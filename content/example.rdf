@@ -1,0 +1,1 @@
+You'll see me if you request /example.rdf or if you request /example with an "Accept: application/rdf+xml" header.
