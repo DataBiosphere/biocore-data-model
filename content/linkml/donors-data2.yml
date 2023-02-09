@@ -1,0 +1,11 @@
+donors:
+  - id: ORCID:1234
+    full_name: Clark Kent
+    death_age: 33
+    strain: 555-555-5555
+    genetic_ancestry: ALIVE
+  - id: ORCID:2222
+    full_name: Count Dracula
+    death_age: 0
+    strain: 555-555-5555
+    genetic_ancestry: UNDEAD

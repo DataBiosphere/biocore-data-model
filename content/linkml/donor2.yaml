@@ -1,5 +1,5 @@
 id: https://w3id.org/linkml/examples/personinfo
-name: personinfo
+name: donorinfo
 prefixes:                                  
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/

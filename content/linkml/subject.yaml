@@ -1,16 +1,16 @@
-id: 
+id: https://w3id.org/linkml/examples/personinfo # this is the URI of the schema, just using example for now
 name: subject
 prefixes:
-  linkml: https://w3id.org/linkml/
+  linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
 imports:
-  - linkml:types
-default_range: string
+  - linkml:types # this imports the linkml types schema
+default_range: string # if not specified, the default range is string
   
 classes:
-  Subject:
-    attributes:
+  Subject: # this is the name of the class, Subject could be Donor, Patient, etc.
+    attributes: # example attributes go here
       id:
-      birth_date:
+      birth_date: 
       death_date:
       death_age:
       reported_ethnicity:
