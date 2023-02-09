@@ -1,0 +1,105 @@
+# baseURI: https://datamodel.terra.bio/TerraCore
+# imports: https://datamodel.terra.bio/imports/EFO_subset
+# imports: https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset
+# imports: https://datamodel.terra.bio/imports/OBIAssay_subset
+# imports: https://datamodel.terra.bio/imports/OBI_core
+# imports: https://datamodel.terra.bio/TerraCoreValueSets
+# imports: https://datamodel.terra.bio/TerraDCAT_ap
+# prefix: BioCore
+# are these comments actually doing anything? need to update the ontology to use the new prefix
+# most of the terra.bio imports don't appear to actually work
+# unclear if we should actually be importing owl, rdf, rdfs, xsd, etc.
+
+@prefix : <https://datamodel.terra.bio/TerraCore#> .
+@prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
+@prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
+@prefix TerraCore: <https://datamodel.terra.bio/TerraCore#> .
+@prefix TerraCoreValueSets: <https://datamodel.terra.bio/TerraCoreValueSets#> .
+@prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix duo: <http://purl.obolibrary.org/obo/duo-basic.owl#> .
+@prefix nsf2_full_mtg: <http://www.jcvi.org/framework/nsf2_full_mtg#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://datamodel.terra.bio/TerraCore>
+  a owl:Ontology ;
+  dc:contributor "Sid Cox" ;
+  dc:creator "Kathy Reinold" ;
+  dct:date "" ;
+  dct:license <https://github.com/DataBiosphere/terra-interoperability-model/blob/master/LICENSE> ;
+  rdfs:comment "Please cite The Broad Institute of Harvard and MIT, Data Sciences Platform." ;
+  owl:imports <https://datamodel.terra.bio/imports/EFO_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
+  owl:imports <https://datamodel.terra.bio/TerraCoreValueSets> ;
+  owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
+  owl:versionInfo "2023" ;
+.
+
+BioCore:Activity
+  a owl:Class ;
+  rdfs:label "Activity" ;
+  rdfs:subClassOf prov:Activity ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dct:created ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty TerraCore:id ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prov:endedAtTime ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prov:startedAtTime ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty prov:wasAssociatedWith ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty TerraCore:hasProtocol ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty TerraCore:usesSample ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prov:generated ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prov:used ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty TerraCore:hasDataModality ;
+    ] ;
+  skos:prefLabel "Activity" ;
+  prov:definition "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research." ;
+.

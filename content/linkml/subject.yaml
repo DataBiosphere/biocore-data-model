@@ -1,0 +1,27 @@
+id: 
+name: subject
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+  
+classes:
+  Subject:
+    attributes:
+      id:
+      birth_date:
+      death_date:
+      death_age:
+      reported_ethnicity:
+      genetic_ancestry:
+      organism_type:
+      phenotypic_sex:
+      strain:
+  Container:
+    tree_root: true
+    attributes:
+      subjects:
+        multivalued: true
+        inlined_as_list: true
+        range: Subject

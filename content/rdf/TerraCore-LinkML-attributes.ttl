@@ -1,0 +1,169 @@
+# baseURI: https://datamodel.terra.bio/TerraCore
+
+@prefix : <https://datamodel.terra.bio/TerraCore#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix TerraCore: <https://datamodel.terra.bio/TerraCore#> .
+
+<https://datamodel.terra.bio/TerraCore>
+  a owl:Ontology ;
+  owl:versionInfo "test version of BioCoreFields" ;
+.
+TerraCore:hasDateOfBirth
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:label "has date of birth" ;
+  rdfs:range xsd:dateTime ;
+  skos:definition "A reference to the data of birth of the Donor or Family Member." ;
+  TerraCore:hasColumnLabel "birth_date" ;
+.
+TerraCore:hasDateOfDeath
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:label "has date of death" ;
+  rdfs:range [
+      owl:unionOf (
+          xsd:date
+          xsd:dateTime
+        ) ;
+    ] ;
+  rdfs:subPropertyOf dct:date ;
+.
+TerraCore:hasDonorAgeAtCollection
+  a owl:ObjectProperty ;
+  rdfs:domain TerraCore:BioSample ;
+  rdfs:domain TerraCore:Measurement ;
+  rdfs:label "hasDonorAgeAtCollection" ;
+  rdfs:range TerraCore:Age ;
+  skos:definition "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created." ;
+  skos:prefLabel "hasDonorAgeAtCollection" ;
+  TerraCore:hasColumnLabel "donor_age_at_collection" ;
+.
+TerraCore:hasAgeAtDeath
+  a owl:ObjectProperty ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:domain TerraCore:HumanDonor ;
+  rdfs:label "hasAgeAtDeath" ;
+  rdfs:range TerraCore:Age ;
+  skos:definition "A reference to the Age of the Donor at time of death." ;
+  skos:prefLabel "hasAgeAtDeath" ;
+  TerraCore:hasColumnLabel "death_age" ;
+.
+TerraCore:hasDonor
+  a owl:ObjectProperty ;
+  rdfs:domain TerraCore:BioSample ;
+  rdfs:label "hasDonor" ;
+  rdfs:range TerraCore:Donor ;
+  owl:inverseOf TerraCore:donated ;
+  skos:definition "This property references the Donor organism from which the BioSample was acquired." ;
+  skos:prefLabel "hasDonor" ;
+  TerraCore:hasColumnLabel "donor" ;
+.
+TerraCore:hasRace
+  a owl:DatatypeProperty ;
+  rdfs:comment "Considering using HANCESTRO ancestry category subclasses as options here.  In the meantime, capturing a text string.  Also consider whether we need to track reported and genetic as determined by genetic analysis." ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:domain TerraCore:HumanDonor ;
+  rdfs:label "hasRace" ;
+  rdfs:range xsd:string ;
+  skos:definition "A property that relects a HumanDonor's reported race. " ;
+  skos:prefLabel "has race" ;
+  TerraCore:hasColumnLabel "race" ;
+.
+TerraCore:hasReportedEthnicity
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend using HANCESTRO ancestry category subclasses but a text string is also acceptable." ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:domain TerraCore:HumanDonor ;
+  rdfs:label "has reported ethnicity" ;
+  rdfs:range [
+      owl:unionOf (
+          xsd:anyURI
+          xsd:string
+        ) ;
+    ] ;
+  skos:definition "A property that relects a HumanDonor's reported ethnic origins. " ;
+  skos:prefLabel "has reported ethnicity" ;
+  TerraCore:hasColumnLabel "reported_ethnicity" ;
+.
+TerraCore:hasReportedEthnicity
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend using HANCESTRO ancestry category subclasses but a text string is also acceptable." ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:domain TerraCore:HumanDonor ;
+  rdfs:label "has reported ethnicity" ;
+  rdfs:range [
+      owl:unionOf (
+          xsd:anyURI
+          xsd:string
+        ) ;
+    ] ;
+  skos:definition "A property that relects a HumanDonor's reported ethnic origins. " ;
+  skos:prefLabel "has reported ethnicity" ;
+  TerraCore:hasColumnLabel "reported_ethnicity" ;
+.
+TerraCore:hasOrganismType
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 " ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:label "hasOrganismType" ;
+  rdfs:range [
+      owl:unionOf (
+          xsd:anyURI
+          xsd:string
+        ) ;
+    ] ;
+  skos:definition "A reference to the organism type." ;
+  skos:prefLabel "hasOrganismType" ;
+  TerraCore:hasColumnLabel "organism_type" ;
+.
+TerraCore:BiologicalSex
+  a owl:Class ;
+  rdfs:label "Biological sex" ;
+  rdfs:subClassOf obo:BFO_0000019 ;
+  rdfs:subClassOf obo:PATO_0001894 ;
+  skos:definition "A quality of an organism indicating physical sexual characteristics. Equivalent of PATO's phenotypic sex but pseudohermaphrodite is not relevant to existing data and is not recommended." ;
+.
+TerraCore:hasPhenotypicSex
+  a owl:ObjectProperty ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:label "hasPhenotypicSex" ;
+  rdfs:range TerraCore:BiologicalSex ;
+  owl:equivalentProperty obo:PATO_0001894 ;
+  skos:definition "A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\"" ;
+  skos:prefLabel "hasPhenotypicSex" ;
+  TerraCore:hasColumnLabel "phenotypic_sex" ;
+.
+TerraCore:hasGenotypicSex
+  a owl:DatatypeProperty ;
+  rdfs:comment "Add equivalence to http://purl.obolibrary.org/obo/PATO_0020000" ;
+  rdfs:domain TerraCore:BioSample ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:domain TerraCore:FamilyMember ;
+  rdfs:label "hasGenotypicSex" ;
+  rdfs:range xsd:string ;
+  skos:definition "A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes. [PATO]" ;
+  skos:prefLabel "hasGenotypicSex" ;
+  TerraCore:hasColumnLabel "genotypic_sex" ;
+.
+TerraCore:hasStrain
+  a owl:DatatypeProperty ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:domain TerraCore:DogDonor ;
+  rdfs:domain TerraCore:Donor ;
+  rdfs:domain TerraCore:MouseDonor ;
+  rdfs:label "hasStrain" ;
+  rdfs:range xsd:string ;
+  skos:definition "Text string to represent the strain." ;
+  skos:prefLabel "hasStrain" ;
+.

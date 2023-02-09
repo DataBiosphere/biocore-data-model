@@ -1,0 +1,63 @@
+{
+   "$defs": {
+      "Donor": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "birth_date": {
+               "description": "date of birth",
+               "type": "string"
+            },
+            "death_age": {
+               "maximum": 200,
+               "minimum": 0,
+               "type": "integer"
+            },
+            "death_date": {
+               "type": "string"
+            },
+            "genetic_ancestry": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "organism_type": {
+               "type": "string"
+            },
+            "phenotypic_sex": {
+               "type": "string"
+            },
+            "reported_ethnicity": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "strain": {
+               "description": "strain of organism, for non-humans",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "organism_type"
+         ],
+         "title": "Donor",
+         "type": "object"
+      }
+   },
+   "$id": "https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "donor",
+   "type": "object",
+   "version": null
+}
+

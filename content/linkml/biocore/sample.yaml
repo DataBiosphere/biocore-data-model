@@ -1,0 +1,35 @@
+id: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Sample
+name: sample
+prefixes:
+  linkml: https://w3id.org/linkml/
+#  biocore: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  Sample:
+    attributes:
+      id:
+        identifier: true
+      sample_type:
+        description: biosample or molecular sample
+      anatomical_site:
+        description: UBERON or anatomical name
+      date_collected:
+        required: true # a date collected is required for a sample, though it might be unknown
+        description: when the sample was collected
+      donor_age_at_collection:
+        range: integer
+        minimum_value: 0
+        maximum_value: 200 # assuming units are years!
+      donor: # link to donor table
+      derived_from_sample: # when a sample is derived from another sample
+
+  # Container:
+  #   tree_root: true
+  #   attributes:
+  #     samples:
+  #       multivalued: true
+  #       inlined_as_list: true
+  #       range: Sample
