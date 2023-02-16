@@ -49,19 +49,20 @@ slots:
       age at death
   reported_ethnicity:
     multivalued: true
-    description:
-      the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.
     range: string
     slot_uri: BioCoreFields:hasOrganismType # we can use inheritance to define a slot_uri for an attribute, such as form BioCore data model
   genetic_ancestry:
     multivalued: true
   organism_type:
-    required: true
+    required: true # making this required to see the functionality
+    description:
+      the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.
   phenotypic_sex:
   strain: 
     description:
-     strain of organism, for non-humans, e.g. C57BL/6J
+     strain of organism, for non-humans only, e.g. C57BL/6J
   xref_id: # external identifier for a donor
     multivalued: true
+    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
     description:
       other identifiers for the person, e.g. ORCID, etc.
