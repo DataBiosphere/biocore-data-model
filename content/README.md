@@ -3,7 +3,7 @@
 All in one readme, no digging through the directory tree to find docs, its all here.
 
 BioCore is not a schema, but it contains tools for generating them using LinkML and YAML files. The YAML files are the data model, the schema it generates are JSON files. 
-The Turtle/RDF ontology (OWL2) files are just collections of *vocabularies*, and there are three of them:
+The Turtle/RDF ontology (OWL2) files are collections of *vocabularies*, and there are three of them:
 
    1. The BioCoreFields ontology, which is the core of the BioCore data model, and is the basis for the other two vocabularies. This is simply a list of Fields or Attributes, basically names of things and their definitions. Data types are specified later. Not only are there definitions of each type of Data Column (Field), there are also pointers to other standard ontologies selected in BioCore. If you are labeling a columnar data file like Parquet, this is all you need to use.
    2. The BioCoreTables ontology. Much smaller than the other two, is a list of classes that describe, oddly enough, Tables. These are the recommended names of *things* you might have in a dataset like patients (Donors) or tissue samples (BioSamples). Note that all of the classes in BioCoreTables are purposefully *singular*. If you want to describe about a _populated_table_ (not just the metadata labels for the table), then you should use the LinkML code and make a container there that you can validate against.
