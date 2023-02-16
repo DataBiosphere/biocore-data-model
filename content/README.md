@@ -24,4 +24,4 @@ The LinkMl code is *not complete*, it is a working prototype that we plan to mak
 
  * write the canonical models with comments, they are stripped out in the JSON files. Here is where datatypes are written, and the cardinality of the Fields.
  * Import the BioCore ontology (vocabulary) files into the LinkML code, so that the code can be used to validate the data model and build schema.
- * Create a test set and compare against the AnVIL Findability Subset. This target schema was created by the BioCore Team, explicity to be the first test of BioCore.
+ * Create a test set and compare against the AnVIL Findability Subset. This target schema was created by the BioCore Team, explicity to be the first test of BioCore (v1.0 GOAL).
