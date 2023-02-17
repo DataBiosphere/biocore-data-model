@@ -25,3 +25,10 @@ classes:
         maximum_value: 200 # assuming units are years!
       donor: # link to donor table
       derived_from_sample: # when a sample is derived from another sample
+  Container:
+    tree_root: true
+    attributes:
+      samples:
+        multivalued: true
+        inlined_as_list: true
+        range: Sample
