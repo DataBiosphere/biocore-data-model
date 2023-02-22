@@ -1,0 +1,1048 @@
+@prefix : <https://datamodel.terra.bio/BioCore#> .
+@prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
+@prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
+@prefix BioCoreTables: <https://datamodel.terra.bio/BioCoreTables#> . # update
+@prefix BioCoreTerms: <https://datamodel.terra.bio/BioCoreValueSets#> . # update
+@prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix duo: <http://purl.obolibrary.org/obo/duo-basic.owl#> .
+@prefix nsf2_full_mtg: <http://www.jcvi.org/framework/nsf2_full_mtg#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
+
+<https://datamodel.terra.bio/BioCoreFields>
+  a owl:Ontology ;
+  dc:contributor "Sid Cox" ;
+  dc:creator "Kathy Reinold" ;
+  dct:date "" ;
+  dct:license <https://github.com/DataBiosphere/terra-interoperability-model/blob/master/LICENSE> ;
+  rdfs:comment "Please cite The Broad Institute of Harvard and MIT, Data Sciences Platform." ;
+  owl:imports <https://datamodel.terra.bio/imports/EFO_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
+  owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
+  owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
+  owl:imports <https://datamodel.terra.bio/BioCoreFields> ;
+  owl:versionInfo "2023" ;
+.
+<https://datamodel.terra.bio/BioCore>
+  a owl:Ontology ;
+  owl:versionInfo "February 2023 Sid Cox" ;
+.
+dct:contributor
+  TerraCore:hasColumnLabel "contributor" ;
+.
+dct:description
+  TerraCore:hasColumnLabel "description" ;
+.
+dct:license
+  TerraCore:hasColumnLabel "license" ;
+.
+dct:title
+  TerraCore:hasColumnLabel "title" ;
+.
+dcat:contactPoint
+  TerraCore:hasColumnLabel "contact_point" ;
+.
+prov:endedAtTime
+  TerraCore:hasColumnLabel "end_time" ;
+.
+prov:generated
+  TerraCore:hasColumnLabel "generated" ;
+.
+prov:hadDerivation
+  a owl:ObjectProperty ;
+  rdfs:label "hadDerivation" ;
+  owl:inverseOf prov:wasDerivedFrom ;
+  prov:definition "Inverse of prov:wasDerivedFrom" ;
+  TerraCore:hasColumnLabel "derivation" ;
+.
+prov:used
+  owl:inverseOf prov:wasUsedBy ;
+  TerraCore:hasColumnLabel "used" ;
+.
+prov:wasAssociatedWith
+  TerraCore:hasColumnLabel "associated_with" ;
+.
+prov:wasDerivedFrom
+  TerraCore:hasColumnLabel "derived_from" ;
+.
+prov:wasGeneratedBy
+  TerraCore:hasColumnLabel "generated_by" ;
+.
+TerraCore:confirmsDisease
+  a owl:ObjectProperty ;
+  rdfs:label "confirmsDisease" ;
+  skos:definition "A property that identifies a disease or condition has been confirmed through diagnosis.  Contrast with hasDisease." ;
+  TerraCore:hasColumnLabel "confirms_disease" ;
+.
+TerraCore:hasActivityType
+  a owl:DatatypeProperty ;
+  rdfs:label "hasActivityType" ;
+  skos:definition "A reference to the type of activity, preferably using an identifier in a recommended standard ontology." ;
+  TerraCore:hasColumnLabel "activity_type" ;
+.
+TerraCore:hasAge
+  a owl:ObjectProperty ;
+  rdfs:label "hasAge" ;
+  skos:definition "A reference to the Age of the Donor at the point in time that data was collected or that the BioSample was obtained." ;
+  skos:prefLabel "hasAge" ;
+  TerraCore:hasColumnLabel "age" ;
+.
+TerraCore:hasAgeAtDeath
+  a owl:ObjectProperty ;
+  rdfs:label "hasAgeAtDeath" ;
+  skos:definition "A reference to the Age of the Donor at time of death." ;
+  skos:prefLabel "hasAgeAtDeath" ;
+  TerraCore:hasColumnLabel "death_age" ;
+.
+TerraCore:hasAgeAtDiagnosis
+  a owl:ObjectProperty ;
+  rdfs:label "age at diagnosis" ;
+  skos:definition "A reference to the Age of the Donor at the point in time that diagnosis was made." ;
+  skos:prefLabel "age at diagnosis" ;
+  TerraCore:hasColumnLabel "diagnosis_age" ;
+.
+TerraCore:hasAgeAtOnset
+  a owl:ObjectProperty ;
+  rdfs:label "age at onset" ;
+  skos:definition "A reference to the Age of the Donor at the onset of the disease associated with the diagnosis." ;
+  skos:prefLabel "age at onset" ;
+  TerraCore:hasColumnLabel "onset_age" ;
+.
+TerraCore:hasAgeCategory
+  a owl:DatatypeProperty ;
+  rdfs:label "hasAgeCategory" ;
+  skos:prefLabel "hasAgeCategory" ;
+  TerraCore:hasColumnLabel "age_category" ;
+.
+TerraCore:hasAgeUnit
+  a owl:DatatypeProperty ;
+  rdfs:label "hasAgeUnit" ;
+  rdfs:subPropertyOf TerraCore:hasUnit ;
+  skos:definition "A reference to the unit of time during which an entity has existed." ;
+  TerraCore:hasColumnLabel "age_unit" ;
+.
+TerraCore:hasAlignedFragments
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment file types." ;
+  rdfs:label "hasAlignedFragments" ;
+  skos:prefLabel "hasAlignedFragments" ;
+.
+TerraCore:hasAllele
+  a owl:DatatypeProperty ;
+  rdfs:label "hasAllele" ;
+  skos:prefLabel "hasAllele" ;
+.
+TerraCore:hasAlpha2Code
+  a owl:AnnotationProperty ;
+  rdfs:label "hasAlpha2Code" ;
+.
+TerraCore:hasAmount
+  a owl:DatatypeProperty ;
+  rdfs:comment "Consider replacing with a measurement ontology" ;
+  rdfs:label "has amount" ;
+  skos:definition "A property that identifies the numerical quantity of an entity." ;
+  skos:prefLabel "has amount" ;
+  TerraCore:hasColumnLabel "amount" ;
+.
+TerraCore:hasAmountUnit
+  a owl:DatatypeProperty ;
+  rdfs:label "has amount unit" ;
+  rdfs:subPropertyOf TerraCore:hasUnit ;
+  skos:definition "A property that captures the units of an entity. The units may be an amount such as moles or grams; or a concentration, such as g/mL or molarity. Other units may include enzyme activity, the specific activity of a radionucleotide, or the titer of an antibody" ;
+  skos:prefLabel "has amount unit" ;
+  TerraCore:hasColumnLabel "amount_unit" ;
+.
+TerraCore:hasAnatomicalRegion
+  a owl:DatatypeProperty ;
+  rdfs:comment "Many groups are convening to define Common Coordinate Frameworks for specific organs/species.  This will be a rapidly evolving area in the near future.  Thus allowing text or URI as we wait for the field to mature allows us to support what we hope will at a minimum be controlled vocabulary under discussion of these groups." ;
+  rdfs:label "hasAnatomicalRegion" ;
+  skos:definition "A reference to the physical location within the AnatomicalSite from which the BioSample was taken." ;
+  skos:prefLabel "hasAnatomicalRegion" ;
+  TerraCore:hasColumnLabel "anatomical_region" ;
+.
+TerraCore:hasAnatomicalSite
+  a owl:DatatypeProperty ;
+  rdfs:comment "May want to consider restricting this to UBERON terms but currently any URI is allowed.  This is useful for imaging and other whole body samples as UBERON does not have \"whole body\".  Use NCIT:C13041 for this." ;
+  rdfs:label "hasAnatomicalSite" ;
+  skos:definition "A reference to the site within the organism from which the BioSample was taken." ;
+  skos:prefLabel "hasAnatomicalSite" ;
+  TerraCore:hasColumnLabel "anatomical_site" ;
+.
+TerraCore:hasAprioriCellType
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasAprioriCellType" ;
+.
+TerraCore:hasAssayActivity
+  a owl:ObjectProperty ;
+  rdfs:label "hasAssay" ;
+  rdfs:subPropertyOf prov:wasUsedBy ;
+  skos:definition "A subproperty of usedBy which indicates that an AssayActivity was performed using this entity." ;
+  skos:prefLabel "hasAssay" ;
+.
+TerraCore:hasAssayType
+  a owl:ObjectProperty ;
+  rdfs:label "hasAssayType" ;
+  skos:definition "A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070)." ;
+  TerraCore:hasColumnLabel "assay_type" ;
+.
+TerraCore:hasAverageReadLength
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasAverageReadLength" ;
+.
+TerraCore:hasBioSample
+  a owl:ObjectProperty ;
+  rdfs:label "has BioSample" ;
+  owl:inverseOf TerraCore:hasDonor ;
+  skos:definition "This property references the BioSample donated by the Donor." ;
+  skos:prefLabel "has BioSample" ;
+  TerraCore:hasColumnLabel "biosample" ;
+.
+TerraCore:hasBioSampleType
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasBioSampleType" ;
+  rdfs:subPropertyOf TerraCore:hasSampleType ;
+  TerraCore:hasColumnLabel "biosample_type" ;
+.
+TerraCore:hasBirthYear
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has birth year" ;
+.
+TerraCore:hasCellCycle
+  a owl:DatatypeProperty ;
+  rdfs:domain TerraCore:SingleCell ;
+  rdfs:label "hasCellCycle" ;
+  skos:definition "A property that describes the stage of the cell cycle at the time the sample was obtained." ;
+  skos:prefLabel "hasCellCycle" ;
+  TerraCore:hasColumnLabel "cell_cycle" ;
+.
+TerraCore:hasCellState
+  a owl:DatatypeProperty ;
+  rdfs:label "hasCellState" ;
+  skos:definition "A property that describes the cell’s metabolic or electrophysiological state." ;
+  skos:prefLabel "hasCellState" ;
+  TerraCore:hasColumnLabel "cell_state" ;
+.
+TerraCore:hasChecksum
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has checksum" ;
+  skos:prefLabel "hasChecksum" ;
+  TerraCore:hasColumnLabel "checksum" ;
+.
+TerraCore:hasChild
+  a owl:ObjectProperty ;
+  rdfs:label "has child" ;
+  skos:definition "A property that identifies genetic children." ;
+.
+TerraCore:hasChromosome
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has chromosome" ;
+  skos:prefLabel "hasChromosome" ;
+  TerraCore:hasColumnLabel "chromosome" ;
+.
+TerraCore:hasClonality
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has clonality" ;
+  TerraCore:hasColumnLabel "clonality" ;
+.
+TerraCore:hasColumnLabel
+  a owl:AnnotationProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has column label" ;
+  skos:prefLabel "has column label" ;
+.
+TerraCore:hasCountry
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasCountry" ;
+.
+TerraCore:hasCrossReference
+  a owl:ObjectProperty ;
+  rdfs:label "hasCrossReference" ;
+  rdfs:subPropertyOf skos:closeMatch ;
+  skos:definition "Reference to the entity in another electronic system.  The data stored about the entity may vary from system to system, but this relationship asserts that the reference represents the same entity." ;
+  skos:prefLabel "hasCrossReference" ;
+  TerraCore:hasColumnLabel "xref" ;
+.
+TerraCore:hasCurrentAddress
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasCurrentAddress" ;
+.
+TerraCore:hasDataModality
+  a owl:ObjectProperty ;
+  rdfs:label "hasDataModality" ;
+  skos:definition "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information." ;
+  TerraCore:hasColumnLabel "data_modality" ;
+.
+TerraCore:hasDateCollected
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:label "has date collected" ;
+  rdfs:subPropertyOf dct:date ;
+  skos:definition "Date the BioSample was originally collected from its Donor." ;
+  skos:prefLabel "has date collected" ;
+  TerraCore:hasColumnLabel "date_collected" ;
+.
+TerraCore:hasDateOfBirth
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:label "has date of birth" ;
+  skos:definition "A reference to the data of birth of the Donor or Family Member." ;
+  TerraCore:hasColumnLabel "birth_date" ;
+.
+TerraCore:hasDateOfDeath
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has date of death" ;
+  rdfs:subPropertyOf dct:date ;
+.
+TerraCore:hasDevelopmentalStage
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasDevelopmentalStage" ;
+  skos:prefLabel "hasDevelopmentalStage" ;
+  TerraCore:hasColumnLabel "developmental_stage" ;
+.
+TerraCore:hasDiagnosis
+  a owl:ObjectProperty ;
+  rdfs:label "hasDiagnosis" ;
+  skos:definition "A property that identifies a Diagnosis including provenance and the disease or condition diagnosed." ;
+  skos:prefLabel "has diagnosis" ;
+  TerraCore:hasColumnLabel "diagnosis_id" ;
+.
+TerraCore:hasDisease
+  a owl:DatatypeProperty ;
+  rdfs:label "hasDisease" ;
+  skos:definition "A property that identifies a disease or condition has been reported in this entity." ;
+  skos:prefLabel "hasDisease" ;
+  TerraCore:hasColumnLabel "disease_id" ;
+.
+TerraCore:hasDiseaseStageType
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "disease stage type" ;
+  skos:prefLabel "has disease stage type" ;
+  TerraCore:hasColumnLabel "disease_stage_type" ;
+.
+TerraCore:hasDiseaseStageValue
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "disease stage" ;
+  skos:prefLabel "has disease stage value" ;
+  TerraCore:hasColumnLabel "disease_stage_value" ;
+.
+TerraCore:hasDonor
+  a owl:ObjectProperty ;
+  rdfs:label "hasDonor" ;
+  owl:inverseOf TerraCore:donated ;
+  skos:definition "This property references the Donor organism from which the BioSample was acquired." ;
+  skos:prefLabel "hasDonor" ;
+  TerraCore:hasColumnLabel "donor" ;
+.
+
+TerraCore:hasDonorAgeAtCollection
+  a owl:ObjectProperty ;
+  rdfs:label "hasDonorAgeAtCollection" ;
+  skos:definition "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created." ;
+  skos:prefLabel "hasDonorAgeAtCollection" ;
+  TerraCore:hasColumnLabel "donor_age_at_collection" ;
+.
+TerraCore:hasDonorAgeAtEvent
+  a owl:ObjectProperty ;
+  rdfs:label "hasDonorAgeAtEvent" ;
+  skos:definition "A reference to the Age of the Donor at the point in time that the event or administration occured." ;
+  skos:prefLabel "hasDonorAgeAtEvent" ;
+  TerraCore:hasColumnLabel "donor_age_at_event" ;
+.
+TerraCore:hasDonorTreatmentType
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need to add recommended vocabulary." ;
+  rdfs:label "has donor treatment type" ;
+  skos:prefLabel "has donor treatment type" ;
+  TerraCore:hasColumnLabel "donor_treatment_type" ;
+.
+TerraCore:hasDose
+  a owl:DatatypeProperty ;
+  rdfs:label "has dose" ;
+  skos:definition "A reference to the dosage information relevant to this Donor Treatment or Medication." ;
+  skos:prefLabel "has dose" ;
+  TerraCore:hasColumnLabel "dose" ;
+.
+TerraCore:hasDuplicateFragments
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment data types." ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasDuplicateFragments" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "hasDuplicateFragments" ;
+.
+TerraCore:hasDuration
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has duration" ;
+  skos:prefLabel "has duration" ;
+  TerraCore:hasColumnLabel "duration" ;
+.
+TerraCore:hasDurationUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has duration unit" ;
+  rdfs:subPropertyOf TerraCore:hasUnit ;
+  skos:prefLabel "has duration unit" ;
+  TerraCore:hasColumnLabel "duration_unit" ;
+.
+TerraCore:hasEstimatedLibrarySize
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment file types." ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasEstimatedLibrarySize" ;
+  skos:prefLabel "hasEstimatedLibrarySize" ;
+.
+TerraCore:hasFamilyIdentifier
+  a owl:DatatypeProperty ;
+  rdfs:label "hasFamilyIdentifier" ;
+  skos:definition "A property identifies the family with whom this Donor is affiliated." ;
+  TerraCore:hasColumnLabel "family_identifier" ;
+.
+TerraCore:hasFileFormat
+  a owl:DatatypeProperty ;
+  rdfs:comment "The definition of this field follows the convention used by the Human Cell Atlas." ;
+  rdfs:label "hasFileFormat" ;
+  rdfs:subPropertyOf dct:format ;
+  skos:definition "An indication of the format of an electronic file; include the full file extension including compression extensions." ;
+  TerraCore:hasColumnLabel "file_format" ;
+.
+TerraCore:hasFileSize
+  a owl:DatatypeProperty ;
+  rdfs:label "hasFileSize" ;
+  owl:equivalentProperty <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C171192> ;
+  skos:definition "Property that describes the approximate size of a file in megabytes." ;
+  TerraCore:hasColumnLabel "file_size" ;
+.
+TerraCore:hasFragments
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment file types." ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasFragments" ;
+  skos:prefLabel "hasFragments" ;
+.
+TerraCore:hasGRCName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Name of the Reference Assembly in Genome Reference Consortium format (ncbi.nlm.nih.gov/grc.  Still draft." ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasGRCName" ;
+  skos:prefLabel "hasGRCName" ;
+.
+TerraCore:hasGeneContext
+  a owl:DatatypeProperty ;
+  rdfs:label "has gene context" ;
+  skos:definition "A specific gene identified that applies to this variant." ;
+  TerraCore:hasColumnLabel "gene_context" ;
+.
+TerraCore:hasGeneExpressionProgram
+  a owl:DatatypeProperty ;
+  rdfs:label "hasGeneExpressionProgram" ;
+  skos:definition "A property that characterizes the gene expression patterns at work in the cell." ;
+  skos:prefLabel "hasGeneExpressionProgram" ;
+  TerraCore:hasColumnLabel "gene_expression_program" ;
+.
+TerraCore:hasGeneticAncestry
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004" ;
+  rdfs:label "has genetic ancestry" ;
+  skos:definition "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data." ;
+  skos:prefLabel "has genetic ancestry" ;
+  TerraCore:hasColumnLabel "genetic_ancestry" ;
+.
+TerraCore:hasGeneticModification
+  a owl:DatatypeProperty ;
+  rdfs:label "has genetic modification" ;
+  skos:prefLabel "has genetic modification" ;
+  prov:definition "A reference to a genetic modification of a BioSample." ;
+  TerraCore:hasColumnLabel "genetic_mod" ;
+.
+TerraCore:hasGeneticModificationMethod
+  a owl:DatatypeProperty ;
+  rdfs:label "has genetic modification method" ;
+  skos:prefLabel "has genetic modification method" ;
+  prov:definition "The method of a GeneticModification, see ValueSets." ;
+  TerraCore:hasColumnLabel "genetic_mod_method" ;
+.
+TerraCore:hasGeneticModificationReference
+  a owl:DatatypeProperty ;
+  rdfs:label "has genetic modification reference" ;
+  skos:prefLabel "has genetic modification reference" ;
+  prov:definition "An external reference to a genetic modification method." ;
+  TerraCore:hasColumnLabel "genetic_mod_ref" ;
+.
+TerraCore:hasGeneticModificationType
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has genetic modification type" ;
+  skos:prefLabel "has genetic modification type" ;
+  TerraCore:hasColumnLabel "genetic_mod_type" ;
+.
+TerraCore:hasGenotypicSex
+  a owl:DatatypeProperty ;
+  rdfs:comment "Add equivalence to http://purl.obolibrary.org/obo/PATO_0020000" ;
+  rdfs:label "hasGenotypicSex" ;
+  skos:definition "A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes. [PATO]" ;
+  skos:prefLabel "hasGenotypicSex" ;
+  TerraCore:hasColumnLabel "genotypic_sex" ;
+.
+TerraCore:hasGrade
+  a rdf:Property ;
+  rdfs:label "hasGrade" ;
+  rdfs:range xsd:string ;
+.
+TerraCore:hasHalfSibling
+  a owl:ObjectProperty ;
+  rdfs:label "hasHalfSibling" ;
+  skos:definition "A property that identifies genetic half siblings." ;
+  TerraCore:hasColumnLabel "half_sibling" ;
+.
+TerraCore:hasHostOrganism
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has host organism" ;
+  TerraCore:hasColumnLabel "host_organism" ;
+.
+TerraCore:hasImmunogen
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:comment "Target is a string for now but will ultimately be a class. CHEBI term CHEBI:60816" ;
+  rdfs:label "has immunogen" ;
+  skos:prefLabel "has immunogen" ;
+  TerraCore:hasColumnLabel "immunogen" ;
+.
+TerraCore:hasLibraryLayout
+  a owl:DatatypeProperty ;
+  rdfs:label "hasLibraryLayout" ;
+  skos:definition "An indicator of whether the referenced library was prepared for paired or single end sequencing." ;
+  skos:prefLabel "hasLibraryLayout" ;
+  TerraCore:hasColumnLabel "library_layout" ;
+.
+TerraCore:hasLibraryPrepActivity
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasLibraryPrep" ;
+  rdfs:subPropertyOf prov:wasUsedBy ;
+  skos:definition "A subproperty of usedBy which indicates that LibraryPreparation was performed using this entity." ;
+  skos:prefLabel "hasLibraryPrep" ;
+  TerraCore:hasColumnLabel "library_prep_id" ;
+.
+TerraCore:hasLibraryPreparationType
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasLibraryPreparationType" ;
+  TerraCore:hasColumnLabel "library_prep_type" ;
+.
+TerraCore:hasLifeStage
+  a rdf:Property ;
+  rdfs:comment "Need definition" ;
+  rdfs:comment "Varies per species; temporary solution" ;
+  rdfs:label "hasLifeStage" ;
+  skos:prefLabel "has life stage" ;
+  TerraCore:hasColumnLabel "life_stage" ;
+.
+TerraCore:hasLot
+  a owl:DatatypeProperty ;
+  rdfs:comment "A serial or lot number that was manufactured together. Added for Antibodies but domain can expand." ;
+  rdfs:label "hasLot" ;
+  skos:prefLabel "hasLot" ;
+  prov:definition "The lot unit of an entity." ;
+  TerraCore:hasColumnLabel "lot" ;
+.
+TerraCore:hasLowerBound
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasLowerBound" ;
+  skos:prefLabel "hasLowerBound" ;
+  TerraCore:hasColumnLabel "lower_bound" ;
+.
+TerraCore:hasMailingAddress
+  a rdf:Property ;
+  rdfs:label "hasMailingAddress" ;
+  skos:definition "Text form of the address, including country and postal code." ;
+  TerraCore:hasColumnLabel "mailing_address" ;
+.
+TerraCore:hasMannerOfDeath
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has manner of death" ;
+  skos:prefLabel "has manner of death" ;
+  TerraCore:hasColumnLabel "manner_of_death" ;
+.
+TerraCore:hasMeasurement
+  a owl:ObjectProperty ;
+  rdfs:label "has measurement" ;
+  skos:definition "A reference to a Measurement related to this Donor." ;
+  skos:prefLabel "has measurement" ;
+  TerraCore:hasColumnLabel "measurement" ;
+.
+TerraCore:hasMeasurementType
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend LOINC or SNOMED vocabularies." ;
+  rdfs:label "has measurement type" ;
+  skos:prefLabel "has measurement type" ;
+  TerraCore:hasColumnLabel "measurement_type" ;
+.
+TerraCore:hasMedication
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend term or URL from MEDDRA or RxNORM. Note that this model of a medication is subject to change." ;
+  rdfs:label "has medication" ;
+  skos:definition "A reference to the medication information relevant to this entity." ;
+  skos:prefLabel "has medication" ;
+  TerraCore:hasColumnLabel "medication" ;
+.
+TerraCore:hasMissingValueReason
+  a owl:AnnotationProperty ;
+  rdfs:comment "The reason choices are taken from the International Nucleotide Sequencing Data Collaborative (INSDC); see https://www.insdc.org/missing-value-reporting#." ;
+  rdfs:label "has missing value reason" ;
+  TerraCore:hasColumnLabel "missing_value_reason" ;
+.
+
+TerraCore:hasMolecularSampleType
+  a owl:ObjectProperty ;
+  rdfs:label "hasMolecularSampleType" ;
+  rdfs:subPropertyOf TerraCore:hasSampleType ;
+  TerraCore:hasColumnLabel "mol_sample_type" ;
+.
+TerraCore:hasMorphology
+  a owl:DatatypeProperty ;
+  rdfs:label "hasMorphology" ;
+  TerraCore:hasColumnLabel "morphology" ;
+.
+TerraCore:hasNonDuplicatedFragments
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment file types." ;
+  rdfs:label "hasNonDuplicatedFragments" ;
+  skos:prefLabel "hasNonDuplicatedFragments" ;
+.
+TerraCore:hasOrganismType
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 " ;
+  rdfs:label "hasOrganismType" ;
+  skos:definition "A reference to the organism type." ;
+  skos:prefLabel "hasOrganismType" ;
+  TerraCore:hasColumnLabel "organism_type" ;
+.
+TerraCore:hasPairedEndIdentifier
+  a owl:DatatypeProperty ;
+  rdfs:label "hasPairedEndIdentifier" ;
+.
+TerraCore:hasPairedNormal
+  a rdf:Property ;
+  rdfs:label "hasPairedNormal" ;
+  TerraCore:hasColumnLabel "paired_normal" ;
+.
+TerraCore:hasPairedTumor
+  a rdf:Property ;
+  rdfs:label "hasPairedTumor" ;
+  TerraCore:hasColumnLabel "paired_tumor" ;
+.
+TerraCore:hasParent
+  a owl:ObjectProperty ;
+  rdfs:label "hasParent" ;
+  skos:definition "A property that identifies genetic parents." ;
+  TerraCore:hasColumnLabel "parent" ;
+.
+TerraCore:hasPartNumber
+  a owl:DatatypeProperty ;
+  rdfs:comment "The part number is for reordering. Added for Antibodies but domain can expand." ;
+  rdfs:label "has part number" ;
+  skos:prefLabel "has part number" ;
+  prov:definition "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity." ;
+  TerraCore:hasColumnLabel "part_number" ;
+.
+TerraCore:hasPercentAlignedReads
+  a owl:DatatypeProperty ;
+  rdfs:label "hasPercentAlignedReads" ;
+  skos:prefLabel "hasPercentAlignedReads" ;
+.
+TerraCore:hasPercentDuplicateFragments
+  a owl:DatatypeProperty ;
+  rdfs:comment "For alignment file types." ;
+  rdfs:label "hasPercentDuplicateFragments" ;
+  skos:prefLabel "hasPercentDuplicateFragments" ;
+.
+TerraCore:hasPhenopacket
+  a owl:ObjectProperty ;
+  skos:definition "A reference to the phenopacket file." ;
+  TerraCore:hasColumnLabel "phenopacket" ;
+.
+TerraCore:hasPhenotype
+  a owl:DatatypeProperty ;
+  skos:definition "A reference to the phenotype from the Human Phenotype Ontology. " ;
+  TerraCore:hasColumnLabel "phenotype" ;
+.
+TerraCore:hasPhenotypeDescription
+  a owl:AnnotationProperty ;
+  skos:definition "Phenotype term or free text description for additional phenotype information." ;
+  TerraCore:hasColumnLabel "phenotype_description" ;
+.
+TerraCore:hasPhenotypicSex
+  a owl:ObjectProperty ;
+  rdfs:label "hasPhenotypicSex" ;
+  owl:equivalentProperty obo:PATO_0001894 ;
+  skos:definition "A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\"" ;
+  skos:prefLabel "hasPhenotypicSex" ;
+  TerraCore:hasColumnLabel "phenotypic_sex" ;
+.
+TerraCore:hasPlatform
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:label "hasPlatform" ;
+  skos:definition "A reference to the instrument or platform type used to conduct this activity." ;
+  skos:prefLabel "has platform" ;
+  TerraCore:hasColumnLabel "platform" ;
+.
+TerraCore:hasPlatformIdentifier
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:label "hasPlatformID" ;
+  skos:definition "A reference to the instrument or platform type used to conduct this activity." ;
+  skos:prefLabel "has platform identifier" ;
+  TerraCore:hasColumnLabel "platform_id" ;
+.
+TerraCore:hasPostalCode
+  a rdf:Property ;
+  rdfs:label "hasPostalCode" ;
+  TerraCore:hasColumnLabel "post_code" ;
+.
+TerraCore:hasPreservationState
+  a owl:DatatypeProperty ;
+  rdfs:label "hasPreservationState" ;
+  skos:definition "Method used to preserve the BioSample, if relevant, or Fresh for BioSamples that were not preserved." ;
+  TerraCore:hasColumnLabel "preservation_state" ;
+.
+TerraCore:hasProtocol
+  a owl:DatatypeProperty ;
+  rdfs:label "hasProtocol" ;
+  rdfs:subPropertyOf prov:used ;
+  skos:prefLabel "hasProtocol" ;
+  TerraCore:hasColumnLabel "protocol" ;
+.
+TerraCore:hasRace
+  a owl:DatatypeProperty ;
+  rdfs:comment "Considering using HANCESTRO ancestry category subclasses as options here.  In the meantime, capturing a text string.  Also consider whether we need to track reported and genetic as determined by genetic analysis." ;
+  rdfs:label "hasRace" ;
+  skos:definition "A property that relects a HumanDonor's reported race. " ;
+  skos:prefLabel "has race" ;
+  TerraCore:hasColumnLabel "race" ;
+.
+TerraCore:hasReadCount
+  a owl:DatatypeProperty ;
+  rdfs:comment "Domain will change from File to SequencingOutputFile or SequenceActivity in future." ;
+  rdfs:label "hasReadCount" ;
+  skos:prefLabel "hasReadCount" ;
+.
+TerraCore:hasReadLength
+  a owl:DatatypeProperty ;
+  rdfs:comment "Domain will change from File to SequencingOutputFile or SequenceActivity in future." ;
+  rdfs:label "hasReadLength" ;
+  skos:prefLabel "hasReadLength" ;
+.
+TerraCore:hasReferenceAllele
+  a owl:DatatypeProperty ;
+  rdfs:comment "See also https://vrs.ga4gh.org/en/stable/terms_and_model.html#allele for a more comprehensive model." ;
+  rdfs:label "hasReferenceAllele" ;
+  skos:definition "The state of a molecule at a identified location." ;
+  skos:prefLabel "has reference allele" ;
+.
+TerraCore:hasReportedEthnicity
+  a owl:DatatypeProperty ;
+  rdfs:comment "Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004." ;
+  rdfs:label "has reported ethnicity" ;
+  skos:definition "A property that relects a HumanDonor's reported ethnic origins. " ;
+  skos:prefLabel "has reported ethnicity" ;
+  TerraCore:hasColumnLabel "reported_ethnicity" ;
+.
+TerraCore:hasSampleTreatment
+  a owl:ObjectProperty ;
+  rdfs:label "has sample treatment" ;
+  rdfs:subPropertyOf prov:wasUsedBy ;
+  skos:definition "A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity." ;
+  skos:prefLabel "has sample treatment" ;
+  prov:definition "A sample treatment of a BioSample." ;
+  TerraCore:hasColumnLabel "sample_treatment" ;
+.
+TerraCore:hasSampleTreatmentMethod
+  a owl:DatatypeProperty ;
+  rdfs:label "has sample treatment method" ;
+  skos:prefLabel "has sample treatment method" ;
+  prov:definition "The method of a SampleTreatmentActivity." ;
+  TerraCore:hasColumnLabel "sample_treatment_method" ;
+.
+TerraCore:hasSampleTreatmentType
+  a owl:DatatypeProperty ;
+  rdfs:label "has sample treatment type" ;
+  skos:prefLabel "has sample treatment type" ;
+  prov:definition "The type of a BioSample treatment type, see valuesets for examples." ;
+  TerraCore:hasColumnLabel "sample_treatment_type" ;
+.
+TerraCore:hasSampleType
+  a owl:DatatypeProperty ;
+  rdfs:label "hasSampleType" ;
+  TerraCore:hasColumnLabel "sample_type" ;
+.
+TerraCore:hasSequenceExpression
+  a owl:DatatypeProperty ;
+  rdfs:comment "See https://vrs.ga4gh.org/en/stable/terms_and_model.html#sequence-expression and https://vrsatile.readthedocs.io/en/latest/value_object_descriptor/index.html#expression." ;
+  rdfs:label "hasSequenceExpression" ;
+  skos:definition "An expression describing a Sequence, for example HGVS or ISCN." ;
+  skos:prefLabel "has sequence expression" ;
+  TerraCore:hasColumnLabel "sequence_expression" ;
+.
+TerraCore:hasSequenceLocation
+  a owl:ObjectProperty ;
+  rdfs:definition "Location of variation on a sequence.  For example, for human genome: chr7:140753336-140753337" ;
+  rdfs:label "hasSequenceLocation" ;
+  skos:altLabel "hasLocation" ;
+  skos:prefLabel "hasSequenceLocation" ;
+  TerraCore:hasColumnLabel "seq_location" ;
+.
+TerraCore:hasSequencingActivity
+  a owl:ObjectProperty ;
+  rdfs:label "hasSequencing" ;
+  rdfs:subPropertyOf prov:wasUsedBy ;
+  skos:definition "A subproperty of usedBy which indicates that a SequencingActivity was performed using this entity." ;
+  skos:prefLabel "hasSequencing" ;
+.
+TerraCore:hasServiceProvider
+  a rdf:Property ;
+  a owl:ObjectProperty ;
+  rdfs:label "has service provider" ;
+  skos:definition "A reference to the organization performing this activity." ;
+  TerraCore:hasColumnLabel "service_provider" ;
+.
+TerraCore:hasSexAssignedAtBirth
+  a owl:ObjectProperty ;
+  rdfs:label "hasSexAssignedAtBirth" ;
+  skos:definition "A reference to the BiologicalSex assigned to the donor organism at birth by a medical professional." ;
+  skos:prefLabel "hasSexAssignedAtBirth" ;
+  TerraCore:hasColumnLabel "sex_assigned_at_birth" ;
+.
+TerraCore:hasSibling
+  a owl:ObjectProperty ;
+  rdfs:label "hasSibling" ;
+  skos:definition "A property that identifies full genetic siblings." ;
+  TerraCore:hasColumnLabel "sibling" ;
+.
+TerraCore:hasSource
+  a owl:DatatypeProperty ;
+  rdfs:comment "The source is a string but will ultimately be a Vendor class. Added for Antibodies but domain can expand." ;
+  rdfs:label "hasSource" ;
+  skos:prefLabel "hasSource" ;
+  prov:definition "The source of production for an entity." ;
+  TerraCore:hasColumnLabel "source" ;
+.
+TerraCore:hasStage
+  a rdf:Property ;
+  rdfs:label "hasStage" ;
+.
+TerraCore:hasStartPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "hasStartPosition" ;
+  skos:definition "A reference to the start position on the chromosome identified." ;
+  TerraCore:hasColumnLabel "start_position" ;
+.
+TerraCore:hasStopPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "hasStopPosition" ;
+  TerraCore:hasColumnLabel "stop_position" ;
+.
+TerraCore:hasStrain
+  a owl:DatatypeProperty ;
+  rdfs:label "hasStrain" ;
+  skos:definition "Text string to represent the strain." ;
+  skos:prefLabel "hasStrain" ;
+.
+TerraCore:hasStructuralVariationType
+  a owl:DatatypeProperty ;
+  rdfs:label "hasVariantReference" ;
+  skos:definition "A sequence variant that changes one or more structural features. (Sequence Ontology)" ;
+.
+TerraCore:hasTarget
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:comment "Target is a string for now but will ultimately be a class, and this will change to an ObjectProperty." ;
+  rdfs:label "hasTarget" ;
+  skos:prefLabel "hasTarget" ;
+  TerraCore:hasColumnLabel "target" ;
+.
+TerraCore:hasTemperature
+  a rdf:Property ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has temperature" ;
+  skos:prefLabel "has temperature" ;
+  TerraCore:hasColumnLabel "temperature" ;
+.
+TerraCore:hasTemperatureUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "has temperature unit" ;
+  rdfs:subPropertyOf TerraCore:hasUnit ;
+  skos:prefLabel "has temperature unit" ;
+  TerraCore:hasColumnLabel "temperature_unit" ;
+.
+TerraCore:hasTermName
+  a owl:DatatypeProperty ;
+  rdfs:label "hasTermName" ;
+  rdfs:range xsd:string ;
+.
+TerraCore:hasTreatment
+  a owl:ObjectProperty ;
+  rdfs:label "hasTreatment" ;
+  skos:definition "A reference to the therapeutic treatment undertaken for this Donor." ;
+  skos:prefLabel "has treatment" ;
+  TerraCore:hasColumnLabel "treatment_id" ;
+.
+TerraCore:hasTreatmentOutcome
+  a rdf:Property ;
+  a owl:DatatypeProperty ;
+  rdfs:comment "Should the model define a preferred vocabulary? e.g. positive, negative, no effect?  The specific outcome may need to be more specific, reduced tumor size by  .. but the categories listed are useful." ;
+  rdfs:label "has treatment outcome" ;
+  skos:definition "A reference to the outcome of this Treatment." ;
+  TerraCore:hasColumnLabel "treatment_outcome" ;
+.
+TerraCore:hasTumorMorphology
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasTumorMorphology" ;
+  rdfs:subPropertyOf TerraCore:hasMorphology ;
+.
+TerraCore:hasURI
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasURI" ;
+.
+TerraCore:hasUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasUnit" ;
+  skos:prefLabel "hasUnit" ;
+.
+TerraCore:hasUpperBound
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasUpperBound" ;
+  skos:prefLabel "hasUpperBound" ;
+.
+TerraCore:hasVariantCall
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasVariantCall" ;
+  skos:prefLabel "hasVariantCall" ;
+.
+TerraCore:hasVersion
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "hasVersion" ;
+.
+TerraCore:hasWeight
+  a owl:ObjectProperty ;
+  rdfs:label "hasWeight" ;
+  skos:definition "A property that provides a measurement of the mass of a material entity." ;
+.
+TerraCore:hasWeightUnit
+  a owl:DatatypeProperty ;
+  rdfs:label "hasWeightUnit" ;
+  rdfs:subPropertyOf TerraCore:hasUnit ;
+  skos:definition "A reference to the measurement unit for mass." ;
+.
+TerraCore:isCauseOfDeath
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "cause of death" ;
+  TerraCore:hasColumnLabel "cause_of_death" ;
+.
+TerraCore:isContributorToDeath
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "contributes to death" ;
+  TerraCore:hasColumnLabel "contributor_to_death" ;
+.
+TerraCore:isFundedBy
+  a owl:ObjectProperty ;
+  rdfs:label "isFundedBy" ;
+  skos:definition "A relationship defining the funding source.  The range is expected to include grants, organizations, or a string indicating the funding source." ;
+  TerraCore:hasColumnLabel "funded_by" ;
+.
+TerraCore:isGeneratedByPipeline
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "isGeneratedByPipeline" ;
+  rdfs:subPropertyOf prov:wasGeneratedBy ;
+.
+TerraCore:isPairedWith
+  a owl:ObjectProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "isPairedWith" ;
+  TerraCore:hasColumnLabel "paired_with" ;
+.
+TerraCore:isWholeCell
+  a owl:DatatypeProperty ;
+  rdfs:comment "Need definition" ;
+  rdfs:label "isWholeCell" ;
+.
+TerraCore:usesAntibody
+  a owl:ObjectProperty ;
+  rdfs:comment "Can be used as an ObjectProperty with the Antibody class or as a DataType property, depending on need. Antibody should be linked to OBI in future. Note this could link to nonassay activities like CHiP" ;
+  rdfs:label "usesAntibody" ;
+  rdfs:subPropertyOf prov:used ;
+  skos:prefLabel "usesAntibody" ;
+  prov:definition "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity." ;
+  TerraCore:hasColumnLabel "antibody" ;
+.
+TerraCore:usesLibrary
+  a owl:ObjectProperty ;
+  rdfs:label "usesLibrary" ;
+  rdfs:subPropertyOf prov:used ;
+  skos:definition "A reference to a Sequencing Library used in this activity." ;
+  TerraCore:hasColumnLabel "library" ;
+.
+TerraCore:usesReferenceAssembly
+  a owl:ObjectProperty ;
+  rdfs:label "usesReferenceAssembly" ;
+  skos:definition "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc." ;
+  skos:prefLabel "usesReferenceAssembly" ;
+  TerraCore:hasColumnLabel "uses_reference_assembly" ;
+.
+TerraCore:usesSample
+  a owl:ObjectProperty ;
+  rdfs:comment "BioSample and MolecularSample both inherit range from Sample" ;
+  rdfs:label "usesSample" ;
+  rdfs:subPropertyOf prov:used ;
+  skos:definition "A reference to the sample used by this activity." ;
+  skos:prefLabel "usesSample" ;
+  TerraCore:hasColumnLabel "uses_sample" ;
+.
+TerraCore:usesSoftware
+  a owl:DatatypeProperty ;
+  rdfs:label "uses software" ;
+  skos:prefLabel "uses software" ;
+  prov:definition "A reference to a software tool or command line " ;
+  TerraCore:hasColumnLabel "uses_software" ;
+.
