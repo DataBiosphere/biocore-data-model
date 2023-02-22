@@ -23,11 +23,41 @@ The LinkMl code is *not complete*, it is a working prototype that we plan to mak
    * The cannonical Donor data model: who did the data come from.
    * The cannonical Sample data model: what did they collect, and its child BioSample which has extra fields that are specific to the sample type.
 
+![BioCore Data Model](./svg/BioCore.svg)
+<img src="./BioCore.svg">
+
 ### TODO
 
  * write the canonical models with comments, they are stripped out in the JSON files. Here is where datatypes are written, and the cardinality of the Fields.
  * Import the BioCore ontology (vocabulary) files into the LinkML code, so that the code can be used to validate the data model and build schema.
  * Create a test set and compare against the AnVIL Findability Subset. This target schema was created by the BioCore Team, explicity to be the first test of BioCore (v1.0 GOAL).
 
-![BioCore Data Model](./svg/BioCore.svg)
-<img src="./BioCore.svg">
+### LinkML installation / setup
+
+By far the easiest way to set up LinkML is pip, in linux:
+
+`sudo apt install python3-pip`
+
+There are additional tools in the schema-automator and schemasheets packages for converting to/from ontology files and spreadsheets.
+
+Set up an environment:
+
+`mkdir linkml-biocore
+cd linkml-biocore
+python3 -m venv venv
+source venv/bin/activate
+pip install linkml`
+
+Test installation:
+
+`linkml-convert --help`
+
+Test JSON schema creator, get a YAML model file and make schema:
+
+https://github.com/DataBiosphere/biocore-data-model/blob/main/content/linkml/subject.yaml
+
+`gen-json-schema subject.yaml`
+
+Make a YUML file:
+
+https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20donors%200..*%3E[Donor|id:string;full_name:string;xref_id:string%20*;birth_date:date%20%3F;death_date:date%20%3F;death_age:integer%20%3F;reported_ethnicity:string%20%3F;genetic_ancestry:string%20%3F;organism_type:string%20%3F;phenotypic_sex:string%20%3F;strain:string%20%3F],[Container
