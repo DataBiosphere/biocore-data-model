@@ -60,4 +60,4 @@ https://github.com/DataBiosphere/biocore-data-model/blob/main/content/linkml/sub
 
 Make a YUML file:
 
-https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20donors%200..*%3E[Donor|id:string;full_name:string;xref_id:string%20*;birth_date:date%20%3F;death_date:date%20%3F;death_age:integer%20%3F;reported_ethnicity:string%20%3F;genetic_ancestry:string%20%3F;organism_type:string%20%3F;phenotypic_sex:string%20%3F;strain:string%20%3F],[Container
+https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20donors%200..*%3E[Donor|id:string;full_name:string;xref_id:string%20*;birth_date:date%20%3F;death_date:date%20%3F;death_age:integer%20%3F;reported_ethnicity:string%20%3F;genetic_ancestry:string%20%3F;organism_type:string%20%3F;phenotypic_sex:string%20%3F;strain:string%20%3F],[Container]
