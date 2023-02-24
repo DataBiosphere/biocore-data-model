@@ -1,8 +1,7 @@
-@prefix : <https://datamodel.terra.bio/TerraCore#> .
 @prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
-@prefix TerraCore: <https://datamodel.terra.bio/TerraCore#> .
-@prefix TerraCoreValueSets: <https://datamodel.terra.bio/TerraCoreValueSets#> .
+@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
+@prefix BioCoreValueSets: <https://datamodel.terra.bio/BioCoreValueSets#> .
 @prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -17,9 +16,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix BioCore: <https://datamodel.terra.bio/TerraCore#> .
+@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
 
-<https://datamodel.terra.bio/TerraCore>
+<https://datamodel.terra.bio/BioCore>
   a owl:Ontology ;
   dc:contributor "Sid Cox" ;
   dc:creator "Kathy Reinold" ;
@@ -30,11 +29,11 @@
   owl:imports <https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
-  owl:imports <https://datamodel.terra.bio/TerraCoreValueSets> ;
+  owl:imports <https://datamodel.terra.bio/BioCoreValueSets> ;
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
   owl:versionInfo "2023" ;
 .
-<https://datamodel.terra.bio/TerraCore>
+<https://datamodel.terra.bio/BioCore>
   a owl:Ontology ;
   owl:versionInfo "2023 Sid Cox" ;
 .
@@ -45,13 +44,13 @@ BioCore:Activity
   skos:prefLabel "Activity" ;
   prov:definition "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research." ;
 .
-TerraCore:Sample
+BioCore:Sample
   a owl:Class ;
   rdfs:label "Sample" ;
   skos:definition "Data about a physical material collected for the purpose of research." ;
   skos:prefLabel "Sample" ;
 .
-TerraCore:Donor
+BioCore:Donor
   a owl:Class ;
   rdfs:label "Donor" ;
   rdfs:subClassOf obo:OBI_0100026 ; # donor is a subclass of organism
