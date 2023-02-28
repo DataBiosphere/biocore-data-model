@@ -1,0 +1,5 @@
+# this file contains the terms or values that are recommended by BioCore, this is the values to fill out columns described by BioCoreFields, in the context of BioCoreTables
+
+# add terms to patient table
+
+hasPlatformIdentifier
