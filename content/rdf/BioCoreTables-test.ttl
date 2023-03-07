@@ -29,7 +29,6 @@
   owl:imports <https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
-  owl:imports <https://datamodel.terra.bio/BioCoreValueSets> ;
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
   owl:versionInfo "2023" ;
 .
