@@ -31,7 +31,8 @@
   owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
-  owl:imports <https://datamodel.terra.bio/BioCoreFields> ;
+#  owl:imports <https://datamodel.terra.bio/BioCoreFields> ;
+#  owl:imports <https://github.com/DataBiosphere/biocore-data-model/blob/main/content/rdf/BioCoreFields.ttl> ;
   owl:versionInfo "2023" ;
 .
 <https://datamodel.terra.bio/BioCore>

@@ -1,8 +1,6 @@
 @prefix : <https://datamodel.terra.bio/BioCore#> .
 @prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
-@prefix BioCoreTables: <https://datamodel.terra.bio/BioCoreTables#> . # update
-@prefix BioCoreTerms: <https://datamodel.terra.bio/BioCoreValueSets#> . # update
 @prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -31,7 +29,6 @@
   owl:imports <https://datamodel.terra.bio/imports/OBIAssay_subset> ;
   owl:imports <https://datamodel.terra.bio/imports/OBI_core> ;
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
-  owl:imports <https://datamodel.terra.bio/BioCoreFields> ;
   owl:versionInfo "2023" ;
 .
 <https://datamodel.terra.bio/BioCore>
