@@ -1,0 +1,784 @@
+name: BioCoreFields
+description: BioCoreFields
+id: https://datamodel.terra.bio/BioCoreFields
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  BioCoreFields: https://w3id.org/None/
+default_prefix: BioCoreFields
+slots:
+  member:
+    slot_uri: rdfs:member
+    multivalued: true
+  wasUsedBy:
+    slot_uri: http://www.w3.org/ns/prov#wasUsedBy
+    multivalued: true
+  confirmsDisease:
+    slot_uri: https://datamodel.terra.bio/BioCore#confirmsDisease
+    multivalued: true
+  donated:
+    slot_uri: https://datamodel.terra.bio/BioCore#donated
+    multivalued: true
+  hasAge:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAge
+    multivalued: true
+  hasAgeAtDeath:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAgeAtDeath
+    multivalued: true
+  hasAgeAtDiagnosis:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis
+    multivalued: true
+  hasAgeAtOnset:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAgeAtOnset
+    multivalued: true
+  hasAprioriCellType:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAprioriCellType
+    multivalued: true
+  hasAssayActivity:
+    is_a: wasUsedBy
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAssayActivity
+    multivalued: true
+  hasAssayType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAssayType
+    multivalued: true
+  hasBioSample:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasBioSample
+    multivalued: true
+  hasBioSampleType:
+    comments:
+    - Need definition
+    is_a: hasSampleType
+    slot_uri: https://datamodel.terra.bio/BioCore#hasBioSampleType
+    multivalued: true
+  hasChild:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasChild
+    multivalued: true
+  hasCountry:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasCountry
+    multivalued: true
+  hasCrossReference:
+    is_a: closeMatch
+    slot_uri: https://datamodel.terra.bio/BioCore#hasCrossReference
+    multivalued: true
+  hasCurrentAddress:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasCurrentAddress
+    multivalued: true
+  hasDataModality:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDataModality
+    multivalued: true
+  hasDiagnosis:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDiagnosis
+    multivalued: true
+  hasDonor:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDonor
+    multivalued: true
+  hasDonorAgeAtCollection:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection
+    multivalued: true
+  hasDonorAgeAtEvent:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent
+    multivalued: true
+  hasFileSize:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasFileSize
+    multivalued: true
+  hasHalfSibling:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasHalfSibling
+    multivalued: true
+  hasLibraryPrepActivity:
+    comments:
+    - Need definition
+    is_a: wasUsedBy
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity
+    multivalued: true
+  hasLibraryPreparationType:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLibraryPreparationType
+    multivalued: true
+  hasMeasurement:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMeasurement
+    multivalued: true
+  hasMolecularSampleType:
+    is_a: hasSampleType
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMolecularSampleType
+    multivalued: true
+  hasParent:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasParent
+    multivalued: true
+  hasPhenopacket:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPhenopacket
+    multivalued: true
+  hasPhenotypicSex:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPhenotypicSex
+    multivalued: true
+  hasSampleTreatment:
+    is_a: wasUsedBy
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSampleTreatment
+    multivalued: true
+  hasSequenceLocation:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSequenceLocation
+    multivalued: true
+  hasSequencingActivity:
+    is_a: wasUsedBy
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSequencingActivity
+    multivalued: true
+  hasServiceProvider:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasServiceProvider
+    multivalued: true
+  hasSexAssignedAtBirth:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth
+    multivalued: true
+  hasSibling:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSibling
+    multivalued: true
+  hasTreatment:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTreatment
+    multivalued: true
+  hasVariantCall:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasVariantCall
+    multivalued: true
+  hasWeight:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasWeight
+    multivalued: true
+  isFundedBy:
+    slot_uri: https://datamodel.terra.bio/BioCore#isFundedBy
+    multivalued: true
+  isGeneratedByPipeline:
+    comments:
+    - Need definition
+    is_a: wasGeneratedBy
+    slot_uri: https://datamodel.terra.bio/BioCore#isGeneratedByPipeline
+    multivalued: true
+  isPairedWith:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#isPairedWith
+    multivalued: true
+  usesAntibody:
+    comments:
+    - Can be used as an ObjectProperty with the Antibody class or as a DataType property,
+      depending on need. Antibody should be linked to OBI in future. Note this could
+      link to nonassay activities like CHiP
+    is_a: used
+    slot_uri: https://datamodel.terra.bio/BioCore#usesAntibody
+    multivalued: true
+  usesLibrary:
+    is_a: used
+    slot_uri: https://datamodel.terra.bio/BioCore#usesLibrary
+    multivalued: true
+  usesReferenceAssembly:
+    slot_uri: https://datamodel.terra.bio/BioCore#usesReferenceAssembly
+    multivalued: true
+  usesSample:
+    comments:
+    - BioSample and MolecularSample both inherit range from Sample
+    is_a: used
+    slot_uri: https://datamodel.terra.bio/BioCore#usesSample
+    multivalued: true
+  hasActivityType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasActivityType
+    multivalued: true
+  hasAgeCategory:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAgeCategory
+    multivalued: true
+  hasAgeUnit:
+    is_a: hasUnit
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAgeUnit
+    multivalued: true
+  hasAlignedFragments:
+    comments:
+    - For alignment file types.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAlignedFragments
+    multivalued: true
+  hasAllele:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAllele
+    multivalued: true
+  hasAmount:
+    comments:
+    - Consider replacing with a measurement ontology
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAmount
+    multivalued: true
+  hasAmountUnit:
+    is_a: hasUnit
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAmountUnit
+    multivalued: true
+  hasAnatomicalRegion:
+    comments:
+    - Many groups are convening to define Common Coordinate Frameworks for specific
+      organs/species.  This will be a rapidly evolving area in the near future.  Thus
+      allowing text or URI as we wait for the field to mature allows us to support
+      what we hope will at a minimum be controlled vocabulary under discussion of
+      these groups.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAnatomicalRegion
+    multivalued: true
+  hasAnatomicalSite:
+    comments:
+    - May want to consider restricting this to UBERON terms but currently any URI
+      is allowed.  This is useful for imaging and other whole body samples as UBERON
+      does not have \"whole body\".  Use NCIT:C13041 for this.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAnatomicalSite
+    multivalued: true
+  hasAverageReadLength:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAverageReadLength
+    multivalued: true
+  hasBirthYear:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasBirthYear
+    multivalued: true
+  hasCellCycle:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasCellCycle
+    multivalued: true
+  hasCellState:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasCellState
+    multivalued: true
+  hasChecksum:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasChecksum
+    multivalued: true
+  hasChromosome:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasChromosome
+    multivalued: true
+  hasClonality:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasClonality
+    multivalued: true
+  hasDateCollected:
+    is_a: date
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDateCollected
+    multivalued: true
+  hasDateOfBirth:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDateOfBirth
+    multivalued: true
+  hasDateOfDeath:
+    comments:
+    - Need definition
+    is_a: date
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDateOfDeath
+    multivalued: true
+  hasDevelopmentalStage:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDevelopmentalStage
+    multivalued: true
+  hasDisease:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDisease
+    multivalued: true
+  hasDiseaseStageType:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDiseaseStageType
+    multivalued: true
+  hasDiseaseStageValue:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDiseaseStageValue
+    multivalued: true
+  hasDonorTreatmentType:
+    comments:
+    - Need to add recommended vocabulary.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDonorTreatmentType
+    multivalued: true
+  hasDose:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDose
+    multivalued: true
+  hasDuplicateFragments:
+    comments:
+    - For alignment data types.
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDuplicateFragments
+    multivalued: true
+  hasDuration:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDuration
+    multivalued: true
+  hasDurationUnit:
+    comments:
+    - Need definition
+    is_a: hasUnit
+    slot_uri: https://datamodel.terra.bio/BioCore#hasDurationUnit
+    multivalued: true
+  hasEstimatedLibrarySize:
+    comments:
+    - For alignment file types.
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize
+    multivalued: true
+  hasFamilyIdentifier:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasFamilyIdentifier
+    multivalued: true
+  hasFileFormat:
+    comments:
+    - The definition of this field follows the convention used by the Human Cell Atlas.
+    is_a: format
+    slot_uri: https://datamodel.terra.bio/BioCore#hasFileFormat
+    multivalued: true
+  hasFragments:
+    comments:
+    - For alignment file types.
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasFragments
+    multivalued: true
+  hasGRCName:
+    comments:
+    - Name of the Reference Assembly in Genome Reference Consortium format (ncbi.nlm.nih.gov/grc.  Still
+      draft.
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGRCName
+    multivalued: true
+  hasGeneContext:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneContext
+    multivalued: true
+  hasGeneExpressionProgram:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram
+    multivalued: true
+  hasGeneticAncestry:
+    comments:
+    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneticAncestry
+    multivalued: true
+  hasGeneticModification:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneticModification
+    multivalued: true
+  hasGeneticModificationMethod:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod
+    multivalued: true
+  hasGeneticModificationReference:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneticModificationReference
+    multivalued: true
+  hasGeneticModificationType:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGeneticModificationType
+    multivalued: true
+  hasGenotypicSex:
+    comments:
+    - Add equivalence to http://purl.obolibrary.org/obo/PATO_0020000
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGenotypicSex
+    multivalued: true
+  hasGrade:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGrade
+    multivalued: true
+  hasHostOrganism:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasHostOrganism
+    multivalued: true
+  hasImmunogen:
+    comments:
+    - Need definition
+    - Target is a string for now but will ultimately be a class. CHEBI term CHEBI:60816
+    slot_uri: https://datamodel.terra.bio/BioCore#hasImmunogen
+    multivalued: true
+  hasLibraryLayout:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLibraryLayout
+    multivalued: true
+  hasLot:
+    comments:
+    - A serial or lot number that was manufactured together. Added for Antibodies
+      but domain can expand.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLot
+    multivalued: true
+  hasLowerBound:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLowerBound
+    multivalued: true
+  hasMannerOfDeath:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMannerOfDeath
+    multivalued: true
+  hasMeasurementType:
+    comments:
+    - Recommend LOINC or SNOMED vocabularies.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMeasurementType
+    multivalued: true
+  hasMedication:
+    comments:
+    - Recommend term or URL from MEDDRA or RxNORM. Note that this model of a medication
+      is subject to change.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMedication
+    multivalued: true
+  hasMorphology:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMorphology
+    multivalued: true
+  hasNonDuplicatedFragments:
+    comments:
+    - For alignment file types.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments
+    multivalued: true
+  hasOrganismType:
+    comments:
+    - 'For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 '
+    slot_uri: https://datamodel.terra.bio/BioCore#hasOrganismType
+    multivalued: true
+  hasPairedEndIdentifier:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPairedEndIdentifier
+    multivalued: true
+  hasPartNumber:
+    comments:
+    - The part number is for reordering. Added for Antibodies but domain can expand.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPartNumber
+    multivalued: true
+  hasPercentAlignedReads:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPercentAlignedReads
+    multivalued: true
+  hasPercentDuplicateFragments:
+    comments:
+    - For alignment file types.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments
+    multivalued: true
+  hasPhenotype:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPhenotype
+    multivalued: true
+  hasPlatform:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPlatform
+    multivalued: true
+  hasPlatformIdentifier:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPlatformIdentifier
+    multivalued: true
+  hasPreservationState:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPreservationState
+    multivalued: true
+  hasProtocol:
+    is_a: used
+    slot_uri: https://datamodel.terra.bio/BioCore#hasProtocol
+    multivalued: true
+  hasRace:
+    comments:
+    - Considering using HANCESTRO ancestry category subclasses as options here.  In
+      the meantime, capturing a text string.  Also consider whether we need to track
+      reported and genetic as determined by genetic analysis.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasRace
+    multivalued: true
+  hasReadCount:
+    comments:
+    - Domain will change from File to SequencingOutputFile or SequenceActivity in
+      future.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasReadCount
+    multivalued: true
+  hasReadLength:
+    comments:
+    - Domain will change from File to SequencingOutputFile or SequenceActivity in
+      future.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasReadLength
+    multivalued: true
+  hasReferenceAllele:
+    comments:
+    - See also https://vrs.ga4gh.org/en/stable/terms_and_model.html#allele for a more
+      comprehensive model.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasReferenceAllele
+    multivalued: true
+  hasReportedEthnicity:
+    comments:
+    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasReportedEthnicity
+    multivalued: true
+  hasSampleTreatmentMethod:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod
+    multivalued: true
+  hasSampleTreatmentType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSampleTreatmentType
+    multivalued: true
+  hasSampleType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSampleType
+    multivalued: true
+  hasSequenceExpression:
+    comments:
+    - See https://vrs.ga4gh.org/en/stable/terms_and_model.html#sequence-expression
+      and https://vrsatile.readthedocs.io/en/latest/value_object_descriptor/index.html#expression.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSequenceExpression
+    multivalued: true
+  hasSource:
+    comments:
+    - The source is a string but will ultimately be a Vendor class. Added for Antibodies
+      but domain can expand.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasSource
+    multivalued: true
+  hasStartPosition:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasStartPosition
+    multivalued: true
+  hasStopPosition:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasStopPosition
+    multivalued: true
+  hasStrain:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasStrain
+    multivalued: true
+  hasStructuralVariationType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasStructuralVariationType
+    multivalued: true
+  hasTarget:
+    comments:
+    - Need definition
+    - Target is a string for now but will ultimately be a class, and this will change
+      to an ObjectProperty.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTarget
+    multivalued: true
+  hasTemperatureUnit:
+    comments:
+    - Need definition
+    is_a: hasUnit
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTemperatureUnit
+    multivalued: true
+  hasTermName:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTermName
+    multivalued: true
+  hasTreatmentOutcome:
+    comments:
+    - Should the model define a preferred vocabulary? e.g. positive, negative, no
+      effect?  The specific outcome may need to be more specific, reduced tumor size
+      by  .. but the categories listed are useful.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTreatmentOutcome
+    multivalued: true
+  hasTumorMorphology:
+    comments:
+    - Need definition
+    is_a: hasMorphology
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTumorMorphology
+    multivalued: true
+  hasURI:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasURI
+    multivalued: true
+  hasUnit:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasUnit
+    multivalued: true
+  hasUpperBound:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasUpperBound
+    multivalued: true
+  hasWeightUnit:
+    is_a: hasUnit
+    slot_uri: https://datamodel.terra.bio/BioCore#hasWeightUnit
+    multivalued: true
+  isCauseOfDeath:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#isCauseOfDeath
+    multivalued: true
+  isContributorToDeath:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#isContributorToDeath
+    multivalued: true
+  isWholeCell:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#isWholeCell
+    multivalued: true
+  usesSoftware:
+    slot_uri: https://datamodel.terra.bio/BioCore#usesSoftware
+    multivalued: true
+  domainIncludes:
+    slot_uri: http://purl.org/dc/dcam/domainIncludes
+    multivalued: true
+  rangeIncludes:
+    slot_uri: http://schema.org/rangeIncludes
+    multivalued: true
+  abstract:
+    slot_uri: http://purl.org/dc/terms/abstract
+    multivalued: true
+  accessRights:
+    slot_uri: http://purl.org/dc/terms/accessRights
+    multivalued: true
+  accrualMethod:
+    slot_uri: http://purl.org/dc/terms/accrualMethod
+    multivalued: true
+  accrualPeriodicity:
+    slot_uri: http://purl.org/dc/terms/accrualPeriodicity
+    multivalued: true
+  accrualPolicy:
+    slot_uri: http://purl.org/dc/terms/accrualPolicy
+    multivalued: true
+  audience:
+    slot_uri: http://purl.org/dc/terms/audience
+    multivalued: true
+  conformsTo:
+    slot_uri: http://purl.org/dc/terms/conformsTo
+    multivalued: true
+  contributor:
+    slot_uri: http://purl.org/dc/terms/contributor
+    multivalued: true
+  coverage:
+    slot_uri: http://purl.org/dc/terms/coverage
+    multivalued: true
+  creator:
+    slot_uri: http://purl.org/dc/terms/creator
+    multivalued: true
+  description:
+    slot_uri: http://purl.org/dc/terms/description
+    multivalued: true
+  educationLevel:
+    slot_uri: http://purl.org/dc/terms/educationLevel
+    multivalued: true
+  extent:
+    slot_uri: http://purl.org/dc/terms/extent
+    multivalued: true
+  hasFormat:
+    slot_uri: http://purl.org/dc/terms/hasFormat
+    multivalued: true
+  hasVersion:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasVersion
+    multivalued: true
+  isFormatOf:
+    slot_uri: http://purl.org/dc/terms/isFormatOf
+    multivalued: true
+  isPartOf:
+    slot_uri: http://purl.org/dc/terms/isPartOf
+    multivalued: true
+  isReferencedBy:
+    slot_uri: http://purl.org/dc/terms/isReferencedBy
+    multivalued: true
+  isReplacedBy:
+    slot_uri: http://purl.org/dc/terms/isReplacedBy
+    multivalued: true
+  isRequiredBy:
+    slot_uri: http://purl.org/dc/terms/isRequiredBy
+    multivalued: true
+  isVersionOf:
+    slot_uri: http://purl.org/dc/terms/isVersionOf
+    multivalued: true
+  language:
+    slot_uri: http://purl.org/dc/terms/language
+    multivalued: true
+  mediator:
+    slot_uri: http://purl.org/dc/terms/mediator
+    multivalued: true
+  medium:
+    slot_uri: http://purl.org/dc/terms/medium
+    multivalued: true
+  publisher:
+    slot_uri: http://purl.org/dc/terms/publisher
+    multivalued: true
+  references:
+    slot_uri: http://purl.org/dc/terms/references
+    multivalued: true
+  relation:
+    slot_uri: http://purl.org/dc/terms/relation
+    multivalued: true
+  replaces:
+    slot_uri: http://purl.org/dc/terms/replaces
+    multivalued: true
+  requires:
+    slot_uri: http://purl.org/dc/terms/requires
+    multivalued: true
+  rights:
+    slot_uri: http://purl.org/dc/terms/rights
+    multivalued: true
+  source:
+    slot_uri: http://purl.org/dc/terms/source
+    multivalued: true
+  spatial:
+    slot_uri: http://purl.org/dc/terms/spatial
+    multivalued: true
+  tableOfContents:
+    slot_uri: http://purl.org/dc/terms/tableOfContents
+    multivalued: true
+  temporal:
+    slot_uri: http://purl.org/dc/terms/temporal
+    multivalued: true
+  type:
+    slot_uri: http://purl.org/dc/terms/type
+    multivalued: true
+  affiliation:
+    slot_uri: http://schema.org/affiliation
+    multivalued: true
+  definition:
+    slot_uri: rdfs:definition
+    multivalued: true
+  maker:
+    slot_uri: http://xmlns.com/foaf/0.1/maker
+    multivalued: true
+  name:
+    slot_uri: http://xmlns.com/foaf/0.1/name
+    multivalued: true
+  workInfoHomepage:
+    slot_uri: http://xmlns.com/foaf/0.1/workInfoHomepage
+    multivalued: true
+  hasAlpha2Code:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasAlpha2Code
+    multivalued: true
+  hasColumnLabel:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasColumnLabel
+    multivalued: true
+  hasLifeStage:
+    comments:
+    - Varies per species; temporary solution
+    slot_uri: https://datamodel.terra.bio/BioCore#hasLifeStage
+    multivalued: true
+  hasMailingAddress:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMailingAddress
+    multivalued: true
+  hasMissingValueReason:
+    comments:
+    - The reason choices are taken from the International Nucleotide Sequencing Data
+      Collaborative (INSDC); see https://www.insdc.org/missing-value-reporting#.
+    slot_uri: https://datamodel.terra.bio/BioCore#hasMissingValueReason
+    multivalued: true
+  hasPairedNormal:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPairedNormal
+    multivalued: true
+  hasPairedTumor:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPairedTumor
+    multivalued: true
+  hasPhenotypeDescription:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPhenotypeDescription
+    multivalued: true
+  hasPostalCode:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasPostalCode
+    multivalued: true
+  hasStage:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasStage
+    multivalued: true
+  hasTemperature:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/BioCore#hasTemperature
+    multivalued: true
+classes:
+  VocabularyEncodingScheme:
+    class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
+  Service:
+    class_uri: http://purl.org/dc/dcmitype/Service
+  List:
+    class_uri: rdf:List
+  Class:
+    class_uri: rdfs:Class
+  Resource:
+    class_uri: rdfs:Resource
+  Kind:
+    class_uri: http://www.w3.org/2006/vcard/ns#Kind
+  Document:
+    class_uri: http://xmlns.com/foaf/0.1/Document
+  Person:
+    class_uri: http://xmlns.com/foaf/0.1/Person
+  SingleCell:
+    slots:
+    - hasCellCycle
+    class_uri: https://datamodel.terra.bio/BioCore#SingleCell
+

@@ -1,0 +1,1299 @@
+Prefix(:=<https://datamodel.terra.bio/BioCoreFields#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://datamodel.terra.bio/BioCoreFields>
+Import(<https://datamodel.terra.bio/TerraDCAT_ap>)
+Import(<https://datamodel.terra.bio/imports/EFO_subset>)
+Import(<https://datamodel.terra.bio/imports/NCBITaxon_Organisms_subset>)
+Import(<https://datamodel.terra.bio/imports/OBIAssay_subset>)
+Import(<https://datamodel.terra.bio/imports/OBI_core>)
+Annotation(<http://purl.org/dc/terms/date> "")
+Annotation(<http://purl.org/dc/terms/license> <https://github.com/DataBiosphere/terra-interoperability-model/blob/master/LICENSE>)
+Annotation(rdfs:comment "Please cite The Broad Institute of Harvard and MIT, Data Sciences Platform.")
+Annotation(owl:versionInfo "2023")
+
+Declaration(Class(<http://purl.org/dc/dcam/VocabularyEncodingScheme>))
+Declaration(Class(<http://purl.org/dc/dcmitype/Service>))
+Declaration(Class(rdf:List))
+Declaration(Class(rdfs:Class))
+Declaration(Class(rdfs:Resource))
+Declaration(Class(<http://www.w3.org/2006/vcard/ns#Kind>))
+Declaration(Class(<http://xmlns.com/foaf/0.1/Document>))
+Declaration(Class(<http://xmlns.com/foaf/0.1/Person>))
+Declaration(Class(<https://datamodel.terra.bio/BioCore#SingleCell>))
+Declaration(ObjectProperty(rdfs:member))
+Declaration(ObjectProperty(<http://www.w3.org/ns/prov#wasUsedBy>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#confirmsDisease>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#donated>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAge>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAgeAtDeath>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAgeAtOnset>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAprioriCellType>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAssayActivity>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasAssayType>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasBioSample>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasBioSampleType>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasChild>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasCountry>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasCrossReference>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasCurrentAddress>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasDataModality>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasDiagnosis>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasDonor>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasFileSize>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasHalfSibling>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasLibraryPreparationType>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasMeasurement>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasMolecularSampleType>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasParent>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasPhenopacket>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasPhenotypicSex>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasSampleTreatment>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasSequenceLocation>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasSequencingActivity>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasServiceProvider>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasSibling>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasTreatment>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasVariantCall>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#hasWeight>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#isFundedBy>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#isGeneratedByPipeline>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#isPairedWith>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#usesAntibody>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#usesLibrary>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#usesReferenceAssembly>))
+Declaration(ObjectProperty(<https://datamodel.terra.bio/BioCore#usesSample>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasActivityType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAgeCategory>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAgeUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAlignedFragments>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAllele>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAmount>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAmountUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAnatomicalRegion>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAnatomicalSite>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasAverageReadLength>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasBirthYear>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasCellCycle>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasCellState>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasChecksum>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasChromosome>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasClonality>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDateCollected>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDateOfBirth>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDateOfDeath>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDevelopmentalStage>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDisease>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDiseaseStageType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDiseaseStageValue>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDonorTreatmentType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDose>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDuplicateFragments>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDuration>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasDurationUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasFamilyIdentifier>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasFileFormat>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasFragments>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGRCName>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneContext>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneticAncestry>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneticModification>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneticModificationReference>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGeneticModificationType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGenotypicSex>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasGrade>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasHostOrganism>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasImmunogen>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasLibraryLayout>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasLot>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasLowerBound>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasMannerOfDeath>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasMeasurementType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasMedication>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasMorphology>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasOrganismType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPairedEndIdentifier>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPartNumber>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPercentAlignedReads>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPhenotype>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPlatform>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPlatformIdentifier>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasPreservationState>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasProtocol>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasRace>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasReadCount>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasReadLength>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasReferenceAllele>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasReportedEthnicity>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasSampleTreatmentType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasSampleType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasSequenceExpression>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasSource>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasStartPosition>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasStopPosition>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasStrain>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasStructuralVariationType>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasTarget>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasTemperatureUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasTermName>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasTreatmentOutcome>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasTumorMorphology>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasURI>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasUpperBound>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#hasWeightUnit>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#isCauseOfDeath>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#isContributorToDeath>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#isWholeCell>))
+Declaration(DataProperty(<https://datamodel.terra.bio/BioCore#usesSoftware>))
+Declaration(NamedIndividual(<http://okfn.org>))
+Declaration(NamedIndividual(<http://stfc.ac.uk>))
+Declaration(NamedIndividual(<http://www.refinitiv.com>))
+Declaration(NamedIndividual(<http://ec.europa.eu/dgs/informatics/>))
+Declaration(NamedIndividual(<http://makxdekkers.com/>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Agent>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/AgentClass>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/BibliographicResource>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Box>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/DCMIType>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/DDC>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/FileFormat>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Frequency>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/IMT>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/ISO3166>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/ISO639-2>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/ISO639-3>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Jurisdiction>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/LCC>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/LCSH>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/LicenseDocument>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/LinguisticSystem>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Location>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/LocationPeriodOrJurisdiction>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/MESH>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/MediaType>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/MediaTypeOrExtent>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/MethodOfAccrual>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/MethodOfInstruction>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/NLM>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Period>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/PeriodOfTime>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/PhysicalMedium>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/PhysicalResource>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Point>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Policy>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/ProvenanceStatement>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/RFC1766>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/RFC3066>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/RFC4646>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/RFC5646>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/RightsStatement>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/SizeOrDuration>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/Standard>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/TGN>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/UDC>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/URI>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/W3CDTF>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/abstract>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/accessRights>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/accrualMethod>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/accrualPeriodicity>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/accrualPolicy>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/audience>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/conformsTo>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/contributor>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/coverage>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/creator>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/description>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/educationLevel>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/extent>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/hasFormat>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/hasVersion>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/instructionalMethod>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isFormatOf>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isPartOf>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isReferencedBy>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isReplacedBy>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isRequiredBy>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/isVersionOf>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/language>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/license>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/mediator>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/medium>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/provenance>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/publisher>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/references>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/relation>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/replaces>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/requires>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/rights>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/rightsHolder>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/source>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/spatial>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/tableOfContents>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/temporal>))
+Declaration(NamedIndividual(<http://purl.org/dc/terms/type>))
+Declaration(NamedIndividual(<http://www.andrea-perego.name/foaf/#me>))
+Declaration(NamedIndividual(<http://www.asahi-net.or.jp/~ax2s-kmtn/>))
+Declaration(NamedIndividual(<http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni>))
+Declaration(NamedIndividual(<http://www.w3.org/2011/gld/>))
+Declaration(NamedIndividual(<http://www.w3.org/People/all#phila>))
+Declaration(NamedIndividual(<http://www.w3.org/ns/dcat>))
+Declaration(NamedIndividual(<http://www.w3.org/ns/prov-o>))
+Declaration(NamedIndividual(<http://www.w3.org/ns/prov-o-20130312>))
+Declaration(NamedIndividual(<http://www.w3.org/ns/prov-o#>))
+Declaration(NamedIndividual(<https://agbeltran.github.io>))
+Declaration(NamedIndividual(<https://csiro.au>))
+Declaration(NamedIndividual(<https://datamodel.terra.bio/TerraDCAT_ap#BiomedicalResearch>))
+Declaration(NamedIndividual(<https://datamodel.terra.bio/TerraDCAT_ap#DSPThemeTaxonomy>))
+Declaration(NamedIndividual(<https://datamodel.terra.bio/TerraDCAT_ap#DataCollection>))
+Declaration(NamedIndividual(<https://jakub.klímek.com/>))
+Declaration(NamedIndividual(<https://w3id.org/people/ralbertoni/>))
+Declaration(AnnotationProperty(<http://purl.org/dc/dcam/domainIncludes>))
+Declaration(AnnotationProperty(<http://purl.org/dc/dcam/rangeIncludes>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/abstract>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/accessRights>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/accrualMethod>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/accrualPeriodicity>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/accrualPolicy>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/audience>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/conformsTo>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/contributor>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/coverage>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/creator>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/description>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/educationLevel>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/extent>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/hasFormat>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/hasVersion>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isFormatOf>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isPartOf>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isReferencedBy>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isReplacedBy>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isRequiredBy>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/isVersionOf>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/language>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/mediator>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/medium>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/publisher>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/references>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/relation>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/replaces>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/requires>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/rights>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/source>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/spatial>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/tableOfContents>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/temporal>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/type>))
+Declaration(AnnotationProperty(<http://schema.org/affiliation>))
+Declaration(AnnotationProperty(<http://schema.org/rangeIncludes>))
+Declaration(AnnotationProperty(rdfs:definition))
+Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/maker>))
+Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/name>))
+Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/workInfoHomepage>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasAlpha2Code>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasColumnLabel>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasLifeStage>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasMailingAddress>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasMissingValueReason>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasPairedNormal>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasPairedTumor>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasPhenotypeDescription>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasPostalCode>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasStage>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasTemperature>))
+Declaration(AnnotationProperty(<https://datamodel.terra.bio/BioCore#hasVersion>))
+Declaration(Datatype(xsd:date))
+Declaration(Datatype(xsd:duration))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasAlpha2Code> (hasAlpha2Code)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAlpha2Code> "hasAlpha2Code")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasColumnLabel> (has column label)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasColumnLabel> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasColumnLabel> "has column label")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasColumnLabel> "has column label")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasLifeStage> (hasLifeStage)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasLifeStage> "Varies per species; temporary solution")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLifeStage> "hasLifeStage")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasLifeStage> "has life stage")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLifeStage> "life_stage")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasMailingAddress> (hasMailingAddress)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMailingAddress> "hasMailingAddress")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasMailingAddress> "Text form of the address, including country and postal code.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMailingAddress> "mailing_address")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasMissingValueReason> (has missing value reason)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasMissingValueReason> "The reason choices are taken from the International Nucleotide Sequencing Data Collaborative (INSDC); see https://www.insdc.org/missing-value-reporting#.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMissingValueReason> "has missing value reason")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMissingValueReason> "missing_value_reason")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasPairedNormal> (hasPairedNormal)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPairedNormal> "hasPairedNormal")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPairedNormal> "paired_normal")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasPairedTumor> (hasPairedTumor)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPairedTumor> "hasPairedTumor")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPairedTumor> "paired_tumor")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasPhenotypeDescription> (<https://datamodel.terra.bio/BioCore#hasPhenotypeDescription>)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPhenotypeDescription> "Phenotype term or free text description for additional phenotype information.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPhenotypeDescription> "phenotype_description")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasPostalCode> (hasPostalCode)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPostalCode> "hasPostalCode")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPostalCode> "post_code")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasStage> (hasStage)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasStage> "hasStage")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasTemperature> (has temperature)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTemperature> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTemperature> "has temperature")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasTemperature> "has temperature")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasTemperature> "temperature")
+
+# Annotation Property: <https://datamodel.terra.bio/BioCore#hasVersion> (hasVersion)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasVersion> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasVersion> "hasVersion")
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <https://datamodel.terra.bio/BioCore#confirmsDisease> (confirmsDisease)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#confirmsDisease> "confirmsDisease")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#confirmsDisease> "A property that identifies a disease or condition has been confirmed through diagnosis.  Contrast with hasDisease.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#confirmsDisease> "confirms_disease")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#donated> (<https://datamodel.terra.bio/BioCore#donated>)
+
+InverseObjectProperties(<https://datamodel.terra.bio/BioCore#donated> <https://datamodel.terra.bio/BioCore#hasDonor>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAge> (hasAge)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAge> "hasAge")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAge> "A reference to the Age of the Donor at the point in time that data was collected or that the BioSample was obtained.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAge> "hasAge")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAge> "age")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAgeAtDeath> (hasAgeAtDeath)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAgeAtDeath> "hasAgeAtDeath")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAgeAtDeath> "A reference to the Age of the Donor at time of death.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtDeath> "hasAgeAtDeath")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtDeath> "death_age")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis> (age at diagnosis)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis> "age at diagnosis")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis> "A reference to the Age of the Donor at the point in time that diagnosis was made.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis> "age at diagnosis")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtDiagnosis> "diagnosis_age")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAgeAtOnset> (age at onset)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAgeAtOnset> "age at onset")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAgeAtOnset> "A reference to the Age of the Donor at the onset of the disease associated with the diagnosis.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtOnset> "age at onset")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAgeAtOnset> "onset_age")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAprioriCellType> (hasAprioriCellType)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAprioriCellType> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAprioriCellType> "hasAprioriCellType")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAssayActivity> (hasAssay)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAssayActivity> "hasAssay")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAssayActivity> "A subproperty of usedBy which indicates that an AssayActivity was performed using this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAssayActivity> "hasAssay")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasAssayActivity> <http://www.w3.org/ns/prov#wasUsedBy>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasAssayType> (hasAssayType)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAssayType> "hasAssayType")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAssayType> "A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070).")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAssayType> "assay_type")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasBioSample> (has BioSample)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasBioSample> "has BioSample")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasBioSample> "This property references the BioSample donated by the Donor.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasBioSample> "has BioSample")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasBioSample> "biosample")
+InverseObjectProperties(<https://datamodel.terra.bio/BioCore#hasBioSample> <https://datamodel.terra.bio/BioCore#hasDonor>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasBioSampleType> (hasBioSampleType)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasBioSampleType> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasBioSampleType> "hasBioSampleType")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasBioSampleType> "biosample_type")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasBioSampleType> <https://datamodel.terra.bio/BioCore#hasSampleType>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasChild> (has child)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasChild> "has child")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasChild> "A property that identifies genetic children.")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasCountry> (hasCountry)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasCountry> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasCountry> "hasCountry")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasCrossReference> (hasCrossReference)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasCrossReference> "hasCrossReference")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasCrossReference> "Reference to the entity in another electronic system.  The data stored about the entity may vary from system to system, but this relationship asserts that the reference represents the same entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasCrossReference> "hasCrossReference")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasCrossReference> "xref")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasCrossReference> <http://www.w3.org/2004/02/skos/core#closeMatch>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasCurrentAddress> (hasCurrentAddress)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasCurrentAddress> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasCurrentAddress> "hasCurrentAddress")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasDataModality> (hasDataModality)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDataModality> "hasDataModality")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDataModality> "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDataModality> "data_modality")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasDiagnosis> (hasDiagnosis)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDiagnosis> "hasDiagnosis")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDiagnosis> "A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDiagnosis> "has diagnosis")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDiagnosis> "diagnosis_id")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasDonor> (hasDonor)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDonor> "hasDonor")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDonor> "This property references the Donor organism from which the BioSample was acquired.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDonor> "hasDonor")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDonor> "donor")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection> (hasDonorAgeAtCollection)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection> "hasDonorAgeAtCollection")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection> "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection> "hasDonorAgeAtCollection")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtCollection> "donor_age_at_collection")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent> (hasDonorAgeAtEvent)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent> "hasDonorAgeAtEvent")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent> "A reference to the Age of the Donor at the point in time that the event or administration occured.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent> "hasDonorAgeAtEvent")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDonorAgeAtEvent> "donor_age_at_event")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasFileFormat> (hasFileFormat)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasFileFormat> "The definition of this field follows the convention used by the Human Cell Atlas.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasFileFormat> "hasFileFormat")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasFileFormat> "An indication of the format of an electronic file; include the full file extension including compression extensions.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasFileFormat> "file_format")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasFileFormat> <http://purl.org/dc/terms/format>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasFileSize> (hasFileSize)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasFileSize> "hasFileSize")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasFileSize> "Property that describes the approximate size of a file in megabytes.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasFileSize> "file_size")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasHalfSibling> (hasHalfSibling)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasHalfSibling> "hasHalfSibling")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasHalfSibling> "A property that identifies genetic half siblings.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasHalfSibling> "half_sibling")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> (hasLibraryPrep)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> "hasLibraryPrep")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> "A subproperty of usedBy which indicates that LibraryPreparation was performed using this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> "hasLibraryPrep")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> "library_prep_id")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasLibraryPrepActivity> <http://www.w3.org/ns/prov#wasUsedBy>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasLibraryPreparationType> (hasLibraryPreparationType)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasLibraryPreparationType> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLibraryPreparationType> "hasLibraryPreparationType")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLibraryPreparationType> "library_prep_type")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasMeasurement> (has measurement)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMeasurement> "has measurement")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasMeasurement> "A reference to a Measurement related to this Donor.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasMeasurement> "has measurement")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMeasurement> "measurement")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasMolecularSampleType> (hasMolecularSampleType)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMolecularSampleType> "hasMolecularSampleType")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMolecularSampleType> "mol_sample_type")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasMolecularSampleType> <https://datamodel.terra.bio/BioCore#hasSampleType>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasParent> (hasParent)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasParent> "hasParent")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasParent> "A property that identifies genetic parents.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasParent> "parent")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasPhenopacket> (<https://datamodel.terra.bio/BioCore#hasPhenopacket>)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPhenopacket> "A reference to the phenopacket file.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPhenopacket> "phenopacket")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasPhenotypicSex> (hasPhenotypicSex)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPhenotypicSex> "hasPhenotypicSex")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPhenotypicSex> "A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\"")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPhenotypicSex> "hasPhenotypicSex")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPhenotypicSex> "phenotypic_sex")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasProtocol> (hasProtocol)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasProtocol> "hasProtocol")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasProtocol> "hasProtocol")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasProtocol> "protocol")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasProtocol> <http://www.w3.org/ns/prov#used>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSampleTreatment> (has sample treatment)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSampleTreatment> "has sample treatment")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasSampleTreatment> "A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatment> "has sample treatment")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasSampleTreatment> "A sample treatment of a BioSample.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatment> "sample_treatment")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasSampleTreatment> <http://www.w3.org/ns/prov#wasUsedBy>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSampleType> (hasSampleType)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSampleType> "hasSampleType")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSampleType> "sample_type")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSequenceLocation> (hasSequenceLocation)
+
+AnnotationAssertion(rdfs:definition <https://datamodel.terra.bio/BioCore#hasSequenceLocation> "Location of variation on a sequence.  For example, for human genome: chr7:140753336-140753337")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSequenceLocation> "hasSequenceLocation")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://datamodel.terra.bio/BioCore#hasSequenceLocation> "hasLocation")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSequenceLocation> "hasSequenceLocation")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSequenceLocation> "seq_location")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSequencingActivity> (hasSequencing)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSequencingActivity> "hasSequencing")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasSequencingActivity> "A subproperty of usedBy which indicates that a SequencingActivity was performed using this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSequencingActivity> "hasSequencing")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#hasSequencingActivity> <http://www.w3.org/ns/prov#wasUsedBy>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasServiceProvider> (has service provider)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasServiceProvider> "has service provider")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasServiceProvider> "A reference to the organization performing this activity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasServiceProvider> "service_provider")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth> (hasSexAssignedAtBirth)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth> "hasSexAssignedAtBirth")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth> "A reference to the BiologicalSex assigned to the donor organism at birth by a medical professional.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth> "hasSexAssignedAtBirth")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSexAssignedAtBirth> "sex_assigned_at_birth")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasSibling> (hasSibling)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSibling> "hasSibling")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasSibling> "A property that identifies full genetic siblings.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSibling> "sibling")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasTreatment> (hasTreatment)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTreatment> "hasTreatment")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasTreatment> "A reference to the therapeutic treatment undertaken for this Donor.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasTreatment> "has treatment")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasTreatment> "treatment_id")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasVariantCall> (hasVariantCall)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasVariantCall> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasVariantCall> "hasVariantCall")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasVariantCall> "hasVariantCall")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#hasWeight> (hasWeight)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasWeight> "hasWeight")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasWeight> "A property that provides a measurement of the mass of a material entity.")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#isFundedBy> (isFundedBy)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isFundedBy> "isFundedBy")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#isFundedBy> "A relationship defining the funding source.  The range is expected to include grants, organizations, or a string indicating the funding source.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#isFundedBy> "funded_by")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#isGeneratedByPipeline> (isGeneratedByPipeline)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#isGeneratedByPipeline> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isGeneratedByPipeline> "isGeneratedByPipeline")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#isGeneratedByPipeline> <http://www.w3.org/ns/prov#wasGeneratedBy>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#isPairedWith> (isPairedWith)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#isPairedWith> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isPairedWith> "isPairedWith")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#isPairedWith> "paired_with")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#usesAntibody> (usesAntibody)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#usesAntibody> "Can be used as an ObjectProperty with the Antibody class or as a DataType property, depending on need. Antibody should be linked to OBI in future. Note this could link to nonassay activities like CHiP")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#usesAntibody> "usesAntibody")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#usesAntibody> "usesAntibody")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#usesAntibody> "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#usesAntibody> "antibody")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#usesAntibody> <http://www.w3.org/ns/prov#used>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#usesLibrary> (usesLibrary)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#usesLibrary> "usesLibrary")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#usesLibrary> "A reference to a Sequencing Library used in this activity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#usesLibrary> "library")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#usesLibrary> <http://www.w3.org/ns/prov#used>)
+
+# Object Property: <https://datamodel.terra.bio/BioCore#usesReferenceAssembly> (usesReferenceAssembly)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#usesReferenceAssembly> "usesReferenceAssembly")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#usesReferenceAssembly> "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#usesReferenceAssembly> "usesReferenceAssembly")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#usesReferenceAssembly> "uses_reference_assembly")
+
+# Object Property: <https://datamodel.terra.bio/BioCore#usesSample> (usesSample)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#usesSample> "BioSample and MolecularSample both inherit range from Sample")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#usesSample> "usesSample")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#usesSample> "A reference to the sample used by this activity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#usesSample> "usesSample")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#usesSample> "uses_sample")
+SubObjectPropertyOf(<https://datamodel.terra.bio/BioCore#usesSample> <http://www.w3.org/ns/prov#used>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasActivityType> (hasActivityType)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasActivityType> "hasActivityType")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasActivityType> "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasActivityType> "activity_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAgeCategory> (hasAgeCategory)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAgeCategory> "hasAgeCategory")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAgeCategory> "hasAgeCategory")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAgeCategory> "age_category")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAgeUnit> (hasAgeUnit)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAgeUnit> "hasAgeUnit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAgeUnit> "A reference to the unit of time during which an entity has existed.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAgeUnit> "age_unit")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasAgeUnit> <https://datamodel.terra.bio/BioCore#hasUnit>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAlignedFragments> (hasAlignedFragments)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAlignedFragments> "For alignment file types.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAlignedFragments> "hasAlignedFragments")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAlignedFragments> "hasAlignedFragments")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAllele> (hasAllele)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAllele> "hasAllele")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAllele> "hasAllele")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAmount> (has amount)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAmount> "Consider replacing with a measurement ontology")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAmount> "has amount")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAmount> "A property that identifies the numerical quantity of an entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAmount> "has amount")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAmount> "amount")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAmountUnit> (has amount unit)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAmountUnit> "has amount unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAmountUnit> "A property that captures the units of an entity. The units may be an amount such as moles or grams; or a concentration, such as g/mL or molarity. Other units may include enzyme activity, the specific activity of a radionucleotide, or the titer of an antibody")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAmountUnit> "has amount unit")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAmountUnit> "amount_unit")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasAmountUnit> <https://datamodel.terra.bio/BioCore#hasUnit>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> (hasAnatomicalRegion)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> "Many groups are convening to define Common Coordinate Frameworks for specific organs/species.  This will be a rapidly evolving area in the near future.  Thus allowing text or URI as we wait for the field to mature allows us to support what we hope will at a minimum be controlled vocabulary under discussion of these groups.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> "hasAnatomicalRegion")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> "A reference to the physical location within the AnatomicalSite from which the BioSample was taken.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> "hasAnatomicalRegion")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAnatomicalRegion> "anatomical_region")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> (hasAnatomicalSite)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> "May want to consider restricting this to UBERON terms but currently any URI is allowed.  This is useful for imaging and other whole body samples as UBERON does not have \"whole body\".  Use NCIT:C13041 for this.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> "hasAnatomicalSite")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> "A reference to the site within the organism from which the BioSample was taken.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> "hasAnatomicalSite")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasAnatomicalSite> "anatomical_site")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasAverageReadLength> (hasAverageReadLength)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasAverageReadLength> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasAverageReadLength> "hasAverageReadLength")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasBirthYear> (has birth year)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasBirthYear> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasBirthYear> "has birth year")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasCellCycle> (hasCellCycle)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasCellCycle> "hasCellCycle")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasCellCycle> "A property that describes the stage of the cell cycle at the time the sample was obtained.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasCellCycle> "hasCellCycle")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasCellCycle> "cell_cycle")
+DataPropertyDomain(<https://datamodel.terra.bio/BioCore#hasCellCycle> <https://datamodel.terra.bio/BioCore#SingleCell>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasCellState> (hasCellState)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasCellState> "hasCellState")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasCellState> "A property that describes the cell’s metabolic or electrophysiological state.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasCellState> "hasCellState")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasCellState> "cell_state")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasChecksum> (has checksum)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasChecksum> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasChecksum> "has checksum")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasChecksum> "hasChecksum")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasChecksum> "checksum")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasChromosome> (has chromosome)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasChromosome> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasChromosome> "has chromosome")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasChromosome> "hasChromosome")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasChromosome> "chromosome")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasClonality> (has clonality)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasClonality> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasClonality> "has clonality")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasClonality> "clonality")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDateCollected> (has date collected)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDateCollected> "has date collected")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDateCollected> "Date the BioSample was originally collected from its Donor.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDateCollected> "has date collected")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDateCollected> "date_collected")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasDateCollected> <http://purl.org/dc/terms/date>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDateOfBirth> (has date of birth)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDateOfBirth> "has date of birth")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDateOfBirth> "A reference to the data of birth of the Donor or Family Member.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDateOfBirth> "birth_date")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDateOfDeath> (has date of death)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDateOfDeath> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDateOfDeath> "has date of death")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasDateOfDeath> <http://purl.org/dc/terms/date>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDevelopmentalStage> (hasDevelopmentalStage)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDevelopmentalStage> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDevelopmentalStage> "hasDevelopmentalStage")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDevelopmentalStage> "hasDevelopmentalStage")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDevelopmentalStage> "developmental_stage")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDisease> (hasDisease)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDisease> "hasDisease")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDisease> "A property that identifies a disease or condition has been reported in this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDisease> "hasDisease")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDisease> "disease_id")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDiseaseStageType> (disease stage type)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDiseaseStageType> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDiseaseStageType> "disease stage type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDiseaseStageType> "has disease stage type")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDiseaseStageType> "disease_stage_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDiseaseStageValue> (disease stage)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDiseaseStageValue> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDiseaseStageValue> "disease stage")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDiseaseStageValue> "has disease stage value")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDiseaseStageValue> "disease_stage_value")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDonorTreatmentType> (has donor treatment type)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDonorTreatmentType> "Need to add recommended vocabulary.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDonorTreatmentType> "has donor treatment type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDonorTreatmentType> "has donor treatment type")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDonorTreatmentType> "donor_treatment_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDose> (has dose)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDose> "has dose")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasDose> "A reference to the dosage information relevant to this Donor Treatment or Medication.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDose> "has dose")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDose> "dose")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDuplicateFragments> (hasDuplicateFragments)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDuplicateFragments> "For alignment data types.")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDuplicateFragments> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDuplicateFragments> "hasDuplicateFragments")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDuplicateFragments> "hasDuplicateFragments")
+DataPropertyRange(<https://datamodel.terra.bio/BioCore#hasDuplicateFragments> xsd:integer)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDuration> (has duration)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDuration> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDuration> "has duration")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDuration> "has duration")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDuration> "duration")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasDurationUnit> (has duration unit)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasDurationUnit> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasDurationUnit> "has duration unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasDurationUnit> "has duration unit")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasDurationUnit> "duration_unit")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasDurationUnit> <https://datamodel.terra.bio/BioCore#hasUnit>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize> (hasEstimatedLibrarySize)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize> "For alignment file types.")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize> "hasEstimatedLibrarySize")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasEstimatedLibrarySize> "hasEstimatedLibrarySize")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasFamilyIdentifier> (hasFamilyIdentifier)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasFamilyIdentifier> "hasFamilyIdentifier")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasFamilyIdentifier> "A property identifies the family with whom this Donor is affiliated.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasFamilyIdentifier> "family_identifier")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasFragments> (hasFragments)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasFragments> "For alignment file types.")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasFragments> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasFragments> "hasFragments")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasFragments> "hasFragments")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGRCName> (hasGRCName)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasGRCName> "Name of the Reference Assembly in Genome Reference Consortium format (ncbi.nlm.nih.gov/grc.  Still draft.")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasGRCName> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGRCName> "hasGRCName")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGRCName> "hasGRCName")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneContext> (has gene context)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneContext> "has gene context")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasGeneContext> "A specific gene identified that applies to this variant.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneContext> "gene_context")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram> (hasGeneExpressionProgram)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram> "hasGeneExpressionProgram")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram> "A property that characterizes the gene expression patterns at work in the cell.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram> "hasGeneExpressionProgram")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneExpressionProgram> "gene_expression_program")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> (has genetic ancestry)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> "Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> "has genetic ancestry")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> "has genetic ancestry")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneticAncestry> "genetic_ancestry")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneticModification> (has genetic modification)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneticModification> "has genetic modification")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModification> "has genetic modification")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasGeneticModification> "A reference to a genetic modification of a BioSample.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModification> "genetic_mod")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod> (has genetic modification method)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod> "has genetic modification method")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod> "has genetic modification method")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod> "The method of a GeneticModification, see ValueSets.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationMethod> "genetic_mod_method")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneticModificationReference> (has genetic modification reference)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneticModificationReference> "has genetic modification reference")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationReference> "has genetic modification reference")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasGeneticModificationReference> "An external reference to a genetic modification method.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationReference> "genetic_mod_ref")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGeneticModificationType> (has genetic modification type)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasGeneticModificationType> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGeneticModificationType> "has genetic modification type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationType> "has genetic modification type")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGeneticModificationType> "genetic_mod_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGenotypicSex> (hasGenotypicSex)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasGenotypicSex> "Add equivalence to http://purl.obolibrary.org/obo/PATO_0020000")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGenotypicSex> "hasGenotypicSex")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasGenotypicSex> "A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes. [PATO]")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasGenotypicSex> "hasGenotypicSex")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasGenotypicSex> "genotypic_sex")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasGrade> (hasGrade)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasGrade> "hasGrade")
+DataPropertyRange(<https://datamodel.terra.bio/BioCore#hasGrade> xsd:string)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasHostOrganism> (has host organism)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasHostOrganism> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasHostOrganism> "has host organism")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasHostOrganism> "host_organism")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasImmunogen> (has immunogen)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasImmunogen> "Need definition")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasImmunogen> "Target is a string for now but will ultimately be a class. CHEBI term CHEBI:60816")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasImmunogen> "has immunogen")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasImmunogen> "has immunogen")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasImmunogen> "immunogen")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasLibraryLayout> (hasLibraryLayout)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLibraryLayout> "hasLibraryLayout")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasLibraryLayout> "An indicator of whether the referenced library was prepared for paired or single end sequencing.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasLibraryLayout> "hasLibraryLayout")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLibraryLayout> "library_layout")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasLot> (hasLot)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasLot> "A serial or lot number that was manufactured together. Added for Antibodies but domain can expand.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLot> "hasLot")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasLot> "hasLot")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasLot> "The lot unit of an entity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLot> "lot")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasLowerBound> (hasLowerBound)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasLowerBound> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasLowerBound> "hasLowerBound")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasLowerBound> "hasLowerBound")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasLowerBound> "lower_bound")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasMannerOfDeath> (has manner of death)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasMannerOfDeath> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMannerOfDeath> "has manner of death")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasMannerOfDeath> "has manner of death")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMannerOfDeath> "manner_of_death")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasMeasurementType> (has measurement type)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasMeasurementType> "Recommend LOINC or SNOMED vocabularies.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMeasurementType> "has measurement type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasMeasurementType> "has measurement type")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMeasurementType> "measurement_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasMedication> (has medication)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasMedication> "Recommend term or URL from MEDDRA or RxNORM. Note that this model of a medication is subject to change.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMedication> "has medication")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasMedication> "A reference to the medication information relevant to this entity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasMedication> "has medication")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMedication> "medication")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasMorphology> (hasMorphology)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasMorphology> "hasMorphology")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasMorphology> "morphology")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments> (hasNonDuplicatedFragments)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments> "For alignment file types.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments> "hasNonDuplicatedFragments")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasNonDuplicatedFragments> "hasNonDuplicatedFragments")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasOrganismType> (hasOrganismType)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasOrganismType> "For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 ")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasOrganismType> "hasOrganismType")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasOrganismType> "A reference to the organism type.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasOrganismType> "hasOrganismType")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasOrganismType> "organism_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPairedEndIdentifier> (hasPairedEndIdentifier)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPairedEndIdentifier> "hasPairedEndIdentifier")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPartNumber> (has part number)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasPartNumber> "The part number is for reordering. Added for Antibodies but domain can expand.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPartNumber> "has part number")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPartNumber> "has part number")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasPartNumber> "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPartNumber> "part_number")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPercentAlignedReads> (hasPercentAlignedReads)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPercentAlignedReads> "hasPercentAlignedReads")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPercentAlignedReads> "hasPercentAlignedReads")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments> (hasPercentDuplicateFragments)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments> "For alignment file types.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments> "hasPercentDuplicateFragments")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPercentDuplicateFragments> "hasPercentDuplicateFragments")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPhenotype> (<https://datamodel.terra.bio/BioCore#hasPhenotype>)
+
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPhenotype> "A reference to the phenotype from the Human Phenotype Ontology. ")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPhenotype> "phenotype")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPlatform> (hasPlatform)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPlatform> "hasPlatform")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPlatform> "A reference to the instrument or platform type used to conduct this activity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPlatform> "has platform")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPlatform> "platform")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPlatformIdentifier> (hasPlatformID)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPlatformIdentifier> "hasPlatformID")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPlatformIdentifier> "A reference to the instrument or platform type used to conduct this activity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasPlatformIdentifier> "has platform identifier")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPlatformIdentifier> "platform_id")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasPreservationState> (hasPreservationState)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasPreservationState> "hasPreservationState")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasPreservationState> "Method used to preserve the BioSample, if relevant, or Fresh for BioSamples that were not preserved.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasPreservationState> "preservation_state")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasRace> (hasRace)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasRace> "Considering using HANCESTRO ancestry category subclasses as options here.  In the meantime, capturing a text string.  Also consider whether we need to track reported and genetic as determined by genetic analysis.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasRace> "hasRace")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasRace> "A property that relects a HumanDonor's reported race. ")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasRace> "has race")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasRace> "race")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasReadCount> (hasReadCount)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasReadCount> "Domain will change from File to SequencingOutputFile or SequenceActivity in future.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasReadCount> "hasReadCount")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasReadCount> "hasReadCount")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasReadLength> (hasReadLength)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasReadLength> "Domain will change from File to SequencingOutputFile or SequenceActivity in future.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasReadLength> "hasReadLength")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasReadLength> "hasReadLength")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasReferenceAllele> (hasReferenceAllele)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasReferenceAllele> "See also https://vrs.ga4gh.org/en/stable/terms_and_model.html#allele for a more comprehensive model.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasReferenceAllele> "hasReferenceAllele")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasReferenceAllele> "The state of a molecule at a identified location.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasReferenceAllele> "has reference allele")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> (has reported ethnicity)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> "Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> "has reported ethnicity")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> "A property that relects a HumanDonor's reported ethnic origins. ")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> "has reported ethnicity")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasReportedEthnicity> "reported_ethnicity")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod> (has sample treatment method)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod> "has sample treatment method")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod> "has sample treatment method")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod> "The method of a SampleTreatmentActivity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentMethod> "sample_treatment_method")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasSampleTreatmentType> (has sample treatment type)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSampleTreatmentType> "has sample treatment type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentType> "has sample treatment type")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentType> "The type of a BioSample treatment type, see valuesets for examples.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSampleTreatmentType> "sample_treatment_type")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasSequenceExpression> (hasSequenceExpression)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasSequenceExpression> "See https://vrs.ga4gh.org/en/stable/terms_and_model.html#sequence-expression and https://vrsatile.readthedocs.io/en/latest/value_object_descriptor/index.html#expression.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSequenceExpression> "hasSequenceExpression")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasSequenceExpression> "An expression describing a Sequence, for example HGVS or ISCN.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSequenceExpression> "has sequence expression")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSequenceExpression> "sequence_expression")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasSource> (hasSource)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasSource> "The source is a string but will ultimately be a Vendor class. Added for Antibodies but domain can expand.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasSource> "hasSource")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasSource> "hasSource")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#hasSource> "The source of production for an entity.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasSource> "source")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasStartPosition> (hasStartPosition)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasStartPosition> "hasStartPosition")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasStartPosition> "A reference to the start position on the chromosome identified.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasStartPosition> "start_position")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasStopPosition> (hasStopPosition)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasStopPosition> "hasStopPosition")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasStopPosition> "stop_position")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasStrain> (hasStrain)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasStrain> "hasStrain")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasStrain> "Text string to represent the strain.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasStrain> "hasStrain")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasStructuralVariationType> (hasVariantReference)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasStructuralVariationType> "hasVariantReference")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasStructuralVariationType> "A sequence variant that changes one or more structural features. (Sequence Ontology)")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasTarget> (hasTarget)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTarget> "Need definition")
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTarget> "Target is a string for now but will ultimately be a class, and this will change to an ObjectProperty.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTarget> "hasTarget")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasTarget> "hasTarget")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasTarget> "target")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasTemperatureUnit> (has temperature unit)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTemperatureUnit> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTemperatureUnit> "has temperature unit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasTemperatureUnit> "has temperature unit")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasTemperatureUnit> "temperature_unit")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasTemperatureUnit> <https://datamodel.terra.bio/BioCore#hasUnit>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasTermName> (hasTermName)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTermName> "hasTermName")
+DataPropertyRange(<https://datamodel.terra.bio/BioCore#hasTermName> xsd:string)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasTreatmentOutcome> (has treatment outcome)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTreatmentOutcome> "Should the model define a preferred vocabulary? e.g. positive, negative, no effect?  The specific outcome may need to be more specific, reduced tumor size by  .. but the categories listed are useful.")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTreatmentOutcome> "has treatment outcome")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasTreatmentOutcome> "A reference to the outcome of this Treatment.")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#hasTreatmentOutcome> "treatment_outcome")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasTumorMorphology> (hasTumorMorphology)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasTumorMorphology> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasTumorMorphology> "hasTumorMorphology")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasTumorMorphology> <https://datamodel.terra.bio/BioCore#hasMorphology>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasURI> (hasURI)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasURI> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasURI> "hasURI")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasUnit> (hasUnit)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasUnit> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasUnit> "hasUnit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasUnit> "hasUnit")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasUpperBound> (hasUpperBound)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#hasUpperBound> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasUpperBound> "hasUpperBound")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#hasUpperBound> "hasUpperBound")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#hasWeightUnit> (hasWeightUnit)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#hasWeightUnit> "hasWeightUnit")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/BioCore#hasWeightUnit> "A reference to the measurement unit for mass.")
+SubDataPropertyOf(<https://datamodel.terra.bio/BioCore#hasWeightUnit> <https://datamodel.terra.bio/BioCore#hasUnit>)
+
+# Data Property: <https://datamodel.terra.bio/BioCore#isCauseOfDeath> (cause of death)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#isCauseOfDeath> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isCauseOfDeath> "cause of death")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#isCauseOfDeath> "cause_of_death")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#isContributorToDeath> (contributes to death)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#isContributorToDeath> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isContributorToDeath> "contributes to death")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#isContributorToDeath> "contributor_to_death")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#isWholeCell> (isWholeCell)
+
+AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/BioCore#isWholeCell> "Need definition")
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#isWholeCell> "isWholeCell")
+
+# Data Property: <https://datamodel.terra.bio/BioCore#usesSoftware> (uses software)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/BioCore#usesSoftware> "uses software")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/BioCore#usesSoftware> "uses software")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/BioCore#usesSoftware> "A reference to a software tool or command line ")
+AnnotationAssertion(<https://datamodel.terra.bio/BioCore#hasColumnLabel> <https://datamodel.terra.bio/BioCore#usesSoftware> "uses_software")
+
+
+
+
+)

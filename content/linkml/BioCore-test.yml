@@ -1,0 +1,70 @@
+id: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor
+# id: https://w3id.org/linkml/examples/personinfo # example schema URI
+name: BioCore
+prefixes:
+  linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+imports:
+  - linkml:types # this imports the linkml types schema
+  - BioCoreFields
+#  - BioCoreTables
+default_range: string # if not specified, the default range is string
+  
+classes:
+  Donor: # this is the name of the class, Donor could be Subject, Patient, etc.
+    slots:
+     - id
+     - birth_date
+     - death_date
+     - death_age
+     - reported_ethnicity
+     - genetic_ancestry
+     - organism_type
+     - phenotypic_sex
+     - strain
+     - xref_id
+  Container:
+    attributes:
+      donors:
+        multivalued: true # the container holds a list of donors
+        inlined_as_list: true
+        range: Donor # the donors are things of class Donor
+        description:
+          the dataset is a table of donors
+slots:
+  id:
+    identifier: true  # this is the primary identifier for the class
+  birth_date:
+    multivalued: false
+    description:
+      date of birth
+    range: date
+  death_date:
+    multivalued: false
+    range: date
+    description:
+      date of death
+  death_age:
+    range: integer
+    minimum_value: 0
+    maximum_value: 200
+    description:
+      age at death
+  reported_ethnicity:
+    multivalued: true
+    range: string
+    slot_uri: BioCoreFields:hasOrganismType # we can use inheritance to define a slot_uri for an attribute, such as form BioCore data model
+  genetic_ancestry:
+    multivalued: true
+  organism_type:
+    required: true # making this required to see the functionality
+    description:
+      the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.
+  phenotypic_sex:
+  strain: 
+    description:
+     strain of organism, for non-humans only, e.g. C57BL/6J
+  xref_id: # external identifier for a donor
+    multivalued: true
+    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
+    description:
+      other identifiers for the person, e.g. ORCID, etc.

@@ -1,0 +1,149 @@
+{
+    "$defs": {
+        "Class": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Class",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "donors": {
+                    "description": "the dataset is a table of donors",
+                    "items": {
+                        "$ref": "#/$defs/Donor"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "Document": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Document",
+            "type": "object"
+        },
+        "Donor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "birth_date": {
+                    "description": "date of birth",
+                    "format": "date",
+                    "type": "string"
+                },
+                "death_age": {
+                    "description": "age at death",
+                    "maximum": 200,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "death_date": {
+                    "description": "date of death",
+                    "format": "date",
+                    "type": "string"
+                },
+                "genetic_ancestry": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "organism_type": {
+                    "description": "the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.",
+                    "type": "string"
+                },
+                "phenotypic_sex": {
+                    "type": "string"
+                },
+                "reported_ethnicity": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "strain": {
+                    "description": "strain of organism, for non-humans only, e.g. C57BL/6J",
+                    "type": "string"
+                },
+                "xref_id": {
+                    "description": "other identifiers for the person, e.g. ORCID, etc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "organism_type"
+            ],
+            "title": "Donor",
+            "type": "object"
+        },
+        "Kind": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Kind",
+            "type": "object"
+        },
+        "List": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "List",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Person",
+            "type": "object"
+        },
+        "Resource": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Resource",
+            "type": "object"
+        },
+        "Service": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Service",
+            "type": "object"
+        },
+        "SingleCell": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "hasCellCycle": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "SingleCell",
+            "type": "object"
+        },
+        "VocabularyEncodingScheme": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VocabularyEncodingScheme",
+            "type": "object"
+        }
+    },
+    "$id": "https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "BioCore",
+    "type": "object",
+    "version": null
+}

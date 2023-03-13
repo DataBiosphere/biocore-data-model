@@ -1,4 +1,3 @@
-@prefix : <https://datamodel.terra.bio/BioCore#> .
 @prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
 @prefix BioCoreFields: <https://datamodel.terra.bio/BioCoreFields#> . # update

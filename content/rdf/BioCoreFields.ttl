@@ -2,7 +2,7 @@
 @prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
 @prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+#@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix duo: <http://purl.obolibrary.org/obo/duo-basic.owl#> .
@@ -19,8 +19,8 @@
 
 <https://datamodel.terra.bio/BioCoreFields>
   a owl:Ontology ;
-  dc:contributor "Sid Cox" ;
-  dc:creator "Kathy Reinold" ;
+#  dc:contributor "Sid Cox" ;
+#  dc:creator "Kathy Reinold" ;
   dct:date "" ;
   dct:license <https://github.com/DataBiosphere/terra-interoperability-model/blob/master/LICENSE> ;
   rdfs:comment "Please cite The Broad Institute of Harvard and MIT, Data Sciences Platform." ;
@@ -31,51 +31,51 @@
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
   owl:versionInfo "2023" ;
 .
-<https://datamodel.terra.bio/BioCore>
-  a owl:Ontology ;
-  owl:versionInfo "February 2023 Sid Cox" ;
-.
-dct:contributor
-  BioCore:hasColumnLabel "contributor" ;
-.
-dct:description
-  BioCore:hasColumnLabel "description" ;
-.
-dct:license
-  BioCore:hasColumnLabel "license" ;
-.
-dct:title
-  BioCore:hasColumnLabel "title" ;
-.
-dcat:contactPoint
-  BioCore:hasColumnLabel "contact_point" ;
-.
-prov:endedAtTime
-  BioCore:hasColumnLabel "end_time" ;
-.
-prov:generated
-  BioCore:hasColumnLabel "generated" ;
-.
-prov:hadDerivation
-  a owl:ObjectProperty ;
-  rdfs:label "hadDerivation" ;
-  owl:inverseOf prov:wasDerivedFrom ;
-  prov:definition "Inverse of prov:wasDerivedFrom" ;
-  BioCore:hasColumnLabel "derivation" ;
-.
-prov:used
-  owl:inverseOf prov:wasUsedBy ;
-  BioCore:hasColumnLabel "used" ;
-.
-prov:wasAssociatedWith
-  BioCore:hasColumnLabel "associated_with" ;
-.
-prov:wasDerivedFrom
-  BioCore:hasColumnLabel "derived_from" ;
-.
-prov:wasGeneratedBy
-  BioCore:hasColumnLabel "generated_by" ;
-.
+# <https://datamodel.terra.bio/BioCore>
+#   a owl:Ontology ;
+#   owl:versionInfo "February 2023 Sid Cox" ;
+# .
+# dct:contributor
+#   BioCore:hasColumnLabel "contributor" ;
+# .
+# dct:description
+#   BioCore:hasColumnLabel "description" ;
+# .
+# dct:license
+#   BioCore:hasColumnLabel "license" ;
+# .
+# dct:title
+#   BioCore:hasColumnLabel "title" ;
+# .
+# dcat:contactPoint
+#   BioCore:hasColumnLabel "contact_point" ;
+# .
+# prov:endedAtTime
+#   BioCore:hasColumnLabel "end_time" ;
+# .
+# prov:generated
+#   BioCore:hasColumnLabel "generated" ;
+# .
+# prov:hadDerivation
+#   a owl:ObjectProperty ;
+#   rdfs:label "hadDerivation" ;
+#   owl:inverseOf prov:wasDerivedFrom ;
+#   prov:definition "Inverse of prov:wasDerivedFrom" ;
+#   BioCore:hasColumnLabel "derivation" ;
+# .
+# prov:used
+#   owl:inverseOf prov:wasUsedBy ;
+#   BioCore:hasColumnLabel "used" ;
+# .
+# prov:wasAssociatedWith
+#   BioCore:hasColumnLabel "associated_with" ;
+# .
+# prov:wasDerivedFrom
+#   BioCore:hasColumnLabel "derived_from" ;
+# .
+# prov:wasGeneratedBy
+#   BioCore:hasColumnLabel "generated_by" ;
+# .
 BioCore:confirmsDisease
   a owl:ObjectProperty ;
   rdfs:label "confirmsDisease" ;
@@ -430,9 +430,9 @@ BioCore:hasFileFormat
   BioCore:hasColumnLabel "file_format" ;
 .
 BioCore:hasFileSize
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:label "hasFileSize" ;
-  owl:equivalentProperty <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C171192> ;
+#  owl:equivalentProperty <https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C171192> ; # some issue with this
   skos:definition "Property that describes the approximate size of a file in megabytes." ;
   BioCore:hasColumnLabel "file_size" ;
 .
@@ -555,8 +555,7 @@ BioCore:hasLibraryPreparationType
   BioCore:hasColumnLabel "library_prep_type" ;
 .
 BioCore:hasLifeStage
-  a rdf:Property ;
-  rdfs:comment "Need definition" ;
+  a owl:AnnotationProperty ;
   rdfs:comment "Varies per species; temporary solution" ;
   rdfs:label "hasLifeStage" ;
   skos:prefLabel "has life stage" ;
@@ -578,7 +577,7 @@ BioCore:hasLowerBound
   BioCore:hasColumnLabel "lower_bound" ;
 .
 BioCore:hasMailingAddress
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:label "hasMailingAddress" ;
   skos:definition "Text form of the address, including country and postal code." ;
   BioCore:hasColumnLabel "mailing_address" ;
@@ -650,12 +649,12 @@ BioCore:hasPairedEndIdentifier
   rdfs:label "hasPairedEndIdentifier" ;
 .
 BioCore:hasPairedNormal
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:label "hasPairedNormal" ;
   BioCore:hasColumnLabel "paired_normal" ;
 .
 BioCore:hasPairedTumor
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:label "hasPairedTumor" ;
   BioCore:hasColumnLabel "paired_tumor" ;
 .
@@ -702,7 +701,7 @@ BioCore:hasPhenotypeDescription
 BioCore:hasPhenotypicSex
   a owl:ObjectProperty ;
   rdfs:label "hasPhenotypicSex" ;
-  owl:equivalentProperty obo:PATO_0001894 ;
+#  owl:equivalentProperty obo:PATO_0001894 ; # this is a class, not a property and so can't be equivalent
   skos:definition "A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\"" ;
   skos:prefLabel "hasPhenotypicSex" ;
   BioCore:hasColumnLabel "phenotypic_sex" ;
@@ -724,7 +723,7 @@ BioCore:hasPlatformIdentifier
   BioCore:hasColumnLabel "platform_id" ;
 .
 BioCore:hasPostalCode
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:label "hasPostalCode" ;
   BioCore:hasColumnLabel "post_code" ;
 .
@@ -856,7 +855,7 @@ BioCore:hasSource
   BioCore:hasColumnLabel "source" ;
 .
 BioCore:hasStage
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:label "hasStage" ;
 .
 BioCore:hasStartPosition
@@ -890,7 +889,7 @@ BioCore:hasTarget
   BioCore:hasColumnLabel "target" ;
 .
 BioCore:hasTemperature
-  a rdf:Property ;
+  a owl:AnnotationProperty ;
   rdfs:comment "Need definition" ;
   rdfs:label "has temperature" ;
   skos:prefLabel "has temperature" ;
@@ -954,7 +953,7 @@ BioCore:hasVariantCall
   skos:prefLabel "hasVariantCall" ;
 .
 BioCore:hasVersion
-  a owl:DatatypeProperty ;
+  a owl:AnnotationProperty ;
   rdfs:comment "Need definition" ;
   rdfs:label "hasVersion" ;
 .

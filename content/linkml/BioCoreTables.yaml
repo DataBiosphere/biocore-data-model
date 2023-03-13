@@ -1,4 +1,4 @@
-..name: BioCore
+name: BioCore
 description: BioCore
 id: https://datamodel.terra.bio/BioCore
 imports:
