@@ -32,120 +32,132 @@
   owl:imports <https://datamodel.terra.bio/TerraDCAT_ap> ;
   owl:versionInfo "2023" ;
 .
-TerraCore:Age
+BioCore:Age
   a owl:Class ;
   rdfs:label "Age" ;
   rdfs:subClassOf obo:OBI_0001167 ;
   skos:prefLabel "Age " ;
 .
-TerraCore:Address
+BioCore:Address
   a owl:Class ;
   rdfs:label "Address" ;
   rdfs:subClassOf obo:IAO_0000030 ;
   prov:definition "A physical address for a Person or Organization." ;
 .
-TerraCore:BiologicalSex
+BioCore:BiologicalSex
   a owl:Class ;
   rdfs:label "Biological sex" ;
   rdfs:subClassOf obo:BFO_0000019 ;
   rdfs:subClassOf obo:PATO_0001894 ;
   skos:definition "A quality of an organism indicating physical sexual characteristics. Equivalent of PATO's phenotypic sex but pseudohermaphrodite is not relevant to existing data and is not recommended." ;
 .
-TerraCore:Country
+BioCore:Country
   a owl:Class ;
   rdfs:label "Country" ;
   rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
   skos:definition "A country represented by the ISO-3166 Alpha-2 code and name (as a label). https://www.iso.org/obp/ui/#search" ;
 .
-TerraCore:Dog
+BioCore:Dog
   a obo:NCBITaxon_9615 ;
   rdfs:label "Dog" ;
 .
-TerraCore:Dose
+BioCore:Dose
   a owl:Class ;
   rdfs:label "Dose" ;
   rdfs:subClassOf obo:IAO_0000027 ;
   skos:definition "A measured amount of a substance." ;
   skos:prefLabel "Dose" ;
 .
-TerraCore:Female
-  a TerraCore:FemaleSex ;
+BioCore:Female
+  a BioCore:FemaleSex ;
   rdfs:label "Female" ;
 .
-TerraCore:FemaleSex
+BioCore:FemaleSex
   a owl:Class ;
   oboInOwl:hasExactSynonym "F" ;
   rdfs:label "Female" ;
-  rdfs:subClassOf TerraCore:BiologicalSex ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
   owl:equivalentClass obo:PATO_0000383 ;
   skos:altLabel "F" ;
 .
-TerraCore:GRCh37
-  a TerraCore:ReferenceAssembly ;
+BioCore:GRCh37
+  a BioCore:ReferenceAssembly ;
   rdfs:label "GRCh37" ;
-  TerraCore:hasGRCName "GRCh37" ;
-  TerraCore:hasOrganismType TerraCore:Homo_sapiens ;
+  BioCore:hasGRCName "GRCh37" ;
+  BioCore:hasOrganismType BioCore:Homo_sapiens ;
 .
-TerraCore:GeneralResearchUse
+BioCore:GeneralResearchUse
   a obo:DUO_0000005 ;
   rdfs:label "General Research Use" ;
   skos:prefLabel "General Research Use" ;
 .
-TerraCore:GrCh38
-  a TerraCore:ReferenceAssembly ;
+BioCore:GrCh38
+  a BioCore:ReferenceAssembly ;
   rdfs:label "GRCh38" ;
-  TerraCore:hasGRCName "GRCh38" ;
-  TerraCore:hasOrganismType TerraCore:Homo_sapiens ;
+  BioCore:hasGRCName "GRCh38" ;
+  BioCore:hasOrganismType BioCore:Homo_sapiens ;
 .
-TerraCore:Homo_sapiens
+BioCore:Homo_sapiens
   a obo:NCBITaxon_9606 ;
   rdfs:label "Human" ;
   skos:definition "Instance of Homo sapiens organism to define organism type." ;
   skos:prefLabel "Homo sapiens" ;
 .
-TerraCore:Intersex
+BioCore:Intersex
   a owl:Class ;
   oboInOwl:hasExactSynonym "intersex" ;
   rdfs:label "Intersex" ;
-  rdfs:subClassOf TerraCore:BiologicalSex ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
   owl:equivalentClass obo:PATO_0001340 ;
   skos:altLabel "Hermaphrodite" ;
 .
-TerraCore:Male
-  a TerraCore:MaleSex ;
+BioCore:Male
+  a BioCore:MaleSex ;
   rdfs:label "Male" ;
 .
-TerraCore:MaleSex
+BioCore:MaleSex
   a owl:Class ;
   oboInOwl:hasExactSynonym "M" ;
   rdfs:label "Male" ;
-  rdfs:subClassOf TerraCore:BiologicalSex ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
   owl:equivalentClass obo:PATO_0000384 ;
   skos:altLabel "M" ;
 .
-TerraCore:Mus_musculus
+BioCore:Mus_musculus
   a obo:NCBITaxon_10090 ;
   rdfs:label "Mus musculus" ;
   skos:definition "Instance of Mus musculus organism to define organism type." ;
 .
-TerraCore:NoRestriction
+BioCore:NoRestriction
   a obo:DUO_0000004 ;
   rdfs:label "NoRestriction" ;
   skos:prefLabel "NoRestriction" ;
 .
-TerraCore:PrincipalInvestigator
+BioCore:PrincipalInvestigator
   a owl:Class ;
   rdfs:label "Principal Investigator" ;
   rdfs:subClassOf prov:Person ;
   prov:definition "The principal or lead person who carries out an investigation assigned by a sponsor or authorizing agent." ;
 .
-TerraCore:Rabbit
+BioCore:Rabbit
   a obo:NCBITaxon_9986 ;
   rdfs:label "Rabbit" ;
 .
-TerraCore:SingleCell
+BioCore:SingleCell
   a owl:Class ;
   rdfs:label "SingleCell" ;
-  rdfs:subClassOf TerraCore:BioSample ;
+  rdfs:subClassOf BioCore:BioSample ;
   skos:definition "Data about a physical sample consisting of a single cell or nucleus taken from an organism (living or deceased) or derived from such a Sample." ;
+.
+BioCore:UserRestriction
+  a obo:DUO_0000026 ;
+  rdfs:label "User Restriction" ;
+  skos:prefLabel "User Restriction" ;
+.
+BioCore:Weight
+  a owl:Class ;
+  rdfs:label "Weight" ;
+  rdfs:subClassOf obo:IAO_0000109 ;
+  owl:equivalentClass obo:PATO_0000128 ;
+  skos:definition "A measurement of the mass of an entity." ;
 .
