@@ -1,0 +1,213 @@
+..name: BioCoreTerms
+description: BioCoreTerms
+id: https://datamodel.terra.bio/BioCoreTerms
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  BioCoreTerms: https://w3id.org/None/
+default_prefix: BioCoreTerms
+slots:
+  member:
+    slot_uri: rdfs:member
+    multivalued: true
+  domainIncludes:
+    slot_uri: http://purl.org/dc/dcam/domainIncludes
+    multivalued: true
+  rangeIncludes:
+    slot_uri: http://schema.org/rangeIncludes
+    multivalued: true
+  abstract:
+    slot_uri: http://purl.org/dc/terms/abstract
+    multivalued: true
+  accessRights:
+    slot_uri: http://purl.org/dc/terms/accessRights
+    multivalued: true
+  accrualMethod:
+    slot_uri: http://purl.org/dc/terms/accrualMethod
+    multivalued: true
+  accrualPeriodicity:
+    slot_uri: http://purl.org/dc/terms/accrualPeriodicity
+    multivalued: true
+  accrualPolicy:
+    slot_uri: http://purl.org/dc/terms/accrualPolicy
+    multivalued: true
+  audience:
+    slot_uri: http://purl.org/dc/terms/audience
+    multivalued: true
+  conformsTo:
+    slot_uri: http://purl.org/dc/terms/conformsTo
+    multivalued: true
+  contributor:
+    slot_uri: http://purl.org/dc/terms/contributor
+    multivalued: true
+  coverage:
+    slot_uri: http://purl.org/dc/terms/coverage
+    multivalued: true
+  creator:
+    slot_uri: http://purl.org/dc/terms/creator
+    multivalued: true
+  description:
+    slot_uri: http://purl.org/dc/terms/description
+    multivalued: true
+  educationLevel:
+    slot_uri: http://purl.org/dc/terms/educationLevel
+    multivalued: true
+  extent:
+    slot_uri: http://purl.org/dc/terms/extent
+    multivalued: true
+  hasFormat:
+    slot_uri: http://purl.org/dc/terms/hasFormat
+    multivalued: true
+  hasVersion:
+    slot_uri: http://purl.org/dc/terms/hasVersion
+    multivalued: true
+  isFormatOf:
+    slot_uri: http://purl.org/dc/terms/isFormatOf
+    multivalued: true
+  isPartOf:
+    slot_uri: http://purl.org/dc/terms/isPartOf
+    multivalued: true
+  isReferencedBy:
+    slot_uri: http://purl.org/dc/terms/isReferencedBy
+    multivalued: true
+  isReplacedBy:
+    slot_uri: http://purl.org/dc/terms/isReplacedBy
+    multivalued: true
+  isRequiredBy:
+    slot_uri: http://purl.org/dc/terms/isRequiredBy
+    multivalued: true
+  isVersionOf:
+    slot_uri: http://purl.org/dc/terms/isVersionOf
+    multivalued: true
+  language:
+    slot_uri: http://purl.org/dc/terms/language
+    multivalued: true
+  mediator:
+    slot_uri: http://purl.org/dc/terms/mediator
+    multivalued: true
+  medium:
+    slot_uri: http://purl.org/dc/terms/medium
+    multivalued: true
+  publisher:
+    slot_uri: http://purl.org/dc/terms/publisher
+    multivalued: true
+  references:
+    slot_uri: http://purl.org/dc/terms/references
+    multivalued: true
+  relation:
+    slot_uri: http://purl.org/dc/terms/relation
+    multivalued: true
+  replaces:
+    slot_uri: http://purl.org/dc/terms/replaces
+    multivalued: true
+  requires:
+    slot_uri: http://purl.org/dc/terms/requires
+    multivalued: true
+  rights:
+    slot_uri: http://purl.org/dc/terms/rights
+    multivalued: true
+  source:
+    slot_uri: http://purl.org/dc/terms/source
+    multivalued: true
+  spatial:
+    slot_uri: http://purl.org/dc/terms/spatial
+    multivalued: true
+  tableOfContents:
+    slot_uri: http://purl.org/dc/terms/tableOfContents
+    multivalued: true
+  temporal:
+    slot_uri: http://purl.org/dc/terms/temporal
+    multivalued: true
+  type:
+    slot_uri: http://purl.org/dc/terms/type
+    multivalued: true
+  affiliation:
+    slot_uri: http://schema.org/affiliation
+    multivalued: true
+  maker:
+    slot_uri: http://xmlns.com/foaf/0.1/maker
+    multivalued: true
+  name:
+    slot_uri: http://xmlns.com/foaf/0.1/name
+    multivalued: true
+  workInfoHomepage:
+    slot_uri: http://xmlns.com/foaf/0.1/workInfoHomepage
+    multivalued: true
+  hasGRCName:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasGRCName
+    multivalued: true
+  hasOrganismType:
+    slot_uri: https://datamodel.terra.bio/BioCore#hasOrganismType
+    multivalued: true
+classes:
+  DUO_0000005:
+    class_uri: http://purl.obolibrary.org/obo/DUO_0000005
+  PATO_0000128:
+    class_uri: http://purl.obolibrary.org/obo/PATO_0000128
+  PATO_0000383:
+    class_uri: http://purl.obolibrary.org/obo/PATO_0000383
+  PATO_0000384:
+    class_uri: http://purl.obolibrary.org/obo/PATO_0000384
+  PATO_0001340:
+    class_uri: http://purl.obolibrary.org/obo/PATO_0001340
+  PATO_0001894:
+    class_uri: http://purl.obolibrary.org/obo/PATO_0001894
+  VocabularyEncodingScheme:
+    class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
+  Service:
+    class_uri: http://purl.org/dc/dcmitype/Service
+  List:
+    class_uri: rdf:List
+  Class:
+    class_uri: rdfs:Class
+  Resource:
+    class_uri: rdfs:Resource
+  SpatialThing:
+    class_uri: http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+  Kind:
+    class_uri: http://www.w3.org/2006/vcard/ns#Kind
+  Document:
+    class_uri: http://xmlns.com/foaf/0.1/Document
+  Person:
+    class_uri: http://xmlns.com/foaf/0.1/Person
+  Address:
+    is_a: IAO_0000030
+    class_uri: https://datamodel.terra.bio/BioCore#Address
+  Age:
+    is_a: OBI_0001167
+    class_uri: https://datamodel.terra.bio/BioCore#Age
+  BioSample:
+    class_uri: https://datamodel.terra.bio/BioCore#BioSample
+  BiologicalSex:
+    is_a: BFO_0000019
+    mixins:
+    - PATO_0001894
+    class_uri: https://datamodel.terra.bio/BioCore#BiologicalSex
+  Country:
+    is_a: SpatialThing
+    class_uri: https://datamodel.terra.bio/BioCore#Country
+  Dose:
+    is_a: IAO_0000027
+    class_uri: https://datamodel.terra.bio/BioCore#Dose
+  FemaleSex:
+    is_a: BiologicalSex
+    class_uri: https://datamodel.terra.bio/BioCore#FemaleSex
+  Intersex:
+    is_a: BiologicalSex
+    class_uri: https://datamodel.terra.bio/BioCore#Intersex
+  MaleSex:
+    is_a: BiologicalSex
+    class_uri: https://datamodel.terra.bio/BioCore#MaleSex
+  PrincipalInvestigator:
+    is_a: Person
+    class_uri: https://datamodel.terra.bio/BioCore#PrincipalInvestigator
+  ReferenceAssembly:
+    class_uri: https://datamodel.terra.bio/BioCore#ReferenceAssembly
+  SingleCell:
+    is_a: BioSample
+    class_uri: https://datamodel.terra.bio/BioCore#SingleCell
+  Weight:
+    is_a: IAO_0000109
+    class_uri: https://datamodel.terra.bio/BioCore#Weight
+

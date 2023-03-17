@@ -5,6 +5,6 @@ prefixes:
 imports:
   - linkml:types
   - BioCoreFields
-  - BioCoreTables
+  - BioCoreTables-min3
 default_range: string # if not specified, any string or link is ok
 classes: # now use the imported classes from BioCoreTables

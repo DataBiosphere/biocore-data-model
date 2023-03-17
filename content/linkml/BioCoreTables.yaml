@@ -1,4 +1,4 @@
-name: BioCoreTables
+...name: BioCoreTables
 description: BioCoreTables
 id: https://datamodel.terra.bio/BioCoreTables
 imports:
@@ -157,114 +157,114 @@ classes:
     class_uri: http://xmlns.com/foaf/0.1/Person
   Activity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#Activity
+    class_uri: https://datamodel.terra.bio/TerraCore#Activity
   AlignmentActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#AlignmentActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#AlignmentActivity
   AlignmentFile:
     is_a: File
-    class_uri: https://datamodel.terra.bio/BioCore#AlignmentFile
+    class_uri: https://datamodel.terra.bio/TerraCore#AlignmentFile
   AnalysisActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#AnalysisActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#AnalysisActivity
   Antibody:
     is_a: BFO_0000040
-    class_uri: https://datamodel.terra.bio/BioCore#Antibody
+    class_uri: https://datamodel.terra.bio/TerraCore#Antibody
   AssayActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#AssayActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#AssayActivity
   BioSample:
     is_a: Sample
-    class_uri: https://datamodel.terra.bio/BioCore#BioSample
+    class_uri: https://datamodel.terra.bio/TerraCore#BioSample
   BioSampleDissociationActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#BioSampleDissociationActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#BioSampleDissociationActivity
   Diagnosis:
     is_a: IAO_0000030
-    class_uri: https://datamodel.terra.bio/BioCore#Diagnosis
+    class_uri: https://datamodel.terra.bio/TerraCore#Diagnosis
   DogDonor:
     is_a: Donor
-    class_uri: https://datamodel.terra.bio/BioCore#DogDonor
+    class_uri: https://datamodel.terra.bio/TerraCore#DogDonor
   Donor:
     is_a: OBI_0100026
-    class_uri: https://datamodel.terra.bio/BioCore#Donor
+    class_uri: https://datamodel.terra.bio/TerraCore#Donor
   DonorTreatmentActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#DonorTreatmentActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#DonorTreatmentActivity
   ExperimentActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#ExperimentActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#ExperimentActivity
   FamilyMember:
     is_a: OBI_0100026
-    class_uri: https://datamodel.terra.bio/BioCore#FamilyMember
+    class_uri: https://datamodel.terra.bio/TerraCore#FamilyMember
   File:
     comments:
     - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
       to http://www.w3.org/ns/dcat#Distribution doesn''t make sense in this context;
       thus we have our own class.  Also added electronic. '
     is_a: IAO_0000030
-    class_uri: https://datamodel.terra.bio/BioCore#File
+    class_uri: https://datamodel.terra.bio/TerraCore#File
   HistopathologyActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#HistopathologyActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#HistopathologyActivity
   HumanDonor:
     is_a: Donor
-    class_uri: https://datamodel.terra.bio/BioCore#HumanDonor
+    class_uri: https://datamodel.terra.bio/TerraCore#HumanDonor
   Library:
     is_a: BFO_0000040
-    class_uri: https://datamodel.terra.bio/BioCore#Library
+    class_uri: https://datamodel.terra.bio/TerraCore#Library
   LibraryPreparationActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#LibraryPreparationActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#LibraryPreparationActivity
   Measurement:
     is_a: IAO_0000030
-    class_uri: https://datamodel.terra.bio/BioCore#Measurement
+    class_uri: https://datamodel.terra.bio/TerraCore#Measurement
   MolecularSample:
     is_a: Sample
-    class_uri: https://datamodel.terra.bio/BioCore#MolecularSample
+    class_uri: https://datamodel.terra.bio/TerraCore#MolecularSample
   MouseDonor:
     is_a: Donor
-    class_uri: https://datamodel.terra.bio/BioCore#MouseDonor
+    class_uri: https://datamodel.terra.bio/TerraCore#MouseDonor
   NucleusIsolationActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#NucleusIsolationActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#NucleusIsolationActivity
   Project:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#Project
+    class_uri: https://datamodel.terra.bio/TerraCore#Project
   ReferenceAssembly:
     comments:
     - Instances should include either a cross reference to the reference sequence
       or an official GRCName from the Genome Reference Consortium, or both.
     is_a: OBI_0001573
-    class_uri: https://datamodel.terra.bio/BioCore#ReferenceAssembly
+    class_uri: https://datamodel.terra.bio/TerraCore#ReferenceAssembly
   Sample:
     is_a: OBI_0100051
-    class_uri: https://datamodel.terra.bio/BioCore#Sample
+    class_uri: https://datamodel.terra.bio/TerraCore#Sample
   SampleTreatmentActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#SampleTreatmentActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#SampleTreatmentActivity
   SequenceFile:
     is_a: File
-    class_uri: https://datamodel.terra.bio/BioCore#SequenceFile
+    class_uri: https://datamodel.terra.bio/TerraCore#SequenceFile
   SequenceLocation:
     is_a: OBI_0000973
-    class_uri: https://datamodel.terra.bio/BioCore#SequenceLocation
+    class_uri: https://datamodel.terra.bio/TerraCore#SequenceLocation
   SequencingActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#SequencingActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#SequencingActivity
   SingleCellAssignment:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#SingleCellAssignment
+    class_uri: https://datamodel.terra.bio/TerraCore#SingleCellAssignment
   SingleCellIsolationActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#SingleCellIsolationActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#SingleCellIsolationActivity
   VariantCall:
     is_a: OBI_0000973
-    class_uri: https://datamodel.terra.bio/BioCore#VariantCall
+    class_uri: https://datamodel.terra.bio/TerraCore#VariantCall
   VariantCallSetFile:
     is_a: File
-    class_uri: https://datamodel.terra.bio/BioCore#VariantCallSetFile
+    class_uri: https://datamodel.terra.bio/TerraCore#VariantCallSetFile
   VariantCallingActivity:
     is_a: Activity
-    class_uri: https://datamodel.terra.bio/BioCore#VariantCallingActivity
+    class_uri: https://datamodel.terra.bio/TerraCore#VariantCallingActivity
 

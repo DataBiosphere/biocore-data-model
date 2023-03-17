@@ -1,26 +1,12 @@
-@prefix : <https://datamodel.terra.bio/BioCore#> .
-@prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
 @prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
-#@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix duo: <http://purl.obolibrary.org/obo/duo-basic.owl#> .
 @prefix nsf2_full_mtg: <http://www.jcvi.org/framework/nsf2_full_mtg#> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
+@prefix BioCore: <https://datamodel.terra.bio/TerraCore#> .
 
 <https://datamodel.terra.bio/BioCoreFields>
   a owl:Ontology ;
-#  dc:contributor "Sid Cox" ;
-#  dc:creator "Kathy Reinold" ;
   dct:date "" ;
   dct:license <https://github.com/DataBiosphere/terra-interoperability-model/blob/master/LICENSE> ;
   rdfs:comment "Please cite The Broad Institute of Harvard and MIT, Data Sciences Platform." ;

@@ -119,6 +119,10 @@ Tables
 
 Terms
 
+`./robot convert -vvv -i rdf/BioCoreTerms.ttl -o ofn/BioCoreTerms.ofn`
+
+`schemauto import-owl ofn/BioCoreTerms.ofn > linkml/BioCoreTerms.yaml`
+
 Questions/TODO/Someday
 
    * rangeIncludes and hasVersion overwrites
