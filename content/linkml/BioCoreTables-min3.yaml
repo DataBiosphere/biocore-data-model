@@ -1,0 +1,28 @@
+name: BioCore
+description: BioCore
+id: https://datamodel.terra.bio/BioCore
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  BioCore: https://w3id.org/None/
+default_prefix: BioCore
+slots:
+  definition:
+    slot_uri: http://www.w3.org/ns/prov#definition
+    multivalued: true
+  prefLabel:
+    slot_uri: http://www.w3.org/2004/02/skos/core#prefLabel
+    multivalued: true
+classes:
+  OBI_0100026:
+    class_uri: http://purl.obolibrary.org/obo/OBI_0100026
+  Activity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/TerraCore#Activity
+  Donor:
+    is_a: OBI_0100026
+    class_uri: https://datamodel.terra.bio/TerraCore#Donor
+  Sample:
+    class_uri: https://datamodel.terra.bio/TerraCore#Sample
+

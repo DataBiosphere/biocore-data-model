@@ -7,4 +7,4 @@ imports:
   - BioCoreFields
   - BioCoreTables
 default_range: string # if not specified, any string or link is ok
-classes: # now import the classes from BioCoreTables
+classes: # now use the imported classes from BioCoreTables

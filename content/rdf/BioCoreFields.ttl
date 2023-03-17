@@ -222,7 +222,7 @@ BioCore:hasBirthYear
 .
 BioCore:hasCellCycle
   a owl:DatatypeProperty ;
-  rdfs:domain BioCore:SingleCell ;
+  rdfs:domain BioCore:SingleCell ; # example of following an rdfs:domain from a parent class
   rdfs:label "hasCellCycle" ;
   skos:definition "A property that describes the stage of the cell cycle at the time the sample was obtained." ;
   skos:prefLabel "hasCellCycle" ;

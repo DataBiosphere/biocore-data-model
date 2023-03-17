@@ -26,7 +26,11 @@ The LinkMl code is *not complete*, it is a working prototype that we plan to mak
 ![BioCore Data Model](./svg/BioCore.svg)
 <img src="./BioCore.svg">
 
-### TODO
+## Code organization
+
+Generally files are organized by type, Ontology (OWL/TTL) go in the `rdf` directory, YAML data models go in the `linkml` directory, JSON Schema into the `json_schema` directory, etc. Note that there are some symbolic links, like in the external `tools` directory back to this directories, to make file i/o more intuitive and not have to remember the whole directory structure.
+
+## TODO
 
  * write the canonical models with comments, they are stripped out in the JSON files. Here is where datatypes are written, and the cardinality of the Fields.
  * Import the BioCore ontology (vocabulary) files into the LinkML code, so that the code can be used to validate the data model and build schema.
@@ -34,13 +38,13 @@ The LinkMl code is *not complete*, it is a working prototype that we plan to mak
 
 ### LinkML installation / setup
 
-By far the easiest way to set up LinkML is pip, in linux:
+By far the easiest way to set up LinkML is to use pip, in debianish linux this is one line (but easy on any OS):
 
 `sudo apt install python3-pip`
 
 There are additional tools in the schema-automator and schemasheets packages for converting to/from ontology files and spreadsheets.
 
-Set up an environment:
+Set up an environment (venv is optional?):
 
 `mkdir linkml-biocore
 cd linkml-biocore
@@ -48,24 +52,80 @@ python3 -m venv venv
 source venv/bin/activate
 pip install linkml`
 
+OPTIONAL: There are lots of command line tools and files being generated here, if you don't completely love the command line you might consider using VSCODE (by Microsoft corporation (if you don't already)) for both the file browser and the terminal interactions, along with extensions for viewing TTL ontology and YAML data model files. It is a very fine software that will do everything we need here.
+
 Test installation:
 
 `linkml-convert --help`
 
-Test JSON schema creator, get a YAML model file and make schema:
+Test JSON schema creator, get a YAML model file (like from the `example_yaml` directory):
 
 https://github.com/DataBiosphere/biocore-data-model/blob/main/content/linkml/subject.yaml
 
+and make schema:
+
 `gen-json-schema subject.yaml`
 
-Make a YUML file:
+Make a YUML file (class diagram):
 
 https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20donors%200..*%3E[Donor|id:string;full_name:string;xref_id:string%20*;birth_date:date%20%3F;death_date:date%20%3F;death_age:integer%20%3F;reported_ethnicity:string%20%3F;genetic_ancestry:string%20%3F;organism_type:string%20%3F;phenotypic_sex:string%20%3F;strain:string%20%3F],[Container]
 
 ### Exporting ontologies to LinkML
 
-The process is to use robot to generate ofn files then to convert these into YAML for LinkML to import.
+The process is to use *robot* to generate ofn files then to convert these into YAML for LinkML to import.
 
-`./robot convert -i ../rdf/BioCoreFields.ttl -o BioCoreFields.ofn`
+### Simple example (POC)
 
-`schemauto import-owl BioCoreFields.ofn`
+For this example we are just going to turn 3 classes into tables: Sample, Donor, and Activity. These are defined in the 'mini-ontology' `BioCoreTables-min3.ttl`.
+
+`./robot convert -i rdf/BioCoreTables-min3.ttl -o ofn/BioCoreTables-min3.ofn`
+
+*robot* has 3 levels of verbosity beyond the default, if you want to see everything that just happened (with lots of DEBUG, INFO, and WARN statements):
+
+`./robot convert -vvv -i rdf/BioCoreTables-min3.ttl -o ofn/BioCoreTables-min3.ofn`
+
+Now we use scheauto to translate the ofn into LinkML compatible YAML:
+
+`schemauto import-owl ofn/BioCoreTables-min3.ofn`
+
+Export it to a YAML file like:
+
+`schemauto import-owl ofn/BioCoreTables-min3.ofn > linkml/BioCoreTables-min3.yaml`
+
+Questions/TODO
+
+   * Resolve all the punning errors from skos / prov etc.
+   * fix BioCore prefix going to `wid.org/None`
+   * Why does `prov:Activity` get converted into `Activity` by schemauto? Is the `:` getting tokenized in some weird way?
+      * ERROR:root:Overwriting class_uri for {'class_uri': 'http://www.w3.org/ns/prov#Activity'} to BioCore:Activity
+   * skos and prov definition conflict
+      * ERROR:root:Overwriting slot_uri for {'slot_uri': 'http://www.w3.org/2004/02/skos/core#definition'} to http://www.w3.org/ns/prov#definition
+      * Is there a way to pull definitions (either one) into the linkml yaml?
+
+
+### Full BioCore export process (for release)
+
+Fields 
+
+`./robot convert -i rdf/BioCoreFields.ttl -o ofn/BioCoreFields.ofn`
+
+`schemauto import-owl ofn/BioCoreFields.ofn > linkml/BioCoreFields.yaml`
+
+Tables
+
+`./robot convert -i rdf/BioCoreTables.ttl -o ofn/BioCoreTables.ofn`
+
+`schemauto import-owl ofn/BioCoreTables.ofn > linkml/BioCoreTables.yaml`
+
+Terms
+
+Questions/TODO/Someday
+
+   * rangeIncludes and hasVersion overwrites
+      * ERROR:root:Overwriting slot_uri for {'slot_uri': 'http://purl.org/dc/dcam/rangeIncludes'} to http://schema.org/rangeIncludes
+      * ERROR:root:Overwriting slot_uri for {'slot_uri': 'http://purl.org/dc/terms/hasVersion'} to https://datamodel.terra.bio/BioCore#hasVersion
+   * Unknown errors from schemaauto:
+      * ERROR:root:TODO
+      * weird dots (progress bar) at the beginning of output
+   * Is there a way to pull in a model description from OWL?
+   * Need to turn off     multivalued: true for prefLabel

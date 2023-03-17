@@ -1,0 +1,47 @@
+Prefix(:=<https://datamodel.terra.bio/BioCore#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://datamodel.terra.bio/BioCore>
+Annotation(owl:versionInfo "2023 Sid Cox")
+
+Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0100026>))
+Declaration(Class(<http://www.w3.org/ns/prov#Activity>))
+Declaration(Class(<https://datamodel.terra.bio/TerraCore#Activity>))
+Declaration(Class(<https://datamodel.terra.bio/TerraCore#Donor>))
+Declaration(Class(<https://datamodel.terra.bio/TerraCore#Sample>))
+Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#definition>))
+Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#prefLabel>))
+Declaration(AnnotationProperty(<http://www.w3.org/ns/prov#definition>))
+
+
+############################
+#   Classes
+############################
+
+# Class: <https://datamodel.terra.bio/TerraCore#Activity> (Activity)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#Activity> "Activity")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#Activity> "Activity")
+AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#Activity> "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research.")
+SubClassOf(<https://datamodel.terra.bio/TerraCore#Activity> <http://www.w3.org/ns/prov#Activity>)
+
+# Class: <https://datamodel.terra.bio/TerraCore#Donor> (Donor)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#Donor> "Donor")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#Donor> "An organism from which a sample or test result is available")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#Donor> "Donor")
+SubClassOf(<https://datamodel.terra.bio/TerraCore#Donor> <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Class: <https://datamodel.terra.bio/TerraCore#Sample> (Sample)
+
+AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#Sample> "Sample")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#Sample> "Data about a physical material collected for the purpose of research.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#Sample> "Sample")
+
+
+)

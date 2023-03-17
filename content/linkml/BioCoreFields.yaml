@@ -1,4 +1,4 @@
-name: BioCoreFields
+........name: BioCoreFields
 description: BioCoreFields
 id: https://datamodel.terra.bio/BioCoreFields
 imports:
