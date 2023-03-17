@@ -1,12 +1,12 @@
-name: BioCore
-description: BioCore
-id: https://datamodel.terra.bio/BioCore
+name: BioCoreTables
+description: BioCoreTables
+id: https://datamodel.terra.bio/BioCoreTables
 imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  BioCore: https://w3id.org/None/
-default_prefix: BioCore
+  BioCoreTables: https://w3id.org/None/
+default_prefix: BioCoreTables
 slots:
   member:
     slot_uri: rdfs:member
@@ -125,9 +125,6 @@ slots:
   affiliation:
     slot_uri: http://schema.org/affiliation
     multivalued: true
-  minCardinality:
-    slot_uri: owl:minCardinality
-    multivalued: true
   maker:
     slot_uri: http://xmlns.com/foaf/0.1/maker
     multivalued: true
@@ -137,21 +134,15 @@ slots:
   workInfoHomepage:
     slot_uri: http://xmlns.com/foaf/0.1/workInfoHomepage
     multivalued: true
-  hasCustodian:
-    slot_uri: https://datamodel.terra.bio/TerraDCAT_ap#hasCustodian
-    multivalued: true
-  hasOriginalPublication:
-    slot_uri: https://datamodel.terra.bio/TerraDCAT_ap#hasOriginalPublication
-    multivalued: true
 classes:
-  Error1:
-    class_uri: http://org.semanticweb.owlapi/error#Error1
-  Error2:
-    class_uri: http://org.semanticweb.owlapi/error#Error2
+  OBI_0001573:
+    class_uri: http://purl.obolibrary.org/obo/OBI_0001573
   VocabularyEncodingScheme:
     class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
   Service:
     class_uri: http://purl.org/dc/dcmitype/Service
+  EFO_0007831:
+    class_uri: http://www.ebi.ac.uk/efo/EFO_0007831
   List:
     class_uri: rdf:List
   Class:
@@ -166,9 +157,114 @@ classes:
     class_uri: http://xmlns.com/foaf/0.1/Person
   Activity:
     is_a: Activity
-    class_uri: BioCore:Activity
+    class_uri: https://datamodel.terra.bio/BioCore#Activity
+  AlignmentActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#AlignmentActivity
+  AlignmentFile:
+    is_a: File
+    class_uri: https://datamodel.terra.bio/BioCore#AlignmentFile
+  AnalysisActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#AnalysisActivity
+  Antibody:
+    is_a: BFO_0000040
+    class_uri: https://datamodel.terra.bio/BioCore#Antibody
+  AssayActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#AssayActivity
+  BioSample:
+    is_a: Sample
+    class_uri: https://datamodel.terra.bio/BioCore#BioSample
+  BioSampleDissociationActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#BioSampleDissociationActivity
+  Diagnosis:
+    is_a: IAO_0000030
+    class_uri: https://datamodel.terra.bio/BioCore#Diagnosis
+  DogDonor:
+    is_a: Donor
+    class_uri: https://datamodel.terra.bio/BioCore#DogDonor
   Donor:
     is_a: OBI_0100026
-    class_uri: https://datamodel.terra.bio/TerraCore#Donor
+    class_uri: https://datamodel.terra.bio/BioCore#Donor
+  DonorTreatmentActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#DonorTreatmentActivity
+  ExperimentActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#ExperimentActivity
+  FamilyMember:
+    is_a: OBI_0100026
+    class_uri: https://datamodel.terra.bio/BioCore#FamilyMember
+  File:
+    comments:
+    - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
+      to http://www.w3.org/ns/dcat#Distribution doesn''t make sense in this context;
+      thus we have our own class.  Also added electronic. '
+    is_a: IAO_0000030
+    class_uri: https://datamodel.terra.bio/BioCore#File
+  HistopathologyActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#HistopathologyActivity
+  HumanDonor:
+    is_a: Donor
+    class_uri: https://datamodel.terra.bio/BioCore#HumanDonor
+  Library:
+    is_a: BFO_0000040
+    class_uri: https://datamodel.terra.bio/BioCore#Library
+  LibraryPreparationActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#LibraryPreparationActivity
+  Measurement:
+    is_a: IAO_0000030
+    class_uri: https://datamodel.terra.bio/BioCore#Measurement
+  MolecularSample:
+    is_a: Sample
+    class_uri: https://datamodel.terra.bio/BioCore#MolecularSample
+  MouseDonor:
+    is_a: Donor
+    class_uri: https://datamodel.terra.bio/BioCore#MouseDonor
+  NucleusIsolationActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#NucleusIsolationActivity
+  Project:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#Project
+  ReferenceAssembly:
+    comments:
+    - Instances should include either a cross reference to the reference sequence
+      or an official GRCName from the Genome Reference Consortium, or both.
+    is_a: OBI_0001573
+    class_uri: https://datamodel.terra.bio/BioCore#ReferenceAssembly
   Sample:
-    class_uri: https://datamodel.terra.bio/TerraCore#Sample
+    is_a: OBI_0100051
+    class_uri: https://datamodel.terra.bio/BioCore#Sample
+  SampleTreatmentActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#SampleTreatmentActivity
+  SequenceFile:
+    is_a: File
+    class_uri: https://datamodel.terra.bio/BioCore#SequenceFile
+  SequenceLocation:
+    is_a: OBI_0000973
+    class_uri: https://datamodel.terra.bio/BioCore#SequenceLocation
+  SequencingActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#SequencingActivity
+  SingleCellAssignment:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#SingleCellAssignment
+  SingleCellIsolationActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#SingleCellIsolationActivity
+  VariantCall:
+    is_a: OBI_0000973
+    class_uri: https://datamodel.terra.bio/BioCore#VariantCall
+  VariantCallSetFile:
+    is_a: File
+    class_uri: https://datamodel.terra.bio/BioCore#VariantCallSetFile
+  VariantCallingActivity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/BioCore#VariantCallingActivity
+
