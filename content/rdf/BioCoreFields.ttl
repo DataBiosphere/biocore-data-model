@@ -46,7 +46,7 @@
 #   a owl:ObjectProperty ;
 #   rdfs:label "hadDerivation" ;
 #   owl:inverseOf prov:wasDerivedFrom ;
-#   prov:definition "Inverse of prov:wasDerivedFrom" ;
+#   skos:definition "Inverse of prov:wasDerivedFrom" ;
 #   BioCore:hasColumnLabel "derivation" ;
 # .
 # prov:used
@@ -260,7 +260,6 @@ BioCore:hasCountry
 BioCore:hasCrossReference
   a owl:ObjectProperty ;
   rdfs:label "hasCrossReference" ;
-  rdfs:subPropertyOf skos:closeMatch ;
   skos:definition "Reference to the entity in another electronic system.  The data stored about the entity may vary from system to system, but this relationship asserts that the reference represents the same entity." ;
   skos:prefLabel "hasCrossReference" ;
   BioCore:hasColumnLabel "xref" ;
@@ -280,7 +279,7 @@ BioCore:hasDateCollected
   a rdf:Property ;
   a owl:DatatypeProperty ;
   rdfs:label "has date collected" ;
-  rdfs:subPropertyOf dct:date ;
+  # rdfs:subPropertyOf dct:date ;
   skos:definition "Date the BioSample was originally collected from its Donor." ;
   skos:prefLabel "has date collected" ;
   BioCore:hasColumnLabel "date_collected" ;
@@ -297,7 +296,7 @@ BioCore:hasDateOfDeath
   a owl:DatatypeProperty ;
   rdfs:comment "Need definition" ;
   rdfs:label "has date of death" ;
-  rdfs:subPropertyOf dct:date ;
+  # rdfs:subPropertyOf dct:date ;
 .
 BioCore:hasDevelopmentalStage
   a owl:DatatypeProperty ;
@@ -461,21 +460,21 @@ BioCore:hasGeneticModification
   a owl:DatatypeProperty ;
   rdfs:label "has genetic modification" ;
   skos:prefLabel "has genetic modification" ;
-  prov:definition "A reference to a genetic modification of a BioSample." ;
+  skos:definition "A reference to a genetic modification of a BioSample." ;
   BioCore:hasColumnLabel "genetic_mod" ;
 .
 BioCore:hasGeneticModificationMethod
   a owl:DatatypeProperty ;
   rdfs:label "has genetic modification method" ;
   skos:prefLabel "has genetic modification method" ;
-  prov:definition "The method of a GeneticModification, see ValueSets." ;
+  skos:definition "The method of a GeneticModification, see ValueSets." ;
   BioCore:hasColumnLabel "genetic_mod_method" ;
 .
 BioCore:hasGeneticModificationReference
   a owl:DatatypeProperty ;
   rdfs:label "has genetic modification reference" ;
   skos:prefLabel "has genetic modification reference" ;
-  prov:definition "An external reference to a genetic modification method." ;
+  skos:definition "An external reference to a genetic modification method." ;
   BioCore:hasColumnLabel "genetic_mod_ref" ;
 .
 BioCore:hasGeneticModificationType
@@ -552,7 +551,7 @@ BioCore:hasLot
   rdfs:comment "A serial or lot number that was manufactured together. Added for Antibodies but domain can expand." ;
   rdfs:label "hasLot" ;
   skos:prefLabel "hasLot" ;
-  prov:definition "The lot unit of an entity." ;
+  skos:definition "The lot unit of an entity." ;
   BioCore:hasColumnLabel "lot" ;
 .
 BioCore:hasLowerBound
@@ -655,7 +654,7 @@ BioCore:hasPartNumber
   rdfs:comment "The part number is for reordering. Added for Antibodies but domain can expand." ;
   rdfs:label "has part number" ;
   skos:prefLabel "has part number" ;
-  prov:definition "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity." ;
+  skos:definition "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity." ;
   BioCore:hasColumnLabel "part_number" ;
 .
 BioCore:hasPercentAlignedReads
@@ -767,21 +766,21 @@ BioCore:hasSampleTreatment
   rdfs:subPropertyOf prov:wasUsedBy ;
   skos:definition "A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity." ;
   skos:prefLabel "has sample treatment" ;
-  prov:definition "A sample treatment of a BioSample." ;
+  skos:definition "A sample treatment of a BioSample." ;
   BioCore:hasColumnLabel "sample_treatment" ;
 .
 BioCore:hasSampleTreatmentMethod
   a owl:DatatypeProperty ;
   rdfs:label "has sample treatment method" ;
   skos:prefLabel "has sample treatment method" ;
-  prov:definition "The method of a SampleTreatmentActivity." ;
+  skos:definition "The method of a SampleTreatmentActivity." ;
   BioCore:hasColumnLabel "sample_treatment_method" ;
 .
 BioCore:hasSampleTreatmentType
   a owl:DatatypeProperty ;
   rdfs:label "has sample treatment type" ;
   skos:prefLabel "has sample treatment type" ;
-  prov:definition "The type of a BioSample treatment type, see valuesets for examples." ;
+  skos:definition "The type of a BioSample treatment type, see valuesets for examples." ;
   BioCore:hasColumnLabel "sample_treatment_type" ;
 .
 BioCore:hasSampleType
@@ -837,7 +836,7 @@ BioCore:hasSource
   rdfs:comment "The source is a string but will ultimately be a Vendor class. Added for Antibodies but domain can expand." ;
   rdfs:label "hasSource" ;
   skos:prefLabel "hasSource" ;
-  prov:definition "The source of production for an entity." ;
+  skos:definition "The source of production for an entity." ;
   BioCore:hasColumnLabel "source" ;
 .
 BioCore:hasStage
@@ -995,7 +994,7 @@ BioCore:usesAntibody
   rdfs:label "usesAntibody" ;
   rdfs:subPropertyOf prov:used ;
   skos:prefLabel "usesAntibody" ;
-  prov:definition "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity." ;
+  skos:definition "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity." ;
   BioCore:hasColumnLabel "antibody" ;
 .
 BioCore:usesLibrary
@@ -1025,6 +1024,6 @@ BioCore:usesSoftware
   a owl:DatatypeProperty ;
   rdfs:label "uses software" ;
   skos:prefLabel "uses software" ;
-  prov:definition "A reference to a software tool or command line " ;
+  skos:definition "A reference to a software tool or command line " ;
   BioCore:hasColumnLabel "uses_software" ;
 .

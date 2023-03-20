@@ -27,7 +27,7 @@ BioCore:Activity
   rdfs:label "Activity" ;
   rdfs:subClassOf prov:Activity ;
   skos:prefLabel "Activity" ;
-  prov:definition "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research." ;
+  skos:definitiontion "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research." ;
 .
 BioCore:Sample
   a owl:Class ;
