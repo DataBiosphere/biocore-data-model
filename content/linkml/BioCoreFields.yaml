@@ -1,4 +1,4 @@
-........name: BioCoreFields
+name: BioCoreFields
 description: BioCoreFields
 id: https://datamodel.terra.bio/BioCoreFields
 imports:
@@ -781,4 +781,3 @@ classes:
     slots:
     - hasCellCycle
     class_uri: https://datamodel.terra.bio/TerraCore#SingleCell
-

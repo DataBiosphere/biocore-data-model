@@ -1,0 +1,73 @@
+{
+    "$defs": {
+        "Class": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Class",
+            "type": "object"
+        },
+        "Document": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Document",
+            "type": "object"
+        },
+        "Kind": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Kind",
+            "type": "object"
+        },
+        "List": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "List",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Person",
+            "type": "object"
+        },
+        "Resource": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Resource",
+            "type": "object"
+        },
+        "Service": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Service",
+            "type": "object"
+        },
+        "SingleCell": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "hasCellCycle": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "SingleCell",
+            "type": "object"
+        },
+        "VocabularyEncodingScheme": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VocabularyEncodingScheme",
+            "type": "object"
+        }
+    },
+    "$id": "https://datamodel.terra.bio/BioCoreFields",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "BioCoreFields",
+    "type": "object",
+    "version": null
+}
