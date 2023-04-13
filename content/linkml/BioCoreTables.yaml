@@ -1,4 +1,4 @@
-...name: BioCoreTables
+name: BioCoreTables
 description: BioCoreTables
 id: https://datamodel.terra.bio/BioCoreTables
 imports:
@@ -267,4 +267,3 @@ classes:
   VariantCallingActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#VariantCallingActivity
-

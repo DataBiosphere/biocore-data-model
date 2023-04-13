@@ -484,7 +484,6 @@ AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasCrossRe
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasCrossReference> "Reference to the entity in another electronic system.  The data stored about the entity may vary from system to system, but this relationship asserts that the reference represents the same entity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasCrossReference> "hasCrossReference")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasCrossReference> "xref")
-SubObjectPropertyOf(<https://datamodel.terra.bio/TerraCore#hasCrossReference> <http://www.w3.org/2004/02/skos/core#closeMatch>)
 
 # Object Property: <https://datamodel.terra.bio/TerraCore#hasCurrentAddress> (hasCurrentAddress)
 
@@ -601,9 +600,9 @@ SubObjectPropertyOf(<https://datamodel.terra.bio/TerraCore#hasProtocol> <http://
 # Object Property: <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> (has sample treatment)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "has sample treatment")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "A sample treatment of a BioSample.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "has sample treatment")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "A sample treatment of a BioSample.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatment> "sample_treatment")
 SubObjectPropertyOf(<https://datamodel.terra.bio/TerraCore#hasSampleTreatment> <http://www.w3.org/ns/prov#wasUsedBy>)
 
@@ -686,8 +685,8 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#usesAntibody> "Can be used as an ObjectProperty with the Antibody class or as a DataType property, depending on need. Antibody should be linked to OBI in future. Note this could link to nonassay activities like CHiP")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#usesAntibody> "usesAntibody")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#usesAntibody> "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#usesAntibody> "usesAntibody")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#usesAntibody> "May be a reference to an antibody used for a SampleTreatmentActivity or another Activity.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#usesAntibody> "antibody")
 SubObjectPropertyOf(<https://datamodel.terra.bio/TerraCore#usesAntibody> <http://www.w3.org/ns/prov#used>)
 
@@ -832,7 +831,6 @@ AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasDateCol
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasDateCollected> "Date the BioSample was originally collected from its Donor.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasDateCollected> "has date collected")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasDateCollected> "date_collected")
-SubDataPropertyOf(<https://datamodel.terra.bio/TerraCore#hasDateCollected> <http://purl.org/dc/terms/date>)
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasDateOfBirth> (has date of birth)
 
@@ -844,7 +842,6 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#hasDateOfDeath> "Need definition")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasDateOfDeath> "has date of death")
-SubDataPropertyOf(<https://datamodel.terra.bio/TerraCore#hasDateOfDeath> <http://purl.org/dc/terms/date>)
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasDevelopmentalStage> (hasDevelopmentalStage)
 
@@ -962,22 +959,22 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasGeneticModification> (has genetic modification)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasGeneticModification> "has genetic modification")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModification> "A reference to a genetic modification of a BioSample.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModification> "has genetic modification")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModification> "A reference to a genetic modification of a BioSample.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModification> "genetic_mod")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> (has genetic modification method)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> "has genetic modification method")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> "The method of a GeneticModification, see ValueSets.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> "has genetic modification method")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> "The method of a GeneticModification, see ValueSets.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod> "genetic_mod_method")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> (has genetic modification reference)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> "has genetic modification reference")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> "An external reference to a genetic modification method.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> "has genetic modification reference")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> "An external reference to a genetic modification method.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference> "genetic_mod_ref")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasGeneticModificationType> (has genetic modification type)
@@ -1025,8 +1022,8 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#hasLot> "A serial or lot number that was manufactured together. Added for Antibodies but domain can expand.")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasLot> "hasLot")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasLot> "The lot unit of an entity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasLot> "hasLot")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasLot> "The lot unit of an entity.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasLot> "lot")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasLowerBound> (hasLowerBound)
@@ -1085,8 +1082,8 @@ AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasPairedE
 
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#hasPartNumber> "The part number is for reordering. Added for Antibodies but domain can expand.")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasPartNumber> "has part number")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasPartNumber> "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasPartNumber> "has part number")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasPartNumber> "The part number or catalogue number (e.g. Stock Keeping Unit) of an entity.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasPartNumber> "part_number")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasPercentAlignedReads> (hasPercentAlignedReads)
@@ -1163,15 +1160,15 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> (has sample treatment method)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> "has sample treatment method")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> "The method of a SampleTreatmentActivity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> "has sample treatment method")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> "The method of a SampleTreatmentActivity.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod> "sample_treatment_method")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> (has sample treatment type)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> "has sample treatment type")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> "The type of a BioSample treatment type, see valuesets for examples.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> "has sample treatment type")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> "The type of a BioSample treatment type, see valuesets for examples.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType> "sample_treatment_type")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasSequenceExpression> (hasSequenceExpression)
@@ -1186,8 +1183,8 @@ AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <http
 
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#hasSource> "The source is a string but will ultimately be a Vendor class. Added for Antibodies but domain can expand.")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#hasSource> "hasSource")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#hasSource> "The source of production for an entity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#hasSource> "hasSource")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#hasSource> "The source of production for an entity.")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#hasSource> "source")
 
 # Data Property: <https://datamodel.terra.bio/TerraCore#hasStartPosition> (hasStartPosition)
@@ -1289,8 +1286,8 @@ AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#isWholeCel
 # Data Property: <https://datamodel.terra.bio/TerraCore#usesSoftware> (uses software)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#usesSoftware> "uses software")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#usesSoftware> "A reference to a software tool or command line ")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#usesSoftware> "uses software")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#usesSoftware> "A reference to a software tool or command line ")
 AnnotationAssertion(<https://datamodel.terra.bio/TerraCore#hasColumnLabel> <https://datamodel.terra.bio/TerraCore#usesSoftware> "uses_software")
 
 

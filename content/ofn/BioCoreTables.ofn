@@ -230,15 +230,15 @@ EquivalentClasses(<http://www.ebi.ac.uk/efo/EFO_0009091> <https://datamodel.terr
 # Class: <https://datamodel.terra.bio/TerraCore#Activity> (Activity)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#Activity> "Activity")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#Activity> "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#Activity> "Activity")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#Activity> "An activity occurs over a period of time, generates an entity, and may include consuming, processing, transforming, modifying, relocating, or using entities.  This subclass of prov:Activity restricts members to those with a DataModality relevant to biomedical research.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#Activity> <http://www.w3.org/ns/prov#Activity>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#AlignmentActivity> (Alignment)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#AlignmentActivity> "Alignment")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#AlignmentActivity> "An activity that aligns the output of a Sequencing Activity (a genetic sequence) to produce an aligned sequence.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#AlignmentActivity> "Alignment")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#AlignmentActivity> "An activity that aligns the output of a Sequencing Activity (a genetic sequence) to produce an aligned sequence.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#AlignmentActivity> <https://datamodel.terra.bio/TerraCore#Activity>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#AlignmentFile> (AlignmentFile)
@@ -251,21 +251,21 @@ SubClassOf(<https://datamodel.terra.bio/TerraCore#AlignmentFile> <https://datamo
 # Class: <https://datamodel.terra.bio/TerraCore#AnalysisActivity> (Analysis)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#AnalysisActivity> "Analysis")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#AnalysisActivity> "An activity that records the output of a specific analysis method.  Software version, components, arguments are described in prov:SoftwareAgent.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#AnalysisActivity> "Analysis")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#AnalysisActivity> "An activity that records the output of a specific analysis method.  Software version, components, arguments are described in prov:SoftwareAgent.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#AnalysisActivity> <https://datamodel.terra.bio/TerraCore#Activity>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#Antibody> (Antibody)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#Antibody> "Antibody")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#Antibody> "A reference to the antibody/antibodies used in this Activity.")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#Antibody> "A reference to the antibody/antibodies used in this Activity.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#Antibody> <http://purl.obolibrary.org/obo/BFO_0000040>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#AssayActivity> (Assay)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#AssayActivity> "Assay")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#AssayActivity> "An activity that generates an electronic record documenting the result of the Assay performed.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#AssayActivity> "Assay")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#AssayActivity> "An activity that generates an electronic record documenting the result of the Assay performed.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#AssayActivity> <https://datamodel.terra.bio/TerraCore#Activity>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#BioSample> (BioSample)
@@ -366,8 +366,8 @@ SubClassOf(<https://datamodel.terra.bio/TerraCore#Measurement> <http://purl.obol
 # Class: <https://datamodel.terra.bio/TerraCore#MolecularSample> (MolecularSample)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#MolecularSample> "MolecularSample")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#MolecularSample> "Data about a physical sample consisting of one or more molecular entities, either purified from a Sample or synthesized.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#MolecularSample> "MolecularSample")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#MolecularSample> "Data about a physical sample consisting of one or more molecular entities, either purified from a Sample or synthesized.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#MolecularSample> <https://datamodel.terra.bio/TerraCore#Sample>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#MouseDonor> (MouseDonor)
@@ -394,8 +394,8 @@ SubClassOf(<https://datamodel.terra.bio/TerraCore#Project> <http://www.w3.org/ns
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "DRAFT")
 AnnotationAssertion(rdfs:comment <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "Instances should include either a cross reference to the reference sequence or an official GRCName from the Genome Reference Consortium, or both.")
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "ReferenceAssembly")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "DNA sequence data identified as representative of specific organism's DNA.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "ReferenceAssembly")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#ReferenceAssembly> "DNA sequence data identified as representative of specific organism's DNA.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#ReferenceAssembly> <http://purl.obolibrary.org/obo/OBI_0001573>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#Sample> (Sample)
@@ -421,15 +421,15 @@ SubClassOf(<https://datamodel.terra.bio/TerraCore#SequenceFile> <https://datamod
 # Class: <https://datamodel.terra.bio/TerraCore#SequenceLocation> (SequenceLocation)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#SequenceLocation> "SequenceLocation")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#SequenceLocation> "The location of a sequence feature defined by its start and end position based on a reference coordinate system, such as recorded in a sequence feature table.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#SequenceLocation> "SequenceLocation")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#SequenceLocation> "The location of a sequence feature defined by its start and end position based on a reference coordinate system, such as recorded in a sequence feature table.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#SequenceLocation> <http://purl.obolibrary.org/obo/OBI_0000973>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#SequencingActivity> (Sequencing)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#SequencingActivity> "Sequencing")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#SequencingActivity> "An activity that produces an electronic record of a genetic sequence from a Sample")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#SequencingActivity> "Sequencing")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#SequencingActivity> "An activity that produces an electronic record of a genetic sequence from a Sample")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#SequencingActivity> <https://datamodel.terra.bio/TerraCore#Activity>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#SingleCellAssignment> (SingleCellAssignment)
@@ -447,15 +447,15 @@ SubClassOf(<https://datamodel.terra.bio/TerraCore#SingleCellIsolationActivity> <
 # Class: <https://datamodel.terra.bio/TerraCore#VariantCall> (VariantCall)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#VariantCall> "VariantCall")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#VariantCall> "A variation in genetic sequence for a particular Sample and VariantCallingActivity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#VariantCall> "VariantCall")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#VariantCall> "A variation in genetic sequence for a particular Sample and VariantCallingActivity.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#VariantCall> <http://purl.obolibrary.org/obo/OBI_0000973>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#VariantCallSetFile> (VariantCallSet)
 
 AnnotationAssertion(rdfs:label <https://datamodel.terra.bio/TerraCore#VariantCallSetFile> "VariantCallSet")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://datamodel.terra.bio/TerraCore#VariantCallSetFile> "An electronic record of a collection of variations in genetic sequence for a particular Sample that have been generated by a VariantCallingActivity.")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#prefLabel> <https://datamodel.terra.bio/TerraCore#VariantCallSetFile> "VariantCallSet")
-AnnotationAssertion(<http://www.w3.org/ns/prov#definition> <https://datamodel.terra.bio/TerraCore#VariantCallSetFile> "An electronic record of a collection of variations in genetic sequence for a particular Sample that have been generated by a VariantCallingActivity.")
 SubClassOf(<https://datamodel.terra.bio/TerraCore#VariantCallSetFile> <https://datamodel.terra.bio/TerraCore#File>)
 
 # Class: <https://datamodel.terra.bio/TerraCore#VariantCallingActivity> (VariantCallingActivity)

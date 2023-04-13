@@ -1,5 +1,19 @@
 {
     "$defs": {
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "samples": {
+                    "items": {
+                        "$ref": "#/$defs/Sample"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
         "Sample": {
             "additionalProperties": false,
             "description": "",
@@ -43,6 +57,14 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
+    "properties": {
+        "samples": {
+            "items": {
+                "$ref": "#/$defs/Sample"
+            },
+            "type": "array"
+        }
+    },
     "title": "sample",
     "type": "object",
     "version": null

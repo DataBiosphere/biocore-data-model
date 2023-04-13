@@ -109,19 +109,19 @@ Fields
 
 `./robot convert -i rdf/BioCoreFields.ttl -o ofn/BioCoreFields.ofn`
 
-`schemauto import-owl ofn/BioCoreFields.ofn > linkml/BioCoreFields.yaml`
+`schemauto import-owl ofn/BioCoreFields.ofn -o linkml/BioCoreFields.yaml`
 
 Tables
 
 `./robot convert -i rdf/BioCoreTables.ttl -o ofn/BioCoreTables.ofn`
 
-`schemauto import-owl ofn/BioCoreTables.ofn > linkml/BioCoreTables.yaml`
+`schemauto import-owl ofn/BioCoreTables.ofn -o linkml/BioCoreTables.yaml`
 
-Terms
+Terms *maybe this doesn't need to be converted to LinkML if we only deploy through CENTree?*
 
 `./robot convert -vvv -i rdf/BioCoreTerms.ttl -o ofn/BioCoreTerms.ofn`
 
-`schemauto import-owl ofn/BioCoreTerms.ofn > linkml/BioCoreTerms.yaml`
+`schemauto import-owl ofn/BioCoreTerms.ofn -o linkml/BioCoreTerms.yaml`
 
 Questions/TODO/Someday
 
@@ -130,6 +130,5 @@ Questions/TODO/Someday
       * ERROR:root:Overwriting slot_uri for {'slot_uri': 'http://purl.org/dc/terms/hasVersion'} to https://datamodel.terra.bio/BioCore#hasVersion
    * Unknown errors from schemaauto:
       * ERROR:root:TODO
-      * weird dots (progress bar) at the beginning of output
    * Is there a way to pull in a model description from OWL?
    * Need to turn off     multivalued: true for prefLabel

@@ -62,7 +62,6 @@ slots:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCountry
     multivalued: true
   hasCrossReference:
-    is_a: closeMatch
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCrossReference
     multivalued: true
   hasCurrentAddress:
@@ -259,7 +258,6 @@ slots:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasClonality
     multivalued: true
   hasDateCollected:
-    is_a: date
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateCollected
     multivalued: true
   hasDateOfBirth:
@@ -268,7 +266,6 @@ slots:
   hasDateOfDeath:
     comments:
     - Need definition
-    is_a: date
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateOfDeath
     multivalued: true
   hasDevelopmentalStage:
