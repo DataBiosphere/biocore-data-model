@@ -709,14 +709,14 @@ slots:
       and https://vrsatile.readthedocs.io/en/latest/value_object_descriptor/index.html#expression.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSequenceExpression
     multivalued: true
-  source:
-    alias: hasSource
-    description: The source of production for an entity.
-    comments:
-    - The source is a string but will ultimately be a Vendor class. Added for Antibodies
-      but domain can expand.
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasSource
-    multivalued: true
+  # source:
+  #   alias: hasSource
+  #   description: The source of production for an entity.
+  #   comments:
+  #   - The source is a string but will ultimately be a Vendor class. Added for Antibodies
+  #     but domain can expand.
+  #   slot_uri: https://datamodel.terra.bio/TerraCore#hasSource
+  #   multivalued: true
   start_position:
     alias: hasStartPosition
     description: A reference to the start position on the chromosome identified.

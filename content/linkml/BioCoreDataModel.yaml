@@ -4,7 +4,33 @@ prefixes:
   linkml: https://w3id.org/linkml/
 imports:
   - linkml:types
-  - BioCoreFields
-  - BioCoreTables-min3
+  - BioCoreFieldsLinkML
+  # - BioCoreTables-min3
 default_range: string # if not specified, any string or link is ok
 classes: # now use the imported classes from BioCoreTables
+  OBI_0100026:
+    class_uri: http://purl.obolibrary.org/obo/OBI_0100026
+  Activity:
+    is_a: Activity
+    class_uri: https://datamodel.terra.bio/TerraCore#Activity
+    slots:
+     - activity_type
+  Donor:
+    is_a: OBI_0100026
+    class_uri: https://datamodel.terra.bio/TerraCore#Donor
+    slots:
+     - birth_year
+     - date_of_death
+     - reported_ethnicity
+     - genetic_ancestry
+     - organism_type
+     - phenotypic_sex
+     - strain
+     - xref
+  Sample:
+    class_uri: https://datamodel.terra.bio/TerraCore#Sample
+  BioSample:
+    class_uri: https://datamodel.terra.bio/TerraCore#Sample
+    is_a: Sample
+    slots:
+     - apriori_cell_type
