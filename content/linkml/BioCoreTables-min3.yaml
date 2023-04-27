@@ -1,12 +1,12 @@
-name: BioCore
-description: BioCore
+name: BioCoreTables-min3
+description: BioCore-min3
 id: https://datamodel.terra.bio/BioCore
 imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   BioCore: https://w3id.org/None/
-default_prefix: BioCore
+default_prefix: BioCoreTables
 slots:
   definition:
     slot_uri: http://www.w3.org/ns/prov#definition
