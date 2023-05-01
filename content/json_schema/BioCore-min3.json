@@ -1,0 +1,163 @@
+{
+    "$defs": {
+        "Activity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "hasActivityType": {
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Activity",
+            "type": "object"
+        },
+        "BioSample": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "hasAprioriCellType": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "BioSample",
+            "type": "object"
+        },
+        "Class": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Class",
+            "type": "object"
+        },
+        "Document": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Document",
+            "type": "object"
+        },
+        "Donor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "hasBirthYear": {
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": "array"
+                },
+                "hasCrossReference": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasDateOfDeath": {
+                    "description": "A reference to the date of death of the Donor or Family Member.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasGeneticAncestry": {
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasOrganismType": {
+                    "description": "A reference to the organism type.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasPhenotypicSex": {
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasReportedEthnicity": {
+                    "description": "A property that relects a HumanDonor's reported ethnic origins.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hasStrain": {
+                    "description": "Text string to represent the strain.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Donor",
+            "type": "object"
+        },
+        "Kind": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Kind",
+            "type": "object"
+        },
+        "List": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "List",
+            "type": "object"
+        },
+        "OBI0100026": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "OBI0100026",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Person",
+            "type": "object"
+        },
+        "Resource": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Resource",
+            "type": "object"
+        },
+        "Sample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Sample",
+            "type": "object"
+        },
+        "Service": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Service",
+            "type": "object"
+        },
+        "VocabularyEncodingScheme": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VocabularyEncodingScheme",
+            "type": "object"
+        }
+    },
+    "$id": "https://datamodel.terra.bio",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "biocore",
+    "type": "object",
+    "version": null
+}
