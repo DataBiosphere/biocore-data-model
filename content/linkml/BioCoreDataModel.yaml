@@ -11,7 +11,7 @@ classes: # now use the imported classes from BioCoreTables
   OBI_0100026:
     class_uri: http://purl.obolibrary.org/obo/OBI_0100026
   Activity:
-    is_a: Activity
+    # is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#Activity
     slots:
      - activity_type

@@ -387,7 +387,7 @@ slots:
     description: A reference to the date of death of the Donor or Family Member.
     range: datetime
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateOfDeath
-    multivalued: true
+    multivalued: false
   developmental_stage:
     alias: hasDevelopmentalStage
     comments:
