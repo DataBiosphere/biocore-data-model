@@ -1,0 +1,375 @@
+id: http://example.org/schema/
+name: anvil_findability_subset
+
+prefixes:
+  schema: http://example.org/schema/
+
+default_prefix: anvil
+
+classes:
+  AnvilActivity:
+    slots:
+      - activity_id
+      - activity_type
+      - used_file_id
+      - generated_file_id
+      - used_biosample_id
+      - source_datarepo_row_ids
+    primary_key: activity_id
+
+  AnvilAlignmentActivity:
+    slots:
+      - alignmentactivity_id
+      - activity_type
+      - data_modality
+      - generated_file_id
+      - used_file_id
+      - reference_assembly
+      - source_datarepo_row_ids
+    primary_key: alignmentactivity_id
+
+  AnvilAntibody:
+    slots:
+      - antibody_id
+      - target
+      - source_datarepo_row_ids
+    primary_key: antibody_id
+
+  AnvilAssayActivity:
+    slots:
+      - assayactivity_id
+      - activity_type
+      - antibody_id
+      - assay_type
+      - data_modality
+      - generated_file_id
+      - used_biosample_id
+      - source_datarepo_row_ids
+    primary_key: assayactivity_id
+
+  AnvilBiosample:
+    slots:
+      - biosample_id
+      - anatomical_site
+      - apriori_cell_type
+      - biosample_type
+      - disease
+      - donor_age_at_collection_unit
+      - donor_age_at_collection_lower_bound
+      - donor_age_at_collection_upper_bound
+      - donor_id
+      - part_of_dataset_id
+      - source_datarepo_row_ids
+    primary_key: biosample_id
+
+  AnvilDataset:
+    slots:
+      - dataset_id
+      - consent_group
+      - data_use_permission
+      - owner
+      - principal_investigator
+      - registered_identifier
+      - title
+      - data_modality
+      - source_datarepo_row_ids
+    primary_key: dataset_id
+
+  AnvilDiagnosis:
+    slots:
+      - diagnosis_id
+      - donor_id
+      - disease
+      - diagnosis_age_unit
+      - diagnosis_age_lower_bound
+      - diagnosis_age_upper_bound
+      - onset_age_unit
+      - onset_age_lower_bound
+      - onset_age_upper_bound
+      - phenotype
+      - phenopacket
+      - source_datarepo_row_ids
+    primary_key: diagnosis_id
+
+  AnvilDonor:
+    slots:
+      - donor_id
+      - organism_type
+      - part_of_dataset_id
+      - phenotypic_sex
+      - reported_ethnicity
+      - genetic_ancestry
+      - source_datarepo_row_ids
+    primary_key: donor_id
+
+  AnvilFile:
+    slots:
+      - file_id
+      - data_modality
+      - file_format
+      - file_size
+      - file_md5sum
+      - reference_assembly
+      - file_name
+      - file_ref
+      - is_supplementary
+      - source_datarepo_row_ids
+    primary_key: file_id
+
+  AnvilProject:
+    slots:
+      - project_id
+      - funded_by
+      - generated_dataset_id
+      - principal_investigator
+      - title
+      - registered_identifier
+      - source_datarepo_row_ids
+    primary_key: project_id
+
+  AnvilSequencingActivity:
+    slots:
+      - sequencingactivity_id
+      - activity_type
+      - assay_type
+      - data_modality
+      - generated_file_id
+      - used_biosample_id
+      - source_datarepo_row_ids
+    primary_key: sequencingactivity_id
+
+AnvilVariantCallingActivity:
+    slots:
+      - variantcallingactivity_id
+      - activity_type
+      - used_file_id
+      - generated_file_id
+      - reference_assembly
+      - data_modality
+      - source_datarepo_row_ids
+    primary_key: variantcallingactivity_id
+
+slots:
+  activity_id:
+    range: string
+    required: true
+  activity_type:
+    range: string
+  used_file_id:
+    range: string
+    multivalued: true
+  generated_file_id:
+    range: string
+    multivalued: true
+  used_biosample_id:
+    range: string
+    multivalued: true
+  source_datarepo_row_ids:
+    range: string
+    multivalued: true
+  alignmentactivity_id:
+    range: string
+    required: true
+  data_modality:
+    range: string
+    multivalued: true
+  reference_assembly:
+    range: string
+    multivalued: true
+  antibody_id:
+    range: string
+    required: true
+  target:
+    range: string
+  assayactivity_id:
+    range: string
+    required: true
+  assay_type:
+    range: string
+  biosample_id:
+    range: string
+    required: true
+  anatomical_site:
+    range: string
+  apriori_cell_type:
+    range: string
+    multivalued: true
+  biosample_type:
+    range: string
+  disease:
+    range: string
+  donor_age_at_collection_unit:
+    range: string
+  donor_age_at_collection_lower_bound:
+    range: float
+  donor_age_at_collection_upper_bound:
+    range: float
+  donor_id:
+    range: string
+    multivalued: true
+  part_of_dataset_id:
+    range: string
+    multivalued: true
+  dataset_id:
+    range: string
+    required: true
+  consent_group:
+    range: string
+    multivalued: true
+  data_use_permission:
+    range: string
+    multivalued: true
+  owner:
+    range: string
+    multivalued: true
+  principal_investigator:
+    range: string
+    multivalued: true
+  registered_identifier:
+    range: string
+    multivalued: true
+  title:
+    range: string
+  diagnosis_id:
+    range: string
+    required: true
+  diagnosis_age_unit:
+    range: string
+  diagnosis_age_lower_bound:
+    range: float
+  diagnosis_age_upper_bound:
+    range: float
+  onset_age_unit:
+    range: string
+  onset_age_lower_bound:
+    range: float
+  onset_age_upper_bound:
+    range: float
+  phenotype:
+    range: string
+    multivalued: true
+  phenopacket:
+    range: string
+    multivalued: true
+  organism_type:
+    range: string
+  phenotypic_sex:
+    range: string
+  reported_ethnicity:
+    range: string
+    multivalued: true
+  genetic_ancestry:
+    range: string
+    multivalued: true
+  file_id:
+    range: string
+    required: true
+  file_format:
+    range: string
+  file_size:
+    range: integer
+  file_md5sum:
+    range: string
+  file_name:
+    range: string
+  file_ref:
+    range: string
+  is_supplementary:
+    range: boolean
+  project_id:
+    range: string
+    required: true
+  funded_by:
+    range: string
+    multivalued: true
+  generated_dataset_id:
+    range:
+
+# string
+#     multivalued: true
+#   sequencingactivity_id:
+#     range: string
+#     required: true
+#   variantcallingactivity_id:
+#     range: string
+#     required: true
+
+relationships:
+  from_activity.used_file_id_to_file.file_id:
+    domain: AnvilActivity
+    range: AnvilFile
+    slot_uri: used_file_id
+  from_activity.generated_file_id_to_file.file_id:
+    domain: AnvilActivity
+    range: AnvilFile
+    slot_uri: generated_file_id
+  from_activity.used_biosample_id_to_biosample.biosample_id:
+    domain: AnvilActivity
+    range: AnvilBiosample
+    slot_uri: used_biosample_id
+  from_alignmentactivity.used_file_id_to_file.file_id:
+    domain: AnvilAlignmentActivity
+    range: AnvilFile
+    slot_uri: used_file_id
+  from_alignmentactivity.generated_file_id_to_file.file_id:
+    domain: AnvilAlignmentActivity
+    range: AnvilFile
+    slot_uri: generated_file_id
+  from_assayactivity.antibody_id_to_antibody.antibody_id:
+    domain: AnvilAssayActivity
+    range: AnvilAntibody
+    slot_uri: antibody_id
+  from_assayactivity.generated_file_id_to_file.file_id:
+    domain: AnvilAssayActivity
+    range: AnvilFile
+    slot_uri: generated_file_id
+  from_assayactivity.used_biosample_id_to_biosample.biosample_id:
+    domain: AnvilAssayActivity
+    range: AnvilBiosample
+    slot_uri: used_biosample_id
+  from_biosample.donor_id_to_donor.donor_id:
+    domain: AnvilBiosample
+    range: AnvilDonor
+    slot_uri: donor_id
+  from_biosample.part_of_dataset_id_to_dataset.dataset_id:
+    domain: AnvilBiosample
+    range: AnvilDataset
+    slot_uri: part_of_dataset_id
+  from_donor.part_of_dataset_id_to_dataset.dataset_id:
+    domain: AnvilDonor
+    range: AnvilDataset
+    slot_uri: part_of_dataset_id
+  from_diagnosis.donor_id_to_donor.donor_id:
+    domain: AnvilDiagnosis
+    range: AnvilDonor
+    slot_uri: donor_id
+  from_project.generated_dataset_id_to_dataset.dataset_id:
+    domain: AnvilProject
+    range: AnvilDataset
+    slot_uri: generated_dataset_id
+  from_sequencingactivity.generated_file_id_to_file.file_id:
+    domain: AnvilSequencingActivity
+    range: AnvilFile
+    slot_uri: generated_file_id
+  from_sequencingactivity.used_biosample_id_to_biosample.biosample_id:
+    domain: AnvilSequencingActivity
+    range: AnvilBiosample
+    slot_uri: used_biosample_id
+  from_variantcallingactivity.used_file_id_to_file.file_id:
+    domain: AnvilVariantCallingActivity
+    range: AnvilFile
+    slot_uri: used_file_id
+  from_variantcallingactivity.generated_file_id_to_file.file_id:
+    domain: AnvilVariantCallingActivity
+    range: AnvilFile
+    slot_uri: generated_file_id
+
+types:
+  string:
+    base: str
+  float:
+    base: float
+  integer:
+    base: int
+  boolean:
+    base: Bool
