@@ -4,7 +4,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
 imports:
   - linkml:types
-  - BioCoreFieldsLinkML
+  - BioCoreFieldsLinkML2
   # - BioCoreTables-min3
 default_range: string # if not specified, any string or link is ok
 classes: # now use the imported classes from BioCoreTables
