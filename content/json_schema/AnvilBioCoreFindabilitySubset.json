@@ -1,0 +1,648 @@
+{
+    "$defs": {
+        "Activity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Activity",
+            "type": "object"
+        },
+        "AlignmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AlignmentActivity",
+            "type": "object"
+        },
+        "AlignmentFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AlignmentFile",
+            "type": "object"
+        },
+        "AnalysisActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AnalysisActivity",
+            "type": "object"
+        },
+        "Antibody": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Antibody",
+            "type": "object"
+        },
+        "AnvilActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "activity_type": {
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "xref_id": {
+                    "description": "other identifiers for the person, e.g. ORCID, etc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilActivity",
+            "type": "object"
+        },
+        "AnvilAntibody": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "target": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilAntibody",
+            "type": "object"
+        },
+        "AnvilBioSample": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "anatomical_site": {
+                    "description": "A reference to the site within the organism from which the BioSample was taken.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "apriori_cell_type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "biosample_type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "disease": {
+                    "description": "A property that identifies a disease or condition has been reported in this entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "donor": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "donor_age_at_collection": {
+                    "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilBioSample",
+            "type": "object"
+        },
+        "AnvilDataset": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "data_modality": {
+                    "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilDataset",
+            "type": "object"
+        },
+        "AnvilDiagnosis": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "age_at_diagnosis": {
+                    "description": "A reference to the Age of the Donor at the point in time that diagnosis was made.",
+                    "type": "string"
+                },
+                "age_at_onset": {
+                    "description": "A reference to the Age of the Donor at the onset of the disease associated with the diagnosis.",
+                    "type": "string"
+                },
+                "disease": {
+                    "description": "A property that identifies a disease or condition has been reported in this entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "donor": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "phenopacket": {
+                    "description": "A reference to the phenopacket file.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "phenotype": {
+                    "description": "A reference to the phenotype, preferably from the Human Phenotype Ontology. Phenopackets handled separately.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilDiagnosis",
+            "type": "object"
+        },
+        "AnvilDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "genetic_ancestry": {
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "organism_type": {
+                    "description": "A reference to the organism type.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "phenotypic_sex": {
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "reported_ethnicity": {
+                    "description": "A property that relects a HumanDonor's reported ethnic origins.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilDonor",
+            "type": "object"
+        },
+        "AnvilFile": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "checksum": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "data_modality": {
+                    "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_format": {
+                    "description": "An indication of the format of an electronic file; include the full file extension including compression extensions.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_size": {
+                    "description": "Property that describes the approximate size of a file in megabytes.",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "reference_assembly": {
+                    "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilFile",
+            "type": "object"
+        },
+        "AnvilProject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "funded_by": {
+                    "description": "A relationship defining the funding source.  The range is expected to include grants, organizations, or a string indicating the funding source.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilProject",
+            "type": "object"
+        },
+        "AnvilSequencingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "activity_type": {
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "assay_type": {
+                    "description": "A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "biosample": {
+                    "description": "This property references the BioSample donated by the Donor.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "data_modality": {
+                    "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilSequencingActivity",
+            "type": "object"
+        },
+        "AnvilVariantCallingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "activity_type": {
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "data_modality": {
+                    "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "reference_assembly": {
+                    "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnvilVariantCallingActivity",
+            "type": "object"
+        },
+        "AssayActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AssayActivity",
+            "type": "object"
+        },
+        "BioSample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "BioSample",
+            "type": "object"
+        },
+        "BioSampleDissociationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "BioSampleDissociationActivity",
+            "type": "object"
+        },
+        "Class": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Class",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Container",
+            "type": "object"
+        },
+        "Diagnosis": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Diagnosis",
+            "type": "object"
+        },
+        "Document": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Document",
+            "type": "object"
+        },
+        "DogDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "DogDonor",
+            "type": "object"
+        },
+        "Donor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Donor",
+            "type": "object"
+        },
+        "DonorTreatmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "DonorTreatmentActivity",
+            "type": "object"
+        },
+        "EFO0007831": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "EFO0007831",
+            "type": "object"
+        },
+        "ExperimentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "ExperimentActivity",
+            "type": "object"
+        },
+        "FamilyMember": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "FamilyMember",
+            "type": "object"
+        },
+        "File": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "File",
+            "type": "object"
+        },
+        "HistopathologyActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "HistopathologyActivity",
+            "type": "object"
+        },
+        "HumanDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "HumanDonor",
+            "type": "object"
+        },
+        "Kind": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Kind",
+            "type": "object"
+        },
+        "Library": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Library",
+            "type": "object"
+        },
+        "LibraryPreparationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "LibraryPreparationActivity",
+            "type": "object"
+        },
+        "List": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "List",
+            "type": "object"
+        },
+        "Measurement": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Measurement",
+            "type": "object"
+        },
+        "MolecularSample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "MolecularSample",
+            "type": "object"
+        },
+        "MouseDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "MouseDonor",
+            "type": "object"
+        },
+        "NucleusIsolationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "NucleusIsolationActivity",
+            "type": "object"
+        },
+        "OBI0001573": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "OBI0001573",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Person",
+            "type": "object"
+        },
+        "Project": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Project",
+            "type": "object"
+        },
+        "ReferenceAssembly": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "ReferenceAssembly",
+            "type": "object"
+        },
+        "Resource": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Resource",
+            "type": "object"
+        },
+        "Sample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Sample",
+            "type": "object"
+        },
+        "SampleTreatmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SampleTreatmentActivity",
+            "type": "object"
+        },
+        "SequenceFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequenceFile",
+            "type": "object"
+        },
+        "SequenceLocation": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequenceLocation",
+            "type": "object"
+        },
+        "SequencingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequencingActivity",
+            "type": "object"
+        },
+        "Service": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Service",
+            "type": "object"
+        },
+        "SingleCellAssignment": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCellAssignment",
+            "type": "object"
+        },
+        "SingleCellIsolationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCellIsolationActivity",
+            "type": "object"
+        },
+        "VariantCall": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCall",
+            "type": "object"
+        },
+        "VariantCallSetFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCallSetFile",
+            "type": "object"
+        },
+        "VariantCallingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCallingActivity",
+            "type": "object"
+        },
+        "VocabularyEncodingScheme": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VocabularyEncodingScheme",
+            "type": "object"
+        }
+    },
+    "$id": "https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "anvil_findability_subset",
+    "type": "object",
+    "version": null
+}
