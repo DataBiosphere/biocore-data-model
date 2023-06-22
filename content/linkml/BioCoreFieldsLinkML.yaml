@@ -69,7 +69,7 @@ slots:
     aliases: hasBioSampleType
     comments:
     - Need definition
-    is_a: hasSampleType # change to sample_type
+    is_a: sample_type
     slot_uri: https://datamodel.terra.bio/TerraCore#hasBioSampleType
     multivalued: true
   child:
@@ -111,7 +111,6 @@ slots:
     multivalued: true
   donor_age_at_collection:
     aliases: hasDonorAgeAtCollection
-    is_a: age_at_collection
     description: A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection
     multivalued: false # check if this could be array
@@ -279,7 +278,7 @@ slots:
   age_unit:
     aliases: hasAgeUnit
     description: A reference to the unit of time during which an entity has existed e.g. years or days.
-    is_a: hasUnit
+    is_a: unit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeUnit
     multivalued: true
   aligned_fragments:
@@ -304,7 +303,7 @@ slots:
   amount_unit:
     aliases: hasAmountUnit
     description: A property that captures the units of an entity. The units may be an amount such as moles or grams; or a concentration, such as g/mL or molarity. Other units may include enzyme activity, the specific activity of a radionucleotide, or the titer of an antibody.
-    is_a: hasUnit
+    is_a: unit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAmountUnit
     multivalued: true
   anatomical_region:
@@ -443,7 +442,7 @@ slots:
     description: e.g. min seconds hours days
     comments:
     - Need definition
-    is_a: hasUnit
+    is_a: unit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDurationUnit
     multivalued: true
   estimated_library_size:
@@ -464,7 +463,7 @@ slots:
     description: An indication of the format of an electronic file; include the full file extension including compression extensions.
     comments:
     - The definition of this field follows the convention used by the Human Cell Atlas.
-    is_a: format
+    # is_a: format
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFileFormat
     multivalued: true
   fragments:
@@ -750,7 +749,7 @@ slots:
     aliases: hasTemperatureUnit
     comments:
     - Need definition
-    is_a: hasUnit
+    is_a: unit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTemperatureUnit
     multivalued: true
   term_name:
@@ -794,7 +793,7 @@ slots:
   weight_unit:
     aliases: hasWeightUnit
     description: A reference to the measurement unit for mass.
-    is_a: hasUnit
+    is_a: unit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasWeightUnit
     multivalued: true
   cause_of_death:

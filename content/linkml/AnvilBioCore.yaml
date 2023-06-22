@@ -1,0 +1,34 @@
+id: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl
+name: anvil_findability_subset
+prefixes:
+  linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+default_prefix: anvil
+imports:
+  - linkml:types # this imports the linkml types schema
+  - BioCoreFieldsLinkML
+  - BioCoreTables
+default_range: string # if not specified, the default range is string
+classes:
+  AnvilActivity:
+    is_a: Activity
+    slots:
+     - id
+     - activity_type
+     - xref_id
+#    primary_key: id
+  Container:
+    attributes:
+      AnvilActivities:
+        multivalued: true
+        inlined_as_list: true
+        range: AnvilActivity
+        description:
+          all acvitity types
+slots:
+  id:
+    identifier: true  # this is the primary identifier for the class
+  xref_id: # external identifier for a donor
+    multivalued: true
+    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
+    description:
+      other identifiers for the person, e.g. ORCID, etc.

@@ -1,0 +1,138 @@
+id: https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/schema
+name: anvil_findability_subset
+prefixes:
+  linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+default_prefix: anvil
+imports:
+  - linkml:types # this imports the linkml types schema
+  - BioCoreFieldsLinkML
+  - BioCoreTables
+default_range: string # if not specified, the default range is string
+classes:
+
+  AnvilActivity:
+    is_a: Activity
+    slots:
+     - id
+     - activity_type
+     - xref_id
+
+  AnvilAntibody:
+    is_a: Antibody
+    slots:
+      - id
+      - target
+  
+  AnvilBioSample:
+    is_a: BioSample
+    slots:
+      - id
+      - anatomical_site
+      - apriori_cell_type
+      - biosample_type
+      - disease
+      - donor_age_at_collection
+      # - age_unit https://microbiomedata.github.io/nmdc-schema/QuantityValue/
+      # - lower_bound
+      # - upper_bound
+      - donor
+
+  AnvilDataset:
+    slots:
+      - id
+      # - consent_group # TerraDCAT_ap:hasConsentGroup
+      # - data_use_permission # TerraDCAT_ap:hasDataUsePermission
+      # - owner # TerraDCAT_ap:hasOwner
+      # - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
+      # - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
+      # - title # TerraDCAT_ap:hasEntityTitle
+      - data_modality
+      # - source_datarepo_row_ids
+
+  AnvilDiagnosis:
+    slots:
+      - id
+      - donor
+      - disease
+      - age_at_diagnosis
+      - age_at_onset
+      # - diagnosis_age_unit
+      # - diagnosis_age_lower_bound
+      # - diagnosis_age_upper_bound
+      # - onset_age_unit
+      # - onset_age_lower_bound
+      # - onset_age_upper_bound
+      - phenotype
+      - phenopacket
+      # - source_datarepo_row_ids
+
+  AnvilDonor:
+    slots:
+      - id
+      - organism_type
+      # - part_of_dataset_id # TerraDCAT_ap:hasDataset
+      - phenotypic_sex
+      - reported_ethnicity
+      - genetic_ancestry
+      # - source_datarepo_row_ids
+
+  AnvilFile:
+    slots:
+      - id
+      - data_modality
+      - file_format
+      - file_size
+      # - file_md5sum
+      - checksum
+      - reference_assembly
+      - name
+      # - file_ref
+      # - is_supplementary
+      # - source_datarepo_row_ids
+
+  AnvilProject:
+    slots:
+      - id
+      - funded_by
+      # - generated_dataset_id
+      # - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
+      # - title # TerraDCAT_ap:hasEntityTitle
+      # - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
+      # - source_datarepo_row_ids
+
+  AnvilSequencingActivity:
+    slots:
+      - id
+      - activity_type
+      - assay_type
+      - data_modality
+      # - generated_file_id
+      - biosample
+      # - source_datarepo_row_ids
+
+  AnvilVariantCallingActivity:
+      slots:
+        - id
+        - activity_type
+        # - used_file_id
+        # - generated_file_id
+        - reference_assembly
+        - data_modality
+        # - source_datarepo_row_ids
+
+  Container:
+    attributes:
+      # AnvilActivities:
+      #   multivalued: true
+      #   inlined_as_list: true
+      #   range: AnvilActivity
+      #   description:
+      #     all acvitity types
+slots:
+  id:
+    identifier: true  # this is the primary identifier for the class
+  xref_id: # external identifier for a donor
+    multivalued: true
+    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
+    description:
+      other identifiers for the person, e.g. ORCID, etc.

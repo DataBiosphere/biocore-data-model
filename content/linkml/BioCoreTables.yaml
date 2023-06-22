@@ -1,6 +1,6 @@
+id: https://datamodel.terra.bio/BioCoreTables
 name: BioCoreTables
 description: BioCoreTables
-id: https://datamodel.terra.bio/BioCoreTables
 imports:
 - linkml:types
 prefixes:
@@ -156,7 +156,6 @@ classes:
   Person:
     class_uri: http://xmlns.com/foaf/0.1/Person
   Activity:
-    is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#Activity
   AlignmentActivity:
     is_a: Activity
@@ -168,7 +167,7 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#AnalysisActivity
   Antibody:
-    is_a: BFO_0000040
+    # is_a: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Antibody
   AssayActivity:
     is_a: Activity
@@ -180,13 +179,13 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#BioSampleDissociationActivity
   Diagnosis:
-    is_a: IAO_0000030
+    # is_a: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#Diagnosis
   DogDonor:
     is_a: Donor
     class_uri: https://datamodel.terra.bio/TerraCore#DogDonor
   Donor:
-    is_a: OBI_0100026
+    # is_a: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#Donor
   DonorTreatmentActivity:
     is_a: Activity
@@ -195,14 +194,14 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#ExperimentActivity
   FamilyMember:
-    is_a: OBI_0100026
+    # is_a: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#FamilyMember
   File:
     comments:
     - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
       to http://www.w3.org/ns/dcat#Distribution doesn''t make sense in this context;
       thus we have our own class.  Also added electronic. '
-    is_a: IAO_0000030
+    # is_a: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#File
   HistopathologyActivity:
     is_a: Activity
@@ -211,13 +210,13 @@ classes:
     is_a: Donor
     class_uri: https://datamodel.terra.bio/TerraCore#HumanDonor
   Library:
-    is_a: BFO_0000040
+    # is_a: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Library
   LibraryPreparationActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#LibraryPreparationActivity
   Measurement:
-    is_a: IAO_0000030
+    # is_a: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#Measurement
   MolecularSample:
     is_a: Sample
@@ -235,10 +234,10 @@ classes:
     comments:
     - Instances should include either a cross reference to the reference sequence
       or an official GRCName from the Genome Reference Consortium, or both.
-    is_a: OBI_0001573
+    # is_a: OBI_0001573
     class_uri: https://datamodel.terra.bio/TerraCore#ReferenceAssembly
   Sample:
-    is_a: OBI_0100051
+    # is_a: OBI_0100051
     class_uri: https://datamodel.terra.bio/TerraCore#Sample
   SampleTreatmentActivity:
     is_a: Activity
@@ -247,7 +246,7 @@ classes:
     is_a: File
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceFile
   SequenceLocation:
-    is_a: OBI_0000973
+    # is_a: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceLocation
   SequencingActivity:
     is_a: Activity
@@ -259,7 +258,7 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#SingleCellIsolationActivity
   VariantCall:
-    is_a: OBI_0000973
+    # is_a: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#VariantCall
   VariantCallSetFile:
     is_a: File
