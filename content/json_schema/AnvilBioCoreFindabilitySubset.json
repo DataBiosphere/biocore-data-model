@@ -157,7 +157,7 @@
                     },
                     "type": "array"
                 },
-                "id": {
+                "dataset_id": {
                     "type": "string"
                 },
                 "owner": {
@@ -189,7 +189,7 @@
                 }
             },
             "required": [
-                "id"
+                "dataset_id"
             ],
             "title": "AnvilDataset",
             "type": "object"
@@ -215,6 +215,9 @@
                 "diagnosis_age_upper_bound": {
                     "type": "number"
                 },
+                "diagnosis_id": {
+                    "type": "string"
+                },
                 "disease": {
                     "description": "A property that identifies a disease or condition has been reported in this entity.",
                     "items": {
@@ -222,14 +225,7 @@
                     },
                     "type": "array"
                 },
-                "donor": {
-                    "description": "This property references the Donor organism from which the BioSample was acquired.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "id": {
+                "donor_id": {
                     "type": "string"
                 },
                 "onset_age_lower_bound": {
@@ -263,7 +259,7 @@
                 }
             },
             "required": [
-                "id"
+                "diagnosis_id"
             ],
             "title": "AnvilDiagnosis",
             "type": "object"
@@ -272,15 +268,15 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "donor_id": {
+                    "type": "string"
+                },
                 "genetic_ancestry": {
                     "description": "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
-                },
-                "id": {
-                    "type": "string"
                 },
                 "organism_type": {
                     "description": "A reference to the organism type.",
@@ -317,7 +313,7 @@
                 }
             },
             "required": [
-                "id"
+                "donor_id"
             ],
             "title": "AnvilDonor",
             "type": "object"
@@ -340,6 +336,9 @@
                     },
                     "type": "array"
                 },
+                "file_id": {
+                    "type": "string"
+                },
                 "file_md5sum": {
                     "items": {
                         "type": "string"
@@ -351,9 +350,6 @@
                 },
                 "file_size": {
                     "description": "Property that describes the approximate size of a file in megabytes.",
-                    "type": "string"
-                },
-                "id": {
                     "type": "string"
                 },
                 "is_supplementary": {
@@ -380,7 +376,7 @@
                 }
             },
             "required": [
-                "id"
+                "file_id"
             ],
             "title": "AnvilFile",
             "type": "object"
@@ -402,14 +398,14 @@
                     },
                     "type": "array"
                 },
-                "id": {
-                    "type": "string"
-                },
                 "principal_investigator": {
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "project_id": {
+                    "type": "string"
                 },
                 "registered_identifier": {
                     "items": {
@@ -428,7 +424,7 @@
                 }
             },
             "required": [
-                "id"
+                "project_id"
             ],
             "title": "AnvilProject",
             "type": "object"
@@ -471,7 +467,7 @@
                     },
                     "type": "array"
                 },
-                "id": {
+                "sequencingactivity_id": {
                     "type": "string"
                 },
                 "source_datarepo_row_ids": {
@@ -482,8 +478,7 @@
                 }
             },
             "required": [
-                "id",
-                "generated_file_id"
+                "sequencingactivity_id"
             ],
             "title": "AnvilSequencingActivity",
             "type": "object"
@@ -512,9 +507,6 @@
                     },
                     "type": "array"
                 },
-                "id": {
-                    "type": "string"
-                },
                 "reference_assembly": {
                     "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
                     "items": {
@@ -533,12 +525,13 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "variantcallingactivity_id": {
+                    "type": "string"
                 }
             },
             "required": [
-                "id",
-                "used_file_id",
-                "generated_file_id"
+                "variantcallingactivity_id"
             ],
             "title": "AnvilVariantCallingActivity",
             "type": "object"

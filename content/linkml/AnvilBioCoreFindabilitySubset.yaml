@@ -39,7 +39,7 @@ classes:
 
   AnvilDataset:
     slots:
-      - id
+      - dataset_id
       - consent_group # TerraDCAT_ap:hasConsentGroup
       - data_use_permission # TerraDCAT_ap:hasDataUsePermission
       - owner # TerraDCAT_ap:hasOwner
@@ -51,8 +51,8 @@ classes:
 
   AnvilDiagnosis:
     slots:
-      - id
-      - donor
+      - diagnosis_id
+      - donor_id
       - disease
       - age_at_diagnosis
       - age_at_onset
@@ -68,7 +68,7 @@ classes:
 
   AnvilDonor:
     slots:
-      - id
+      - donor_id
       - organism_type
       - part_of_dataset_id # TerraDCAT_ap:hasDataset
       - phenotypic_sex
@@ -78,7 +78,7 @@ classes:
 
   AnvilFile:
     slots:
-      - id
+      - file_id
       - data_modality
       - file_format
       - file_size
@@ -91,7 +91,7 @@ classes:
 
   AnvilProject:
     slots:
-      - id
+      - project_id
       - funded_by
       - generated_dataset_id
       - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
@@ -101,7 +101,7 @@ classes:
 
   AnvilSequencingActivity:
     slots:
-      - id
+      - sequencingactivity_id
       - activity_type
       - assay_type
       - data_modality
@@ -111,7 +111,7 @@ classes:
 
   AnvilVariantCallingActivity:
       slots:
-        - id
+        - variantcallingactivity_id
         - activity_type
         - used_file_id
         - generated_file_id
