@@ -62,7 +62,7 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "id": {
+                "antibody_id": {
                     "type": "string"
                 },
                 "target": {
@@ -73,7 +73,7 @@
                 }
             },
             "required": [
-                "id"
+                "antibody_id"
             ],
             "title": "AnvilAntibody",
             "type": "object"
@@ -95,6 +95,9 @@
                     },
                     "type": "array"
                 },
+                "biosample_id": {
+                    "type": "string"
+                },
                 "biosample_type": {
                     "items": {
                         "type": "string"
@@ -108,23 +111,25 @@
                     },
                     "type": "array"
                 },
-                "donor": {
-                    "description": "This property references the Donor organism from which the BioSample was acquired.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
                 "donor_age_at_collection": {
                     "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
                     "type": "string"
                 },
-                "id": {
+                "donor_age_at_collection_lower_bound": {
+                    "type": "number"
+                },
+                "donor_age_at_collection_unit": {
+                    "type": "string"
+                },
+                "donor_age_at_collection_upper_bound": {
+                    "type": "number"
+                },
+                "donor_id": {
                     "type": "string"
                 }
             },
             "required": [
-                "id"
+                "biosample_id"
             ],
             "title": "AnvilBioSample",
             "type": "object"
@@ -133,6 +138,12 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "consent_group": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
                     "items": {
@@ -140,7 +151,40 @@
                     },
                     "type": "array"
                 },
+                "data_use_permission": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "id": {
+                    "type": "string"
+                },
+                "owner": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "principal_investigator": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "registered_identifier": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "source_datarepo_row_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "title": {
                     "type": "string"
                 }
             },
@@ -162,6 +206,15 @@
                     "description": "A reference to the Age of the Donor at the onset of the disease associated with the diagnosis.",
                     "type": "string"
                 },
+                "diagnosis_age_lower_bound": {
+                    "type": "number"
+                },
+                "diagnosis_age_unit": {
+                    "type": "string"
+                },
+                "diagnosis_age_upper_bound": {
+                    "type": "number"
+                },
                 "disease": {
                     "description": "A property that identifies a disease or condition has been reported in this entity.",
                     "items": {
@@ -179,6 +232,15 @@
                 "id": {
                     "type": "string"
                 },
+                "onset_age_lower_bound": {
+                    "type": "number"
+                },
+                "onset_age_unit": {
+                    "type": "string"
+                },
+                "onset_age_upper_bound": {
+                    "type": "number"
+                },
                 "phenopacket": {
                     "description": "A reference to the phenopacket file.",
                     "items": {
@@ -188,6 +250,12 @@
                 },
                 "phenotype": {
                     "description": "A reference to the phenotype, preferably from the Human Phenotype Ontology. Phenopackets handled separately.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "source_datarepo_row_ids": {
                     "items": {
                         "type": "string"
                     },
@@ -221,6 +289,12 @@
                     },
                     "type": "array"
                 },
+                "part_of_dataset_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "phenotypic_sex": {
                     "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
                     "items": {
@@ -230,6 +304,12 @@
                 },
                 "reported_ethnicity": {
                     "description": "A property that relects a HumanDonor's reported ethnic origins.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "source_datarepo_row_ids": {
                     "items": {
                         "type": "string"
                     },
@@ -246,12 +326,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "checksum": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
                     "items": {
@@ -266,12 +340,24 @@
                     },
                     "type": "array"
                 },
+                "file_md5sum": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_ref": {
+                    "type": "string"
+                },
                 "file_size": {
                     "description": "Property that describes the approximate size of a file in megabytes.",
                     "type": "string"
                 },
                 "id": {
                     "type": "string"
+                },
+                "is_supplementary": {
+                    "type": "boolean"
                 },
                 "name": {
                     "items": {
@@ -281,6 +367,12 @@
                 },
                 "reference_assembly": {
                     "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "source_datarepo_row_ids": {
                     "items": {
                         "type": "string"
                     },
@@ -304,7 +396,34 @@
                     },
                     "type": "array"
                 },
+                "generated_dataset_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "id": {
+                    "type": "string"
+                },
+                "principal_investigator": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "registered_identifier": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "source_datarepo_row_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "title": {
                     "type": "string"
                 }
             },
@@ -346,12 +465,25 @@
                     },
                     "type": "array"
                 },
+                "generated_file_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "id": {
                     "type": "string"
+                },
+                "source_datarepo_row_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
-                "id"
+                "id",
+                "generated_file_id"
             ],
             "title": "AnvilSequencingActivity",
             "type": "object"
@@ -374,6 +506,12 @@
                     },
                     "type": "array"
                 },
+                "generated_file_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -383,10 +521,24 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "source_datarepo_row_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "used_file_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
-                "id"
+                "id",
+                "used_file_id",
+                "generated_file_id"
             ],
             "title": "AnvilVariantCallingActivity",
             "type": "object"
@@ -413,12 +565,6 @@
             "additionalProperties": false,
             "description": "",
             "title": "Class",
-            "type": "object"
-        },
-        "Container": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Container",
             "type": "object"
         },
         "Diagnosis": {

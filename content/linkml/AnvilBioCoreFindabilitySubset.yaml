@@ -20,34 +20,34 @@ classes:
   AnvilAntibody:
     is_a: Antibody
     slots:
-      - id
+      - antibody_id
       - target
   
   AnvilBioSample:
     is_a: BioSample
     slots:
-      - id
+      - biosample_id
       - anatomical_site
       - apriori_cell_type
       - biosample_type
       - disease
       - donor_age_at_collection
-      # - age_unit https://microbiomedata.github.io/nmdc-schema/QuantityValue/
-      # - lower_bound
-      # - upper_bound
-      - donor
+      - donor_age_at_collection_unit
+      - donor_age_at_collection_lower_bound
+      - donor_age_at_collection_upper_bound
+      - donor_id
 
   AnvilDataset:
     slots:
       - id
-      # - consent_group # TerraDCAT_ap:hasConsentGroup
-      # - data_use_permission # TerraDCAT_ap:hasDataUsePermission
-      # - owner # TerraDCAT_ap:hasOwner
-      # - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
-      # - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
-      # - title # TerraDCAT_ap:hasEntityTitle
+      - consent_group # TerraDCAT_ap:hasConsentGroup
+      - data_use_permission # TerraDCAT_ap:hasDataUsePermission
+      - owner # TerraDCAT_ap:hasOwner
+      - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
+      - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
+      - title # TerraDCAT_ap:hasEntityTitle
       - data_modality
-      # - source_datarepo_row_ids
+      - source_datarepo_row_ids
 
   AnvilDiagnosis:
     slots:
@@ -56,25 +56,25 @@ classes:
       - disease
       - age_at_diagnosis
       - age_at_onset
-      # - diagnosis_age_unit
-      # - diagnosis_age_lower_bound
-      # - diagnosis_age_upper_bound
-      # - onset_age_unit
-      # - onset_age_lower_bound
-      # - onset_age_upper_bound
+      - diagnosis_age_unit
+      - diagnosis_age_lower_bound
+      - diagnosis_age_upper_bound
+      - onset_age_unit
+      - onset_age_lower_bound
+      - onset_age_upper_bound
       - phenotype
       - phenopacket
-      # - source_datarepo_row_ids
+      - source_datarepo_row_ids
 
   AnvilDonor:
     slots:
       - id
       - organism_type
-      # - part_of_dataset_id # TerraDCAT_ap:hasDataset
+      - part_of_dataset_id # TerraDCAT_ap:hasDataset
       - phenotypic_sex
       - reported_ethnicity
       - genetic_ancestry
-      # - source_datarepo_row_ids
+      - source_datarepo_row_ids
 
   AnvilFile:
     slots:
@@ -82,23 +82,22 @@ classes:
       - data_modality
       - file_format
       - file_size
-      # - file_md5sum # say that it is_a: checksum
-      - checksum
+      - file_md5sum # say that it is_a: checksum
       - reference_assembly
       - name
-      # - file_ref
-      # - is_supplementary
-      # - source_datarepo_row_ids
+      - file_ref
+      - is_supplementary
+      - source_datarepo_row_ids
 
   AnvilProject:
     slots:
       - id
       - funded_by
-      # - generated_dataset_id
-      # - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
-      # - title # TerraDCAT_ap:hasEntityTitle
-      # - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
-      # - source_datarepo_row_ids
+      - generated_dataset_id
+      - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
+      - title # TerraDCAT_ap:hasEntityTitle
+      - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
+      - source_datarepo_row_ids
 
   AnvilSequencingActivity:
     slots:
@@ -106,33 +105,31 @@ classes:
       - activity_type
       - assay_type
       - data_modality
-      # - generated_file_id
+      - generated_file_id
       - biosample
-      # - source_datarepo_row_ids
+      - source_datarepo_row_ids
 
   AnvilVariantCallingActivity:
       slots:
         - id
         - activity_type
-        # - used_file_id
-        # - generated_file_id
+        - used_file_id
+        - generated_file_id
         - reference_assembly
         - data_modality
-        # - source_datarepo_row_ids
-
-  Container:
-    attributes:
-      # AnvilActivities:
-      #   multivalued: true
-      #   inlined_as_list: true
-      #   range: AnvilActivity
-      #   description:
-      #     all acvitity types
+        - source_datarepo_row_ids
+  # Container:
+  #   attributes:
+  #     # AnvilActivities:
+  #     #   multivalued: true
+  #     #   inlined_as_list: true
+  #     #   range: AnvilActivity
+  #     #   description:
+  #     #     all acvitity types
 slots:
   id:
     identifier: true  # this is the primary identifier for the class
     range: string
-    required: true
   xref_id: # external identifier for a donor
     is_a: id
     multivalued: true
@@ -142,140 +139,98 @@ slots:
   activity_id:
     is_a: id
   activity_type:
-    range: string
-  # used_file_id:
-  #   range: string
-  #   multivalued: true
-  # generated_file_id:
-  #   range: string
-  #   multivalued: true
-  # used_biosample_id:
-  #   range: string
-  #   multivalued: true
-  # source_datarepo_row_ids:
-  #   range: string
-  #   multivalued: true
-  # alignmentactivity_id:
-  #   range: string
-  #   required: true
-  # data_modality:
-  #   range: string
-  #   multivalued: true
-  # reference_assembly:
-  #   range: string
-  #   multivalued: true
-  # antibody_id:
-  #   range: string
-  #   required: true
-  # target:
-  #   range: string
-  # assayactivity_id:
-  #   range: string
-  #   required: true
-  # assay_type:
-  #   range: string
-  # biosample_id:
-  #   range: string
-  #   required: true
-  # anatomical_site:
-  #   range: string
-  # apriori_cell_type:
-  #   range: string
-  #   multivalued: true
-  # biosample_type:
-  #   range: string
-  # disease:
-  #   range: string
-  # donor_age_at_collection_unit:
-  #   range: string
-  # donor_age_at_collection_lower_bound:
-  #   range: float
-  # donor_age_at_collection_upper_bound:
-  #   range: float
-  # donor_id:
-  #   range: string
-  #   multivalued: true
-  # part_of_dataset_id:
-  #   range: string
-  #   multivalued: true
-  # dataset_id:
-  #   range: string
-  #   required: true
-  # consent_group:
-  #   range: string
-  #   multivalued: true
-  # data_use_permission:
-  #   range: string
-  #   multivalued: true
-  # owner:
-  #   range: string
-  #   multivalued: true
-  # principal_investigator:
-  #   range: string
-  #   multivalued: true
-  # registered_identifier:
-  #   range: string
-  #   multivalued: true
-  # title:
-  #   range: string
-  # diagnosis_id:
-  #   range: string
-  #   required: true
-  # diagnosis_age_unit:
-  #   range: string
-  # diagnosis_age_lower_bound:
-  #   range: float
-  # diagnosis_age_upper_bound:
-  #   range: float
-  # onset_age_unit:
-  #   range: string
-  # onset_age_lower_bound:
-  #   range: float
-  # onset_age_upper_bound:
-  #   range: float
-  # phenotype:
-  #   range: string
-  #   multivalued: true
-  # phenopacket:
-  #   range: string
-  #   multivalued: true
-  # organism_type:
-  #   range: string
-  # phenotypic_sex:
-  #   range: string
-  # reported_ethnicity:
-  #   range: string
-  #   multivalued: true
-  # genetic_ancestry:
-  #   range: string
-  #   multivalued: true
-  # file_id:
-  #   range: string
-  #   required: true
-  # file_format:
-  #   range: string
-  # file_size:
-  #   range: integer
-  # file_md5sum:
-  #   range: string
-  # file_name:
-  #   range: string
-  # file_ref:
-  #   range: string
-  # is_supplementary:
-  #   range: boolean
-  # project_id:
-  #   range: string
-  #   required: true
-  # funded_by:
-  #   range: string
-  #   multivalued: true
-  # generated_dataset_id:
-  #   range: string
-  #   multivalued: true
-  # sequencingactivity_id:
-  #   range: string
-  #   required: true
-  # variantcallingactivity_id:
-  #   range: string
-  #   required: true
+  used_file_id:
+    is_a: id
+    multivalued: true
+  generated_file_id:
+    is_a: id
+    multivalued: true
+  used_biosample_id:
+    is_a: id
+    multivalued: true
+  source_datarepo_row_ids:
+    multivalued: true
+  alignmentactivity_id:
+    is_a: id
+  data_modality:
+    multivalued: true
+  reference_assembly:
+    multivalued: true
+  antibody_id:
+    is_a: id
+  target:
+  assayactivity_id:
+    is_a: id
+  assay_type:
+  biosample_id:
+    is_a: id
+  anatomical_site:
+  apriori_cell_type:
+    multivalued: true
+  biosample_type:
+  disease:
+  donor_age_at_collection_unit:
+  donor_age_at_collection_lower_bound:
+    range: float
+  donor_age_at_collection_upper_bound:
+    range: float
+  donor_id:
+    is_a: id
+  part_of_dataset_id:
+    multivalued: true
+  dataset_id:
+    is_a: id
+  consent_group:
+    multivalued: true
+  data_use_permission:
+    multivalued: true
+  owner:
+    multivalued: true
+  principal_investigator:
+    multivalued: true
+  registered_identifier:
+    multivalued: true
+  title:
+  diagnosis_id:
+    is_a: id
+  diagnosis_age_unit:
+  diagnosis_age_lower_bound:
+    range: float
+  diagnosis_age_upper_bound:
+    range: float
+  onset_age_unit:
+  onset_age_lower_bound:
+    range: float
+  onset_age_upper_bound:
+    range: float
+  phenotype:
+    multivalued: true
+  phenopacket:
+    multivalued: true
+  organism_type:
+  phenotypic_sex:
+  reported_ethnicity:
+    multivalued: true
+  genetic_ancestry:
+    multivalued: true
+  file_id:
+    is_a: id
+  file_format:
+  file_size:
+    range: integer
+  file_md5sum:
+    is_a: checksum
+  file_name:
+  file_ref:
+  is_supplementary:
+    range: boolean
+  project_id:
+    is_a: id
+  funded_by:
+    multivalued: true
+  generated_dataset_id:
+    multivalued: true
+  sequencingactivity_id:
+    is_a: id
+  variantcallingactivity_id:
+    is_a: id
