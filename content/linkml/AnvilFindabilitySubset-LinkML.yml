@@ -283,16 +283,14 @@ slots:
     range: string
     multivalued: true
   generated_dataset_id:
-    range:
-
-# string
-#     multivalued: true
-#   sequencingactivity_id:
-#     range: string
-#     required: true
-#   variantcallingactivity_id:
-#     range: string
-#     required: true
+    range: string
+    multivalued: true
+  sequencingactivity_id:
+    range: string
+    required: true
+  variantcallingactivity_id:
+    range: string
+    required: true
 
 relationships:
   from_activity.used_file_id_to_file.file_id:

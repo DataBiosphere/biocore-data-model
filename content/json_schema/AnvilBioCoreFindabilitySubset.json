@@ -34,6 +34,9 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "activity_id": {
+                    "type": "string"
+                },
                 "activity_type": {
                     "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
                     "items": {
@@ -41,11 +44,8 @@
                     },
                     "type": "array"
                 },
-                "id": {
-                    "type": "string"
-                },
                 "xref_id": {
-                    "description": "other identifiers for the person, e.g. ORCID, etc.",
+                    "description": "other identifiers for the person, e.g. ORCID, etc",
                     "items": {
                         "type": "string"
                     },
@@ -53,7 +53,7 @@
                 }
             },
             "required": [
-                "id"
+                "activity_id"
             ],
             "title": "AnvilActivity",
             "type": "object"

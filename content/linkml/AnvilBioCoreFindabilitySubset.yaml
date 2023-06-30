@@ -13,7 +13,7 @@ classes:
   AnvilActivity:
     is_a: Activity
     slots:
-     - id
+     - activity_id
      - activity_type
      - xref_id
 
@@ -82,7 +82,7 @@ classes:
       - data_modality
       - file_format
       - file_size
-      # - file_md5sum
+      # - file_md5sum # say that it is_a: checksum
       - checksum
       - reference_assembly
       - name
@@ -131,8 +131,151 @@ classes:
 slots:
   id:
     identifier: true  # this is the primary identifier for the class
+    range: string
+    required: true
   xref_id: # external identifier for a donor
+    is_a: id
     multivalued: true
     recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
     description:
-      other identifiers for the person, e.g. ORCID, etc.
+      other identifiers for the person, e.g. ORCID, etc
+  activity_id:
+    is_a: id
+  activity_type:
+    range: string
+  # used_file_id:
+  #   range: string
+  #   multivalued: true
+  # generated_file_id:
+  #   range: string
+  #   multivalued: true
+  # used_biosample_id:
+  #   range: string
+  #   multivalued: true
+  # source_datarepo_row_ids:
+  #   range: string
+  #   multivalued: true
+  # alignmentactivity_id:
+  #   range: string
+  #   required: true
+  # data_modality:
+  #   range: string
+  #   multivalued: true
+  # reference_assembly:
+  #   range: string
+  #   multivalued: true
+  # antibody_id:
+  #   range: string
+  #   required: true
+  # target:
+  #   range: string
+  # assayactivity_id:
+  #   range: string
+  #   required: true
+  # assay_type:
+  #   range: string
+  # biosample_id:
+  #   range: string
+  #   required: true
+  # anatomical_site:
+  #   range: string
+  # apriori_cell_type:
+  #   range: string
+  #   multivalued: true
+  # biosample_type:
+  #   range: string
+  # disease:
+  #   range: string
+  # donor_age_at_collection_unit:
+  #   range: string
+  # donor_age_at_collection_lower_bound:
+  #   range: float
+  # donor_age_at_collection_upper_bound:
+  #   range: float
+  # donor_id:
+  #   range: string
+  #   multivalued: true
+  # part_of_dataset_id:
+  #   range: string
+  #   multivalued: true
+  # dataset_id:
+  #   range: string
+  #   required: true
+  # consent_group:
+  #   range: string
+  #   multivalued: true
+  # data_use_permission:
+  #   range: string
+  #   multivalued: true
+  # owner:
+  #   range: string
+  #   multivalued: true
+  # principal_investigator:
+  #   range: string
+  #   multivalued: true
+  # registered_identifier:
+  #   range: string
+  #   multivalued: true
+  # title:
+  #   range: string
+  # diagnosis_id:
+  #   range: string
+  #   required: true
+  # diagnosis_age_unit:
+  #   range: string
+  # diagnosis_age_lower_bound:
+  #   range: float
+  # diagnosis_age_upper_bound:
+  #   range: float
+  # onset_age_unit:
+  #   range: string
+  # onset_age_lower_bound:
+  #   range: float
+  # onset_age_upper_bound:
+  #   range: float
+  # phenotype:
+  #   range: string
+  #   multivalued: true
+  # phenopacket:
+  #   range: string
+  #   multivalued: true
+  # organism_type:
+  #   range: string
+  # phenotypic_sex:
+  #   range: string
+  # reported_ethnicity:
+  #   range: string
+  #   multivalued: true
+  # genetic_ancestry:
+  #   range: string
+  #   multivalued: true
+  # file_id:
+  #   range: string
+  #   required: true
+  # file_format:
+  #   range: string
+  # file_size:
+  #   range: integer
+  # file_md5sum:
+  #   range: string
+  # file_name:
+  #   range: string
+  # file_ref:
+  #   range: string
+  # is_supplementary:
+  #   range: boolean
+  # project_id:
+  #   range: string
+  #   required: true
+  # funded_by:
+  #   range: string
+  #   multivalued: true
+  # generated_dataset_id:
+  #   range: string
+  #   multivalued: true
+  # sequencingactivity_id:
+  #   range: string
+  #   required: true
+  # variantcallingactivity_id:
+  #   range: string
+  #   required: true
