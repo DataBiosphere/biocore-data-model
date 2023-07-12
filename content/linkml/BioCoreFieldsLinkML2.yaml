@@ -1,3 +1,4 @@
+# test version, with columnNames as alias, maybe the right way or too complicated?
 name: BioCoreFields
 description: Definition of all fields (e.g. column headers) in LinkML as slots.
 id: https://datamodel.terra.bio/BioCoreFieldsLinkML # the ID of this file

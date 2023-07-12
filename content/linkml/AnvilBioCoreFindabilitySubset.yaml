@@ -5,7 +5,7 @@ prefixes:
 default_prefix: anvil
 imports:
   - linkml:types # this imports the linkml types schema
-  - BioCoreFieldsLinkML
+  - BioCoreFields
   - BioCoreTables
 default_range: string # if not specified, the default range is string
 classes:

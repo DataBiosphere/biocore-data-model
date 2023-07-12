@@ -1,244 +1,168 @@
 name: BioCoreFields
-description: Definition of all fields (e.g. column headers) in LinkML as slots.
-id: https://datamodel.terra.bio/BioCoreFieldsLinkML # the ID of this file
+description: BioCoreFields
+id: https://datamodel.terra.bio/BioCoreFields
 imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  BioCore: https://datamodel.terra.bio # need to decide on URL
+  BioCoreFields: https://w3id.org/None/
 default_prefix: BioCoreFields
 slots:
-  # member:
-  #   slot_uri: rdfs:member
-  #   multivalued: true
+  member:
+    slot_uri: rdfs:member
+    multivalued: true
   wasUsedBy:
     slot_uri: http://www.w3.org/ns/prov#wasUsedBy
     multivalued: true
-  confirms_diease:
-    aliases: confirmsDisease
-    description: A property that identifies a disease or condition has been confirmed through diagnosis.  Contrast with has_disease.
+  confirmsDisease:
     slot_uri: https://datamodel.terra.bio/TerraCore#confirmsDisease
     multivalued: true
   donated:
     slot_uri: https://datamodel.terra.bio/TerraCore#donated
     multivalued: true
-  age:
-    aliases: hasAge
-    description: A reference to the Age of the Donor at the point in time that data was collected or that the BioSample was obtained.
+  hasAge:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAge
     multivalued: true
-  age_at_death:
-    aliases: hasAgeAtDeath
-    description: A reference to the Age of the Donor at time of death.
+  hasAgeAtDeath:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtDeath
-    multivalued: false
-  age_at_diagnosis:
-    aliases: hasAgeAtDiagnosis
-    description: A reference to the Age of the Donor at the point in time that diagnosis was made.
+    multivalued: true
+  hasAgeAtDiagnosis:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtDiagnosis
-    multivalued: false # again question
-  age_at_onset:
-    aliases: hasAgeAtOnset
-    description: A reference to the Age of the Donor at the onset of the disease associated with the diagnosis.
+    multivalued: true
+  hasAgeAtOnset:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtOnset
-    multivalued: false # will onsets for multiple conditions ever be presented in an array?
-  apriori_cell_type:
-    aliases: hasAprioriCellType
+    multivalued: true
+  hasAprioriCellType:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAprioriCellType
     multivalued: true
-  assay:
-    aliases: hasAssayActivity, hasAssay
-    description: A subproperty of usedBy which indicates that an AssayActivity was performed using this entity.
+  hasAssayActivity:
     is_a: wasUsedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAssayActivity
     multivalued: true
-  assay_type:
-    aliases: hasAssayType
-    description: A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070).
+  hasAssayType:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAssayType
     multivalued: true
-  biosample:
-    aliases: hasBioSample
-    description: This property references the BioSample donated by the Donor.
-    # inverse: donor # need to decide if this can work on nonDonor (e.g. Diagnosis, then this is not an inverse)
+  hasBioSample:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasBioSample
     multivalued: true
-  biosample_type:
-    aliases: hasBioSampleType
+  hasBioSampleType:
     comments:
     - Need definition
-    is_a: sample_type
+    is_a: hasSampleType
     slot_uri: https://datamodel.terra.bio/TerraCore#hasBioSampleType
     multivalued: true
-  child:
-    aliases: hasChild
-    description: A property that identifies genetic children.
+  hasChild:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasChild
     multivalued: true
-  country:
-    aliases: hasCountry
+  hasCountry:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCountry
     multivalued: true
-  xref:
-    aliases: hasCrossReference
+  hasCrossReference:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCrossReference
     multivalued: true
-  current_address:
-    aliases: hasCurrentAddress
+  hasCurrentAddress:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCurrentAddress
     multivalued: true
-  data_modality:
-    aliases: hasDataModality
-    description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
+  hasDataModality:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDataModality
     multivalued: true
-  diagnosis:
-    aliases: hasDiagnosis
-    description: A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.
+  hasDiagnosis:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDiagnosis
     multivalued: true
-  donor:
-    aliases: hasDonor
-    description: This property references the Donor organism from which the BioSample was acquired.
-    inverse: donated
+  hasDonor:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     multivalued: true
-  donor_age_at_collection:
-    aliases: hasDonorAgeAtCollection
-    description: A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
+  hasDonorAgeAtCollection:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection
-    multivalued: false # check if this could be array
-  donor_age_at_event:
-    aliases: hasDonorAgeAtEvent
-    description: A reference to the Age of the Donor at the point in time that the event or administration occured.
-    is_a: age
+    multivalued: true
+  hasDonorAgeAtEvent:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorAgeAtEvent
-    multivalued: false
-  file_size:
-    aliases: hasFileSize
-    description: Property that describes the approximate size of a file in megabytes.
+    multivalued: true
+  hasFileSize:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFileSize
-    multivalued: false
-  half_sibling:
-    aliases: hasHalfSibling
-    description: A property that identifies genetic half siblings.
+    multivalued: true
+  hasHalfSibling:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasHalfSibling
     multivalued: true
-  library_prep:
-    aliases: hasLibraryPrepActivity, hasLibraryPrep
-    description: A subproperty of usedBy which indicates that LibraryPreparation was performed using this entity.
+  hasLibraryPrepActivity:
+    comments:
+    - Need definition
     is_a: wasUsedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLibraryPrepActivity
     multivalued: true
-  library_prep_type:
-    aliases: hasLibraryPreparationType
+  hasLibraryPreparationType:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLibraryPreparationType
     multivalued: true
-  measurement:
-    aliases: hasMeasurement
-    description: A reference to a Measurement related to this Donor.
+  hasMeasurement:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMeasurement
     multivalued: true
-  mol_sample_type:
-    aliases: hasMolecularSampleType
-    comments:
-    - Need definition
+  hasMolecularSampleType:
     is_a: hasSampleType
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMolecularSampleType
     multivalued: true
-  parent:
-    aliases: hasParent
-    description: A property that identifies genetic parents.
+  hasParent:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasParent
     multivalued: true
-  phenopacket:
-    aliases: hasPhenopacket
-    description: A reference to the phenopacket file.
+  hasPhenopacket:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPhenopacket
     multivalued: true
-  phenotypic_sex:
-    aliases: hasPhenotypicSex
-    description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\
-#    comment: mapping to obo PATO_0001894
+  hasPhenotypicSex:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPhenotypicSex
     multivalued: true
-  sample_treatment:
-    aliases: hasSampleTreatment
-    description: A sample treatment of a BioSample. A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity.
+  hasSampleTreatment:
     is_a: wasUsedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSampleTreatment
     multivalued: true
-  seq_location:
-    aliases: hasSequenceLocation, hasLocation
-    description: "Location of variation on a sequence. For example, for human genome: chr7:140753336-140753337"
+  hasSequenceLocation:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSequenceLocation
     multivalued: true
-  sequencing:
-    aliases: hasSequencingActivity, hasSequencing
-    description: A subproperty of usedBy which indicates that a SequencingActivity was performed using this entity.
+  hasSequencingActivity:
     is_a: wasUsedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSequencingActivity
     multivalued: true
-  service_provider:
-    aliases: hasServiceProvider
-    description: A reference to the organization performing this activity.
+  hasServiceProvider:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasServiceProvider
     multivalued: true
-  sex_assigned_at_birth:
-    aliases: hasSexAssignedAtBirth
-    description: A reference to the BiologicalSex assigned to the donor organism at birth by a medical professional.
+  hasSexAssignedAtBirth:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSexAssignedAtBirth
     multivalued: true
-  sibling:
-    aliases: hasSibling
-    description: A property that identifies full genetic siblings.
+  hasSibling:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSibling
     multivalued: true
-  treatment:
-    aliases: hasTreatment
-    description: A reference to the therapeutic treatment undertaken for this Donor.
+  hasTreatment:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTreatment
     multivalued: true
-  variant_call:
-    aliases: hasVariantCall
+  hasVariantCall:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasVariantCall
     multivalued: true
-  weight:
-    aliases: hasWeight
-    description: A property that provides a measurement of the mass of a material entity.
+  hasWeight:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasWeight
     multivalued: true
-  funded_by:
-    aliases: isFundedBy
-    description: A relationship defining the funding source.  The range is expected to include grants, organizations, or a string indicating the funding source.
+  isFundedBy:
     slot_uri: https://datamodel.terra.bio/TerraCore#isFundedBy
     multivalued: true
-  generated_by_pipeline:
-    aliases: isGeneratedByPipeline
+  isGeneratedByPipeline:
     comments:
     - Need definition
     is_a: wasGeneratedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#isGeneratedByPipeline
     multivalued: true
-  paired_with:
-    aliases: isPairedWith
+  isPairedWith:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#isPairedWith
     multivalued: true
-  antibody:
-    aliases: usesAntibody
-    description: May be a reference to an antibody used for a SampleTreatmentActivity or another Activity.
+  usesAntibody:
     comments:
     - Can be used as an ObjectProperty with the Antibody class or as a DataType property,
       depending on need. Antibody should be linked to OBI in future. Note this could
@@ -246,69 +170,47 @@ slots:
     is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesAntibody
     multivalued: true
-  library:
-    aliases: usesLibrary
-    description: A reference to a Sequencing Library used in this activity.
+  usesLibrary:
     is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesLibrary
     multivalued: true
-  reference_assembly:
-    aliases: usesReferenceAssembly
-    description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
+  usesReferenceAssembly:
     slot_uri: https://datamodel.terra.bio/TerraCore#usesReferenceAssembly
     multivalued: true
-  sample:
-    aliases: usesSample
-    description: A reference to the sample used by this activity.
+  usesSample:
     comments:
     - BioSample and MolecularSample both inherit range from Sample
     is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesSample
     multivalued: true
-  activity_type:
-    aliases: hasActivityType
-    description: A reference to the type of activity, preferably using an identifier in a recommended standard ontology.
+  hasActivityType:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasActivityType
     multivalued: true
-  age_category:
-    aliases: hasAgeCategory
-    description: A category of age e.g. Embryonic or Postnatal.
+  hasAgeCategory:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeCategory
     multivalued: true
-  age_unit:
-    aliases: hasAgeUnit
-    description: A reference to the unit of time during which an entity has existed e.g. years or days.
-    is_a: unit
+  hasAgeUnit:
+    is_a: hasUnit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeUnit
     multivalued: true
-  aligned_fragments:
-    aliases: hasAlignedFragments
-    description: Need definition.
+  hasAlignedFragments:
     comments:
     - For alignment file types.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAlignedFragments
     multivalued: true
-  allele:
-    aliases: hasAllele
+  hasAllele:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAllele
     multivalued: true
-  amount:
-    aliases: hasAmount
-    description: A property that identifies the numerical quantity of an entity.
-    range: decimal
+  hasAmount:
     comments:
     - Consider replacing with a measurement ontology
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAmount
     multivalued: true
-  amount_unit:
-    aliases: hasAmountUnit
-    description: A property that captures the units of an entity. The units may be an amount such as moles or grams; or a concentration, such as g/mL or molarity. Other units may include enzyme activity, the specific activity of a radionucleotide, or the titer of an antibody.
-    is_a: unit
+  hasAmountUnit:
+    is_a: hasUnit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAmountUnit
     multivalued: true
-  anatomical_region:
-    aliases: hasAnatomicalRegion
-    description: A reference to the physical location within the AnatomicalSite from which the BioSample was taken.
+  hasAnatomicalRegion:
     comments:
     - Many groups are convening to define Common Coordinate Frameworks for specific
       organs/species.  This will be a rapidly evolving area in the near future.  Thus
@@ -317,506 +219,372 @@ slots:
       these groups.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAnatomicalRegion
     multivalued: true
-  anatomical_site:
-    aliases: hasAnatomicalSite
-    description: A reference to the site within the organism from which the BioSample was taken.
+  hasAnatomicalSite:
     comments:
     - May want to consider restricting this to UBERON terms but currently any URI
       is allowed.  This is useful for imaging and other whole body samples as UBERON
       does not have \"whole body\".  Use NCIT:C13041 for this.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAnatomicalSite
     multivalued: true
-  average_read_length:
-    aliases: hasAverageReadLength
-    range: decimal
+  hasAverageReadLength:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAverageReadLength
     multivalued: true
-  birth_year:
-    aliases: hasBirthYear
-    range: integer
+  hasBirthYear:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasBirthYear
     multivalued: true
-  cell_cycle:
-    aliases: hasCellCycle
-    description: A property that describes the stage of the cell cycle at the time the sample was obtained.
+  hasCellCycle:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCellCycle
     multivalued: true
-  cell_state:
-    aliases: hasCellState
-    description: A property that describes the cell’s metabolic or electrophysiological state.
+  hasCellState:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasCellState
     multivalued: true
-  checksum:
-    aliases: hasChecksum
+  hasChecksum:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasChecksum
     multivalued: true
-  chromosome:
-    aliases: hasChromosome
+  hasChromosome:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasChromosome
     multivalued: true
-  clonality:
-    aliases: hasClonality
-    description: e.g. monoclonal or polyclonal
+  hasClonality:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasClonality
     multivalued: true
-  date_collected:
-    aliases: hasDateCollected
-    description: Date the BioSample was originally collected from its Donor.
-    range: datetime
+  hasDateCollected:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateCollected
-    multivalued: false
-  date_of_birth:
-    aliases: hasDateOfBirth
-    description: A reference to the date of birth of the Donor or Family Member.
-    range: datetime
+    multivalued: true
+  hasDateOfBirth:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateOfBirth
-    multivalued: false
-  date_of_death:
-    aliases: hasDateOfDeath
-    description: A reference to the date of death of the Donor or Family Member.
-    range: datetime
+    multivalued: true
+  hasDateOfDeath:
+    comments:
+    - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDateOfDeath
-    multivalued: false
-  developmental_stage:
-    aliases: hasDevelopmentalStage
+    multivalued: true
+  hasDevelopmentalStage:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDevelopmentalStage
     multivalued: true
-  disease:
-    aliases: hasDisease
-    description: A property that identifies a disease or condition has been reported in this entity.
+  hasDisease:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDisease
     multivalued: true
-  disease_stage_type:
-    aliases: hasDiseaseStageType
+  hasDiseaseStageType:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDiseaseStageType
     multivalued: true
-  disease_stage_value:
-    aliases: hasDiseaseStageValue
+  hasDiseaseStageValue:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDiseaseStageValue
     multivalued: true
-  donor_treatment_type:
-    aliases: hasDonorTreatmentType
+  hasDonorTreatmentType:
     comments:
-    - Need definition
     - Need to add recommended vocabulary.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorTreatmentType
     multivalued: true
-  dose:
-    aliases: hasDose
-    description: A reference to the dosage information relevant to this Donor Treatment or Medication.
+  hasDose:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDose
     multivalued: true
-  duplicate_fragments:
-    aliases: hasDuplicateFragments
-    range: integer
+  hasDuplicateFragments:
     comments:
     - For alignment data types.
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDuplicateFragments
     multivalued: true
-  duration:
-    aliases: hasDuration
-    range: decimal
+  hasDuration:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDuration
     multivalued: true
-  duration_unit:
-    aliases: hasDurationUnit
-    description: e.g. min seconds hours days
+  hasDurationUnit:
     comments:
     - Need definition
-    is_a: unit
+    is_a: hasUnit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDurationUnit
     multivalued: true
-  estimated_library_size:
-    aliases: hasEstimatedLibrarySize
+  hasEstimatedLibrarySize:
     comments:
     - For alignment file types.
     - Need definition
-    range: integer
     slot_uri: https://datamodel.terra.bio/TerraCore#hasEstimatedLibrarySize
     multivalued: true
-  family_identifier:
-    aliases: hasFamilyIdentifier
-    description: A property identifies the family with whom this Donor is affiliated.
+  hasFamilyIdentifier:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFamilyIdentifier
     multivalued: true
-  file_format:
-    aliases: hasFileFormat
-    description: An indication of the format of an electronic file; include the full file extension including compression extensions.
+  hasFileFormat:
     comments:
     - The definition of this field follows the convention used by the Human Cell Atlas.
-    # is_a: format
+    is_a: format
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFileFormat
     multivalued: true
-  fragments:
-    aliases: hasFragments
+  hasFragments:
     comments:
     - For alignment file types.
     - Need definition
-    range: integer
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFragments
     multivalued: true
-  grc_name:
-    aliases: hasGRCName
+  hasGRCName:
     comments:
     - Name of the Reference Assembly in Genome Reference Consortium format (ncbi.nlm.nih.gov/grc.  Still
       draft.
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGRCName
     multivalued: true
-  gene_context:
-    aliases: hasGeneContext
-    description: A specific gene identified that applies to this variant.
+  hasGeneContext:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneContext
     multivalued: true
-  gene_expression_program:
-    aliases: hasGeneExpressionProgram
-    description: A property that characterizes the gene expression patterns at work in the cell.
+  hasGeneExpressionProgram:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneExpressionProgram
     multivalued: true
-  genetic_ancestry:
-    aliases: hasGeneticAncestry
-    description: A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.
+  hasGeneticAncestry:
     comments:
     - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneticAncestry
     multivalued: true
-  genetic_mod:
-    aliases: hasGeneticModification
-    description: A reference to a genetic modification of a BioSample.
+  hasGeneticModification:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneticModification
     multivalued: true
-  genetic_mod_method:
-    aliases: hasGeneticModificationMethod
-    description: The method of a GeneticModification.
+  hasGeneticModificationMethod:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneticModificationMethod
     multivalued: true
-  genetic_mod_ref:
-    aliases: hasGeneticModificationReference
-    description: An external reference to a genetic modification method.
+  hasGeneticModificationReference:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneticModificationReference
     multivalued: true
-  genetic_mod_type: 
-    aliases: hasGeneticModificationType
+  hasGeneticModificationType:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGeneticModificationType
     multivalued: true
-  genotypic_sex:
-    aliases: hasGenotypicSex
-    description: A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes. [PATO]
+  hasGenotypicSex:
     comments:
     - Add equivalence to http://purl.obolibrary.org/obo/PATO_0020000
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGenotypicSex
     multivalued: true
-  grade:
-    aliases: hasGrade
+  hasGrade:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasGrade
     multivalued: true
-  host_organism:
-    aliases: hasHostOrganism
+  hasHostOrganism:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasHostOrganism
     multivalued: true
-  immunogen:
-    aliases: hasImmunogen
+  hasImmunogen:
     comments:
     - Need definition
     - Target is a string for now but will ultimately be a class. CHEBI term CHEBI:60816
     slot_uri: https://datamodel.terra.bio/TerraCore#hasImmunogen
     multivalued: true
-  library_layout:
-    aliases: hasLibraryLayout
-    description: An indicator of whether the referenced library was prepared for paired or single end sequencing.
+  hasLibraryLayout:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLibraryLayout
     multivalued: true
-  lot:
-    aliases: hasLot
-    description: The lot unit of an entity.
+  hasLot:
     comments:
     - A serial or lot number that was manufactured together. Added for Antibodies
       but domain can expand.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLot
     multivalued: true
-  lower_bound:
-    aliases: hasLowerBound
+  hasLowerBound:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLowerBound
     multivalued: true
-  manner_of_death:
-    aliases: hasMannerOfDeath
+  hasMannerOfDeath:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMannerOfDeath
     multivalued: true
-  measurement_type:
-    aliases: hasMeasurementType
+  hasMeasurementType:
     comments:
     - Recommend LOINC or SNOMED vocabularies.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMeasurementType
     multivalued: true
-  medication:
-    aliases: hasMedication
-    description: A reference to the medication information relevant to this entity.
+  hasMedication:
     comments:
     - Recommend term or URL from MEDDRA or RxNORM. Note that this model of a medication
       is subject to change.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMedication
     multivalued: true
-  morphology:
-    aliases: hasMorphology
+  hasMorphology:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMorphology
     multivalued: true
-  non_dup_frag:
-    aliases: hasNonDuplicatedFragments
+  hasNonDuplicatedFragments:
     comments:
     - For alignment file types.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasNonDuplicatedFragments
     multivalued: true
-  organism_type:
-    aliases: hasOrganismType
-    description: A reference to the organism type.
+  hasOrganismType:
     comments:
     - 'For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 '
     slot_uri: https://datamodel.terra.bio/TerraCore#hasOrganismType
     multivalued: true
-  paired_end_identifier:
-    aliases: hasPairedEndIdentifier
+  hasPairedEndIdentifier:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPairedEndIdentifier
     multivalued: true
-  part_number:
-    aliases: hasPartNumber
-    description: The part number or catalogue number (e.g. Stock Keeping Unit) of an entity.
+  hasPartNumber:
     comments:
     - The part number is for reordering. Added for Antibodies but domain can expand.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPartNumber
     multivalued: true
-  percent_aligned_reads:
-    aliases: hasPercentAlignedReads
+  hasPercentAlignedReads:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPercentAlignedReads
     multivalued: true
-  percent_dup_frag:
-    aliases: hasPercentDuplicateFragments
+  hasPercentDuplicateFragments:
     comments:
     - For alignment file types.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPercentDuplicateFragments
     multivalued: true
-  phenotype:
-    aliases: hasPhenotype
-    description: A reference to the phenotype, preferably from the Human Phenotype Ontology. Phenopackets handled separately.
+  hasPhenotype:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPhenotype
     multivalued: true
-  platform:
-    aliases: hasPlatform
-    description: A reference to the instrument or platform type used to conduct this activity.
+  hasPlatform:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPlatform
     multivalued: true
-  platform_identifier:
-    aliases: hasPlatformIdentifier
-    description: A reference to the instrument or platform type used to conduct this activity.
+  hasPlatformIdentifier:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPlatformIdentifier
     multivalued: true
-  preservation_state:
-    aliases: hasPreservationState
-    description: Method used to preserve the BioSample, if relevant, or Fresh for BioSamples that were not preserved.
+  hasPreservationState:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPreservationState
     multivalued: true
-  protocol:
-    aliases: hasProtocol
+  hasProtocol:
     is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#hasProtocol
     multivalued: true
-  race:
-    aliases: hasRace
-    description: A property that relects a HumanDonor's reported race.
+  hasRace:
     comments:
     - Considering using HANCESTRO ancestry category subclasses as options here.  In
       the meantime, capturing a text string.  Also consider whether we need to track
       reported and genetic as determined by genetic analysis.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasRace
     multivalued: true
-  read_count:
-    aliases: hasReadCount
-    range: integer
+  hasReadCount:
     comments:
     - Domain will change from File to SequencingOutputFile or SequenceActivity in
       future.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasReadCount
     multivalued: true
-  read_length:
-    aliases: hasReadLength
-    range: integer
+  hasReadLength:
     comments:
     - Domain will change from File to SequencingOutputFile or SequenceActivity in
       future.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasReadLength
     multivalued: true
-  ref_allele:
-    aliases: hasReferenceAllele
-    description: The state of a molecule at a identified location.
+  hasReferenceAllele:
     comments:
     - See also https://vrs.ga4gh.org/en/stable/terms_and_model.html#allele for a more
       comprehensive model.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasReferenceAllele
     multivalued: true
-  reported_ethnicity:
-    aliases: hasReportedEthnicity
-    description: A property that relects a HumanDonor's reported ethnic origins.
+  hasReportedEthnicity:
     comments:
     - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasReportedEthnicity
     multivalued: true
-  sample_treatment_method:
-    aliases: hasSampleTreatmentMethod
-    description: The method of a SampleTreatmentActivity.
+  hasSampleTreatmentMethod:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSampleTreatmentMethod
     multivalued: true
-  sample_treatment_type:
-    aliases: hasSampleTreatmentType
-    description: The type of a BioSample treatment type, see valuesets for examples.
+  hasSampleTreatmentType:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSampleTreatmentType
     multivalued: true
-  sample_type:
-    aliases: hasSampleType
+  hasSampleType:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSampleType
     multivalued: true
-  sequence_expression:
-    aliases: hasSequenceExpression
-    description: An expression describing a Sequence, for example HGVS or ISCN.
+  hasSequenceExpression:
     comments:
     - See https://vrs.ga4gh.org/en/stable/terms_and_model.html#sequence-expression
       and https://vrsatile.readthedocs.io/en/latest/value_object_descriptor/index.html#expression.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSequenceExpression
     multivalued: true
-  source_manufact:
-    aliases: hasSource
-    description: The source of production for an entity.
+  hasSource:
     comments:
     - The source is a string but will ultimately be a Vendor class. Added for Antibodies
       but domain can expand.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasSource
     multivalued: true
-  start_position:
-    aliases: hasStartPosition
-    description: A reference to the start position on the chromosome identified.
-    range: integer
+  hasStartPosition:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasStartPosition
     multivalued: true
-  stop_position:
-    aliases: hasStopPosition
-    range: integer
+  hasStopPosition:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasStopPosition
     multivalued: true
-  strain:
-    aliases: hasStrain
-    description: Text string to represent the strain.
+  hasStrain:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasStrain
     multivalued: true
-  structural_variation_type:
-    aliases: hasStructuralVariationType
-    description: A sequence variant that changes one or more structural features (Sequence Ontology).
+  hasStructuralVariationType:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasStructuralVariationType
     multivalued: true
-  target:
-    aliases: hasTarget
+  hasTarget:
     comments:
     - Need definition
     - Target is a string for now but will ultimately be a class, and this will change
       to an ObjectProperty.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTarget
     multivalued: true
-  temperature_unit:
-    aliases: hasTemperatureUnit
+  hasTemperatureUnit:
     comments:
     - Need definition
-    is_a: unit
+    is_a: hasUnit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTemperatureUnit
     multivalued: true
-  term_name:
-    aliases: hasTermName
+  hasTermName:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTermName
     multivalued: true
-  treatment_outcome:
-    aliases: hasTreatmentOutcome
-    description: A reference to the outcome of this Treatment.
+  hasTreatmentOutcome:
     comments:
     - Should the model define a preferred vocabulary? e.g. positive, negative, no
       effect?  The specific outcome may need to be more specific, reduced tumor size
       by  .. but the categories listed are useful.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTreatmentOutcome
     multivalued: true
-  tumor_morphology:
-    aliases: hasTumorMorphology
+  hasTumorMorphology:
     comments:
     - Need definition
     is_a: hasMorphology
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTumorMorphology
     multivalued: true
-  uri:
-    aliases: hasURI
+  hasURI:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasURI
     multivalued: true
-  unit:
-    aliases: hasUnit
+  hasUnit:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasUnit
     multivalued: true
-  upper_bound:
-    aliases: hasUpperBound
+  hasUpperBound:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasUpperBound
     multivalued: true
-  weight_unit:
-    aliases: hasWeightUnit
-    description: A reference to the measurement unit for mass.
-    is_a: unit
+  hasWeightUnit:
+    is_a: hasUnit
     slot_uri: https://datamodel.terra.bio/TerraCore#hasWeightUnit
     multivalued: true
-  cause_of_death:
-    aliases: isCauseOfDeath
+  isCauseOfDeath:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#isCauseOfDeath
     multivalued: true
-  contributor_to_death:
-    aliases: isContributorToDeath
+  isContributorToDeath:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#isContributorToDeath
     multivalued: true
-  whole_cell:
-    aliases: isWholeCell
+  isWholeCell:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#isWholeCell
     multivalued: true
-  software:
-    aliases: usesSoftware
-    description: A reference to a software tool or command line.
+  usesSoftware:
     slot_uri: https://datamodel.terra.bio/TerraCore#usesSoftware
     multivalued: true
   domainIncludes:
@@ -950,47 +718,41 @@ slots:
   hasAlpha2Code:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAlpha2Code
     multivalued: true
-  life_stage:
-    aliases: hasLifeStage
+  hasColumnLabel:
+    comments:
+    - Need definition
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasColumnLabel
+    multivalued: true
+  hasLifeStage:
     comments:
     - Varies per species; temporary solution
     slot_uri: https://datamodel.terra.bio/TerraCore#hasLifeStage
     multivalued: true
-  mailing_address:
-    aliases: hasMailingAddress
-    description: Text form of the address, including country and postal code.
+  hasMailingAddress:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMailingAddress
     multivalued: true
-  missing_value_reason:
-    aliases: hasMissingValueReason
+  hasMissingValueReason:
     comments:
     - The reason choices are taken from the International Nucleotide Sequencing Data
       Collaborative (INSDC); see https://www.insdc.org/missing-value-reporting#.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMissingValueReason
     multivalued: true
-  paired_normal:
-    aliases: hasPairedNormal
+  hasPairedNormal:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPairedNormal
     multivalued: true
-  paired_tumor:
-    aliases: hasPairedTumor
+  hasPairedTumor:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPairedTumor
     multivalued: true
-  phenotype_description:
-    aliases: hasPhenotypeDescription
-    description: Phenotype term or free text description for additional phenotype information.
+  hasPhenotypeDescription:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPhenotypeDescription
     multivalued: true
-  post_code:
-    aliases: hasPostalCode
+  hasPostalCode:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPostalCode
     multivalued: true
-  stage:
-    aliases: hasStage
+  hasStage:
     slot_uri: https://datamodel.terra.bio/TerraCore#hasStage
     multivalued: true
-  temperature:
-    aliases: hasTemperature
+  hasTemperature:
     comments:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTemperature
@@ -1011,4 +773,8 @@ classes:
   Document:
     class_uri: http://xmlns.com/foaf/0.1/Document
   Person:
-    class_uri: http://xmlns.com/foaf/0.1/Person  
+    class_uri: http://xmlns.com/foaf/0.1/Person
+  SingleCell:
+    slots:
+    - hasCellCycle
+    class_uri: https://datamodel.terra.bio/TerraCore#SingleCell
