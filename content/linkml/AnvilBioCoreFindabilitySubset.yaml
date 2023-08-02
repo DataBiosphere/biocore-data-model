@@ -5,8 +5,8 @@ prefixes:
 default_prefix: anvil
 imports:
   - linkml:types # this imports the linkml types schema
-  - BioCoreFields
-  - BioCoreTables
+  - BioCoreFields # The BioCore set of standard fields (i.e. columns)
+  - BioCoreTables # The BioCore set of standard tables (classes)
 default_range: string # if not specified, the default range is string
 classes:
 
@@ -118,7 +118,7 @@ classes:
         - reference_assembly
         - data_modality
         - source_datarepo_row_ids
-  # Container:
+  # Container: # do we need to define a class to describe how rows are structured, or just assume the obvious for SQL?
   #   attributes:
   #     # AnvilActivities:
   #     #   multivalued: true

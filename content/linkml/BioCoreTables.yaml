@@ -135,6 +135,8 @@ slots:
     slot_uri: http://xmlns.com/foaf/0.1/workInfoHomepage
     multivalued: true
 classes:
+  RelationalTable:
+    class_uri: http://purl.org/dc/terms/DCMIType
   OBI_0001573:
     class_uri: http://purl.obolibrary.org/obo/OBI_0001573
   VocabularyEncodingScheme:
@@ -143,20 +145,21 @@ classes:
     class_uri: http://purl.org/dc/dcmitype/Service
   EFO_0007831:
     class_uri: http://www.ebi.ac.uk/efo/EFO_0007831
-  List:
-    class_uri: rdf:List
-  Class:
-    class_uri: rdfs:Class
-  Resource:
-    class_uri: rdfs:Resource
-  Kind:
-    class_uri: http://www.w3.org/2006/vcard/ns#Kind
-  Document:
-    class_uri: http://xmlns.com/foaf/0.1/Document
-  Person:
-    class_uri: http://xmlns.com/foaf/0.1/Person
+  # List:
+  #   class_uri: rdf:List
+  # Class:
+  #   class_uri: rdfs:Class
+  # Resource:
+  #   class_uri: rdfs:Resource
+  # Kind:
+  #   class_uri: http://www.w3.org/2006/vcard/ns#Kind
+  # Document:
+  #   class_uri: http://xmlns.com/foaf/0.1/Document
+  # Person:
+  #   class_uri: http://xmlns.com/foaf/0.1/Person
   Activity:
     class_uri: https://datamodel.terra.bio/TerraCore#Activity
+    is_a: RelationalTable
   AlignmentActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#AlignmentActivity
@@ -169,6 +172,7 @@ classes:
   Antibody:
     # is_a: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Antibody
+    is_a: RelationalTable
   AssayActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#AssayActivity
@@ -181,12 +185,14 @@ classes:
   Diagnosis:
     # is_a: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#Diagnosis
+    is_a: RelationalTable
   DogDonor:
     is_a: Donor
     class_uri: https://datamodel.terra.bio/TerraCore#DogDonor
   Donor:
     # is_a: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#Donor
+    is_a: RelationalTable
   DonorTreatmentActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#DonorTreatmentActivity
@@ -196,6 +202,7 @@ classes:
   FamilyMember:
     # is_a: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#FamilyMember
+    is_a: RelationalTable
   File:
     comments:
     - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
@@ -203,6 +210,7 @@ classes:
       thus we have our own class.  Also added electronic. '
     # is_a: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#File
+    is_a: RelationalTable
   HistopathologyActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#HistopathologyActivity
@@ -212,6 +220,7 @@ classes:
   Library:
     # is_a: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Library
+    is_a: RelationalTable
   LibraryPreparationActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#LibraryPreparationActivity
@@ -239,15 +248,17 @@ classes:
   Sample:
     # is_a: OBI_0100051
     class_uri: https://datamodel.terra.bio/TerraCore#Sample
+    is_a: RelationalTable
   SampleTreatmentActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#SampleTreatmentActivity
   SequenceFile:
     is_a: File
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceFile
-  SequenceLocation:
+  SequenceLocation: # this doesn't have to be a table, but it's convenient in case there is a sequence table given with a dataset
     # is_a: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceLocation
+    is_a: RelationalTable
   SequencingActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#SequencingActivity
@@ -257,9 +268,10 @@ classes:
   SingleCellIsolationActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#SingleCellIsolationActivity
-  VariantCall:
+  VariantCall: # generally you won't make a table for a single variant call, but you might have a table of all variant calls in a dataset, revisit
     # is_a: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#VariantCall
+    is_a: RelationalTable
   VariantCallSetFile:
     is_a: File
     class_uri: https://datamodel.terra.bio/TerraCore#VariantCallSetFile
