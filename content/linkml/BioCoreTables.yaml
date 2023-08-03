@@ -137,13 +137,15 @@ slots:
 classes:
   RelationalTable:
     class_uri: http://purl.org/dc/terms/DCMIType
-  OBI_0001573:
+  DNASequence:
+    meaning: OBI_0001573
     class_uri: http://purl.obolibrary.org/obo/OBI_0001573
   VocabularyEncodingScheme:
     class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
   Service:
     class_uri: http://purl.org/dc/dcmitype/Service
-  EFO_0007831:
+  SingleCell:
+    meaning: EFO_0007831
     class_uri: http://www.ebi.ac.uk/efo/EFO_0007831
   # List:
   #   class_uri: rdf:List
