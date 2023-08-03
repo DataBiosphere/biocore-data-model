@@ -138,14 +138,14 @@ classes:
   RelationalTable:
     class_uri: http://purl.org/dc/terms/DCMIType
   DNASequence:
-    meaning: OBI_0001573
+    see_also: OBI_0001573
     class_uri: http://purl.obolibrary.org/obo/OBI_0001573
   VocabularyEncodingScheme:
     class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
   Service:
     class_uri: http://purl.org/dc/dcmitype/Service
   SingleCell:
-    meaning: EFO_0007831
+    see_also: EFO_0007831
     class_uri: http://www.ebi.ac.uk/efo/EFO_0007831
   # List:
   #   class_uri: rdf:List
@@ -172,7 +172,7 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#AnalysisActivity
   Antibody:
-    meaning: BFO_0000040
+    see_also: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Antibody
     is_a: RelationalTable
   AssayActivity:
@@ -185,14 +185,14 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#BioSampleDissociationActivity
   Diagnosis:
-    meaning: IAO_0000030
+    see_also: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#Diagnosis
     is_a: RelationalTable
   DogDonor:
     is_a: Donor
     class_uri: https://datamodel.terra.bio/TerraCore#DogDonor
   Donor:
-    meaning: OBI_0100026
+    see_also: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#Donor
     is_a: RelationalTable
   DonorTreatmentActivity:
@@ -202,7 +202,7 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#ExperimentActivity
   FamilyMember:
-    meaning: OBI_0100026
+    see_also: OBI_0100026
     class_uri: https://datamodel.terra.bio/TerraCore#FamilyMember
     is_a: RelationalTable
   File:
@@ -210,7 +210,7 @@ classes:
     - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
       to http://www.w3.org/ns/dcat#Distribution doesn''t make sense in this context;
       thus we have our own class.  Also added electronic. '
-    meaning: IAO_0000030
+    see_also: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#File
     is_a: RelationalTable
   HistopathologyActivity:
@@ -220,14 +220,14 @@ classes:
     is_a: Donor
     class_uri: https://datamodel.terra.bio/TerraCore#HumanDonor
   Library:
-    meaning: BFO_0000040
+    see_also: BFO_0000040
     class_uri: https://datamodel.terra.bio/TerraCore#Library
     is_a: RelationalTable
   LibraryPreparationActivity:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#LibraryPreparationActivity
   Measurement:
-    meaning: IAO_0000030
+    see_also: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#Measurement
   MolecularSample:
     is_a: Sample
@@ -245,10 +245,10 @@ classes:
     comments:
     - Instances should include either a cross reference to the reference sequence
       or an official GRCName from the Genome Reference Consortium, or both.
-    meaning: OBI_0001573
+    see_also: OBI_0001573
     class_uri: https://datamodel.terra.bio/TerraCore#ReferenceAssembly
   Sample:
-    meaning: OBI_0100051
+    see_also: OBI_0100051
     class_uri: https://datamodel.terra.bio/TerraCore#Sample
     is_a: RelationalTable
   SampleTreatmentActivity:
@@ -258,7 +258,7 @@ classes:
     is_a: File
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceFile
   SequenceLocation: # this doesn't have to be a table, but it's convenient in case there is a sequence table given with a dataset
-    meaning: OBI_0000973
+    see_also: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#SequenceLocation
     is_a: RelationalTable
   SequencingActivity:
@@ -271,7 +271,7 @@ classes:
     is_a: Activity
     class_uri: https://datamodel.terra.bio/TerraCore#SingleCellIsolationActivity
   VariantCall: # generally you won't make a table for a single variant call, but you might have a table of all variant calls in a dataset, revisit
-    meaning: OBI_0000973
+    see_also: OBI_0000973
     class_uri: https://datamodel.terra.bio/TerraCore#VariantCall
     is_a: RelationalTable
   VariantCallSetFile:
