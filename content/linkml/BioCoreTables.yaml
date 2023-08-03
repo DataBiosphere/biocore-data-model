@@ -1,6 +1,7 @@
 id: https://datamodel.terra.bio/BioCoreTables
 name: BioCoreTables
 description: BioCoreTables
+license: CC0
 imports:
 - linkml:types
 prefixes:

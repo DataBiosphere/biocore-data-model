@@ -1,6 +1,7 @@
 name: BioCoreFields
 description: Definition of all fields (e.g. column headers) in LinkML as slots.
-id: https://datamodel.terra.bio/BioCoreFieldsLinkML # the ID of this file
+id: https://datamodel.terra.bio/BioCoreFields # the ID of this file
+license: CC0
 imports:
 - linkml:types
 prefixes:
@@ -995,20 +996,20 @@ slots:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTemperature
     multivalued: true
-classes:
-  VocabularyEncodingScheme:
-    class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
-  Service:
-    class_uri: http://purl.org/dc/dcmitype/Service
-  List:
-    class_uri: rdf:List
-  Class:
-    class_uri: rdfs:Class
-  Resource:
-    class_uri: rdfs:Resource
-  Kind:
-    class_uri: http://www.w3.org/2006/vcard/ns#Kind
-  Document:
-    class_uri: http://xmlns.com/foaf/0.1/Document
-  Person:
-    class_uri: http://xmlns.com/foaf/0.1/Person  
+# classes:
+#   VocabularyEncodingScheme:
+#     class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
+#   Service:
+#     class_uri: http://purl.org/dc/dcmitype/Service
+#   List:
+#     class_uri: rdf:List
+#   Class:
+#     class_uri: rdfs:Class
+#   Resource:
+#     class_uri: rdfs:Resource
+#   Kind:
+#     class_uri: http://www.w3.org/2006/vcard/ns#Kind
+#   Document:
+#     class_uri: http://xmlns.com/foaf/0.1/Document
+#   Person:
+#     class_uri: http://xmlns.com/foaf/0.1/Person  
