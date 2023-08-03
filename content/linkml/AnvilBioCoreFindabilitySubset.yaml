@@ -129,7 +129,7 @@ classes:
 slots:
   id:
     identifier: true  # this is the primary identifier for the class
-    range: string
+    range: uriorcurie
   xref_id: # external identifier for a donor
     is_a: id
     multivalued: true

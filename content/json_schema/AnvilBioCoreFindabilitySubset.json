@@ -554,22 +554,16 @@
             "title": "BioSampleDissociationActivity",
             "type": "object"
         },
-        "Class": {
+        "DNASequence": {
             "additionalProperties": false,
             "description": "",
-            "title": "Class",
+            "title": "DNASequence",
             "type": "object"
         },
         "Diagnosis": {
             "additionalProperties": false,
             "description": "",
             "title": "Diagnosis",
-            "type": "object"
-        },
-        "Document": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Document",
             "type": "object"
         },
         "DogDonor": {
@@ -588,12 +582,6 @@
             "additionalProperties": false,
             "description": "",
             "title": "DonorTreatmentActivity",
-            "type": "object"
-        },
-        "EFO0007831": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "EFO0007831",
             "type": "object"
         },
         "ExperimentActivity": {
@@ -626,12 +614,6 @@
             "title": "HumanDonor",
             "type": "object"
         },
-        "Kind": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Kind",
-            "type": "object"
-        },
         "Library": {
             "additionalProperties": false,
             "description": "",
@@ -642,12 +624,6 @@
             "additionalProperties": false,
             "description": "",
             "title": "LibraryPreparationActivity",
-            "type": "object"
-        },
-        "List": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "List",
             "type": "object"
         },
         "Measurement": {
@@ -674,18 +650,6 @@
             "title": "NucleusIsolationActivity",
             "type": "object"
         },
-        "OBI0001573": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "OBI0001573",
-            "type": "object"
-        },
-        "Person": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Person",
-            "type": "object"
-        },
         "Project": {
             "additionalProperties": false,
             "description": "",
@@ -698,10 +662,10 @@
             "title": "ReferenceAssembly",
             "type": "object"
         },
-        "Resource": {
+        "RelationalTable": {
             "additionalProperties": false,
             "description": "",
-            "title": "Resource",
+            "title": "RelationalTable",
             "type": "object"
         },
         "Sample": {
@@ -738,6 +702,12 @@
             "additionalProperties": false,
             "description": "",
             "title": "Service",
+            "type": "object"
+        },
+        "SingleCell": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCell",
             "type": "object"
         },
         "SingleCellAssignment": {
