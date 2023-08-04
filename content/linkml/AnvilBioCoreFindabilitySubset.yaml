@@ -2,6 +2,7 @@ id: https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/sc
 name: anvil_findability_subset
 prefixes:
   linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+  anvil: https://anvilproject.org/
 default_prefix: anvil
 imports:
   - linkml:types # this imports the linkml types schema
@@ -35,7 +36,7 @@ classes:
       - donor_age_at_collection_unit
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
-      - donor_id
+      - donor
 
   AnvilDataset:
     slots:
@@ -75,6 +76,7 @@ classes:
       - reported_ethnicity
       - genetic_ancestry
       - source_datarepo_row_ids
+      - biosample
 
   AnvilFile:
     slots:
@@ -162,6 +164,9 @@ slots:
   assayactivity_id:
     is_a: id
   assay_type:
+  biosample:
+    multivalued: true
+    range: biosample_id
   biosample_id:
     is_a: id
   anatomical_site:
@@ -176,6 +181,9 @@ slots:
     range: float
   donor_id:
     is_a: id
+  donor:
+    multivalued: true
+    range: donor_id
   part_of_dataset_id:
     multivalued: true
   dataset_id:

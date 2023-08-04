@@ -6,7 +6,7 @@ imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  BioCoreTables: https://w3id.org/None/
+  BioCoreTables: https://datamodel.terra.bio/BioCoreTables/
 default_prefix: BioCoreTables
 slots:
   member:

@@ -7,7 +7,9 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
   BioCore: https://datamodel.terra.bio # need to decide on URL
+  BioCoreFields: https://datamodel.terra.bio/BioCoreFields/
 default_prefix: BioCoreFields
+default_range: string
 slots:
   # member:
   #   slot_uri: rdfs:member
@@ -107,7 +109,7 @@ slots:
   donor:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
-    inverse: donated
+    # inverse: donated
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     multivalued: true
   donor_age_at_collection:
@@ -152,7 +154,7 @@ slots:
     aliases: hasMolecularSampleType
     comments:
     - Need definition
-    is_a: hasSampleType
+    is_a: sample_type
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMolecularSampleType
     multivalued: true
   parent:
@@ -228,7 +230,6 @@ slots:
     aliases: isGeneratedByPipeline
     comments:
     - Need definition
-    is_a: wasGeneratedBy
     slot_uri: https://datamodel.terra.bio/TerraCore#isGeneratedByPipeline
     multivalued: true
   paired_with:
@@ -244,13 +245,11 @@ slots:
     - Can be used as an ObjectProperty with the Antibody class or as a DataType property,
       depending on need. Antibody should be linked to OBI in future. Note this could
       link to nonassay activities like CHiP
-    is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesAntibody
     multivalued: true
   library:
     aliases: usesLibrary
     description: A reference to a Sequencing Library used in this activity.
-    is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesLibrary
     multivalued: true
   reference_assembly:
@@ -263,7 +262,6 @@ slots:
     description: A reference to the sample used by this activity.
     comments:
     - BioSample and MolecularSample both inherit range from Sample
-    is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesSample
     multivalued: true
   activity_type:
@@ -644,7 +642,6 @@ slots:
     multivalued: true
   protocol:
     aliases: hasProtocol
-    is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#hasProtocol
     multivalued: true
   race:
@@ -770,15 +767,15 @@ slots:
     aliases: hasTumorMorphology
     comments:
     - Need definition
-    is_a: hasMorphology
+    is_a: morphology
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTumorMorphology
     multivalued: true
-  uri:
-    aliases: hasURI
-    comments:
-    - Need definition
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasURI
-    multivalued: true
+  # uri:
+  #   aliases: hasURI
+  #   comments:
+  #   - Need definition
+  #   slot_uri: https://datamodel.terra.bio/TerraCore#hasURI
+  #   multivalued: true
   unit:
     aliases: hasUnit
     comments:
@@ -936,9 +933,9 @@ slots:
   affiliation:
     slot_uri: http://schema.org/affiliation
     multivalued: true
-  definition:
-    slot_uri: rdfs:definition
-    multivalued: true
+  # definition:
+  #   slot_uri: rdfs:definition
+  #   multivalued: true
   maker:
     slot_uri: http://xmlns.com/foaf/0.1/maker
     multivalued: true
