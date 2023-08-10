@@ -44,6 +44,12 @@
                     },
                     "type": "array"
                 },
+                "file": {
+                    "items": {
+                        "$ref": "#/$defs/File"
+                    },
+                    "type": "array"
+                },
                 "xref_id": {
                     "description": "other identifiers for the person, e.g. ORCID, etc",
                     "items": {
@@ -111,6 +117,13 @@
                     },
                     "type": "array"
                 },
+                "donor": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "donor_age_at_collection": {
                     "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
                     "type": "string"
@@ -123,9 +136,6 @@
                 },
                 "donor_age_at_collection_upper_bound": {
                     "type": "number"
-                },
-                "donor_id": {
-                    "type": "string"
                 }
             },
             "required": [
@@ -268,6 +278,13 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "biosample": {
+                    "description": "This property references the BioSample donated by the Donor.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "donor_id": {
                     "type": "string"
                 },
