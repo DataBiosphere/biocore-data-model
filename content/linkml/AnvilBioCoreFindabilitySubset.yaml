@@ -14,7 +14,6 @@ classes:
   AnvilActivity:
     is_a: Activity
     slots:
-     - activity_id
      - activity_type
      - xref_id
      - file
@@ -22,13 +21,11 @@ classes:
   AnvilAntibody:
     is_a: Antibody
     slots:
-      - antibody_id
       - target
   
   AnvilBioSample:
     is_a: BioSample
     slots:
-      - biosample_id
       - anatomical_site
       - apriori_cell_type
       - biosample_type
@@ -41,7 +38,6 @@ classes:
 
   AnvilDataset:
     slots:
-      - dataset_id
       - consent_group # TerraDCAT_ap:hasConsentGroup
       - data_use_permission # TerraDCAT_ap:hasDataUsePermission
       - owner # TerraDCAT_ap:hasOwner
@@ -53,8 +49,7 @@ classes:
 
   AnvilDiagnosis:
     slots:
-      - diagnosis_id
-      - donor_id
+      - donor
       - disease
       - age_at_diagnosis
       - age_at_onset
@@ -70,9 +65,9 @@ classes:
 
   AnvilDonor:
     slots:
-      - donor_id
       - organism_type
-      - part_of_dataset_id # TerraDCAT_ap:hasDataset
+      # - part_of_dataset_id # TerraDCAT_ap:hasDataset
+      - dataset
       - phenotypic_sex
       - reported_ethnicity
       - genetic_ancestry
@@ -81,7 +76,6 @@ classes:
 
   AnvilFile:
     slots:
-      - file_id
       - data_modality
       - file_format
       - file_size
@@ -94,9 +88,9 @@ classes:
 
   AnvilProject:
     slots:
-      - project_id
       - funded_by
-      - generated_dataset_id
+      # - generated_dataset_id
+      - dataset
       - principal_investigator # TerraDCAT_ap:hasPrincipalInvestigator
       - title # TerraDCAT_ap:hasEntityTitle
       - registered_identifier # TerraDCAT_ap:hasRegisteredIdentifier
@@ -104,20 +98,20 @@ classes:
 
   AnvilSequencingActivity:
     slots:
-      - sequencingactivity_id
       - activity_type
       - assay_type
       - data_modality
-      - generated_file_id
+      # - generated_file_id
+      - dataset
       - biosample
       - source_datarepo_row_ids
 
   AnvilVariantCallingActivity:
       slots:
-        - variantcallingactivity_id
         - activity_type
         - used_file_id
-        - generated_file_id
+        # - generated_file_id
+        - file
         - reference_assembly
         - data_modality
         - source_datarepo_row_ids
@@ -174,7 +168,12 @@ slots:
   apriori_cell_type:
     multivalued: true
   biosample_type:
+  dataset:
+    multivalued: true
+    range: Dataset
   disease:
+    multivalued: true
+    range: Disease
   donor_age_at_collection_unit:
   donor_age_at_collection_lower_bound:
     range: float
