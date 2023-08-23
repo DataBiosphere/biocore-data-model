@@ -115,7 +115,7 @@ classes:
         - reference_assembly
         - data_modality
         - source_datarepo_row_ids
-  # Container: # do we need to define a class to describe how rows are structured, or just assume the obvious for SQL?
+  # Container: # for validating yaml data
   #   attributes:
   #     # AnvilActivities:
   #     #   multivalued: true
@@ -128,7 +128,7 @@ slots:
     identifier: true  # this is the primary identifier for the class
     range: uriorcurie
   xref_id: # external identifier for a donor
-    is_a: id
+    # is_a: id
     multivalued: true
     recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
     description:
@@ -137,7 +137,7 @@ slots:
     is_a: id
   activity_type:
   used_file_id:
-    is_a: id
+    # is_a: id
     multivalued: true
   generated_file_id:
     is_a: id
