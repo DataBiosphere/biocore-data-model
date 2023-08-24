@@ -139,7 +139,7 @@
 --     * Slot: disease Description: 
 -- # Class: "AnvilBioSample_donor" Description: ""
 --     * Slot: AnvilBioSample_id Description: Autocreated FK slot
---     * Slot: donor Description: 
+--     * Slot: donor_id Description: 
 -- # Class: "AnvilDataset_consent_group" Description: ""
 --     * Slot: AnvilDataset_id Description: Autocreated FK slot
 --     * Slot: consent_group Description: 
@@ -163,7 +163,7 @@
 --     * Slot: source_datarepo_row_ids Description: 
 -- # Class: "AnvilDiagnosis_donor" Description: ""
 --     * Slot: AnvilDiagnosis_id Description: Autocreated FK slot
---     * Slot: donor Description: 
+--     * Slot: donor_id Description: 
 -- # Class: "AnvilDiagnosis_disease" Description: ""
 --     * Slot: AnvilDiagnosis_id Description: Autocreated FK slot
 --     * Slot: disease Description: 
@@ -503,9 +503,10 @@ CREATE TABLE "AnvilBioSample_disease" (
 );
 CREATE TABLE "AnvilBioSample_donor" (
 	"AnvilBioSample_id" TEXT, 
-	donor TEXT, 
-	PRIMARY KEY ("AnvilBioSample_id", donor), 
-	FOREIGN KEY("AnvilBioSample_id") REFERENCES "AnvilBioSample" (id)
+	donor_id TEXT, 
+	PRIMARY KEY ("AnvilBioSample_id", donor_id), 
+	FOREIGN KEY("AnvilBioSample_id") REFERENCES "AnvilBioSample" (id), 
+	FOREIGN KEY(donor_id) REFERENCES "Donor" (id)
 );
 CREATE TABLE "AnvilDataset_consent_group" (
 	"AnvilDataset_id" TEXT, 
@@ -551,9 +552,10 @@ CREATE TABLE "AnvilDataset_source_datarepo_row_ids" (
 );
 CREATE TABLE "AnvilDiagnosis_donor" (
 	"AnvilDiagnosis_id" TEXT, 
-	donor TEXT, 
-	PRIMARY KEY ("AnvilDiagnosis_id", donor), 
-	FOREIGN KEY("AnvilDiagnosis_id") REFERENCES "AnvilDiagnosis" (id)
+	donor_id TEXT, 
+	PRIMARY KEY ("AnvilDiagnosis_id", donor_id), 
+	FOREIGN KEY("AnvilDiagnosis_id") REFERENCES "AnvilDiagnosis" (id), 
+	FOREIGN KEY(donor_id) REFERENCES "Donor" (id)
 );
 CREATE TABLE "AnvilDiagnosis_disease" (
 	"AnvilDiagnosis_id" TEXT, 

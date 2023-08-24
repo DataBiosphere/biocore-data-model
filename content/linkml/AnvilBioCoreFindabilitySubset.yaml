@@ -183,7 +183,7 @@ slots:
     is_a: id
   donor:
     multivalued: true
-    range: donor_id
+    range: Donor
   part_of_dataset_id:
     multivalued: true
   dataset_id:
