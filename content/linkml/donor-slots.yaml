@@ -1,17 +1,47 @@
 id: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor
-# id: https://w3id.org/linkml/examples/personinfo # example schema URI
+# id: https://w3id.org/biocore/examples/donor # example schema URI registered with w3id.org
 name: donor
+description: |-
+  A donor is a person or organism that is the source of a biosample.
+license: https://creativecommons.org/publicdomain/zero/1.0/
 prefixes:
   linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+  donor: https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  GSSO: http://purl.obolibrary.org/obo/GSSO_
+  famrel: https://example.org/FamilialRelations#
+default_prefix: donor
 imports:
   - linkml:types # this imports the linkml types schema
 default_range: string # if not specified, the default range is string
+
+emit_prefixes: # for semantic web output data
+  - rdf
+  - rdfs
+  - xsd
+  - skos
   
 classes:
-  Donor: # this is the name of the class, Donor could be Subject, Patient, etc.
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity. This level of abstraction could be changed to RelationalTable, for example. Useful for semantic web export.
     slots:
-     - id
-     - birth_date
+      - id
+      - name
+      - description
+      - image
+    close_mappings:
+     - schema:Thing
+  Donor: # this is the name of the class, Donor could be Subject, Patient, etc.
+    description: >-
+      A person or organism that is the source of a biosample.
+    is_a: NamedThing # this is the parent class
+    mixins:
+      - HasAliases
+    slots:
+     - birth_date # note all dates will be strings unless format is specified, may want to add date_at_event, etc.
      - death_date
      - death_age
      - reported_ethnicity
@@ -20,22 +50,71 @@ classes:
      - phenotypic_sex
      - strain
      - xref_id
-  Container:
+
+  HasAliases:
+    description: >-
+      A mixin applied to any class that can have aliases/alternateNames. Useful to mapping BioCore to TIM, for example.
+    mixin: true
     attributes:
-      donors:
-        multivalued: true # the container holds a list of donors
-        inlined_as_list: true
-        range: Donor # the donors are things of class Donor
-        description:
-          the dataset is a table of donors
+      aliases:
+        multivalued: true
+        exact_mappings:
+          - schema:alternateName
+  
+  Relationship:
+    slots:
+      - started_at_time
+      - ended_at_time
+      - related_to
+      - type
+  FamilialRelationship: #example from personinfo.yaml
+    is_a: Relationship
+    slot_usage:
+      type:
+        range: FamilialRelationshipType
+        required: true
+      related_to:
+        range: Donor
+        required: true
+  # TODO: annotate that this is a container/root class
+  # Container:
+  #   tree_root: true
+  #   slots:
+  #     - donors
+  # Container:
+  #   attributes:
+  #     donors:
+  #       multivalued: true # the container holds a list of donors
+  #       inlined_as_list: true
+  #       range: Donor # the donors are things of class Donor
+  #       description:
+  #         the dataset is a table of donors
 slots:
   id:
-    identifier: true  # this is the primary identifier for the class
+    identifier: true
+    slot_uri: schema:identifier
+  name:
+    slot_uri: schema:name
+  description:
+    slot_uri: schema:description
+  image:
+    slot_uri: schema:image
+  gender:
+    slot_uri: schema:gender
+    range: GenderType
   birth_date:
     multivalued: false
     description:
       date of birth
     range: date
+    slot_uri: schema:birthDate
+  is_current:
+    range: boolean
+    description: boolean flag indicating whether the donor data is current to some unspecified date
+  has_familial_relationships:
+    range: FamilialRelationship
+    multivalued: true
+    inlined_as_list: true
   death_date:
     multivalued: false
     range: date
@@ -47,10 +126,18 @@ slots:
     maximum_value: 200
     description:
       age at death
+  age_in_years: #assumes donor is alive
+    range: integer
+    minimum_value: 0
+    maximum_value: 999 # assumes donor is an animal (!)
+  ended_at_time:
+    slot_uri: prov:endedAtTime
+    range: date
+  related_to:
   reported_ethnicity:
     multivalued: true
     range: string
-    slot_uri: BioCoreFields:hasOrganismType # we can use inheritance to define a slot_uri for an attribute, such as form BioCore data model
+    # slot_uri: BioCoreFields:hasOrganismType # we can use inheritance to define a slot_uri for an attribute, such as form BioCore data model
   genetic_ancestry:
     multivalued: true
   organism_type:
@@ -66,3 +153,40 @@ slots:
     recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
     description:
       other identifiers for the person, e.g. ORCID, etc.
+  started_at_time:
+    slot_uri: prov:startedAtTime
+    range: date
+  duration:
+    range: float
+  type:
+
+  donors: # perhaps clearer way of defining a container
+    range: Donor
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+enums:
+  FamilialRelationshipType:
+    permissible_values:
+      SIBLING_OF:
+        meaning: famrel:01
+      PARENT_OF:
+        meaning: famrel:02
+      CHILD_OF:
+        meaning: famrel:03
+  GenderType:
+    permissible_values:
+      nonbinary man:
+        meaning: GSSO:009254
+      nonbinary woman:
+        meaning: GSSO:009253
+      transgender woman:
+        meaning: GSSO:000384
+      transgender man:
+        meaning: GSSO:000372
+      cisgender man:
+        meaning: GSSO:000371
+      cisgender woman:
+        meaning: GSSO:000385
+  DiagnosisType:

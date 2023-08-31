@@ -1,0 +1,187 @@
+{
+    "$defs": {
+        "DiagnosisType": {
+            "description": "",
+            "enum": [],
+            "title": "DiagnosisType",
+            "type": "string"
+        },
+        "Donor": {
+            "additionalProperties": false,
+            "description": "A person or organism that is the source of a biosample.",
+            "properties": {
+                "aliases": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "birth_date": {
+                    "description": "date of birth",
+                    "format": "date",
+                    "type": "string"
+                },
+                "death_age": {
+                    "description": "age at death",
+                    "maximum": 200,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "death_date": {
+                    "description": "date of death",
+                    "format": "date",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "genetic_ancestry": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organism_type": {
+                    "description": "the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.",
+                    "type": "string"
+                },
+                "phenotypic_sex": {
+                    "type": "string"
+                },
+                "reported_ethnicity": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "strain": {
+                    "description": "strain of organism, for non-humans only, e.g. C57BL/6J",
+                    "type": "string"
+                },
+                "xref_id": {
+                    "description": "other identifiers for the person, e.g. ORCID, etc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "organism_type",
+                "id"
+            ],
+            "title": "Donor",
+            "type": "object"
+        },
+        "FamilialRelationship": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "ended_at_time": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "related_to": {
+                    "type": "string"
+                },
+                "started_at_time": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/$defs/FamilialRelationshipType"
+                }
+            },
+            "required": [
+                "related_to",
+                "type"
+            ],
+            "title": "FamilialRelationship",
+            "type": "object"
+        },
+        "FamilialRelationshipType": {
+            "description": "",
+            "enum": [
+                "SIBLING_OF",
+                "PARENT_OF",
+                "CHILD_OF"
+            ],
+            "title": "FamilialRelationshipType",
+            "type": "string"
+        },
+        "GenderType": {
+            "description": "",
+            "enum": [
+                "nonbinary man",
+                "nonbinary woman",
+                "transgender woman",
+                "transgender man",
+                "cisgender man",
+                "cisgender woman"
+            ],
+            "title": "GenderType",
+            "type": "string"
+        },
+        "NamedThing": {
+            "additionalProperties": false,
+            "description": "A generic grouping for any identifiable entity. This level of abstraction could be changed to RelationalTable, for example. Useful for semantic web export.",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "NamedThing",
+            "type": "object"
+        },
+        "Relationship": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "ended_at_time": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "related_to": {
+                    "type": "string"
+                },
+                "started_at_time": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "title": "Relationship",
+            "type": "object"
+        }
+    },
+    "$id": "https://raw.githubusercontent.com/DataBiosphere/terra-interoperability-model/master/releases/2.x/terra-core/TerraCoreDataModel.ttl#Donor",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "donor",
+    "type": "object",
+    "version": null
+}
