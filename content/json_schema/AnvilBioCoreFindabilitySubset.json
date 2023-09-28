@@ -111,6 +111,13 @@
                     },
                     "type": "array"
                 },
+                "donor": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "donor_age_at_collection": {
                     "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
                     "type": "string"

@@ -36,6 +36,7 @@ classes:
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
       - donor_id
+      - donor
 
   AnvilDataset:
     slots:
@@ -127,6 +128,9 @@ classes:
   #     #   description:
   #     #     all acvitity types
 slots:
+  donor:
+    range: AnvilDonor
+    domain: AnvilBioSample
   id:
     identifier: true  # this is the primary identifier for the class
     range: uriorcurie

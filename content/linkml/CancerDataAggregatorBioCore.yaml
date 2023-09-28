@@ -1,0 +1,94 @@
+id: https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/schema
+name: cda_biocore
+prefixes:
+  linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+default_prefix: CDABioCore
+imports:
+  - linkml:types # this imports the linkml types schema
+  - BioCoreFields # The BioCore set of standard fields (i.e. columns)
+  - BioCoreTables # The BioCore set of standard tables (classes)
+default_range: string # if not specified, the default range is string
+classes:
+
+  CDADonor:
+    is_a: Donor
+    aliases: subject, Subject, ResearchSubject
+    slots:
+      - id
+      # - identifier
+      - organism_type
+      - phenotypic_sex
+      - reported_ethnicity
+      - cause_of_death
+      - genetic_ancestry
+  CDABioSample:
+    is_a: BioSample
+    aliases: Specimen, Sample, Biospecimen
+    slots:
+      - id
+      - donor_age_at_collection
+      - disease
+      - anatomical_site
+      - biosample_type
+      - donor
+      - biosample
+
+slots:
+  id:
+    identifier: true  # this is the primary identifier for the class
+    range: uriorcurie
+  donor:
+    range: CDADonor
+    domain: CDABioSample
+  # xref_id: # external identifier for a donor
+  #   is_a: id
+  #   multivalued: true
+  #   recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
+  #   description:
+  #     other identifiers for the person, e.g. ORCID, etc
+  # activity_type:
+  # donor_age_at_collection_unit:
+  # donor_age_at_collection_lower_bound:
+  #   range: float
+  # donor_age_at_collection_upper_bound:
+  #   range: float
+  # consent_group:
+  #   multivalued: true
+  # data_use_permission:
+  #   multivalued: true
+  # owner:
+  #   multivalued: true
+  # principal_investigator:
+  #   multivalued: true
+  # registered_identifier:
+  #   multivalued: true
+  # title:
+  # diagnosis_age_unit:
+  # diagnosis_age_lower_bound:
+  #   range: float
+  # diagnosis_age_upper_bound:
+  #   range: float
+  # onset_age_unit:
+  # onset_age_lower_bound:
+  #   range: float
+  # onset_age_upper_bound:
+  #   range: float
+  # phenotype:
+  #   multivalued: true
+  # phenopacket:
+  #   multivalued: true
+  # organism_type:
+  # phenotypic_sex:
+  # reported_ethnicity:
+  #   multivalued: true
+  # genetic_ancestry:
+  #   multivalued: true
+  # file_format:
+  # file_size:
+  #   range: integer
+  # file_md5sum:
+  #   is_a: checksum
+  # file_name:
+  # file_ref:
+  # funded_by:
+  #   multivalued: true

@@ -17,6 +17,7 @@ CREATE TABLE "Donor" (
 	name TEXT, 
 	description TEXT, 
 	image TEXT, 
+	reported_ethnicity TEXT[],
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "Donor" IS 'A person or organism that is the source of a biosample.';COMMENT ON COLUMN "Donor".birth_date IS 'date of birth';COMMENT ON COLUMN "Donor".death_date IS 'date of death';COMMENT ON COLUMN "Donor".death_age IS 'age at death';COMMENT ON COLUMN "Donor".organism_type IS 'the type of organism, ideally the Linnean genus and species name, but also may be e.g. human, mouse, etc.';COMMENT ON COLUMN "Donor".strain IS 'strain of organism, for non-humans only, e.g. C57BL/6J';
 CREATE TABLE "HasAliases" (

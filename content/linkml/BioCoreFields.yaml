@@ -7,6 +7,7 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
   BioCore: https://datamodel.terra.bio # need to decide on URL
+  BioCoreFields: https://datamodel.terra.bio/BioCoreFields
 default_prefix: BioCoreFields
 slots:
   # member:
@@ -152,7 +153,7 @@ slots:
     aliases: hasMolecularSampleType
     comments:
     - Need definition
-    is_a: hasSampleType
+    is_a: sample_type
     slot_uri: https://datamodel.terra.bio/TerraCore#hasMolecularSampleType
     multivalued: true
   parent:
