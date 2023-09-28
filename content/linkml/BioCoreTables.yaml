@@ -10,7 +10,7 @@ prefixes:
 default_prefix: BioCoreTables
 slots:
   member:
-    slot_uri: rdfs:member
+    slot_uri: https://www.w3.org/TR/rdf12-schema/#ch_member
     multivalued: true
   domainIncludes:
     slot_uri: http://purl.org/dc/dcam/domainIncludes
