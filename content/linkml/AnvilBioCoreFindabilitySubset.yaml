@@ -2,6 +2,7 @@ id: https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/sc
 name: anvil_findability_subset
 prefixes:
   linkml: https://w3id.org/linkml/ # this is the URI of the linkml prefix
+  anvil: https://anvilproject.org/
 default_prefix: anvil
 imports:
   - linkml:types # this imports the linkml types schema
@@ -156,8 +157,6 @@ slots:
     multivalued: true
   alignmentactivity_id:
     is_a: id
-  data_modality:
-    multivalued: true
   reference_assembly:
     multivalued: true
   antibody_id:
@@ -165,13 +164,9 @@ slots:
   target:
   assayactivity_id:
     is_a: id
-  assay_type:
   biosample_id:
     is_a: id
   anatomical_site:
-  apriori_cell_type:
-    multivalued: true
-  biosample_type:
   disease:
   donor_age_at_collection_unit:
   donor_age_at_collection_lower_bound:
