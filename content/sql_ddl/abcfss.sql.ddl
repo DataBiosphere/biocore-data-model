@@ -7,14 +7,13 @@
 -- # Class: "AnvilBioSample" Description: ""
 --     * Slot: biosample_id Description: 
 --     * Slot: anatomical_site Description: 
---     * Slot: biosample_type Description: 
 --     * Slot: disease Description: 
 --     * Slot: donor_age_at_collection Description: A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
 --     * Slot: donor_age_at_collection_unit Description: 
 --     * Slot: donor_age_at_collection_lower_bound Description: 
 --     * Slot: donor_age_at_collection_upper_bound Description: 
 --     * Slot: donor_id Description: 
---     * Slot: donor Description: 
+--     * Slot: donor Description: This property references the Donor organism from which the BioSample was acquired.
 -- # Class: "AnvilDataset" Description: ""
 --     * Slot: dataset_id Description: 
 --     * Slot: title Description: 
@@ -46,7 +45,6 @@
 -- # Class: "AnvilSequencingActivity" Description: ""
 --     * Slot: sequencingactivity_id Description: 
 --     * Slot: activity_type Description: 
---     * Slot: assay_type Description: 
 -- # Class: "AnvilVariantCallingActivity" Description: ""
 --     * Slot: variantcallingactivity_id Description: 
 --     * Slot: activity_type Description: 
@@ -136,6 +134,9 @@
 -- # Class: "AnvilBioSample_apriori_cell_type" Description: ""
 --     * Slot: AnvilBioSample_biosample_id Description: Autocreated FK slot
 --     * Slot: apriori_cell_type Description: 
+-- # Class: "AnvilBioSample_biosample_type" Description: ""
+--     * Slot: AnvilBioSample_biosample_id Description: Autocreated FK slot
+--     * Slot: biosample_type Description: 
 -- # Class: "AnvilDataset_consent_group" Description: ""
 --     * Slot: AnvilDataset_dataset_id Description: Autocreated FK slot
 --     * Slot: consent_group Description: 
@@ -153,7 +154,7 @@
 --     * Slot: registered_identifier Description: 
 -- # Class: "AnvilDataset_data_modality" Description: ""
 --     * Slot: AnvilDataset_dataset_id Description: Autocreated FK slot
---     * Slot: data_modality Description: 
+--     * Slot: data_modality Description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
 -- # Class: "AnvilDataset_source_datarepo_row_ids" Description: ""
 --     * Slot: AnvilDataset_dataset_id Description: Autocreated FK slot
 --     * Slot: source_datarepo_row_ids Description: 
@@ -180,7 +181,7 @@
 --     * Slot: source_datarepo_row_ids Description: 
 -- # Class: "AnvilFile_data_modality" Description: ""
 --     * Slot: AnvilFile_file_id Description: Autocreated FK slot
---     * Slot: data_modality Description: 
+--     * Slot: data_modality Description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
 -- # Class: "AnvilFile_file_md5sum" Description: ""
 --     * Slot: AnvilFile_file_id Description: Autocreated FK slot
 --     * Slot: file_md5sum Description: 
@@ -208,9 +209,12 @@
 -- # Class: "AnvilProject_source_datarepo_row_ids" Description: ""
 --     * Slot: AnvilProject_project_id Description: Autocreated FK slot
 --     * Slot: source_datarepo_row_ids Description: 
+-- # Class: "AnvilSequencingActivity_assay_type" Description: ""
+--     * Slot: AnvilSequencingActivity_sequencingactivity_id Description: Autocreated FK slot
+--     * Slot: assay_type Description: A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070).
 -- # Class: "AnvilSequencingActivity_data_modality" Description: ""
 --     * Slot: AnvilSequencingActivity_sequencingactivity_id Description: Autocreated FK slot
---     * Slot: data_modality Description: 
+--     * Slot: data_modality Description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
 -- # Class: "AnvilSequencingActivity_generated_file_id" Description: ""
 --     * Slot: AnvilSequencingActivity_sequencingactivity_id Description: Autocreated FK slot
 --     * Slot: generated_file_id Description: 
@@ -231,7 +235,7 @@
 --     * Slot: reference_assembly Description: 
 -- # Class: "AnvilVariantCallingActivity_data_modality" Description: ""
 --     * Slot: AnvilVariantCallingActivity_variantcallingactivity_id Description: Autocreated FK slot
---     * Slot: data_modality Description: 
+--     * Slot: data_modality Description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
 -- # Class: "AnvilVariantCallingActivity_source_datarepo_row_ids" Description: ""
 --     * Slot: AnvilVariantCallingActivity_variantcallingactivity_id Description: Autocreated FK slot
 --     * Slot: source_datarepo_row_ids Description: 
@@ -287,7 +291,6 @@ CREATE TABLE "AnvilProject" (
 CREATE TABLE "AnvilSequencingActivity" (
 	sequencingactivity_id TEXT NOT NULL, 
 	activity_type TEXT, 
-	assay_type TEXT, 
 	PRIMARY KEY (sequencingactivity_id)
 );
 CREATE TABLE "AnvilVariantCallingActivity" (
@@ -458,7 +461,6 @@ CREATE TABLE "VariantCallingActivity" (
 CREATE TABLE "AnvilBioSample" (
 	biosample_id TEXT NOT NULL, 
 	anatomical_site TEXT, 
-	biosample_type TEXT, 
 	disease TEXT, 
 	donor_age_at_collection TEXT, 
 	donor_age_at_collection_unit TEXT, 
@@ -619,6 +621,12 @@ CREATE TABLE "AnvilProject_source_datarepo_row_ids" (
 	PRIMARY KEY ("AnvilProject_project_id", source_datarepo_row_ids), 
 	FOREIGN KEY("AnvilProject_project_id") REFERENCES "AnvilProject" (project_id)
 );
+CREATE TABLE "AnvilSequencingActivity_assay_type" (
+	"AnvilSequencingActivity_sequencingactivity_id" TEXT, 
+	assay_type TEXT, 
+	PRIMARY KEY ("AnvilSequencingActivity_sequencingactivity_id", assay_type), 
+	FOREIGN KEY("AnvilSequencingActivity_sequencingactivity_id") REFERENCES "AnvilSequencingActivity" (sequencingactivity_id)
+);
 CREATE TABLE "AnvilSequencingActivity_data_modality" (
 	"AnvilSequencingActivity_sequencingactivity_id" TEXT, 
 	data_modality TEXT, 
@@ -677,5 +685,11 @@ CREATE TABLE "AnvilBioSample_apriori_cell_type" (
 	"AnvilBioSample_biosample_id" TEXT, 
 	apriori_cell_type TEXT, 
 	PRIMARY KEY ("AnvilBioSample_biosample_id", apriori_cell_type), 
+	FOREIGN KEY("AnvilBioSample_biosample_id") REFERENCES "AnvilBioSample" (biosample_id)
+);
+CREATE TABLE "AnvilBioSample_biosample_type" (
+	"AnvilBioSample_biosample_id" TEXT, 
+	biosample_type TEXT, 
+	PRIMARY KEY ("AnvilBioSample_biosample_id", biosample_type), 
 	FOREIGN KEY("AnvilBioSample_biosample_id") REFERENCES "AnvilBioSample" (biosample_id)
 );

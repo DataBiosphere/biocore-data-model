@@ -130,8 +130,20 @@ classes:
   #     #     all acvitity types
 slots:
   donor:
+    aliases: hasDonor
+    description: This property references the Donor organism from which the BioSample was acquired.
+    # inverse: donated
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     range: AnvilDonor
     domain: AnvilBioSample
+    # multivalued: true
+  diagnosis:
+    aliases: hasDiagnosis
+    description: A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasDiagnosis
+    range: AnvilDiagnosis
+    domain: AnvilDonor
+    # multivalued: true
   id:
     identifier: true  # this is the primary identifier for the class
     range: uriorcurie
@@ -146,13 +158,16 @@ slots:
   activity_type:
   used_file_id:
     is_a: id
-    multivalued: true
+    # multivalued: true
+    range: AnvilFile
   generated_file_id:
     is_a: id
-    multivalued: true
+    # multivalued: true
+    range: AnvilFile
   used_biosample_id:
     is_a: id
-    multivalued: true
+    # multivalued: true
+    range: AnvilBioSample
   source_datarepo_row_ids:
     multivalued: true
   alignmentactivity_id:

@@ -6,6 +6,22 @@
             "title": "Activity",
             "type": "object"
         },
+        "ActivityTypes": {
+            "description": "",
+            "enum": [
+                "SampleCollectionActivity",
+                "SampleTreatmentActivity",
+                "SequenceActivity",
+                "AlignmentActivity",
+                "VariantCallingActivity",
+                "ExpressionActivity",
+                "AnalysisActivity",
+                "ImagingActivity",
+                "Activity"
+            ],
+            "title": "ActivityTypes",
+            "type": "string"
+        },
         "AlignmentActivity": {
             "additionalProperties": false,
             "description": "",
@@ -40,7 +56,7 @@
                 "activity_type": {
                     "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/ActivityTypes"
                     },
                     "type": "array"
                 },
@@ -113,10 +129,7 @@
                 },
                 "donor": {
                     "description": "This property references the Donor organism from which the BioSample was acquired.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "donor_age_at_collection": {
                     "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
@@ -443,7 +456,7 @@
                 "activity_type": {
                     "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/ActivityTypes"
                     },
                     "type": "array"
                 },
@@ -469,10 +482,7 @@
                     "type": "array"
                 },
                 "generated_file_id": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "sequencingactivity_id": {
                     "type": "string"
@@ -497,7 +507,7 @@
                 "activity_type": {
                     "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/ActivityTypes"
                     },
                     "type": "array"
                 },
@@ -509,10 +519,7 @@
                     "type": "array"
                 },
                 "generated_file_id": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "reference_assembly": {
                     "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
@@ -528,10 +535,7 @@
                     "type": "array"
                 },
                 "used_file_id": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "variantcallingactivity_id": {
                     "type": "string"

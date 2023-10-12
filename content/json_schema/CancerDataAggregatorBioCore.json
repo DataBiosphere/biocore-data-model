@@ -1,0 +1,351 @@
+{
+    "$defs": {
+        "Activity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Activity",
+            "type": "object"
+        },
+        "AlignmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AlignmentActivity",
+            "type": "object"
+        },
+        "AlignmentFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AlignmentFile",
+            "type": "object"
+        },
+        "AnalysisActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AnalysisActivity",
+            "type": "object"
+        },
+        "Antibody": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Antibody",
+            "type": "object"
+        },
+        "AssayActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "AssayActivity",
+            "type": "object"
+        },
+        "BioSample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "BioSample",
+            "type": "object"
+        },
+        "BioSampleDissociationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "BioSampleDissociationActivity",
+            "type": "object"
+        },
+        "CDABioSample": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "anatomical_site": {
+                    "description": "A reference to the site within the organism from which the BioSample was taken.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "biosample": {
+                    "description": "This property references the BioSample donated by the Donor.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "biosample_type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "disease": {
+                    "description": "A property that identifies a disease or condition has been reported in this entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "donor": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "donor_age_at_collection": {
+                    "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CDABioSample",
+            "type": "object"
+        },
+        "CDADonor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "cause_of_death": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "genetic_ancestry": {
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "organism_type": {
+                    "description": "A reference to the organism type.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "phenotypic_sex": {
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "reported_ethnicity": {
+                    "description": "A property that relects a HumanDonor's reported ethnic origins.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CDADonor",
+            "type": "object"
+        },
+        "DNASequence": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "DNASequence",
+            "type": "object"
+        },
+        "Diagnosis": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Diagnosis",
+            "type": "object"
+        },
+        "DogDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "DogDonor",
+            "type": "object"
+        },
+        "Donor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Donor",
+            "type": "object"
+        },
+        "DonorTreatmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "DonorTreatmentActivity",
+            "type": "object"
+        },
+        "ExperimentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "ExperimentActivity",
+            "type": "object"
+        },
+        "FamilyMember": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "FamilyMember",
+            "type": "object"
+        },
+        "File": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "File",
+            "type": "object"
+        },
+        "HistopathologyActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "HistopathologyActivity",
+            "type": "object"
+        },
+        "HumanDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "HumanDonor",
+            "type": "object"
+        },
+        "Library": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Library",
+            "type": "object"
+        },
+        "LibraryPreparationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "LibraryPreparationActivity",
+            "type": "object"
+        },
+        "Measurement": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Measurement",
+            "type": "object"
+        },
+        "MolecularSample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "MolecularSample",
+            "type": "object"
+        },
+        "MouseDonor": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "MouseDonor",
+            "type": "object"
+        },
+        "NucleusIsolationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "NucleusIsolationActivity",
+            "type": "object"
+        },
+        "Project": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Project",
+            "type": "object"
+        },
+        "ReferenceAssembly": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "ReferenceAssembly",
+            "type": "object"
+        },
+        "RelationalTable": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "RelationalTable",
+            "type": "object"
+        },
+        "Sample": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Sample",
+            "type": "object"
+        },
+        "SampleTreatmentActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SampleTreatmentActivity",
+            "type": "object"
+        },
+        "SequenceFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequenceFile",
+            "type": "object"
+        },
+        "SequenceLocation": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequenceLocation",
+            "type": "object"
+        },
+        "SequencingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SequencingActivity",
+            "type": "object"
+        },
+        "Service": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "Service",
+            "type": "object"
+        },
+        "SingleCell": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCell",
+            "type": "object"
+        },
+        "SingleCellAssignment": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCellAssignment",
+            "type": "object"
+        },
+        "SingleCellIsolationActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "SingleCellIsolationActivity",
+            "type": "object"
+        },
+        "VariantCall": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCall",
+            "type": "object"
+        },
+        "VariantCallSetFile": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCallSetFile",
+            "type": "object"
+        },
+        "VariantCallingActivity": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VariantCallingActivity",
+            "type": "object"
+        },
+        "VocabularyEncodingScheme": {
+            "additionalProperties": false,
+            "description": "",
+            "title": "VocabularyEncodingScheme",
+            "type": "object"
+        }
+    },
+    "$id": "https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "cda_biocore",
+    "type": "object",
+    "version": null
+}

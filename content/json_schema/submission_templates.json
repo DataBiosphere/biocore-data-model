@@ -1,0 +1,205 @@
+[
+  {
+    "tissue_collection_type": null, 
+    "sample_ordinal": null, 
+    "freezing_method": null, 
+    "longest_dimension": null, 
+    "is_ffpe": null, 
+    "current_weight": null, 
+    "sample_type_id": null, 
+    "distance_normal_to_tumor": null, 
+    "type": "sample", 
+    "intermediate_dimension": null, 
+    "diagnoses": {
+      "submitter_id": null
+    }, 
+    "preservation_method": null, 
+    "time_between_clamping_and_freezing": null, 
+    "tumor_descriptor": null, 
+    "tumor_code_id": null, 
+    "time_between_excision_and_freezing": null, 
+    "tissue_source_sites": {
+      "code": null
+    }, 
+    "days_to_sample_procurement": null, 
+    "tumor_code": null, 
+    "method_of_sample_procurement": null, 
+    "passage_count": null, 
+    "shortest_dimension": null, 
+    "biospecimen_anatomic_site": null, 
+    "days_to_collection": null, 
+    "oct_embedded": null, 
+    "initial_weight": null, 
+    "project_id": null, 
+    "diagnosis_pathologically_confirmed": null, 
+    "specimen_type": null, 
+    "pathology_report_uuid": null, 
+    "sample_type": null, 
+    "biospecimen_laterality": null, 
+    "distributor_reference": null, 
+    "tissue_type": null, 
+    "growth_rate": null, 
+    "cases": {
+      "submitter_id": null
+    }, 
+    "parent_samples": {
+      "submitter_id": null
+    }, 
+    "catalog_reference": null, 
+    "submitter_id": null, 
+    "composition": null
+  }, 
+  {
+    "centers": {
+      "code": null
+    }, 
+    "project_id": null, 
+    "weight": null, 
+    "is_ffpe": null, 
+    "samples": {
+      "submitter_id": null
+    }, 
+    "submitter_id": null, 
+    "creation_datetime": null, 
+    "portion_number": null, 
+    "type": "portion"
+  }, 
+  {
+    "a260_a280_ratio": null, 
+    "rna_integrity_number": null, 
+    "spectrophotometer_method": null, 
+    "portions": {
+      "submitter_id": null
+    }, 
+    "normal_tumor_genotype_snp_match": null, 
+    "project_id": null, 
+    "experimental_protocol_type": null, 
+    "concentration": null, 
+    "ribosomal_rna_28s_16s_ratio": null, 
+    "amount": null, 
+    "analyte_volume": null, 
+    "well_number": null, 
+    "analyte_type": null, 
+    "samples": {
+      "submitter_id": null
+    }, 
+    "submitter_id": null, 
+    "type": "analyte", 
+    "analyte_quantity": null, 
+    "analyte_type_id": null
+  }, 
+  {
+    "percent_necrosis": null, 
+    "portions": {
+      "submitter_id": null
+    }, 
+    "number_proliferating_cells": null, 
+    "percent_neutrophil_infiltration": null, 
+    "percent_tumor_nuclei": null, 
+    "percent_monocyte_infiltration": null, 
+    "type": "slide", 
+    "percent_eosinophil_infiltration": null, 
+    "bone_marrow_malignant_cells": null, 
+    "percent_granulocyte_infiltration": null, 
+    "tissue_microarray_coordinates": null, 
+    "percent_stromal_cells": null, 
+    "prostatic_chips_positive_count": null, 
+    "percent_tumor_cells": null, 
+    "prostatic_involvement_percent": null, 
+    "percent_inflam_infiltration": null, 
+    "percent_follicular_component": null, 
+    "section_location": null, 
+    "project_id": null, 
+    "prostatic_chips_total_count": null, 
+    "percent_lymphocyte_infiltration": null, 
+    "percent_normal_cells": null, 
+    "percent_rhabdoid_features": null, 
+    "samples": {
+      "submitter_id": null
+    }, 
+    "submitter_id": null, 
+    "percent_sarcomatoid_features": null
+  }, 
+  {
+    "chipseq_target": null, 
+    "multiplex_barcode": null, 
+    "fragmentation_enzyme": null, 
+    "library_preparation_kit_name": null, 
+    "target_capture_kit_vendor": null, 
+    "target_capture_kit_version": null, 
+    "fragment_maximum_length": null, 
+    "read_group_name": null, 
+    "type": "read_group", 
+    "experiment_name": null, 
+    "includes_spike_ins": null, 
+    "spike_ins_concentration": null, 
+    "platform": null, 
+    "sequencing_date": null, 
+    "target_capture_kit_name": null, 
+    "target_capture_kit": null, 
+    "library_selection": null, 
+    "adapter_name": null, 
+    "library_strand": null, 
+    "is_paired_end": null, 
+    "chipseq_antibody": null, 
+    "library_strategy": null, 
+    "size_selection_range": null, 
+    "target_capture_kit_catalog_number": null, 
+    "single_cell_library": null, 
+    "lane_number": null, 
+    "flow_cell_barcode": null, 
+    "days_to_sequencing": null, 
+    "library_preparation_kit_catalog_number": null, 
+    "target_capture_kit_target_region": null, 
+    "adapter_sequence": null, 
+    "aliquots": {
+      "submitter_id": null
+    }, 
+    "to_trim_adapter_sequence": null, 
+    "project_id": null, 
+    "instrument_model": null, 
+    "fragment_mean_length": null, 
+    "spike_ins_fasta": null, 
+    "number_expect_cells": null, 
+    "fragment_minimum_length": null, 
+    "library_preparation_kit_vendor": null, 
+    "library_preparation_kit_version": null, 
+    "read_length": null, 
+    "library_name": null, 
+    "base_caller_name": null, 
+    "sequencing_center": null, 
+    "base_caller_version": null, 
+    "fragment_standard_deviation_length": null, 
+    "submitter_id": null, 
+    "rin": null
+  }, 
+  {
+    "selected_normal_targeted_sequencing": null, 
+    "aliquot_volume": null, 
+    "centers": {
+      "code": null
+    }, 
+    "aliquot_quantity": null, 
+    "type": "aliquot", 
+    "analyte_type_id": null, 
+    "no_matched_normal_targeted_sequencing": null, 
+    "analytes": {
+      "submitter_id": null
+    }, 
+    "selected_normal_wgs": null, 
+    "analyte_type": null, 
+    "no_matched_normal_wgs": null, 
+    "source_center": null, 
+    "amount": null, 
+    "selected_normal_low_pass_wgs": null, 
+    "project_id": null, 
+    "selected_normal_wxs": null, 
+    "concentration": null, 
+    "samples": {
+      "submitter_id": null
+    }, 
+    "no_matched_normal_wxs": null, 
+    "no_matched_normal_low_pass_wgs": null, 
+    "submitter_id": null
+  }
+]

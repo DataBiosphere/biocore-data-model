@@ -294,7 +294,7 @@ BioCoreTerms:DNABindingModality
 BioCoreTerms:DNAChromatinAccessibility
   a BioCoreTerms:ChromatinAccessibilityModality ;
   rdfs:label "DNA Chromatin Accessibility" ;
-.
+. 
 BioCoreTerms:DNAMethylation
   a BioCoreTerms:DNAMethylationModality ;
   rdfs:label "DNA Methylation" ;

@@ -100,17 +100,6 @@ slots:
     description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDataModality
     multivalued: true
-  diagnosis:
-    aliases: hasDiagnosis
-    description: A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasDiagnosis
-    multivalued: true
-  donor:
-    aliases: hasDonor
-    description: This property references the Donor organism from which the BioSample was acquired.
-    # inverse: donated
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
-    multivalued: true
   donor_age_at_collection:
     aliases: hasDonorAgeAtCollection
     description: A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
@@ -271,6 +260,7 @@ slots:
     description: A reference to the type of activity, preferably using an identifier in a recommended standard ontology.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasActivityType
     multivalued: true
+    range: ActivityTypes
   age_category:
     aliases: hasAgeCategory
     description: A category of age e.g. Embryonic or Postnatal.
@@ -996,6 +986,20 @@ slots:
     - Need definition
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTemperature
     multivalued: true
+
+enums:
+  ActivityTypes:
+    permissible_values:
+      SampleCollectionActivity:
+      SampleTreatmentActivity:
+      SequenceActivity:
+      AlignmentActivity:
+      VariantCallingActivity:
+      ExpressionActivity:
+      AnalysisActivity:
+      ImagingActivity:
+      Activity:
+
 # classes:
 #   VocabularyEncodingScheme:
 #     class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
