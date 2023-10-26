@@ -17,6 +17,8 @@
                 "ExpressionActivity",
                 "AnalysisActivity",
                 "ImagingActivity",
+                "IndexingActivity",
+                "ChecksumActivity",
                 "Activity"
             ],
             "title": "ActivityTypes",
@@ -370,7 +372,7 @@
                 },
                 "file_size": {
                     "description": "Property that describes the approximate size of a file in megabytes.",
-                    "type": "string"
+                    "type": "integer"
                 },
                 "is_supplementary": {
                     "type": "boolean"

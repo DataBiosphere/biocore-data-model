@@ -116,6 +116,7 @@ slots:
     description: Property that describes the approximate size of a file in megabytes.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFileSize
     multivalued: false
+    range: integer
   half_sibling:
     aliases: hasHalfSibling
     description: A property that identifies genetic half siblings.
@@ -998,6 +999,8 @@ enums:
       ExpressionActivity:
       AnalysisActivity:
       ImagingActivity:
+      IndexingActivity:
+      ChecksumActivity:
       Activity:
 
 # classes:

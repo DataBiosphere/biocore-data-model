@@ -36,7 +36,7 @@ classes:
       - donor_age_at_collection_unit
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
-      - donor_id
+      # - donor_id
       - donor
 
   AnvilDataset:
@@ -54,7 +54,7 @@ classes:
   AnvilDiagnosis:
     slots:
       - diagnosis_id
-      - donor_id
+      # - donor_id # link from Donor to Diagnosis not the other way around
       - disease
       - age_at_diagnosis
       - age_at_onset
@@ -71,6 +71,7 @@ classes:
   AnvilDonor:
     slots:
       - donor_id
+      - diagnosis
       - organism_type
       - part_of_dataset_id # TerraDCAT_ap:hasDataset
       - phenotypic_sex
@@ -148,41 +149,31 @@ slots:
     identifier: true  # this is the primary identifier for the class
     range: uriorcurie
   xref_id: # external identifier for a donor
-    is_a: id
     multivalued: true
     recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
     description:
       other identifiers for the person, e.g. ORCID, etc
   activity_id:
     is_a: id
-  activity_type:
   used_file_id:
-    is_a: id
     # multivalued: true
     range: AnvilFile
   generated_file_id:
-    is_a: id
     # multivalued: true
     range: AnvilFile
   used_biosample_id:
-    is_a: id
     # multivalued: true
     range: AnvilBioSample
   source_datarepo_row_ids:
     multivalued: true
   alignmentactivity_id:
     is_a: id
-  reference_assembly:
-    multivalued: true
   antibody_id:
     is_a: id
-  target:
   assayactivity_id:
     is_a: id
   biosample_id:
     is_a: id
-  anatomical_site:
-  disease:
   donor_age_at_collection_unit:
   donor_age_at_collection_lower_bound:
     range: float
@@ -217,21 +208,8 @@ slots:
     range: float
   onset_age_upper_bound:
     range: float
-  phenotype:
-    multivalued: true
-  phenopacket:
-    multivalued: true
-  organism_type:
-  phenotypic_sex:
-  reported_ethnicity:
-    multivalued: true
-  genetic_ancestry:
-    multivalued: true
   file_id:
     is_a: id
-  file_format:
-  file_size:
-    range: integer
   file_md5sum:
     is_a: checksum
   file_name:
@@ -240,8 +218,6 @@ slots:
     range: boolean
   project_id:
     is_a: id
-  funded_by:
-    multivalued: true
   generated_dataset_id:
     multivalued: true
   sequencingactivity_id:
