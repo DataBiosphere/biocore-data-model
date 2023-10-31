@@ -46,11 +46,11 @@ slots:
     multivalued: false # will onsets for multiple conditions ever be presented in an array?
   apriori_cell_type:
     aliases: hasAprioriCellType
-    descripiton: A priori cell type(s) for the sample, which may be assigned independently of experience
+    description: A priori cell type(s) for the sample, which may be assigned independently of experience
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAprioriCellType
     multivalued: true
   aposteriori_cell_type:
-    descripiton: A posteriori cell type for the sample, which require certain assignment based on experimental data
+    description: A posteriori cell type for the sample, which require certain assignment based on experimental data
     multivalued: false
     comments:
     - Could argue for multivalued a posteriori cell type, but this just means that the cell type is uncertain (such as clustering a t-SNE plot) and so better to call it a priori

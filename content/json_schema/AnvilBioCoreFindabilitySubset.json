@@ -108,6 +108,7 @@
                     "type": "array"
                 },
                 "apriori_cell_type": {
+                    "description": "A priori cell type(s) for the sample, which may be assigned independently of experience",
                     "items": {
                         "type": "string"
                     },
@@ -145,9 +146,6 @@
                 },
                 "donor_age_at_collection_upper_bound": {
                     "type": "number"
-                },
-                "donor_id": {
-                    "type": "string"
                 }
             },
             "required": [
@@ -247,9 +245,6 @@
                     },
                     "type": "array"
                 },
-                "donor_id": {
-                    "type": "string"
-                },
                 "onset_age_lower_bound": {
                     "type": "number"
                 },
@@ -290,6 +285,10 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "diagnosis": {
+                    "description": "A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.",
+                    "type": "string"
+                },
                 "donor_id": {
                     "type": "string"
                 },
