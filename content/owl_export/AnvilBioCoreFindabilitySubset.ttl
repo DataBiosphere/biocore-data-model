@@ -33,12 +33,12 @@ anvil:AnvilAntibody a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilAntibody" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasTarget> ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty anvil:antibody_id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasTarget> ],
         <https://w3id.org/None/Antibody> ;
     linkml:attributes "{}" ;
     linkml:is_a "Antibody" .
@@ -66,6 +66,12 @@ anvil:used_biosample_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "used_biosample_id" ;
     rdfs:range anvil:AnvilBioSample .
+
+<https://datamodel.terra.bio/BioCoreFieldsaposteriori_cell_type> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "aposteriori_cell_type" ;
+    rdfs:range linkml:String ;
+    skos:definition "A posteriori cell type for the sample, which require certain assignment based on experimental data" .
 
 <https://github.com/broadinstitute/anvil_tdr_ingest/tree/main/anvil_schema/schema.owl.ttl> a owl:Ontology ;
     rdfs:label "anvil_findability_subset" ;
@@ -559,40 +565,44 @@ anvil:AnvilDataset a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilDataset" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:data_use_permission ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:source_datarepo_row_ids ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:registered_identifier ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:owner ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty anvil:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:principal_investigator ],
+            owl:onProperty anvil:registered_identifier ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:source_datarepo_row_ids ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty anvil:dataset_id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:consent_group ] ;
+            owl:onProperty anvil:consent_group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:principal_investigator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:data_use_permission ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:owner ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ] ;
     linkml:attributes "{}" .
 
 anvil:AnvilProject a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilProject" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty anvil:project_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#isFundedBy> ],
         [ a owl:Restriction ;
@@ -600,39 +610,35 @@ anvil:AnvilProject a owl:Class,
             owl:onProperty anvil:generated_dataset_id ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:source_datarepo_row_ids ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty anvil:principal_investigator ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty anvil:registered_identifier ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty anvil:project_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty anvil:title ] ;
+            owl:onProperty anvil:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:source_datarepo_row_ids ] ;
     linkml:attributes "{}" .
 
 anvil:AnvilSequencingActivity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilSequencingActivity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasBioSample> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://datamodel.terra.bio/BioCoreFieldsActivityTypes> ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasActivityType> ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass anvil:AnvilFile ;
+            owl:onProperty anvil:generated_file_id ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAssayType> ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty anvil:sequencingactivity_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasBioSample> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty anvil:source_datarepo_row_ids ],
@@ -640,18 +646,24 @@ anvil:AnvilSequencingActivity a owl:Class,
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass anvil:AnvilFile ;
-            owl:onProperty anvil:generated_file_id ] ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty anvil:sequencingactivity_id ;
+            owl:qualifiedCardinality 1 ] ;
     linkml:attributes "{}" .
 
 anvil:AnvilVariantCallingActivity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilVariantCallingActivity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty anvil:variantcallingactivity_id ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass anvil:AnvilFile ;
+            owl:onProperty anvil:generated_file_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:source_datarepo_row_ids ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#usesReferenceAssembly> ],
@@ -663,15 +675,9 @@ anvil:AnvilVariantCallingActivity a owl:Class,
             owl:onClass anvil:AnvilFile ;
             owl:onProperty anvil:used_file_id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:source_datarepo_row_ids ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass anvil:AnvilFile ;
-            owl:onProperty anvil:generated_file_id ] ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty anvil:variantcallingactivity_id ;
+            owl:qualifiedCardinality 1 ] ;
     linkml:attributes "{}" .
 
 anvil:activity_id a owl:ObjectProperty,
@@ -1816,41 +1822,41 @@ anvil:AnvilBioSample a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilBioSample" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAnatomicalSite> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAprioriCellType> ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty anvil:biosample_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass anvil:AnvilDonor ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDonor> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasBioSampleType> ],
+            owl:onClass linkml:Float ;
+            owl:onProperty anvil:donor_age_at_collection_lower_bound ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
             owl:onProperty anvil:donor_age_at_collection_upper_bound ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass anvil:AnvilDonor ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDonor> ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty anvil:biosample_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDisease> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAprioriCellType> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty anvil:donor_age_at_collection_unit ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty anvil:donor_age_at_collection_lower_bound ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasBioSampleType> ],
         <https://w3id.org/None/BioSample> ;
     linkml:attributes "{}" ;
     linkml:is_a "BioSample" .
@@ -1956,6 +1962,7 @@ anvil:title a owl:ObjectProperty,
     rdfs:label "apriori_cell_type" ;
     rdfs:range linkml:String ;
     skos:altLabel "hasAprioriCellType" ;
+    skos:definition "A priori cell type(s) for the sample, which may be assigned independently of experience" ;
     skos:exactMatch <https://datamodel.terra.bio/TerraCore#hasAprioriCellType> .
 
 <https://datamodel.terra.bio/TerraCore#hasAssayType> a owl:ObjectProperty,
@@ -2107,32 +2114,19 @@ anvil:AnvilDiagnosis a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilDiagnosis" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty anvil:onset_age_lower_bound ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasPhenopacket> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAgeAtDiagnosis> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty anvil:onset_age_upper_bound ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty anvil:onset_age_unit ],
+            owl:onProperty anvil:source_datarepo_row_ids ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty anvil:diagnosis_age_unit ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasPhenopacket> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAgeAtOnset> ],
+            owl:onClass linkml:Float ;
+            owl:onProperty anvil:onset_age_upper_bound ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty anvil:diagnosis_id ;
@@ -2142,18 +2136,31 @@ anvil:AnvilDiagnosis a owl:Class,
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDisease> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAgeAtDiagnosis> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasPhenotype> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty anvil:diagnosis_age_lower_bound ],
+            owl:onProperty anvil:onset_age_lower_bound ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty anvil:onset_age_unit ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
             owl:onProperty anvil:diagnosis_age_upper_bound ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasPhenotype> ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty anvil:diagnosis_age_lower_bound ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:source_datarepo_row_ids ] ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasAgeAtOnset> ] ;
     linkml:attributes "{}" .
 
 <https://datamodel.terra.bio/TerraCore#hasDisease> a owl:ObjectProperty,
@@ -2199,31 +2206,31 @@ anvil:AnvilDonor a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilDonor" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass anvil:AnvilDiagnosis ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDiagnosis> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasGeneticAncestry> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasOrganismType> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty anvil:source_datarepo_row_ids ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasGeneticAncestry> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasPhenotypicSex> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasReportedEthnicity> ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty anvil:donor_id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasOrganismType> ],
+            owl:onProperty anvil:part_of_dataset_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass anvil:AnvilDiagnosis ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDiagnosis> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:part_of_dataset_id ] ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasReportedEthnicity> ] ;
     linkml:attributes "{}" .
 
 <https://datamodel.terra.bio/TerraCore#hasActivityType> a owl:ObjectProperty,
@@ -2252,26 +2259,6 @@ anvil:AnvilFile a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnvilFile" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty anvil:file_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasFileSize> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#usesReferenceAssembly> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasFileFormat> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:source_datarepo_row_ids ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty anvil:file_md5sum ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty foaf:name ],
         [ a owl:Restriction ;
@@ -2279,12 +2266,32 @@ anvil:AnvilFile a owl:Class,
             owl:onProperty <https://datamodel.terra.bio/TerraCore#hasDataModality> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty anvil:is_supplementary ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty anvil:file_ref ],
         [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty anvil:file_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:file_md5sum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasFileFormat> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty anvil:is_supplementary ] ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#hasFileSize> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty anvil:source_datarepo_row_ids ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://datamodel.terra.bio/TerraCore#usesReferenceAssembly> ] ;
     linkml:attributes "{}" .
 
 <https://datamodel.terra.bio/TerraCore#hasUnit> a owl:ObjectProperty,

@@ -1,5 +1,5 @@
 # this file contains the terms or values that are recommended by BioCore, this is the values to fill out columns described by BioCoreFields, in the context of BioCoreTables
-@prefix : <https://datamodel.terra.bio/BioCore#> .
+@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
 @prefix NCBITaxon_Organisms: <https://datamodel.terra.bio/NCBITaxon_Organisms_subset#> .
 @prefix OBIAssay: <https://datamodel.terra.bio/OBIAssay_subset#> .
 @prefix TerraDCAT_ap: <https://datamodel.terra.bio/TerraDCAT_ap#> .
@@ -16,7 +16,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix BioCore: <https://datamodel.terra.bio/BioCore#> .
 @prefix BioCoreTerms: <https://datamodel.terra.bio/BioCoreTerms#> .
 
 <https://datamodel.terra.bio/BioCoreTerms>
@@ -34,7 +33,7 @@
   owl:versionInfo "2023" ;
 .
 
-### Terms from TerraCoreDataModel (things that were not Tables or Fields)
+### Terms from TerraCoreDataModel (things that were not moved to BioCore LinkML)
 
 BioCore:Age
   a owl:Class ;
@@ -158,26 +157,23 @@ BioCore:UserRestriction
   rdfs:label "User Restriction" ;
   skos:prefLabel "User Restriction" ;
 .
-BioCore:Weight
+BioCoreTerms:Weight
   a owl:Class ;
   rdfs:label "Weight" ;
   rdfs:subClassOf obo:IAO_0000109 ;
   owl:equivalentClass obo:PATO_0000128 ;
   skos:definition "A measurement of the mass of an entity." ;
 .
-
-### Terms from BioCoreTerms: DataModality and BioSampleType etc
-
-BioCoreTerms:AmnioticFluid
-  a BioCoreTerms:AmnioticFluidType ;
-  rdfs:label "Amniotic fluid" ;
-.
-BioCoreTerms:AmnioticFluidType
+BioCoreTerms:SpatialTranscriptomicModality
   a owl:Class ;
-  rdfs:label "Amniotic fluid" ;
-  rdfs:subClassOf BioCoreTerms:BodyFluid ;
-  owl:equivalentClass obo:UBERON_0000173 ;
+  rdfs:label "Spatial Transcriptomics" ;
+  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
 .
+
+# Terms from BioCoreTerms: DataModality and BioSampleType etc
+
+## DaaModality Mini Ontology
+
 BioCoreTerms:Assembly
   a BioCoreTerms:AssemblyModality ;
   rdfs:label "Assembly" ;
@@ -187,86 +183,10 @@ BioCoreTerms:AssemblyModality
   rdfs:label "Assembly" ;
   rdfs:subClassOf BioCoreTerms:GenomicModality ;
 .
-BioCoreTerms:BCell
-  a BioCoreTerms:BCellType ;
-  rdfs:label "B cell" ;
-.
-BioCoreTerms:BCellType
-  a owl:Class ;
-  rdfs:label "B cell" ;
-  rdfs:subClassOf BioCoreTerms:PrimaryCellType ;
-  owl:equivalentClass obo:CL_0000236 ;
-.
-BioCoreTerms:BioSampleType
-  a owl:Class ;
-  rdfs:label "BioSampleType" ;
-  rdfs:subClassOf BioCoreTerms:SampleType ;
-  skos:definition "A classification of samples taken from organisms based on the type of material collected and grouped into primary, cell line and derived type." ;
-.
-BioCoreTerms:Blood
-  a owl:Class ;
-  rdfs:label "Blood" ;
-  rdfs:subClassOf BioCoreTerms:BodyFluid ;
-  owl:equivalentClass obo:UBERON_0000178 ;
-.
-BioCoreTerms:BodyFluid
-  a owl:Class ;
-  rdfs:label "Body fluid" ;
-  rdfs:subClassOf BioCoreTerms:PrimaryType ;
-.
-BioCoreTerms:BreastMilk
-  a BioCoreTerms:BreastMilkType ;
-  rdfs:label "Breast milk" ;
-.
-BioCoreTerms:BreastMilkType
-  a owl:Class ;
-  rdfs:comment "Should this be simply Milk with hasAnatomicalSite of Mammary Glands?  See https://biology.stackexchange.com/questions/39291/are-there-any-non-mammalian-species-known-that-lactate and http://purl.obolibrary.org/obo/UBERON_0001913" ;
-  rdfs:label "Breast milk" ;
-  rdfs:subClassOf BioCoreTerms:BodyFluid ;
-  owl:equivalentClass rdfs:Resource ;
-.
-BioCoreTerms:BuffyCoat
-  a BioCoreTerms:BuffyCoatType ;
-  rdfs:label "BuffyCoat" ;
-.
-BioCoreTerms:BuffyCoatType
-  a owl:Class ;
-  rdfs:label "Buffy coat" ;
-  rdfs:subClassOf BioCoreTerms:Blood ;
-.
 BioCoreTerms:CTScanModality
   a owl:Class ;
   rdfs:label "CT scan" ;
   rdfs:subClassOf BioCoreTerms:MedicalImagingModality ;
-.
-BioCoreTerms:CellFreeDNA
-  a BioCoreTerms:CellFreeDNAType ;
-  rdfs:label "Cell free DNA" ;
-.
-BioCoreTerms:CellFreeDNAType
-  a owl:Class ;
-  rdfs:label "Cell-free DNA" ;
-  rdfs:subClassOf BioCoreTerms:PrimaryType ;
-.
-BioCoreTerms:CellLine
-  a BioCoreTerms:CellLineType ;
-  rdfs:label "Cell line" ;
-.
-BioCoreTerms:CellLineType
-  a owl:Class ;
-  rdfs:comment "Will likely create instances for specific cell lines, but no concrete use case available yet.  Also this should map to \"cell line\" in the Cell Line Ontology. " ;
-  rdfs:label "Cell Line" ;
-  rdfs:subClassOf BioCoreTerms:BioSampleType ;
-.
-BioCoreTerms:CerebrospinalFluid
-  a BioCoreTerms:CerebrospinalFluidType ;
-  rdfs:label "Cerebrospinal fluid" ;
-.
-BioCoreTerms:CerebrospinalFluidType
-  a owl:Class ;
-  rdfs:label "Cerebrospinal fluid" ;
-  rdfs:subClassOf BioCoreTerms:BodyFluid ;
-  owl:equivalentClass obo:UBERON_0001359 ;
 .
 BioCoreTerms:ChromatinAccessibilityModality
   a owl:Class ;
@@ -313,11 +233,6 @@ BioCoreTerms:DataModality
   skos:altLabel "Data Category" ;
   skos:definition "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information." ;
 .
-BioCoreTerms:DerivedType
-  a owl:Class ;
-  rdfs:label "DerivedType" ;
-  rdfs:subClassOf BioCoreTerms:BioSampleType ;
-.
 BioCoreTerms:Electrocardiogram
   a BioCoreTerms:ElectrocardiogramModality ;
   rdfs:label "Electrocardiogram" ;
@@ -348,17 +263,6 @@ BioCoreTerms:EpigenomicModality
   rdfs:label "Epigenomic" ;
   rdfs:subClassOf BioCoreTerms:DataModality ;
   skos:definition "A property that indicates this entity is related to the biological investigation of the epigenome." ;
-.
-BioCoreTerms:Erythrocyte
-  a BioCoreTerms:ErythrocyteType ;
-  rdfs:label "Erythrocyte" ;
-.
-BioCoreTerms:ErythrocyteType
-  a owl:Class ;
-  rdfs:label "Erythrocyte" ;
-  rdfs:subClassOf BioCoreTerms:Blood ;
-  skos:altLabel "RBC" ;
-  skos:altLabel "Red blood cell" ;
 .
 BioCoreTerms:Exome
   a BioCoreTerms:ExomeModality ;
@@ -410,36 +314,6 @@ BioCoreTerms:ImagingModality
   rdfs:label "Imaging" ;
   rdfs:subClassOf BioCoreTerms:DataModality ;
 .
-BioCoreTerms:InducedPluripotentStemCellType
-  a owl:Class ;
-  rdfs:label "Induced pluripotent stem cells" ;
-  rdfs:subClassOf BioCoreTerms:DerivedType ;
-.
-BioCoreTerms:InvitroDifferentiatedCellType
-  a owl:Class ;
-  rdfs:label "In vitro differentiated cells" ;
-  rdfs:subClassOf BioCoreTerms:DerivedType ;
-.
-BioCoreTerms:Leukocyte
-  a BioCoreTerms:LeukocyteType ;
-  rdfs:label "Leukocyte" ;
-.
-BioCoreTerms:LeukocyteType
-  a owl:Class ;
-  rdfs:label "Leukocyte" ;
-  rdfs:subClassOf BioCoreTerms:Blood ;
-  skos:altLabel "White blood cell" ;
-.
-BioCoreTerms:Lymphocyte
-  a BioCoreTerms:LymphocyteType ;
-  rdfs:label "Lymphocyte" ;
-.
-BioCoreTerms:LymphocyteType
-  a owl:Class ;
-  rdfs:label "Lymphocyte" ;
-  rdfs:subClassOf BioCoreTerms:PrimaryCellType ;
-  owl:equivalentClass obo:CL_0000542 ;
-.
 BioCoreTerms:MRI
   a BioCoreTerms:MRIModality ;
   rdfs:label "MRI" ;
@@ -489,6 +363,216 @@ BioCoreTerms:MicroscopyModality
   a owl:Class ;
   rdfs:label "Microscopy" ;
   rdfs:subClassOf BioCoreTerms:ImagingModality ;
+.
+BioCoreTerms:Proteomic
+  a owl:Class ;
+  rdfs:label "Proteomic" ;
+  rdfs:subClassOf BioCoreTerms:DataModality ;
+  skos:definition "A property that indicates this entity is related to the biological investigation of the proteome." ;
+.
+BioCoreTerms:RNABinding
+  a BioCoreTerms:RNABindingModality ;
+  rdfs:label "RNA Binding" ;
+.
+BioCoreTerms:RNABindingModality
+  a owl:Class ;
+  rdfs:label "RNA Binding" ;
+  rdfs:subClassOf BioCoreTerms:EpigenomicModality ;
+.
+BioCoreTerms:RnaSeq
+  a BioCoreTerms:TranscriptomicNonTargeted ;
+  rdfs:label "RNASeq" ;
+.
+BioCoreTerms:Saliva
+  a BioCoreTerms:SalivaType ;
+  rdfs:label "Saliva" ;
+.
+BioCoreTerms:SalivaType
+  a owl:Class ;
+  rdfs:label "Saliva" ;
+  rdfs:subClassOf BioCoreTerms:BodyFluid ;
+  owl:equivalentClass obo:UBERON_0001836 ;
+.
+BioCoreTerms:TranscriptionFactorLocation
+  a BioCoreTerms:TranscriptionFactorLocationModality ;
+  rdfs:label "Transcription Factor Location" ;
+.
+BioCoreTerms:TranscriptionFactorLocationModality
+  a owl:Class ;
+  rdfs:label "Transcription Factor Location" ;
+  rdfs:subClassOf BioCoreTerms:DNABindingModality ;
+.
+BioCoreTerms:Transcriptomic
+  a owl:Class ;
+  rdfs:label "Transcriptomic" ;
+  rdfs:subClassOf BioCoreTerms:DataModality ;
+  skos:definition "A property that indicates this entity is related to the biological investigation of the transcriptome." ;
+.
+BioCoreTerms:TranscriptomicNonTargeted
+  a owl:Class ;
+  rdfs:label "Transcriptomic NonTargeted" ;
+  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
+  skos:altLabel "Transcriptomic NonTargeted" ;
+.
+BioCoreTerms:TranscriptomicTargetedModality
+  a owl:Class ;
+  rdfs:label "Transcriptomic Targeted" ;
+  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
+.
+BioCoreTerms:WholeGenome
+  a BioCoreTerms:WholeGenomeModality ;
+  rdfs:label "Whole Genome" ;
+  skos:altLabel "WGS" ;
+.
+BioCoreTerms:WholeGenomeModality
+  a owl:Class ;
+  rdfs:label "Whole genome" ;
+  rdfs:subClassOf BioCoreTerms:GenomicModality ;
+  skos:altLabel "WGS" ;
+.
+BioCoreTerms:XRay
+  a BioCoreTerms:XRayModality ;
+  rdfs:label "XRay" ;
+.
+BioCoreTerms:XRayModality
+  a owl:Class ;
+  rdfs:label "X ray" ;
+  rdfs:subClassOf BioCoreTerms:MedicalImagingModality ;
+  skos:altLabel "X-ray" ;
+
+## BioSampleType / MolecularSampleType / SampleType Mini Ontology
+
+BioCoreTerms:AmnioticFluid
+  a BioCoreTerms:AmnioticFluidType ;
+  rdfs:label "Amniotic fluid" ;
+.
+BioCoreTerms:AmnioticFluidType
+  a owl:Class ;
+  rdfs:label "Amniotic fluid" ;
+  rdfs:subClassOf BioCoreTerms:BodyFluid ;
+  owl:equivalentClass obo:UBERON_0000173 ;
+.
+BioCoreTerms:BCell
+  a BioCoreTerms:BCellType ;
+  rdfs:label "B cell" ;
+.
+BioCoreTerms:BCellType
+  a owl:Class ;
+  rdfs:label "B cell" ;
+  rdfs:subClassOf BioCoreTerms:PrimaryCellType ;
+  owl:equivalentClass obo:CL_0000236 ;
+.
+BioCoreTerms:BioSampleType
+  a owl:Class ;
+  rdfs:label "BioSampleType" ;
+  rdfs:subClassOf BioCoreTerms:SampleType ;
+  skos:definition "A classification of samples taken from organisms based on the type of material collected and grouped into primary, cell line and derived type." ;
+.
+BioCoreTerms:Blood
+  a owl:Class ;
+  rdfs:label "Blood" ;
+  rdfs:subClassOf BioCoreTerms:BodyFluid ;
+  owl:equivalentClass obo:UBERON_0000178 ;
+.
+BioCoreTerms:BodyFluid
+  a owl:Class ;
+  rdfs:label "Body fluid" ;
+  rdfs:subClassOf BioCoreTerms:PrimaryType ;
+.
+BioCoreTerms:BreastMilk
+  a BioCoreTerms:BreastMilkType ;
+  rdfs:label "Breast milk" ;
+.
+BioCoreTerms:BreastMilkType
+  a owl:Class ;
+  rdfs:comment "Should this be simply Milk with hasAnatomicalSite of Mammary Glands?  See https://biology.stackexchange.com/questions/39291/are-there-any-non-mammalian-species-known-that-lactate and http://purl.obolibrary.org/obo/UBERON_0001913" ;
+  rdfs:label "Breast milk" ;
+  rdfs:subClassOf BioCoreTerms:BodyFluid ;
+  owl:equivalentClass rdfs:Resource ;
+.
+BioCoreTerms:BuffyCoat
+  a BioCoreTerms:BuffyCoatType ;
+  rdfs:label "BuffyCoat" ;
+.
+BioCoreTerms:BuffyCoatType
+  a owl:Class ;
+  rdfs:label "Buffy coat" ;
+  rdfs:subClassOf BioCoreTerms:Blood ;
+.
+BioCoreTerms:CellFreeDNA
+  a BioCoreTerms:CellFreeDNAType ;
+  rdfs:label "Cell free DNA" ;
+.
+BioCoreTerms:CellFreeDNAType
+  a owl:Class ;
+  rdfs:label "Cell-free DNA" ;
+  rdfs:subClassOf BioCoreTerms:PrimaryType ;
+.
+BioCoreTerms:CellLine
+  a BioCoreTerms:CellLineType ;
+  rdfs:label "Cell line" ;
+.
+BioCoreTerms:CellLineType
+  a owl:Class ;
+  rdfs:comment "Will likely create instances for specific cell lines, but no concrete use case available yet.  Also this should map to \"cell line\" in the Cell Line Ontology. " ;
+  rdfs:label "Cell Line" ;
+  rdfs:subClassOf BioCoreTerms:BioSampleType ;
+.
+BioCoreTerms:CerebrospinalFluid
+  a BioCoreTerms:CerebrospinalFluidType ;
+  rdfs:label "Cerebrospinal fluid" ;
+.
+BioCoreTerms:CerebrospinalFluidType
+  a owl:Class ;
+  rdfs:label "Cerebrospinal fluid" ;
+  rdfs:subClassOf BioCoreTerms:BodyFluid ;
+  owl:equivalentClass obo:UBERON_0001359 ;
+.
+BioCoreTerms:DerivedType
+  a owl:Class ;
+  rdfs:label "DerivedType" ;
+  rdfs:subClassOf BioCoreTerms:BioSampleType ;
+.
+BioCoreTerms:Erythrocyte
+  a BioCoreTerms:ErythrocyteType ;
+  rdfs:label "Erythrocyte" ;
+.
+BioCoreTerms:ErythrocyteType
+  a owl:Class ;
+  rdfs:label "Erythrocyte" ;
+  rdfs:subClassOf BioCoreTerms:Blood ;
+  skos:altLabel "RBC" ;
+  skos:altLabel "Red blood cell" ;
+.
+BioCoreTerms:InducedPluripotentStemCellType
+  a owl:Class ;
+  rdfs:label "Induced pluripotent stem cells" ;
+  rdfs:subClassOf BioCoreTerms:DerivedType ;
+.
+BioCoreTerms:InvitroDifferentiatedCellType
+  a owl:Class ;
+  rdfs:label "In vitro differentiated cells" ;
+  rdfs:subClassOf BioCoreTerms:DerivedType ;
+.
+BioCoreTerms:Leukocyte
+  a BioCoreTerms:LeukocyteType ;
+  rdfs:label "Leukocyte" ;
+.
+BioCoreTerms:LeukocyteType
+  a owl:Class ;
+  rdfs:label "Leukocyte" ;
+  rdfs:subClassOf BioCoreTerms:Blood ;
+  skos:altLabel "White blood cell" ;
+.
+BioCoreTerms:Lymphocyte
+  a BioCoreTerms:LymphocyteType ;
+  rdfs:label "Lymphocyte" ;
+.
+BioCoreTerms:LymphocyteType
+  a owl:Class ;
+  rdfs:label "Lymphocyte" ;
+  rdfs:subClassOf BioCoreTerms:PrimaryCellType ;
+  owl:equivalentClass obo:CL_0000542 ;
 .
 BioCoreTerms:MolecularSample
   a BioCoreTerms:MolecularSampleType ;
@@ -569,35 +653,7 @@ BioCoreTerms:PrimaryType
   rdfs:label "PrimaryType" ;
   rdfs:subClassOf BioCoreTerms:BioSampleType ;
 .
-BioCoreTerms:Proteomic
-  a owl:Class ;
-  rdfs:label "Proteomic" ;
-  rdfs:subClassOf BioCoreTerms:DataModality ;
-  skos:definition "A property that indicates this entity is related to the biological investigation of the proteome." ;
-.
-BioCoreTerms:RNABinding
-  a BioCoreTerms:RNABindingModality ;
-  rdfs:label "RNA Binding" ;
-.
-BioCoreTerms:RNABindingModality
-  a owl:Class ;
-  rdfs:label "RNA Binding" ;
-  rdfs:subClassOf BioCoreTerms:EpigenomicModality ;
-.
-BioCoreTerms:RnaSeq
-  a BioCoreTerms:TranscriptomicNonTargeted ;
-  rdfs:label "RNASeq" ;
-.
-BioCoreTerms:Saliva
-  a BioCoreTerms:SalivaType ;
-  rdfs:label "Saliva" ;
-.
-BioCoreTerms:SalivaType
-  a owl:Class ;
-  rdfs:label "Saliva" ;
-  rdfs:subClassOf BioCoreTerms:BodyFluid ;
-  owl:equivalentClass obo:UBERON_0001836 ;
-.
+
 BioCoreTerms:SampleType
   a owl:Class ;
   rdfs:label "SampleType" ;
@@ -623,11 +679,6 @@ BioCoreTerms:SerumType
   rdfs:label "Serum" ;
   rdfs:subClassOf BioCoreTerms:Blood ;
   owl:equivalentClass obo:UBERON_0001977 ;
-.
-BioCoreTerms:SpatialTranscriptomicModality
-  a owl:Class ;
-  rdfs:label "Spatial Transcriptomics" ;
-  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
 .
 BioCoreTerms:Stool
   a BioCoreTerms:StoolType ;
@@ -668,32 +719,6 @@ BioCoreTerms:TissueType
   rdfs:label "Tissue" ;
   rdfs:subClassOf BioCoreTerms:PrimaryType ;
 .
-BioCoreTerms:TranscriptionFactorLocation
-  a BioCoreTerms:TranscriptionFactorLocationModality ;
-  rdfs:label "Transcription Factor Location" ;
-.
-BioCoreTerms:TranscriptionFactorLocationModality
-  a owl:Class ;
-  rdfs:label "Transcription Factor Location" ;
-  rdfs:subClassOf BioCoreTerms:DNABindingModality ;
-.
-BioCoreTerms:Transcriptomic
-  a owl:Class ;
-  rdfs:label "Transcriptomic" ;
-  rdfs:subClassOf BioCoreTerms:DataModality ;
-  skos:definition "A property that indicates this entity is related to the biological investigation of the transcriptome." ;
-.
-BioCoreTerms:TranscriptomicNonTargeted
-  a owl:Class ;
-  rdfs:label "Transcriptomic NonTargeted" ;
-  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
-  skos:altLabel "Transcriptomic NonTargeted" ;
-.
-BioCoreTerms:TranscriptomicTargetedModality
-  a owl:Class ;
-  rdfs:label "Transcriptomic Targeted" ;
-  rdfs:subClassOf BioCoreTerms:Transcriptomic ;
-.
 BioCoreTerms:Urine
   a BioCoreTerms:UrineType ;
   rdfs:label "Urine" ;
@@ -724,24 +749,4 @@ BioCoreTerms:WholeBloodType
   rdfs:label "Whole blood" ;
   rdfs:subClassOf BioCoreTerms:Blood ;
   owl:equivalentClass obo:UBERON_0000178 ;
-.
-BioCoreTerms:WholeGenome
-  a BioCoreTerms:WholeGenomeModality ;
-  rdfs:label "Whole Genome" ;
-  skos:altLabel "WGS" ;
-.
-BioCoreTerms:WholeGenomeModality
-  a owl:Class ;
-  rdfs:label "Whole genome" ;
-  rdfs:subClassOf BioCoreTerms:GenomicModality ;
-  skos:altLabel "WGS" ;
-.
-BioCoreTerms:XRay
-  a BioCoreTerms:XRayModality ;
-  rdfs:label "XRay" ;
-.
-BioCoreTerms:XRayModality
-  a owl:Class ;
-  rdfs:label "X ray" ;
-  rdfs:subClassOf BioCoreTerms:MedicalImagingModality ;
-  skos:altLabel "X-ray" ;
+  .
