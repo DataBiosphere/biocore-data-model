@@ -108,7 +108,7 @@
                     "type": "array"
                 },
                 "apriori_cell_type": {
-                    "description": "A priori cell type(s) for the sample, which may be assigned independently of experience",
+                    "description": "A priori cell type(s) for the sample, a human assignment of cell type without experimental data.",
                     "items": {
                         "type": "string"
                     },

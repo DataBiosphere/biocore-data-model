@@ -46,7 +46,7 @@ slots:
     multivalued: false # will onsets for multiple conditions ever be presented in an array?
   apriori_cell_type:
     aliases: hasAprioriCellType
-    description: A priori cell type(s) for the sample, which may be assigned independently of experience
+    description: A priori cell type(s) for the sample, a human assignment of cell type without experimental data.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAprioriCellType
     multivalued: true
   aposteriori_cell_type:
