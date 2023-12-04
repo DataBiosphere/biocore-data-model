@@ -142,6 +142,7 @@
                     "type": "number"
                 },
                 "donor_age_at_collection_unit": {
+                    "description": "The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
                     "type": "string"
                 },
                 "donor_age_at_collection_upper_bound": {

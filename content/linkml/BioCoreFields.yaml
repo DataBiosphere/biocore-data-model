@@ -109,6 +109,11 @@ slots:
     description: A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection
     multivalued: false # check if this could be array
+  donor_age_at_collection_unit:
+    aliases: hasDonorAgeAtCollectionUnit
+    description: The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasDonorAgeAtCollection
+    multivalued: false # check if this could be array
   donor_age_at_event:
     aliases: hasDonorAgeAtEvent
     description: A reference to the Age of the Donor at the point in time that the event or administration occured.
