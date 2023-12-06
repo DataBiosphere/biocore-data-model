@@ -269,7 +269,7 @@ slots:
     aliases: hasActivityType
     description: A reference to the type of activity, preferably using an identifier in a recommended standard ontology.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasActivityType
-    multivalued: true
+    multivalued: false
     range: ActivityTypes
   age_category:
     aliases: hasAgeCategory

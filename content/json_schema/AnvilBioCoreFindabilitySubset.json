@@ -56,11 +56,8 @@
                     "type": "string"
                 },
                 "activity_type": {
-                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
-                    "items": {
-                        "$ref": "#/$defs/ActivityTypes"
-                    },
-                    "type": "array"
+                    "$ref": "#/$defs/ActivityTypes",
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology."
                 },
                 "xref_id": {
                     "description": "other identifiers for the person, e.g. ORCID, etc",
@@ -456,11 +453,8 @@
             "description": "",
             "properties": {
                 "activity_type": {
-                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
-                    "items": {
-                        "$ref": "#/$defs/ActivityTypes"
-                    },
-                    "type": "array"
+                    "$ref": "#/$defs/ActivityTypes",
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology."
                 },
                 "assay_type": {
                     "description": "A reference to the type of assay, preferably using an identifier in the Ontology for Biomedical Investigations assay entity (http://purl.obolibrary.org/obo/OBI_0000070).",
@@ -507,11 +501,8 @@
             "description": "",
             "properties": {
                 "activity_type": {
-                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology.",
-                    "items": {
-                        "$ref": "#/$defs/ActivityTypes"
-                    },
-                    "type": "array"
+                    "$ref": "#/$defs/ActivityTypes",
+                    "description": "A reference to the type of activity, preferably using an identifier in a recommended standard ontology."
                 },
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
