@@ -32,11 +32,11 @@ classes:
       - apriori_cell_type
       - biosample_type
       - disease
-      - donor_age_at_collection
+#      - donor_age_at_collection
       - donor_age_at_collection_unit
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
-      # - donor_id
+      - donor_id
       - donor
 
   AnvilDataset:
@@ -54,10 +54,10 @@ classes:
   AnvilDiagnosis:
     slots:
       - diagnosis_id
-      # - donor_id # link from Donor to Diagnosis not the other way around
+      - donor_id # clarify which way this link should be
       - disease
-      - age_at_diagnosis
-      - age_at_onset
+      # - age_at_diagnosis
+      # - age_at_onset
       - diagnosis_age_unit
       - diagnosis_age_lower_bound
       - diagnosis_age_upper_bound
@@ -87,9 +87,9 @@ classes:
       - file_size
       - file_md5sum # say that it is_a: checksum
       - reference_assembly
-      - name
+      - file_name
       - file_ref
-      - is_supplementary
+#      - is_supplementary
       - source_datarepo_row_ids
 
   AnvilProject:

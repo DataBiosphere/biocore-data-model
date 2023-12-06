@@ -9,19 +9,16 @@ prefixes:
   BioCoreTables: https://w3id.org/None/
 default_prefix: BioCoreTables
 slots:
-  member:
-    slot_uri: https://www.w3.org/TR/rdf12-schema/#ch_member
-    multivalued: true
 classes:
   RelationalTable:
     class_uri: http://purl.org/dc/terms/DCMIType
   DNASequence:
     see_also: OBI_0001573
     class_uri: http://purl.obolibrary.org/obo/OBI_0001573
-  VocabularyEncodingScheme:
-    class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
-  Service:
-    class_uri: http://purl.org/dc/dcmitype/Service
+  # VocabularyEncodingScheme:
+  #   class_uri: http://purl.org/dc/dcam/VocabularyEncodingScheme
+  # Service:
+  #   class_uri: http://purl.org/dc/dcmitype/Service
   SingleCell:
     see_also: EFO_0007831
     class_uri: http://www.ebi.ac.uk/efo/EFO_0007831
@@ -84,10 +81,6 @@ classes:
     class_uri: https://datamodel.terra.bio/TerraCore#FamilyMember
     is_a: RelationalTable
   File:
-    comments:
-    - 'Used definition from http://semanticscience.org/resource/SIO_000396 but equivalence
-      to http://www.w3.org/ns/dcat#Distribution doesn''t make sense in this context;
-      thus we have our own class.  Also added electronic. '
     see_also: IAO_0000030
     class_uri: https://datamodel.terra.bio/TerraCore#File
     is_a: RelationalTable

@@ -77,7 +77,7 @@ slots:
     - Need definition
     is_a: sample_type
     slot_uri: https://datamodel.terra.bio/TerraCore#hasBioSampleType
-    multivalued: true
+    multivalued: false
   child:
     aliases: hasChild
     description: A property that identifies genetic children.
@@ -170,7 +170,7 @@ slots:
     description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\
 #    comment: mapping to obo PATO_0001894
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPhenotypicSex
-    multivalued: true
+    multivalued: false
   sample_treatment:
     aliases: hasSampleTreatment
     description: A sample treatment of a BioSample. A subproperty of prov:usedBy which indicates that a SampleTreatmentActivity was performed using this entity.
@@ -326,7 +326,7 @@ slots:
       is allowed.  This is useful for imaging and other whole body samples as UBERON
       does not have \"whole body\".  Use NCIT:C13041 for this.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAnatomicalSite
-    multivalued: true
+    multivalued: false
   average_read_length:
     aliases: hasAverageReadLength
     range: decimal
@@ -466,7 +466,7 @@ slots:
     - The definition of this field follows the convention used by the Human Cell Atlas.
     # is_a: format
     slot_uri: https://datamodel.terra.bio/TerraCore#hasFileFormat
-    multivalued: true
+    multivalued: false
   fragments:
     aliases: hasFragments
     comments:
@@ -600,7 +600,7 @@ slots:
     comments:
     - 'For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 '
     slot_uri: https://datamodel.terra.bio/TerraCore#hasOrganismType
-    multivalued: true
+    multivalued: false
   paired_end_identifier:
     aliases: hasPairedEndIdentifier
     slot_uri: https://datamodel.terra.bio/TerraCore#hasPairedEndIdentifier

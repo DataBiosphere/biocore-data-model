@@ -99,10 +99,7 @@
             "properties": {
                 "anatomical_site": {
                     "description": "A reference to the site within the organism from which the BioSample was taken.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "apriori_cell_type": {
                     "description": "A priori cell type(s) for the sample, a human assignment of cell type without experimental data.",
@@ -131,10 +128,6 @@
                     "description": "This property references the Donor organism from which the BioSample was acquired.",
                     "type": "string"
                 },
-                "donor_age_at_collection": {
-                    "description": "A reference to the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
-                    "type": "string"
-                },
                 "donor_age_at_collection_lower_bound": {
                     "type": "number"
                 },
@@ -144,6 +137,9 @@
                 },
                 "donor_age_at_collection_upper_bound": {
                     "type": "number"
+                },
+                "donor_id": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -216,14 +212,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "age_at_diagnosis": {
-                    "description": "A reference to the Age of the Donor at the point in time that diagnosis was made.",
-                    "type": "string"
-                },
-                "age_at_onset": {
-                    "description": "A reference to the Age of the Donor at the onset of the disease associated with the diagnosis.",
-                    "type": "string"
-                },
                 "diagnosis_age_lower_bound": {
                     "type": "number"
                 },
@@ -242,6 +230,9 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "donor_id": {
+                    "type": "string"
                 },
                 "onset_age_lower_bound": {
                     "type": "number"
@@ -299,10 +290,7 @@
                 },
                 "organism_type": {
                     "description": "A reference to the organism type.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "part_of_dataset_id": {
                     "items": {
@@ -312,10 +300,7 @@
                 },
                 "phenotypic_sex": {
                     "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "reported_ethnicity": {
                     "description": "A property that relects a HumanDonor's reported ethnic origins.",
@@ -350,10 +335,7 @@
                 },
                 "file_format": {
                     "description": "An indication of the format of an electronic file; include the full file extension including compression extensions.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "file_id": {
                     "type": "string"
@@ -364,21 +346,15 @@
                     },
                     "type": "array"
                 },
+                "file_name": {
+                    "type": "string"
+                },
                 "file_ref": {
                     "type": "string"
                 },
                 "file_size": {
                     "description": "Property that describes the approximate size of a file in megabytes.",
                     "type": "integer"
-                },
-                "is_supplementary": {
-                    "type": "boolean"
-                },
-                "name": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
                 },
                 "reference_assembly": {
                     "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
@@ -702,12 +678,6 @@
             "title": "SequencingActivity",
             "type": "object"
         },
-        "Service": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Service",
-            "type": "object"
-        },
         "SingleCell": {
             "additionalProperties": false,
             "description": "",
@@ -742,12 +712,6 @@
             "additionalProperties": false,
             "description": "",
             "title": "VariantCallingActivity",
-            "type": "object"
-        },
-        "VocabularyEncodingScheme": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "VocabularyEncodingScheme",
             "type": "object"
         }
     },
