@@ -1,0 +1,87 @@
+# Terms from TerraCoreDataModel (things that were not moved to BioCore LinkML)
+## Links to other ontologies, connect with Application Ontology and Forms Index
+
+BioCore:Age
+  a owl:Class ;
+  rdfs:label "Age" ;
+  rdfs:subClassOf obo:OBI_0001167 ;
+  skos:prefLabel "Age " ;
+.
+BioCore:Address
+  a owl:Class ;
+  rdfs:label "Address" ;
+  rdfs:subClassOf obo:IAO_0000030 ;
+  skos:definition "A physical address for a Person or Organization." ;
+.
+BioCore:BiologicalSex
+  a owl:Class ;
+  rdfs:label "Biological sex" ;
+  rdfs:subClassOf obo:BFO_0000019 ;
+  rdfs:subClassOf obo:PATO_0001894 ;
+  skos:definition "A quality of an organism indicating physical sexual characteristics. Similar to PATO's phenotypic sex but pseudohermaphrodite is not relevant to existing data and is not recommended." ;
+.
+BioCore:Country
+  a owl:Class ;
+  rdfs:label "Country" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+  skos:definition "A country represented by the ISO-3166 Alpha-2 code and name (as a label). https://www.iso.org/obp/ui/#search" ;
+.
+BioCore:Dog
+  a obo:NCBITaxon_9615 ;
+  rdfs:label "Dog" ;
+.
+BioCore:Dose
+  a owl:Class ;
+  rdfs:label "Dose" ;
+  rdfs:subClassOf obo:IAO_0000027 ;
+  skos:definition "A measured amount of a substance." ;
+  skos:prefLabel "Dose" ;
+.
+obo:PATO_0000383
+  a owl:Class ;
+  oboInOwl:hasExactSynonym "F" ;
+  rdfs:label "Female" ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
+  skos:altLabel "F" ;
+.
+
+obo:PATO_0001340
+  a owl:Class ;
+  oboInOwl:hasExactSynonym "intersex" ;
+  rdfs:label "Intersex" ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
+  skos:altLabel "hermaphrodite" ;
+.
+obo:PATO_0000384
+  a owl:Class ;
+  oboInOwl:hasExactSynonym "M" ;
+  rdfs:label "Male" ;
+  rdfs:subClassOf BioCore:BiologicalSex ;
+  skos:altLabel "M" ;
+.
+BioCore:PrincipalInvestigator
+  a owl:Class ;
+  rdfs:label "principal investigator" ;
+  rdfs:subClassOf prov:Person ;
+  skos:definition "The principal or lead person who carries out an investigation assigned by a sponsor or authorizing agent." ;
+.
+obo:PATO_0000128
+  a owl:Class ;
+  rdfs:label "weight" ;
+  rdfs:subClassOf obo:IAO_0000109 ;
+  skos:definition "A measurement of the mass of an entity." ;
+.
+
+
+BioCore:GRCh37
+  a BioCore:ReferenceAssembly ;
+  rdfs:label "GRCh37" ;
+  BioCore:hasGRCName "GRCh37" ;
+.
+BioCore:GrCh38
+  a BioCore:ReferenceAssembly ;
+  rdfs:label "GRCh38" ;
+  BioCore:hasGRCName "GRCh38" ;
+.
+
+
