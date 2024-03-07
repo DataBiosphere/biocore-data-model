@@ -11,13 +11,6 @@ imports:
   - BioCoreTables # The BioCore set of standard tables (classes)
 default_range: string # if not specified, the default range is string
 
-slots:
-  definition:
-    slot_uri: http://www.w3.org/ns/prov#definition
-    multivalued: true
-  prefLabel:
-    slot_uri: http://www.w3.org/2004/02/skos/core#prefLabel
-    multivalued: true
 classes:
   AnvilBioSample:
     is_a: BioSample
@@ -48,3 +41,99 @@ classes:
       - file_md5sum # say that it is_a: checksum
       - file_name
       - file_ref
+
+slots:
+  donor:
+    aliases: hasDonor
+    description: This property references the Donor organism from which the BioSample was acquired.
+    # inverse: donated
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
+    range: AnvilDonor
+    domain: AnvilBioSample
+    # multivalued: true
+  diagnosis:
+    aliases: hasDiagnosis
+    description: A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasDiagnosis
+    range: AnvilDiagnosis
+    domain: AnvilDonor
+    # multivalued: true
+  id:
+    identifier: true  # this is the primary identifier for the class
+    range: uriorcurie
+  xref_id: # external identifier for a donor
+    multivalued: true
+    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
+    description:
+      other identifiers for the person, e.g. ORCID, etc
+  activity_id:
+    is_a: id
+  used_file_id:
+    # multivalued: true
+    range: AnvilFile
+  generated_file_id:
+    # multivalued: true
+    range: AnvilFile
+  used_biosample_id:
+    # multivalued: true
+    range: AnvilBioSample
+  source_datarepo_row_ids:
+    multivalued: true
+  alignmentactivity_id:
+    is_a: id
+  antibody_id:
+    is_a: id
+  assayactivity_id:
+    is_a: id
+  biosample_id:
+    is_a: id
+  donor_age_at_collection_unit:
+  donor_age_at_collection_lower_bound:
+    range: float
+  donor_age_at_collection_upper_bound:
+    range: float
+  donor_id:
+    is_a: id
+  part_of_dataset_id:
+    multivalued: true
+  dataset_id:
+    is_a: id
+  consent_group:
+    multivalued: true
+  data_use_permission:
+    multivalued: true
+  owner:
+    multivalued: true
+  principal_investigator:
+    multivalued: true
+  registered_identifier:
+    multivalued: true
+  title:
+  diagnosis_id:
+    is_a: id
+  diagnosis_age_unit:
+  diagnosis_age_lower_bound:
+    range: float
+  diagnosis_age_upper_bound:
+    range: float
+  onset_age_unit:
+  onset_age_lower_bound:
+    range: float
+  onset_age_upper_bound:
+    range: float
+  file_id:
+    is_a: id
+  file_md5sum:
+    is_a: checksum
+  file_name:
+  file_ref:
+  is_supplementary:
+    range: boolean
+  project_id:
+    is_a: id
+  generated_dataset_id:
+    multivalued: true
+  sequencingactivity_id:
+    is_a: id
+  variantcallingactivity_id:
+    is_a: id
