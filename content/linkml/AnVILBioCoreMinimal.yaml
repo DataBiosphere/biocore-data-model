@@ -1,0 +1,50 @@
+name: AnVILBioCoreMinimal
+description: AnVIL minimal BioCore schema
+id: https://datamodel.terra.bio/BioCore
+prefixes:
+  linkml: https://w3id.org/linkml/
+  anvil: https://anvilproject.org/
+default_prefix: anvil
+imports:
+  - linkml:types # this imports the linkml types schema
+  - BioCoreFields # The BioCore set of standard fields (i.e. columns)
+  - BioCoreTables # The BioCore set of standard tables (classes)
+default_range: string # if not specified, the default range is string
+
+slots:
+  definition:
+    slot_uri: http://www.w3.org/ns/prov#definition
+    multivalued: true
+  prefLabel:
+    slot_uri: http://www.w3.org/2004/02/skos/core#prefLabel
+    multivalued: true
+classes:
+  AnvilBioSample:
+    is_a: BioSample
+    slots:
+      - biosample_id
+      - anatomical_site
+      - apriori_cell_type
+      - biosample_type
+      - disease
+      - donor_age_at_collection_unit
+      - donor_age_at_collection_lower_bound
+      - donor_age_at_collection_upper_bound
+      - donor_id
+  AnvilDonor:
+    slots:
+      - donor_id
+      - diagnosis
+      - organism_type
+      - phenotypic_sex
+      - reported_ethnicity
+      - genetic_ancestry
+  AnvilFile:
+    slots:
+      - file_id
+      - data_modality
+      - file_format
+      - file_size
+      - file_md5sum # say that it is_a: checksum
+      - file_name
+      - file_ref
