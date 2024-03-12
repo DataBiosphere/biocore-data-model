@@ -46,11 +46,11 @@ slots:
     multivalued: false # will onsets for multiple conditions ever be presented in an array?
   apriori_cell_type:
     aliases: hasAprioriCellType
-    description: A priori cell type(s) for the sample, a human assignment of cell type without experimental data.
+    description: A priori cell type(s) for the sample, a human assignment of cell type.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAprioriCellType
     multivalued: true
   aposteriori_cell_type:
-    description: A posteriori cell type for the sample, which require certain assignment based on experimental data
+    description: A posteriori cell type for the sample, which require certain assignment based on experimental data.
     multivalued: false
     comments:
     - Could argue for multivalued a posteriori cell type, but this just means that the cell type is uncertain (such as clustering a t-SNE plot) and so better to call it a priori
@@ -353,8 +353,7 @@ slots:
     multivalued: true
   checksum:
     aliases: hasChecksum
-    comments:
-    - Need definition
+    description: A property that identifies a checksum for a file.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasChecksum
     multivalued: true
   chromosome:

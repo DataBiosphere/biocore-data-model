@@ -7,7 +7,6 @@ prefixes:
 default_prefix: anvil
 imports:
    - linkml:types # this imports the linkml types schema
-#   - BioCoreFields # The BioCore set of standard fields (i.e. columns)
 default_range: string # if not specified, the default range is string
 
 classes:
@@ -48,7 +47,6 @@ slots:
   donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
-    # inverse: donated
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     range: AnvilDonor
     domain: AnvilBioSample
