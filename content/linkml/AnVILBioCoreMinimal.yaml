@@ -1,19 +1,18 @@
 name: AnVILBioCoreMinimal
 description: AnVIL minimal BioCore schema
-id: https://datamodel.terra.bio/BioCore
+id: https://docs.google.com/spreadsheets/d/1kOWpQV7pIUXcFx5jGgx75qnNI5-g_c2D/edit#gid=1482408180
 prefixes:
   linkml: https://w3id.org/linkml/
   anvil: https://anvilproject.org/
 default_prefix: anvil
 imports:
-  - linkml:types # this imports the linkml types schema
-  - BioCoreFields # The BioCore set of standard fields (i.e. columns)
-  - BioCoreTables # The BioCore set of standard tables (classes)
+   - linkml:types # this imports the linkml types schema
+#   - BioCoreFields # The BioCore set of standard fields (i.e. columns)
 default_range: string # if not specified, the default range is string
 
 classes:
   AnvilBioSample:
-    is_a: BioSample
+    description: Contains information about the sample(s) included in the study.
     slots:
       - biosample_id
       - anatomical_site
@@ -23,16 +22,17 @@ classes:
       - donor_age_at_collection_unit
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
-      - donor_id
+      - donor_id_fk # this is the foregin key to the donor table
   AnvilDonor:
+    description: Demographic and phenotypic information about the donor.
     slots:
       - donor_id
-      - diagnosis
       - organism_type
       - phenotypic_sex
       - reported_ethnicity
       - genetic_ancestry
   AnvilFile:
+    description: Information for files associated with the study.
     slots:
       - file_id
       - data_modality
@@ -41,99 +41,98 @@ classes:
       - file_md5sum # say that it is_a: checksum
       - file_name
       - file_ref
+      - reference_assembly
 
 slots:
-  donor:
+# ids are unique identifiers for each entity or explicitly defined foreign key
+  donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
     # inverse: donated
     slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     range: AnvilDonor
     domain: AnvilBioSample
-    # multivalued: true
-  diagnosis:
-    aliases: hasDiagnosis
-    description: A property that identifies a Diagnosis including provenance and the disease or condition diagnosed.
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasDiagnosis
-    range: AnvilDiagnosis
-    domain: AnvilDonor
-    # multivalued: true
+    multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
   id:
-    identifier: true  # this is the primary identifier for the class
+    identifier: true  # this is the type of primary key
     range: uriorcurie
-  xref_id: # external identifier for a donor
-    multivalued: true
-    recommended: true # example of making a slot recommended, does NOT serialize to JSON schema!
-    description:
-      other identifiers for the person, e.g. ORCID, etc
-  activity_id:
-    is_a: id
-  used_file_id:
-    # multivalued: true
-    range: AnvilFile
-  generated_file_id:
-    # multivalued: true
-    range: AnvilFile
-  used_biosample_id:
-    # multivalued: true
-    range: AnvilBioSample
-  source_datarepo_row_ids:
-    multivalued: true
-  alignmentactivity_id:
-    is_a: id
-  antibody_id:
-    is_a: id
-  assayactivity_id:
-    is_a: id
   biosample_id:
     is_a: id
-  donor_age_at_collection_unit:
-  donor_age_at_collection_lower_bound:
-    range: float
-  donor_age_at_collection_upper_bound:
-    range: float
   donor_id:
     is_a: id
-  part_of_dataset_id:
-    multivalued: true
-  dataset_id:
-    is_a: id
-  consent_group:
-    multivalued: true
-  data_use_permission:
-    multivalued: true
-  owner:
-    multivalued: true
-  principal_investigator:
-    multivalued: true
-  registered_identifier:
-    multivalued: true
-  title:
   diagnosis_id:
     is_a: id
-  diagnosis_age_unit:
-  diagnosis_age_lower_bound:
-    range: float
-  diagnosis_age_upper_bound:
-    range: float
-  onset_age_unit:
-  onset_age_lower_bound:
-    range: float
-  onset_age_upper_bound:
-    range: float
   file_id:
     is_a: id
-  file_md5sum:
-    is_a: checksum
-  file_name:
-  file_ref:
-  is_supplementary:
-    range: boolean
-  project_id:
-    is_a: id
-  generated_dataset_id:
+
+  anatomical_site:
+    aliases: hasAnatomicalSite
+    description: A reference to the site within the organism from which the BioSample was taken.
+    multivalued: false
+  apriori_cell_type:
+    aliases: hasAprioriCellType
+    description: A priori cell type(s) for the sample, a human assignment of cell type.
     multivalued: true
-  sequencingactivity_id:
-    is_a: id
-  variantcallingactivity_id:
-    is_a: id
+  biosample_type:
+    description: The type of biosample represented by the record.
+    multivalued: false
+  disease:
+    aliases: hasDisease
+    description: A property that identifies a disease or condition has been reported in this entity.
+    multivalued: false
+  donor_age_at_collection_unit:
+    description: The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.
+  donor_age_at_collection_lower_bound:
+    description: Lower bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.
+    range: float
+  donor_age_at_collection_upper_bound:
+    description: Upper bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.
+    range: float
+  organism_type:
+    aliases: hasOrganismType
+    description: A reference to the organism type.
+    comments:
+    - 'For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 '
+    multivalued: false
+  phenotypic_sex:
+    aliases: hasPhenotypicSex
+    description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
+    multivalued: false
+  reported_ethnicity:
+    aliases: hasReportedEthnicity
+    description: A property that relects a Human Donor's reported ethnic origins.
+    comments:
+    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
+    multivalued: true
+  genetic_ancestry:
+    aliases: hasGeneticAncestry
+    description: A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data.
+    comments:
+    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004
+    multivalued: true
+  data_modality:
+    aliases: hasDataModality
+    description: Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.
+    multivalued: true
+  file_name:
+    description: The name of the file.
+  file_ref:
+    description: The fully qualified path to the file.
+  file_format:
+    aliases: hasFileFormat
+    description: An indication of the format of an electronic file; include the full file extension including compression extensions.
+    comments:
+    - The definition of this field follows the convention used by the Human Cell Atlas.
+    multivalued: false
+  file_size:
+    aliases: hasFileSize
+    description: Property that describes the approximate size of a file in megabytes.
+    multivalued: false
+    range: integer
+  file_md5sum:
+    description: md5 checksum for the file
+    multivalued: false
+  reference_assembly:
+    aliases: usesReferenceAssembly
+    description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
+    multivalued: true

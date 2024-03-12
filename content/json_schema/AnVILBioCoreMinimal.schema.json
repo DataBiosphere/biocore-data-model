@@ -1,63 +1,15 @@
 {
     "$defs": {
-        "Activity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Activity",
-            "type": "object"
-        },
-        "ActivityTypes": {
-            "description": "",
-            "enum": [
-                "SampleCollectionActivity",
-                "SampleTreatmentActivity",
-                "SequenceActivity",
-                "AlignmentActivity",
-                "VariantCallingActivity",
-                "ExpressionActivity",
-                "AnalysisActivity",
-                "ImagingActivity",
-                "IndexingActivity",
-                "ChecksumActivity",
-                "Activity"
-            ],
-            "title": "ActivityTypes",
-            "type": "string"
-        },
-        "AlignmentActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "AlignmentActivity",
-            "type": "object"
-        },
-        "AlignmentFile": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "AlignmentFile",
-            "type": "object"
-        },
-        "AnalysisActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "AnalysisActivity",
-            "type": "object"
-        },
-        "Antibody": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Antibody",
-            "type": "object"
-        },
         "AnvilBioSample": {
             "additionalProperties": false,
-            "description": "",
+            "description": "Contains information about the sample(s) included in the study.",
             "properties": {
                 "anatomical_site": {
                     "description": "A reference to the site within the organism from which the BioSample was taken.",
                     "type": "string"
                 },
                 "apriori_cell_type": {
-                    "description": "A priori cell type(s) for the sample, a human assignment of cell type without experimental data.",
+                    "description": "A priori cell type(s) for the sample, a human assignment of cell type.",
                     "items": {
                         "type": "string"
                     },
@@ -67,28 +19,27 @@
                     "type": "string"
                 },
                 "biosample_type": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "description": "The type of biosample represented by the record.",
+                    "type": "string"
                 },
                 "disease": {
                     "description": "A property that identifies a disease or condition has been reported in this entity.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string"
                 },
                 "donor_age_at_collection_lower_bound": {
+                    "description": "Lower bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.",
                     "type": "number"
                 },
                 "donor_age_at_collection_unit": {
+                    "description": "The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
                     "type": "string"
                 },
                 "donor_age_at_collection_upper_bound": {
+                    "description": "Upper bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.",
                     "type": "number"
                 },
-                "donor_id": {
+                "donor_id_fk": {
+                    "description": "This property references the Donor organism from which the BioSample was acquired.",
                     "type": "string"
                 }
             },
@@ -100,16 +51,13 @@
         },
         "AnvilDonor": {
             "additionalProperties": false,
-            "description": "",
+            "description": "Demographic and phenotypic information about the donor.",
             "properties": {
-                "diagnosis": {
-                    "description": "A property that identifies a Diagnosis including provenance and the disease or condition diagnosed."
-                },
                 "donor_id": {
                     "type": "string"
                 },
                 "genetic_ancestry": {
-                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins  based on genetic/genomic data.",
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data.",
                     "items": {
                         "type": "string"
                     },
@@ -120,11 +68,11 @@
                     "type": "string"
                 },
                 "phenotypic_sex": {
-                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO]\\",
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\\",
                     "type": "string"
                 },
                 "reported_ethnicity": {
-                    "description": "A property that relects a HumanDonor's reported ethnic origins.",
+                    "description": "A property that relects a Human Donor's reported ethnic origins.",
                     "items": {
                         "type": "string"
                     },
@@ -139,7 +87,7 @@
         },
         "AnvilFile": {
             "additionalProperties": false,
-            "description": "",
+            "description": "Information for files associated with the study.",
             "properties": {
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
@@ -156,20 +104,27 @@
                     "type": "string"
                 },
                 "file_md5sum": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "description": "md5 checksum for the file",
+                    "type": "string"
                 },
                 "file_name": {
+                    "description": "The name of the file.",
                     "type": "string"
                 },
                 "file_ref": {
+                    "description": "The fully qualified path to the file.",
                     "type": "string"
                 },
                 "file_size": {
                     "description": "Property that describes the approximate size of a file in megabytes.",
                     "type": "integer"
+                },
+                "reference_assembly": {
+                    "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
@@ -177,207 +132,9 @@
             ],
             "title": "AnvilFile",
             "type": "object"
-        },
-        "AssayActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "AssayActivity",
-            "type": "object"
-        },
-        "BioSample": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "BioSample",
-            "type": "object"
-        },
-        "BioSampleDissociationActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "BioSampleDissociationActivity",
-            "type": "object"
-        },
-        "DNASequence": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "DNASequence",
-            "type": "object"
-        },
-        "Diagnosis": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Diagnosis",
-            "type": "object"
-        },
-        "DogDonor": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "DogDonor",
-            "type": "object"
-        },
-        "Donor": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Donor",
-            "type": "object"
-        },
-        "DonorTreatmentActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "DonorTreatmentActivity",
-            "type": "object"
-        },
-        "ExperimentActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "ExperimentActivity",
-            "type": "object"
-        },
-        "FamilyMember": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "FamilyMember",
-            "type": "object"
-        },
-        "File": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "File",
-            "type": "object"
-        },
-        "HistopathologyActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "HistopathologyActivity",
-            "type": "object"
-        },
-        "HumanDonor": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "HumanDonor",
-            "type": "object"
-        },
-        "Library": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Library",
-            "type": "object"
-        },
-        "LibraryPreparationActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "LibraryPreparationActivity",
-            "type": "object"
-        },
-        "Measurement": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Measurement",
-            "type": "object"
-        },
-        "MolecularSample": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "MolecularSample",
-            "type": "object"
-        },
-        "MouseDonor": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "MouseDonor",
-            "type": "object"
-        },
-        "NucleusIsolationActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "NucleusIsolationActivity",
-            "type": "object"
-        },
-        "Project": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Project",
-            "type": "object"
-        },
-        "ReferenceAssembly": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "ReferenceAssembly",
-            "type": "object"
-        },
-        "RelationalTable": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "RelationalTable",
-            "type": "object"
-        },
-        "Sample": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "Sample",
-            "type": "object"
-        },
-        "SampleTreatmentActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SampleTreatmentActivity",
-            "type": "object"
-        },
-        "SequenceFile": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SequenceFile",
-            "type": "object"
-        },
-        "SequenceLocation": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SequenceLocation",
-            "type": "object"
-        },
-        "SequencingActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SequencingActivity",
-            "type": "object"
-        },
-        "SingleCell": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SingleCell",
-            "type": "object"
-        },
-        "SingleCellAssignment": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SingleCellAssignment",
-            "type": "object"
-        },
-        "SingleCellIsolationActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "SingleCellIsolationActivity",
-            "type": "object"
-        },
-        "VariantCall": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "VariantCall",
-            "type": "object"
-        },
-        "VariantCallSetFile": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "VariantCallSetFile",
-            "type": "object"
-        },
-        "VariantCallingActivity": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "VariantCallingActivity",
-            "type": "object"
         }
     },
-    "$id": "https://datamodel.terra.bio/BioCore",
+    "$id": "https://docs.google.com/spreadsheets/d/1kOWpQV7pIUXcFx5jGgx75qnNI5-g_c2D/edit#gid=1482408180",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
