@@ -134,7 +134,7 @@
             "type": "object"
         }
     },
-    "$id": "https://docs.google.com/spreadsheets/d/1kOWpQV7pIUXcFx5jGgx75qnNI5-g_c2D/edit#gid=1482408180",
+    "$id": "https://github.com/DataBiosphere/biocore-data-model/tree/main/content",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
