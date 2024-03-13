@@ -1,6 +1,6 @@
 name: AnVILBioCoreMinimal
 description: AnVIL minimal BioCore schema
-id: https://docs.google.com/spreadsheets/d/1kOWpQV7pIUXcFx5jGgx75qnNI5-g_c2D/edit#gid=1482408180
+id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
   linkml: https://w3id.org/linkml/
   anvil: https://anvilproject.org/
