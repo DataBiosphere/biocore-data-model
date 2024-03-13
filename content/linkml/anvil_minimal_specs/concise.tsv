@@ -1,0 +1,30 @@
+slot	class	alias	aliases	comments	description	domain	domain_of	from_schema	identifier	is_a	multivalued	owner	range	slot_uri
+>slot	class	alias	aliases	comments	description	domain	domain_of	from_schema	identifier	is_a	multivalued	owner	range	slot_uri
+>			"internal_separator: ""|"""	"internal_separator: ""|"""			"internal_separator: ""|"""							
+donor_id_fk			hasDonor		This property references the Donor organism from which the BioSample was acquired.	AnvilBioSample	AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false		AnvilDonor	https://datamodel.terra.bio/TerraCore#hasDonor
+id								https://github.com/DataBiosphere/biocore-data-model/tree/main/content	true				uriorcurie	
+biosample_id							AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content		id				
+donor_id							AnvilDonor	https://github.com/DataBiosphere/biocore-data-model/tree/main/content		id				
+diagnosis_id								https://github.com/DataBiosphere/biocore-data-model/tree/main/content		id				
+file_id							AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content		id				
+anatomical_site			hasAnatomicalSite		A reference to the site within the organism from which the BioSample was taken.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+apriori_cell_type			hasAprioriCellType		A priori cell type(s) for the sample, a human assignment of cell type.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			true			
+biosample_type					The type of biosample represented by the record.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+disease			hasDisease		A property that identifies a disease or condition has been reported in this entity.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+donor_age_at_collection_unit					The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
+donor_age_at_collection_lower_bound					Lower bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content					float	
+donor_age_at_collection_upper_bound					Upper bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.		AnvilBioSample	https://github.com/DataBiosphere/biocore-data-model/tree/main/content					float	
+organism_type			hasOrganismType	For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 	A reference to the organism type.		AnvilDonor	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+phenotypic_sex			hasPhenotypicSex		"A reference to the BiologicalSex of the Donor organism. \""An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\"		AnvilDonor	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+reported_ethnicity			hasReportedEthnicity	Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.	A property that relects a Human Donor's reported ethnic origins.		AnvilDonor	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			true			
+genetic_ancestry			hasGeneticAncestry	Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004	A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data.		AnvilDonor	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			true			
+data_modality			hasDataModality		Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			true			
+file_name					The name of the file.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
+file_ref					The fully qualified path to the file.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
+file_format			hasFileFormat	The definition of this field follows the convention used by the Human Cell Atlas.	An indication of the format of an electronic file; include the full file extension including compression extensions.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+file_size			hasFileSize		Property that describes the approximate size of a file in megabytes.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false		integer	
+file_md5sum					md5 checksum for the file		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			false			
+reference_assembly			usesReferenceAssembly		A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.		AnvilFile	https://github.com/DataBiosphere/biocore-data-model/tree/main/content			true			
+	AnvilBioSample				Contains information about the sample(s) included in the study.			https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
+	AnvilDonor				Demographic and phenotypic information about the donor.			https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
+	AnvilFile				Information for files associated with the study.			https://github.com/DataBiosphere/biocore-data-model/tree/main/content						
