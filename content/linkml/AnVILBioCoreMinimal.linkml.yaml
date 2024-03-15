@@ -47,7 +47,6 @@ slots:
   donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
-    slot_uri: https://datamodel.terra.bio/TerraCore#hasDonor
     range: AnvilDonor
     domain: AnvilBioSample
     multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
