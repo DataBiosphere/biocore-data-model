@@ -38,9 +38,6 @@
                     "description": "Upper bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.",
                     "type": "number"
                 },
-                "donor_id": {
-                    "type": "string"
-                },
                 "donor_id_fk": {
                     "$ref": "#/$defs/AnvilDonor",
                     "description": "This property references the Donor organism from which the BioSample was acquired."
