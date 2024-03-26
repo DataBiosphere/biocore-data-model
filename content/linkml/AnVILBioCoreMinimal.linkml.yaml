@@ -12,6 +12,9 @@ default_range: string # if not specified, the default range is string
 classes:
   AnvilBioSample:
     description: Contains information about the sample(s) included in the study.
+    attributes:
+      donor_id:
+        range: AnvilDonor
     slots:
       - biosample_id
       - anatomical_site
@@ -50,18 +53,20 @@ slots:
     range: AnvilDonor
     domain: AnvilBioSample
     multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
-  id:
-    identifier: true  # this is the type of primary key
-    range: uriorcurie
+    inlined: true
   biosample_id:
-    is_a: id
+    identifier: true  # this is the type of primary key
+    range: string
+    inlined: true
   donor_id:
-    is_a: id
-  diagnosis_id:
-    is_a: id
+    identifier: true  # this is the type of primary key
+    range: string
+    inlined: true
   file_id:
-    is_a: id
-
+    identifier: true  # this is the type of primary key
+    range: string
+    inlined: true
+  
   anatomical_site:
     aliases: hasAnatomicalSite
     description: A reference to the site within the organism from which the BioSample was taken.
