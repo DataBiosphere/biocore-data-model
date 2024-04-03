@@ -73,10 +73,10 @@ slots:
     multivalued: false
   apriori_cell_type:
     aliases: hasAprioriCellType
-    description: A priori cell type(s) for the sample, a human assignment of cell type.
+    description: A priori cell type(s) for the sample, a human assignment of cell type. This should be used when the cell type is known, but not necessarily confirmed by primary experimental data.
     multivalued: true
   biosample_type:
-    description: The type of biosample represented by the record.
+    description: The type of biosample represented by the record. This is a controlled vocabulary term from BioCoreTerms.
     multivalued: false
   disease:
     aliases: hasDisease
@@ -102,15 +102,15 @@ slots:
     multivalued: false
   reported_ethnicity:
     aliases: hasReportedEthnicity
-    description: A property that relects a Human Donor's reported ethnic origins.
+    description: A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data
     comments:
-    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
+    - We recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
     multivalued: true
   genetic_ancestry:
     aliases: hasGeneticAncestry
-    description: A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data.
+    description: A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data. If you are not sure your values are calculated from the genomic data, use *reported_ethnicity* instead.
     comments:
-    - Recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004
+    - We recommend using HANCESTRO ancestry categories, if you can calculate them.  http://purl.obolibrary.org/obo/HANCESTRO_0004
     multivalued: true
   data_modality:
     aliases: hasDataModality
