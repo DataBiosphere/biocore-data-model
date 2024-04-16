@@ -9,7 +9,7 @@
                     "type": "string"
                 },
                 "apriori_cell_type": {
-                    "description": "A priori cell type(s) for the sample, a human assignment of cell type.",
+                    "description": "A priori cell type(s) for the sample, a human assignment of cell type. This should be used when the cell type is known, but not necessarily confirmed by primary experimental data.",
                     "items": {
                         "type": "string"
                     },
@@ -19,7 +19,7 @@
                     "type": "string"
                 },
                 "biosample_type": {
-                    "description": "The type of biosample represented by the record.",
+                    "description": "The type of biosample represented by the record. This is a controlled vocabulary term from BioCoreTerms.",
                     "type": "string"
                 },
                 "disease": {
@@ -57,11 +57,15 @@
                     "type": "string"
                 },
                 "genetic_ancestry": {
-                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data.",
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data. If you are not sure your values are calculated from the genomic data, use *reported_ethnicity* instead.",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "human_phenotype": {
+                    "$ref": "#/$defs/HumanPhenotypeOntology",
+                    "description": "phenotype code from the human phenotype ontology (HPO)"
                 },
                 "organism_type": {
                     "description": "A reference to the organism type.",
@@ -72,7 +76,7 @@
                     "type": "string"
                 },
                 "reported_ethnicity": {
-                    "description": "A property that relects a Human Donor's reported ethnic origins.",
+                    "description": "A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data",
                     "items": {
                         "type": "string"
                     },
@@ -132,6 +136,16 @@
             ],
             "title": "AnvilFile",
             "type": "object"
+        },
+        "HumanPhenotypeOntology": {
+            "description": "",
+            "enum": [
+                "ALIVE",
+                "DEAD",
+                "UNKNOWN"
+            ],
+            "title": "HumanPhenotypeOntology",
+            "type": "string"
         }
     },
     "$id": "https://github.com/DataBiosphere/biocore-data-model/tree/main/content",

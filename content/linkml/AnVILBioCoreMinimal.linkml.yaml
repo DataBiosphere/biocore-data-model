@@ -4,6 +4,7 @@ id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
   linkml: https://w3id.org/linkml/
   anvil: https://anvilproject.org/
+  hpo: https://hpo.jax.org/app/browse/term/
 default_prefix: anvil
 imports:
    - linkml:types # this imports the linkml types schema
@@ -33,6 +34,7 @@ classes:
       - phenotypic_sex
       - reported_ethnicity
       - genetic_ancestry
+      - human_phenotype
   AnvilFile:
     description: Information for files associated with the study.
     slots:
@@ -138,3 +140,12 @@ slots:
     aliases: usesReferenceAssembly
     description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
     multivalued: true
+
+  human_phenotype:
+    description: phenotype code from the human phenotype ontology (HPO)
+    range: HumanPhenotypeOntology
+
+enums:
+  HumanPhenotypeOntology:
+    permissible_values:
+      All:
