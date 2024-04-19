@@ -13,9 +13,6 @@ default_range: string # if not specified, the default range is string
 classes:
   AnVILBioSample:
     description: Contains information about the sample(s) included in the study.
-    # attributes:
-    #   donor_id:
-    #     range: AnVILDonor
     slots:
       - biosample_id
       - anatomical_site
