@@ -1,6 +1,6 @@
 {
     "$defs": {
-        "AnvilBioSample": {
+        "AnVILBioSample": {
             "additionalProperties": false,
             "description": "Contains information about the sample(s) included in the study.",
             "properties": {
@@ -39,17 +39,17 @@
                     "type": "number"
                 },
                 "donor_id_fk": {
-                    "$ref": "#/$defs/AnvilDonor",
+                    "$ref": "#/$defs/AnVILDonor",
                     "description": "This property references the Donor organism from which the BioSample was acquired."
                 }
             },
             "required": [
                 "biosample_id"
             ],
-            "title": "AnvilBioSample",
+            "title": "AnVILBioSample",
             "type": "object"
         },
-        "AnvilDonor": {
+        "AnVILDonor": {
             "additionalProperties": false,
             "description": "Demographic and phenotypic information about the donor.",
             "properties": {
@@ -86,10 +86,10 @@
             "required": [
                 "donor_id"
             ],
-            "title": "AnvilDonor",
+            "title": "AnVILDonor",
             "type": "object"
         },
-        "AnvilFile": {
+        "AnVILFile": {
             "additionalProperties": false,
             "description": "Information for files associated with the study.",
             "properties": {
@@ -134,15 +134,13 @@
             "required": [
                 "file_id"
             ],
-            "title": "AnvilFile",
+            "title": "AnVILFile",
             "type": "object"
         },
         "HumanPhenotypeOntology": {
             "description": "",
             "enum": [
-                "ALIVE",
-                "DEAD",
-                "UNKNOWN"
+                "All"
             ],
             "title": "HumanPhenotypeOntology",
             "type": "string"

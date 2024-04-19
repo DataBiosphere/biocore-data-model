@@ -3,19 +3,19 @@ description: AnVIL minimal BioCore schema
 id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
   linkml: https://w3id.org/linkml/
-  anvil: https://anvilproject.org/
+  AnVIL: https://AnVILproject.org/
   hpo: https://hpo.jax.org/app/browse/term/
-default_prefix: anvil
+default_prefix: AnVIL
 imports:
    - linkml:types # this imports the linkml types schema
 default_range: string # if not specified, the default range is string
 
 classes:
-  AnvilBioSample:
+  AnVILBioSample:
     description: Contains information about the sample(s) included in the study.
     # attributes:
     #   donor_id:
-    #     range: AnvilDonor
+    #     range: AnVILDonor
     slots:
       - biosample_id
       - anatomical_site
@@ -26,7 +26,7 @@ classes:
       - donor_age_at_collection_lower_bound
       - donor_age_at_collection_upper_bound
       - donor_id_fk # this is the foregin key to the donor table
-  AnvilDonor:
+  AnVILDonor:
     description: Demographic and phenotypic information about the donor.
     slots:
       - donor_id
@@ -35,7 +35,7 @@ classes:
       - reported_ethnicity
       - genetic_ancestry
       - human_phenotype
-  AnvilFile:
+  AnVILFile:
     description: Information for files associated with the study.
     slots:
       - file_id
@@ -52,8 +52,8 @@ slots:
   donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
-    range: AnvilDonor
-    domain: AnvilBioSample
+    range: AnVILDonor
+    domain: AnVILBioSample
     multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
     inlined: true
   biosample_id:
