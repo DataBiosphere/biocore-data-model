@@ -238,11 +238,7 @@ slots:
     multivalued: true
   antibody:
     aliases: usesAntibody
-    description: May be a reference to an antibody used for a SampleTreatmentActivity or another Activity.
-    comments:
-    - Can be used as an ObjectProperty with the Antibody class or as a DataType property,
-      depending on need. Antibody should be linked to OBI in future. Note this could
-      link to nonassay activities like CHiP
+    description: A reference to an antibody used for a SampleTreatmentActivity or another Activity.
     # is_a: used
     slot_uri: https://datamodel.terra.bio/TerraCore#usesAntibody
     multivalued: true
@@ -739,10 +735,7 @@ slots:
     multivalued: true
   target:
     aliases: hasTarget
-    comments:
-    - Need definition
-    - Target is a string for now but will ultimately be a class, and this will change
-      to an ObjectProperty.
+    description: A reference to the target of a treatment or antibody. This could be the molecular target of a specific antibody.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasTarget
     multivalued: true
   temperature_unit:
