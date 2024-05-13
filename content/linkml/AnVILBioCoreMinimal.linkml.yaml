@@ -43,6 +43,7 @@ classes:
       - file_name
       - file_ref
       - reference_assembly
+      - biosample_id_fk # this is the foregin key to the biosample table
 
 slots:
 # ids are unique identifiers for each entity or explicitly defined foreign key
@@ -51,6 +52,13 @@ slots:
     description: This property references the Donor organism from which the BioSample was acquired.
     range: AnVILDonor
     domain: AnVILBioSample
+    multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
+    inlined: true
+  biosample_id_fk:
+    aliases: hasBioSample
+    description: This property references the BioSample from which information in a file was acquired.
+    range: AnVILBioSample
+    domain: AnVILFile
     multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
     inlined: true
   biosample_id:
@@ -99,6 +107,7 @@ slots:
     aliases: hasPhenotypicSex
     description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
     multivalued: false
+    range: PhenotypicSex
   reported_ethnicity:
     aliases: hasReportedEthnicity
     description: A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data
@@ -140,9 +149,17 @@ slots:
 
   human_phenotype:
     description: phenotype code from the human phenotype ontology (HPO)
-    range: HumanPhenotypeOntology
+    # range: HumanPhenotypeOntology
 
 enums:
-  HumanPhenotypeOntology:
+  # HumanPhenotypeOntology:
+  #   permissible_values:
+  #     All:
+  PhenotypicSex:
     permissible_values:
-      All:
+      female:
+        meaning: PATO:0000383
+      male:
+        meaning: PATO:0000384
+      intersex:
+      prefer not to say:

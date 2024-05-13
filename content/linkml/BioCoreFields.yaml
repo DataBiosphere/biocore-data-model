@@ -996,11 +996,11 @@ enums:
       SampleTreatmentActivity:
       SequenceActivity:
       AlignmentActivity:
-      VariantCallingActivity:
+      VariantCallActivity:
       ExpressionActivity:
       AnalysisActivity:
-      ImagingActivity:
-      IndexingActivity:
+      ImageActivity:
+      IndexActivity:
       ChecksumActivity:
       Activity:
 

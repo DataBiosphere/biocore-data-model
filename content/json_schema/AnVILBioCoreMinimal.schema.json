@@ -64,16 +64,16 @@
                     "type": "array"
                 },
                 "human_phenotype": {
-                    "$ref": "#/$defs/HumanPhenotypeOntology",
-                    "description": "phenotype code from the human phenotype ontology (HPO)"
+                    "description": "phenotype code from the human phenotype ontology (HPO)",
+                    "type": "string"
                 },
                 "organism_type": {
                     "description": "A reference to the organism type.",
                     "type": "string"
                 },
                 "phenotypic_sex": {
-                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\\",
-                    "type": "string"
+                    "$ref": "#/$defs/PhenotypicSex",
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\\"
                 },
                 "reported_ethnicity": {
                     "description": "A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data",
@@ -93,6 +93,10 @@
             "additionalProperties": false,
             "description": "Information for files associated with the study.",
             "properties": {
+                "biosample_id_fk": {
+                    "$ref": "#/$defs/AnVILBioSample",
+                    "description": "This property references the BioSample from which information in a file was acquired."
+                },
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
                     "items": {
@@ -137,12 +141,15 @@
             "title": "AnVILFile",
             "type": "object"
         },
-        "HumanPhenotypeOntology": {
+        "PhenotypicSex": {
             "description": "",
             "enum": [
-                "All"
+                "female",
+                "male",
+                "intersex",
+                "prefer not to say"
             ],
-            "title": "HumanPhenotypeOntology",
+            "title": "PhenotypicSex",
             "type": "string"
         }
     },
