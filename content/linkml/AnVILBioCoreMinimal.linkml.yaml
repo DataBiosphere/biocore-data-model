@@ -107,6 +107,7 @@ slots:
     aliases: hasPhenotypicSex
     description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
     multivalued: false
+    inlined: true
     range: PhenotypicSex
   reported_ethnicity:
     aliases: hasReportedEthnicity
@@ -146,7 +147,6 @@ slots:
     aliases: usesReferenceAssembly
     description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
     multivalued: true
-
   human_phenotype:
     description: phenotype code from the human phenotype ontology (HPO)
     # range: HumanPhenotypeOntology
@@ -162,4 +162,6 @@ enums:
       male:
         meaning: PATO:0000384
       intersex:
+        description: between male and female sex
       prefer not to say:
+        description: the individual prefers not to disclose
