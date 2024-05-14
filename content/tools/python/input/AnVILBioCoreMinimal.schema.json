@@ -64,8 +64,8 @@
                     "type": "array"
                 },
                 "human_phenotype": {
-                    "$ref": "#/$defs/HumanPhenotypeOntology",
-                    "description": "phenotype code from the human phenotype ontology (HPO)"
+                    "description": "phenotype code from the human phenotype ontology (HPO)",
+                    "type": "string"
                 },
                 "organism_type": {
                     "description": "A reference to the organism type.",
@@ -93,6 +93,10 @@
             "additionalProperties": false,
             "description": "Information for files associated with the study.",
             "properties": {
+                "biosample_id_fk": {
+                    "$ref": "#/$defs/AnVILBioSample",
+                    "description": "This property references the BioSample from which information in a file was acquired."
+                },
                 "data_modality": {
                     "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
                     "items": {
@@ -136,14 +140,6 @@
             ],
             "title": "AnVILFile",
             "type": "object"
-        },
-        "HumanPhenotypeOntology": {
-            "description": "",
-            "enum": [
-                "All"
-            ],
-            "title": "HumanPhenotypeOntology",
-            "type": "string"
         }
     },
     "$id": "https://github.com/DataBiosphere/biocore-data-model/tree/main/content",

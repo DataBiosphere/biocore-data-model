@@ -45,8 +45,9 @@ classes:
       - reference_assembly
       - biosample_id_fk # this is the foregin key to the biosample table
 
-slots:
-# ids are unique identifiers for each entity or explicitly defined foreign key
+slots: ## ids are unique identifiers for each entity or explicitly defined foreign key
+
+# foreign keys
   donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
@@ -61,6 +62,8 @@ slots:
     domain: AnVILFile
     multivalued: false # assume that a biosample is only from one donor (1-1 relationship) 
     inlined: true
+
+  # primary keys
   biosample_id:
     identifier: true  # this is the type of primary key
     range: string
@@ -103,12 +106,6 @@ slots:
     comments:
     - 'For example: Homo sapiens from NCBITaxon or http://purl.obolibrary.org/obo/NCBITaxon_9606 '
     multivalued: false
-  phenotypic_sex:
-    aliases: hasPhenotypicSex
-    description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
-    multivalued: false
-    inlined: true
-    range: PhenotypicSex
   reported_ethnicity:
     aliases: hasReportedEthnicity
     description: A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data
@@ -147,21 +144,29 @@ slots:
     aliases: usesReferenceAssembly
     description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
     multivalued: true
+  
+  # fields for enumerations
   human_phenotype:
     description: phenotype code from the human phenotype ontology (HPO)
     # range: HumanPhenotypeOntology
+  phenotypic_sex:
+    aliases: hasPhenotypicSex
+    description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
+    multivalued: false
+    inlined: true
+    # range: PhenotypicSex
 
-enums:
-  # HumanPhenotypeOntology:
-  #   permissible_values:
-  #     All:
-  PhenotypicSex:
-    permissible_values:
-      female:
-        meaning: PATO:0000383
-      male:
-        meaning: PATO:0000384
-      intersex:
-        description: between male and female sex
-      prefer not to say:
-        description: the individual prefers not to disclose
+# enums:
+#   # HumanPhenotypeOntology:
+#   #   permissible_values:
+#   #     All:
+#   PhenotypicSex:
+#     permissible_values:
+#       female:
+#         meaning: PATO:0000383
+#       male:
+#         meaning: PATO:0000384
+#       intersex:
+#         description: between male and female sex
+#       prefer not to say:
+#         description: the individual prefers not to disclose
