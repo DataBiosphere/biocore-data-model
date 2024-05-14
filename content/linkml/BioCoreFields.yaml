@@ -31,9 +31,10 @@ slots:
     multivalued: true
   age_at_death:
     aliases: hasAgeAtDeath
-    description: A reference to the Age of the Donor at time of death.
+    description: A reference to the Age of the Donor at time of death. The units are assumed to be years.
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtDeath
     multivalued: false
+    datatype: integer
   age_at_diagnosis:
     aliases: hasAgeAtDiagnosis
     description: A reference to the Age of the Donor at the point in time that diagnosis was made.

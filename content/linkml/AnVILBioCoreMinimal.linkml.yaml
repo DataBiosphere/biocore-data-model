@@ -32,6 +32,7 @@ classes:
       - reported_ethnicity
       - genetic_ancestry
       - human_phenotype
+      - age_at_death
   AnVILFile:
     description: Information for files associated with the study.
     slots:
@@ -144,6 +145,12 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     aliases: usesReferenceAssembly
     description: A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.
     multivalued: true
+  age_at_death:
+    aliases: hasAgeAtDeath
+    description: A reference to the Age of the Donor at time of death. The units are assumed to be years.
+    slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtDeath
+    multivalued: false
+    datatype: integer
   
   # fields for enumerations
   human_phenotype:
