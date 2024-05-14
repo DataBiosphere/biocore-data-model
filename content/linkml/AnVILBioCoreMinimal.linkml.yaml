@@ -165,19 +165,19 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     range: PhenotypicSex
 
 enums:
-  LoincExample:
-    enum_uri: http://hl7.org/fhir/ValueSet/example-intensional
-    see_also:
-      - https://build.fhir.org/valueset-example-intensional.json.html
-    include:
-      - reachable_from:
-          source_ontology: bioregistry:loinc
-          source_nodes:
-            - LOINC:LP43571-6
-          is_direct: true
-    minus:
-      concepts:
-        - LOINC:5932-9  # for example, remove terms with 3rd party licensing restrictions
+  # LoincExample:
+  #   enum_uri: http://hl7.org/fhir/ValueSet/example-intensional
+  #   see_also:
+  #     - https://build.fhir.org/valueset-example-intensional.json.html
+  #   include:
+  #     - reachable_from:
+  #         source_ontology: bioregistry:loinc
+  #         source_nodes:
+  #           - LOINC:LP43571-6
+  #         is_direct: true
+  #   minus:
+  #     concepts:
+  #       - LOINC:5932-9  # for example, remove terms with 3rd party licensing restrictions
 # HumanPhenotypeOntology:
   #   permissible_values:
   #     reachable_from:
