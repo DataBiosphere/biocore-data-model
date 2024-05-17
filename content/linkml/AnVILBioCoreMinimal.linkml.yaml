@@ -33,7 +33,7 @@ classes:
       - reported_ethnicity
       - genetic_ancestry
       - human_phenotype
-      - age_at_death
+      # - age_at_death
   AnVILFile:
     description: Information for files associated with the study.
     slots:
@@ -162,9 +162,9 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
     multivalued: false
     inlined: true
-    range: PhenotypicSex
+    # range: PhenotypicSex
 
-enums:
+# enums:
   # LoincExample:
   #   enum_uri: http://hl7.org/fhir/ValueSet/example-intensional
   #   see_also:
@@ -187,13 +187,13 @@ enums:
   #       include_self: false
   #       relationship_types:
   #         - rdfs:subClassOf
-  PhenotypicSex:
-    permissible_values:
-      female:
-        meaning: PATO:0000383
-      male:
-        meaning: PATO:0000384
-      intersex:
-        description: between male and female sex
-      prefer not to say:
-        description: the individual prefers not to disclose
+  # PhenotypicSex:
+  #   permissible_values:
+  #     female:
+  #       meaning: PATO:0000383
+  #     male:
+  #       meaning: PATO:0000384
+  #     intersex:
+  #       description: between male and female sex
+  #     prefer not to say:
+  #       description: the individual prefers not to disclose
