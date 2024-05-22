@@ -20,12 +20,6 @@ classes:
       - apriori_cell_type
       - biosample_type
       - disease
-      - donor_age_at_collection_unit
-      - donor_age_at_collection_lower_bound
-      - donor_age_at_collection_upper_bound
-      - donor_id_fk # this is the foregin key to the donor table
-  AnVILDonor:
-    description: Demographic and phenotypic information about the donor.
     slots:
       - donor_id
       - organism_type
@@ -187,13 +181,13 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   #       include_self: false
   #       relationship_types:
   #         - rdfs:subClassOf
-  # PhenotypicSex:
-  #   permissible_values:
-  #     female:
-  #       meaning: PATO:0000383
-  #     male:
-  #       meaning: PATO:0000384
-  #     intersex:
-  #       description: between male and female sex
-  #     prefer not to say:
-  #       description: the individual prefers not to disclose
+  PhenotypicSex:
+    permissible_values:
+      female:
+        meaning: PATO:0000383
+      male:
+        meaning: PATO:0000384
+      intersex:
+        description: between male and female sex
+      prefer not to say:
+        description: the individual prefers not to disclose

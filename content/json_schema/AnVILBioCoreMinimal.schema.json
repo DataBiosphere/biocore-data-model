@@ -1,0 +1,152 @@
+{
+    "$defs": {
+        "AnVILBioSample": {
+            "additionalProperties": false,
+            "description": "Contains information about the sample(s) included in the study.",
+            "properties": {
+                "anatomical_site": {
+                    "description": "A reference to the site within the organism from which the BioSample was taken.",
+                    "type": "string"
+                },
+                "apriori_cell_type": {
+                    "description": "A priori cell type(s) for the sample, a human assignment of cell type. This should be used when the cell type is known, but not necessarily confirmed by primary experimental data.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "biosample_id": {
+                    "type": "string"
+                },
+                "biosample_type": {
+                    "description": "The type of biosample represented by the record. This is a controlled vocabulary term from BioCoreTerms.",
+                    "type": "string"
+                },
+                "disease": {
+                    "description": "A property that identifies a disease or condition has been reported in this entity.",
+                    "type": "string"
+                },
+                "donor_age_at_collection_lower_bound": {
+                    "description": "Lower bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.",
+                    "type": "number"
+                },
+                "donor_age_at_collection_unit": {
+                    "description": "The units (e.g. years or days) of the Age of the Donor at the point in time that the BioSample was obtained or other representative entity (test, diagnosis, treatment...) was created.",
+                    "type": "string"
+                },
+                "donor_age_at_collection_upper_bound": {
+                    "description": "Upper bound for age of donor at time sample was taken. If any age at collection data is present, must specify a unit as well.",
+                    "type": "number"
+                },
+                "donor_id_fk": {
+                    "$ref": "#/$defs/AnVILDonor",
+                    "description": "This property references the Donor organism from which the BioSample was acquired."
+                }
+            },
+            "required": [
+                "biosample_id"
+            ],
+            "title": "AnVILBioSample",
+            "type": "object"
+        },
+        "AnVILDonor": {
+            "additionalProperties": false,
+            "description": "Demographic and phenotypic information about the donor.",
+            "properties": {
+                "donor_id": {
+                    "type": "string"
+                },
+                "genetic_ancestry": {
+                    "description": "A property that relects a HumanDonor's reported major contributing ancestral origins based on genetic/genomic data. If you are not sure your values are calculated from the genomic data, use *reported_ethnicity* instead.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "human_phenotype": {
+                    "description": "phenotype code from the human phenotype ontology (HPO)",
+                    "type": "string"
+                },
+                "organism_type": {
+                    "description": "A reference to the organism type.",
+                    "type": "string"
+                },
+                "phenotypic_sex": {
+                    "description": "A reference to the BiologicalSex of the Donor organism. \\\"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\\",
+                    "type": "string"
+                },
+                "reported_ethnicity": {
+                    "description": "A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "donor_id"
+            ],
+            "title": "AnVILDonor",
+            "type": "object"
+        },
+        "AnVILFile": {
+            "additionalProperties": false,
+            "description": "Information for files associated with the study.",
+            "properties": {
+                "biosample_id_fk": {
+                    "$ref": "#/$defs/AnVILBioSample",
+                    "description": "This property references the BioSample from which information in a file was acquired."
+                },
+                "data_modality": {
+                    "description": "Data modality describes the biological nature of the information gathered as the result of an Activity, independent of the technology or methods used to produce the information.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_format": {
+                    "description": "An indication of the format of an electronic file; include the full file extension including compression extensions.",
+                    "type": "string"
+                },
+                "file_id": {
+                    "type": "string"
+                },
+                "file_md5sum": {
+                    "description": "md5 checksum for the file",
+                    "type": "string"
+                },
+                "file_name": {
+                    "description": "The name of the file.",
+                    "type": "string"
+                },
+                "file_ref": {
+                    "description": "The fully qualified path to the file.",
+                    "type": "string"
+                },
+                "file_size": {
+                    "description": "Property that describes the approximate size of a file in megabytes.",
+                    "type": "integer"
+                },
+                "reference_assembly": {
+                    "description": "A reference to the collection of sequences taken as the standard for a given organism. May be defined by https://www.ncbi.nlm.nih.gov/grc.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "file_id"
+            ],
+            "title": "AnVILFile",
+            "type": "object"
+        }
+    },
+    "$id": "https://github.com/DataBiosphere/biocore-data-model/tree/main/content",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "AnVILBioCoreMinimal",
+    "type": "object",
+    "version": null
+}
