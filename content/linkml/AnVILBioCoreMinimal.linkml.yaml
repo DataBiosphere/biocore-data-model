@@ -20,6 +20,12 @@ classes:
       - apriori_cell_type
       - biosample_type
       - disease
+      - donor_age_at_collection_unit
+      - donor_age_at_collection_lower_bound
+      - donor_age_at_collection_upper_bound
+      - donor_id_fk # this is the foregin key to the donor table
+  AnVILDonor:
+    description: Demographic and phenotypic information about the donor.
     slots:
       - donor_id
       - organism_type
@@ -73,6 +79,7 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     range: string
     inlined: true
   
+  # data columns
   anatomical_site:
     aliases: hasAnatomicalSite
     description: A reference to the site within the organism from which the BioSample was taken.
@@ -146,7 +153,6 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     slot_uri: https://datamodel.terra.bio/TerraCore#hasAgeAtDeath
     multivalued: false
     range: decimal
-  
   # fields for enumerations
   human_phenotype:
     description: phenotype code from the human phenotype ontology (HPO)
@@ -158,7 +164,7 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     inlined: true
     # range: PhenotypicSex
 
-# enums:
+enums:
   # LoincExample:
   #   enum_uri: http://hl7.org/fhir/ValueSet/example-intensional
   #   see_also:
