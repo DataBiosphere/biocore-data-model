@@ -1,0 +1,7 @@
+file_id	data_modality	file_format	file_size	file_md5sum	file_name	file_ref	reference_assembly	biosample_id_fk
+1	Genomic	FASTQ	2 GB	d41d8cd98f00b204e9800998ecf8427e	file1.fastq	hg19	GRCh37	1
+2	Transcriptomic	BAM	1.5 GB	098f6bcd4621d373cade4e832627b4f6	file2.bam	hg38	GRCh38	2
+3	Epigenomic	BED	500 MB	5d41402abc4b2a76b9719d911017c592	file3.bed	hg19	GRCh37	3
+4	Genomic	VCF	3 GB	a4b7b34a0d4a8b3a0f5b4f5a5c87b788	file4.vcf	hg38	GRCh38	4
+5	Transcriptomic	GTF	1 GB	8277e0910d750195b448797616e091ad	file5.gtf	hg19	GRCh37	5
+6	Epigenomic	BIGWIG	2.5 GB	6dcd4ce23d88e2ee95838f7b014b628e	file6.bigwig	hg38	GRCh38	6

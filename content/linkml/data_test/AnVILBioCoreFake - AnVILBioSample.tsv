@@ -1,0 +1,7 @@
+biosample_id	anatomical_site	apriori_cell_type	biosample_type	disease	donor_age_at_collection_unit	donor_age_at_collection_lower_bound	donor_age_at_collection_upper_bound	donor_id_fk
+1	Brain	Neuron	Tissue	Dementia	years	10	28	1
+2	Heart	Cardiomyocyte	Tissue	CAD	years	56	71	1
+3	Liver	Hepatocyte	Tissue	Cirrhosis	years	66	84	1
+4	Lung	Alveolar cell	Tissue	COPD	years	62	87	2
+5	Kidney	Nephron	Tissue	CKD	years	77	97	2
+6	Skin	Keratinocyte	Tissue	Psoriasis	years	91	97	2
