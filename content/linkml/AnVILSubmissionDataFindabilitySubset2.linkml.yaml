@@ -1,4 +1,4 @@
-name: AnVILBioCoreFindabilitySubSet2
+name: AnVILSubmissionDataFindabilitySubset2
 description: AnVIL Findability subset version 2, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.
 id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
