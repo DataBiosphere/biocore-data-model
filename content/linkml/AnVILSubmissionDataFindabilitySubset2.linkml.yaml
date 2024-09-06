@@ -1,4 +1,4 @@
-name: AnVILSubmissionDataFindabilitySubset2
+name: AnVILSubmissionDataFindabilitySubsetSchema
 description: AnVIL Findability subset version 2, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.
 id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
@@ -6,12 +6,15 @@ prefixes:
   AnVIL: https://AnVILproject.org/
   hpo: https://hpo.jax.org/app/browse/term/
   PATO: https://www.ebi.ac.uk/ols4/ontologies/pato/
-default_prefix: abcfss2
+  CL: http://purl.obolibrary.org/obo/CL_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+
 imports:
    - linkml:types # this imports the linkml types schema
 default_range: string # if not specified, the default range is string
 
-classes:
+classes: # these are the tables in the data model
   BioSample:
     description: Contains information about the sample(s) included in the study.
     slots:
@@ -60,7 +63,7 @@ classes:
       - file_name
       - file_ref
       - reference_assembly
-      - associated_biosample_id_fk # this is the foregin key to the biosample table
+      - biosample_id_fk # this is the foregin key to the biosample table
   Condition:
     description: Contains information about the condition(s) of the donor.
     slots:
@@ -89,24 +92,29 @@ classes:
       - generated_biosample_id
       - data_modality
   Project:
+    description: Contains information about the project.
+    slots:
+      - project_id
+      - title
+      - funded_by
+      - registered_identifier
+      - principal_investigator
 
 
 slots: ## ids are unique identifiers for each entity or explicitly defined foreign key
-
 # foreign keys
   donor_id_fk:
     aliases: hasDonor
     description: This property references the Donor organism from which the BioSample was acquired.
     range: Donor
-    domain: BioSample
+    # domain: BioSample
     multivalued: true # changed by data dictionary
     inlined: true
-  associated_biosample_id_fk:
+  biosample_id_fk:
     aliases: hasBioSample
     description: The BioSample ID representing the biosample that was used to generate the file.
     range: BioSample #determine if we want to set up a foreign key to the biosample table
-    domain: File
-    # range: string
+    # domain: File
     multivalued: false
   used_file_id:
     description: Associated file ID that links to the record in the file table representing the file used in this activity.
@@ -161,7 +169,6 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     range: string
     inlined: true
 
-  
   # data columns
   activity_type:
     description: A human-readable reference to the type of activity, preferably using an identifier in a recommended standard ontology.
@@ -189,12 +196,14 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   apriori_cell_type_code:
     description: Code associated with the a priori cell type concept in a coding system; system and label are specified in a separate field.
     multivalued: true
+    range: APrioriCellTypeValues
   apriori_cell_type_coding_system:
     description: Reference (URL, etc) to the system that the code and title came from.
     multivalued: true
   biosample_type:
     description: A human-readable reference to the type of biosample represented by the record.
     multivalued: false
+    range: BioSampleTypeValues
   biosample_type_code:
     description: Code associated with the biosample type concept in a coding system; system and label are specified in a separate field.
     multivalued: false
@@ -207,6 +216,11 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   condition_code:
     description: Code associated with the condition concept in a coding system; system and label are specified in a separate field. If multiple values exist, they must be synonymous.
     multivalued: false
+    range:
+      any_of:
+        - range: MonarchDiseaseOntology
+        - range: HumanPhenotypeOntology
+        - range: SNOMEDCT
   condition_coding_system:
     description: Reference (URL, etc) to the system that the code and title came from.
     multivalued: false
@@ -227,6 +241,7 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   donor_type:
     description: Type of donor represented by the record. If blank, the data will be treated as Patient by default.
     multivalued: false
+    range: DonorTypeValues
   funded_by:
     description: A relationship defining the funding source.  The range is expected to include grants, organizations, or a string indicating the funding source.
     multivalued: true
@@ -268,6 +283,7 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     aliases: hasPhenotypicSex
     description: A reference to the BiologicalSex of the Donor organism. \"An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. [PATO_0001894]\
     multivalued: false
+    range: PhenotypicSexValues
   phenotypic_sex_code:
     description: Code associated with the biological sex concept in a coding system; system and label are specified in a separate field.
     multivalued: false
@@ -293,8 +309,6 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   reported_ethnicity:
     aliases: hasReportedEthnicity
     description: A property that relects a Human Donor's reported ethnic origins. Note this may contain both Race and Ethnicity information as define by the US Department of Interior (DOI) https://www.doi.gov/pmb/eeo/directives/race-data
-    comments:
-    - We recommend using HANCESTRO ancestry categories.  http://purl.obolibrary.org/obo/HANCESTRO_0004.
     multivalued: true
   reported_ethnicity_code:
     description: Code associated with the reported ethnicity concept in a coding system; system and label are specified in a separate field.
@@ -308,8 +322,6 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   genetic_ancestry:
     aliases: hasGeneticAncestry
     description: A human-readable property that reflects a donor's reported major contributing ancestral origins based on genetic/genomic data.
-    comments:
-    - We recommend using HANCESTRO ancestry categories, if you can calculate them.  http://purl.obolibrary.org/obo/HANCESTRO_0004
     multivalued: true
   genetic_acestry_code:
     description: Code associated with the genetic ancestry concept in a coding system; system and label are specified in a separate field.
@@ -351,6 +363,145 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     range: decimal
 
 enums:
+  ActivityTypes:
+    permissible_values:
+      SampleCollectionActivity:
+      SampleTreatmentActivity:
+      SequenceActivity:
+      AlignmentActivity:
+      VariantCallActivity:
+      ExpressionActivity:
+      AnalysisActivity:
+      ImageActivity:
+      IndexActivity:
+      ChecksumActivity:
+      Activity:
+  PhenotypicSexValues:
+    permissible_values:
+      female:
+        meaning: PATO:0000383
+      male:
+        meaning: PATO:0000384
+      intersex:
+        description: between male and female sex
+      prefer not to say:
+        description: the individual prefers not to disclose
+  DonorTypeValues:
+    permissible_values:
+      patient:
+      cell line:
+  DataModalityValues:
+    permissible_values:
+      epigenomic:
+      3D contact maps:
+      DNA binding:
+      histone modification location:
+      transcription factor location:
+      DNA chromatin accessibility:
+      DNA methylation:
+      RNA binding:
+      genomic:
+      assembly:
+      exome:
+      genotyping:
+      whole genome:
+      imaging:
+      electrophysiology:
+      medical imaging:
+      CT scan:
+      electrocardiogram:
+      MRI:
+      X ray:
+      microscopy:
+      metabolomic:
+      microbiome:
+      proteomic:
+      transcriptomic:
+      spatial transcriptomics:
+      transcriptomic nontargeted:
+      transcriptomic targeted:
+  BioSampleTypeValues:
+    permissible_values:
+      cell line:
+      primary culture:
+      T cell:
+      platelet:
+      B cell:
+      lymphocyte:
+      monocyte:
+      amniotic fluid:
+      blood:
+      urine:
+      synovial fluid:
+      cerebrospinal fluid:
+      saliva:
+      semen:
+      plasma:
+      serum:
+      stool:
+      vaginal fluid:
+      body fluid:
+      breast milk:
+      buffy coat:
+      cell free DNA:
+      derived type:
+      erythrocyte:
+      induced pluripotent stem cells:
+      in vitro differentiated cells:
+      leukocyte:
+      organoid:
+      peripheral blood mononuclear cell:
+      primary cell:
+      primary type:
+      tissue:
+# dynamic enums
+  APrioriCellTypeValues:
+    reachable_from:
+      source_ontology: obo:cl
+      source_nodes:
+        - CL:0000000
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+  MonarchDiseaseOntology:
+    reachable_from:
+      source_ontology: bioregistry:mondo
+      source_nodes:
+        - MONDO:0000001 ## disease or disorder
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
+    minus:
+      - permissible_values:
+          root_node:
+            meaning: MONDO:0000001 ## disease or disorder
+  HumanPhenotypeOntology:
+    reachable_from:
+      source_ontology: hpo
+      source_nodes:
+        - HP:0000001
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+  SNOMEDCT:
+    reachable_from:
+      source_ontology: bioregistry:snomedct
+      source_nodes:
+        - SNOMEDCT:404684003
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
+
+# HumanPhenotypeOntology:
+  #   permissible_values:
+  #     reachable_from:
+  #       source_ontology: hpo
+  #       source_nodes:
+  #         - HP:0000001
+  #       include_self: false
+  #       relationship_types:
+  #         - rdfs:subClassOf
+
   # LoincExample:
   #   enum_uri: http://hl7.org/fhir/ValueSet/example-intensional
   #   see_also:
@@ -364,22 +515,3 @@ enums:
   #   minus:
   #     concepts:
   #       - LOINC:5932-9  # for example, remove terms with 3rd party licensing restrictions
-# HumanPhenotypeOntology:
-  #   permissible_values:
-  #     reachable_from:
-  #       source_ontology: hpo
-  #       source_nodes:
-  #         - HP:0000001
-  #       include_self: false
-  #       relationship_types:
-  #         - rdfs:subClassOf
-  PhenotypicSex:
-    permissible_values:
-      female:
-        meaning: PATO:0000383
-      male:
-        meaning: PATO:0000384
-      intersex:
-        description: between male and female sex
-      prefer not to say:
-        description: the individual prefers not to disclose
