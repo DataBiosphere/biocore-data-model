@@ -1,0 +1,79 @@
+erDiagram
+BioSample {
+    string biosample_id  
+    string anatomical_site  
+    string anatomical_site_code  
+    string anatomical_site_coding_system  
+    stringList apriori_cell_type  
+    APrioriCellTypeValuesList apriori_cell_type_code  
+    stringList apriori_cell_type_coding_system  
+    BioSampleTypeValues biosample_type  
+    string biosample_type_code  
+    string biosample_type_coding_system  
+    string primary_condition  
+    string primary_condition_code  
+    string primary_condition_coding_system  
+    string donor_age_at_collection_unit  
+    float donor_age_at_collection_lower_bound  
+    float donor_age_at_collection_upper_bound  
+}
+Donor {
+    string donor_id  
+    DonorTypeValues donor_type  
+    string organism_type  
+    string organism_type_code  
+    string organism_type_coding_system  
+    PhenotypicSexValues phenotypic_sex  
+    string phenotypic_sex_code  
+    string phenotypic_sex_coding_system  
+    stringList reported_ethnicity  
+    stringList reported_ethnicity_code  
+    stringList reported_ethnicity_coding_system  
+    stringList genetic_ancestry  
+    stringList genetic_acestry_code  
+    stringList genetic_ancestry_coding_system  
+}
+File {
+    string file_id  
+    stringList data_modality  
+    string file_format  
+    integer file_size  
+    string file_md5sum  
+    string file_name  
+    string file_ref  
+    stringList reference_assembly  
+}
+Condition {
+    string condition_id  
+    string condition  
+    string condition_coding_system  
+    string donor_is_affected  
+    string observation_age_unit  
+    float observation_age_lower_bound  
+    float observation_age_upper_bound  
+    string onset_age_unit  
+    float onset_age_lower_bound  
+    float onset_age_upper_bound  
+}
+Activity {
+    string activity_id  
+    string activity_type  
+    string activity_type_code  
+    string activity_type_coding_system  
+    stringList data_modality  
+}
+Project {
+    string project_id  
+    string title  
+    stringList funded_by  
+    stringList registered_identifier  
+    stringList principal_investigator  
+}
+
+BioSample ||--}o Donor : "donor_id_fk"
+File ||--|o BioSample : "biosample_id_fk"
+Condition ||--}o Donor : "donor_id_fk"
+Activity ||--}o File : "used_file_id"
+Activity ||--}o File : "generated_file_id"
+Activity ||--}o BioSample : "used_biosample_id"
+Activity ||--}o BioSample : "generated_biosample_id"
