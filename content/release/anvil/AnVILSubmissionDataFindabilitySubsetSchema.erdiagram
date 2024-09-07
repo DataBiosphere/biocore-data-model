@@ -1,4 +1,3 @@
-erDiagram
 BioSample {
     string biosample_id  
     string anatomical_site  
@@ -46,6 +45,7 @@ File {
 Condition {
     string condition_id  
     string condition  
+    uriorcurie condition_code  
     string condition_coding_system  
     string donor_is_affected  
     string observation_age_unit  

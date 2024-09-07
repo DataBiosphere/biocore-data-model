@@ -144,32 +144,32 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
     identifier: true  # this is the type of primary key
     description: A unique identifier for the biosample.
     range: string
-    inlined: true
+    # inlined: true
   donor_id:
     identifier: true  # this is the type of primary key
     description: A unique identifier for the donor.
     range: string
-    inlined: true
+    # inlined: true
   file_id:
     identifier: true  # this is the type of primary key
     description: A unique identifier for the file.
     range: string
-    inlined: true
+    # inlined: true
   condition_id:
     identifier: true  # this is the type of primary key
     description: A unique identifier for the documented condition - internal identifier.
     range: string
-    inlined: true
+    # inlined: true
   activity_id:
     identifier: true  # this is the type of primary key
     description: A unique identifier for the activity.
     range: string
-    inlined: true
+    # inlined: true
   project_id:
     identifier: true  # this is the type of primary key
     description: A unique identifier for the project.
     range: string
-    inlined: true
+    # inlined: true
 
   # data columns
   activity_type:
