@@ -231,7 +231,19 @@
                     "type": "string"
                 },
                 "condition_code": {
-                    "description": "Code associated with the condition concept in a coding system; system and label are specified in a separate field. If multiple values exist, they must be synonymous."
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MonarchDiseaseOntology"
+                        },
+                        {
+                            "$ref": "#/$defs/HumanPhenotypeOntology"
+                        },
+                        {
+                            "$ref": "#/$defs/SNOMEDCT"
+                        }
+                    ],
+                    "description": "Code associated with the condition concept in a coding system; system and label are specified in a separate field. If multiple values exist, they must be synonymous.",
+                    "type": "string"
                 },
                 "condition_coding_system": {
                     "description": "Reference (URL, etc) to the system that the code and title came from.",

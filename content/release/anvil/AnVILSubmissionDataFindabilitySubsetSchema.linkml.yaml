@@ -15,6 +15,8 @@ imports:
 default_range: string # if not specified, the default range is string
 
 classes: # these are the tables in the data model
+  # Any:
+  #   class_uri: linkml:Any
   BioSample:
     description: Contains information about the sample(s) included in the study.
     slots:
@@ -216,11 +218,11 @@ slots: ## ids are unique identifiers for each entity or explicitly defined forei
   condition_code:
     description: Code associated with the condition concept in a coding system; system and label are specified in a separate field. If multiple values exist, they must be synonymous.
     multivalued: false
-    range:
-      any_of:
-        - range: MonarchDiseaseOntology
-        - range: HumanPhenotypeOntology
-        - range: SNOMEDCT
+    range: uriorcurie
+    any_of:
+      - range: MonarchDiseaseOntology
+      - range: HumanPhenotypeOntology
+      - range: SNOMEDCT
   condition_coding_system:
     description: Reference (URL, etc) to the system that the code and title came from.
     multivalued: false
