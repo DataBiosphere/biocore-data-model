@@ -15,8 +15,6 @@ imports:
 default_range: string # if not specified, the default range is string
 
 classes: # these are the tables in the data model
-  # Any:
-  #   class_uri: linkml:Any
   BioSample:
     description: Contains information about the sample(s) included in the study.
     slots:
