@@ -14,7 +14,9 @@ The AnVIL Data Submission Findability Subset Schema:
     │   │                                                                       
     │   └──AnVILDataSubmissionFindabilitySubset.tdr.json                        
     │                                                                           
-    │───AnVILDataSubmissionFindabilitySubset.template.xlsx                      
+    │───AnVILDataSubmissionFindabilitySubset.template.xlsx
+    │   │                                                                       
+    │   └──AnVILDataSubmissionFindabilitySubset.example.xlsx     
     │                                                                           
     │───AnVILDataSubmissionFindabilitySubset.erdiagram                          
     │   │                                                                       
