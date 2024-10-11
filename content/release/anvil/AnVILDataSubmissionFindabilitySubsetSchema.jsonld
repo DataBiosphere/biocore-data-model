@@ -1,6 +1,6 @@
 {
-  "name": "AnVILSubmissionDataFindabilitySubsetSchema",
-  "description": "AnVIL Submission Data Findability, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.",
+  "name": "AnVILDataSubmissionFindabilitySubsetSchema",
+  "description": "AnVIL Data Submission Findability Subset Schema, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.",
   "id": "https://github.com/DataBiosphere/biocore-data-model/tree/main/content",
   "imports": [
     "linkml:types"
@@ -1764,10 +1764,10 @@
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "AnVILSubmissionDataFindabilitySubsetSchema.linkml.yaml",
-  "source_file_date": "2024-09-07T08:02:13",
-  "source_file_size": 19349,
-  "generation_date": "2024-09-07T08:02:24",
+  "source_file": "AnVILDataSubmissionFindabilitySubsetSchema.linkml.yaml",
+  "source_file_date": "2024-10-11T17:31:45",
+  "source_file_size": 19126,
+  "generation_date": "2024-10-11T17:36:59",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

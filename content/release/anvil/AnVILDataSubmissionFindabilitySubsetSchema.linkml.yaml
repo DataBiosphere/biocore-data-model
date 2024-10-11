@@ -1,5 +1,5 @@
-name: AnVILSubmissionDataFindabilitySubsetSchema
-description: AnVIL Submission Data Findability, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.
+name: AnVILDataSubmissionFindabilitySubsetSchema
+description: AnVIL Data Submission Findability Subset Schema, following the BioCore data model and distributed as LinkML/yaml, JSON-schema, TDR JSON, and excel templates.
 id: https://github.com/DataBiosphere/biocore-data-model/tree/main/content
 prefixes:
   linkml: https://w3id.org/linkml/
