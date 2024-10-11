@@ -1,3 +1,6 @@
+The AnVIL Data Submission Findability Subset Data Dictionary:
+   * The data dictionary is a human readable guide to the data model to orient data submitters and explain the schema, including its own README.
+
 The AnVIL Data Submission Findability Subset Schema:
    * The schema is written in LinkML/YAML. Modify this file if you want to update all of the machine readable artifacts in this directory. You will need to install linkml to generate artifacts from this file. Documentation: linkml.io
    * The JSON-Schema file contains most of the information contained in the LinkML schema, and is both machine readable and human readable. This is best if you want to import the schema. Generate this file with `gen-json-schema`.
