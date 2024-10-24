@@ -1,5 +1,9 @@
 # README FOR BIOCORE
 
+See the [`release/anvil`](https://github.com/DataBiosphere/biocore-data-model/tree/main/content/release/anvil) directory for the AnVIL data findability subset schema:
+
+Most of this information in this README is archival. 
+
 BioCore Data Model is *not a single* schema, but it contains tools for generating them using LinkML and YAML files (the data model).
 
 The Turtle/RDF ontology (OWL2) files are collections of *vocabularies*, and there are three:
