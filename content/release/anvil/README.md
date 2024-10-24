@@ -1,5 +1,6 @@
-The AnVIL Data Submission Findability Subset Data Dictionary:
+[The AnVIL Data Submission Findability Subset Data Dictionary] (https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=102875356054992937278&rtpof=true&sd=true):
    * The data dictionary is a human readable guide to the data model to orient data submitters and explain the schema, including its own README.
+   * The machine-readable schema also contain the definitions and datatypes, though more information about *how* to structure the tables is provided in the data dictionary.
 
 The AnVIL Data Submission Findability Subset Schema:
    * The schema is written in LinkML/YAML. Modify this file if you want to update all of the machine readable artifacts in this directory. You will need to install linkml to generate artifacts from this file. Documentation: linkml.io
