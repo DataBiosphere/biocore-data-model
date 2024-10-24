@@ -1,8 +1,6 @@
 # README FOR BIOCORE
 
-All in one readme--no digging through the directory tree to find more docs--its all here.
-
-BioCore Data Model is *not a* schema, but it contains tools for generating them using LinkML and YAML files (the data model). The YAML files are the data model, the schema it generates are JSON files. We do provide a collection of test schema, so if you are looking for a schema to start with, check the `json_schema` directory to determine if BioCore will be useful for your application.
+BioCore Data Model is *not a single* schema, but it contains tools for generating them using LinkML and YAML files (the data model).
 
 The Turtle/RDF ontology (OWL2) files are collections of *vocabularies*, and there are three:
 
@@ -52,7 +50,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install linkml`
 
-OPTIONAL: There are lots of command line tools and files being generated here, if you don't completely love the command line you might consider using VSCODE (by Microsoft corporation (if you don't already)) for both the file browser and the terminal interactions, along with extensions for viewing TTL ontology and YAML data model files. It is a very fine software that will do everything we need here.
+OPTIONAL: There are lots of command line tools and files being generated here, if you don't completely love the command line you might consider using VSCODE (by Microsoft corporation (if you don't already)) for both the file browser and the terminal interactions, along with extensions for viewing TTL ontology and YAML data model files. 
 
 Test installation:
 
@@ -103,7 +101,7 @@ Questions/TODO
       * Is there a way to pull definitions (either one) into the linkml yaml?
 
 
-### Full BioCore export process (for release)
+### Full BioCore export process
 
 Fields 
 
