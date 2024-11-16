@@ -3,7 +3,7 @@
    * The machine-readable schema also contain the definitions and datatypes, though more information about *how* to structure the tables is provided in the data dictionary.
 
 # Machine Readable Artifacts: The AnVIL Data Submission Findability Subset Schema
-   * The schema is written in LinkML/YAML. Modify this file if you want to update all of the machine readable artifacts in this directory. You will need to install linkml to generate artifacts from this file. [LinkML Documentation](linkml.io)
+   * The schema is written in LinkML/YAML. Modify this `*.linkml.yaml` if you want to update all of the machine readable artifacts in this directory. You will need to install linkml to generate artifacts from this file. [LinkML Documentation](linkml.io)
    * The JSON-Schema file contains most of the information contained in the LinkML schema, and is both machine readable and human readable. This is best if you want to import the schema. Generate this file with `gen-json-schema`.
    * The template xlsx file. This is useful to prepare data for submission to AnVIL. Generate this file with `gen-excel`.
    * The example xlsx file. A simple example file with one row per table. This is a customized version of the template file.
